@@ -1,4 +1,6 @@
-# Semantic Role Miner usign Stanford Parser , Senna
+# Semantic Role Miner 
+
+## usign Stanford Parser , Senna
 
 Senna is a SRL tool, receiving an input sentence , serving a set of tages for each token wihtin that sentence.
 Output line include POS tag, Chunker tag, NER tag, SRL and corresponding Arg-tags for each predicate identified by SRL (a column for each) and tree.
@@ -22,8 +24,8 @@ My challenge is using both of these formats and creating meaningful triples (rdf
 in other words, changing this sentence to machine interpretable format !
 
 ------------------------------------
- 
- *First Step:
+  
+ ### First Step:
  
   finding root predicate root(ROOT,verb) from stanford output. and finding its corresponding argmuments from Senna output.
   
