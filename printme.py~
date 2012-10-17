@@ -1,5 +1,0 @@
-import StanSennaClass
-
-a=StanSennaClass.SenSta("Hi")
-print a.getSennaOutput()
-print a.getStanOutput()
