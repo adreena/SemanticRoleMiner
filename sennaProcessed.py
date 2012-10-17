@@ -6,23 +6,27 @@ def modifySenna(inputFile):
 	dummyfile=open(inputFile,'r')
 	sennaIterator=dummyfile.read()
         sentences_Senna={}
+        tokenloc=0
 	sentences_Senna["sen0"]={}
 	for line in sennaIterator.split("\n"):
 	   tokens=line.replace(" ","")
 	   tokens=tokens.replace("\t","|")
 	   tokens=tokens.split("|")
 	   #print tokens
+           tokenloc+=1
 	   if tokens[0]!=".": 
 		counter=0
-		sentences_Senna["sen"+str(j)][tokens[0]]={}
+		sentences_Senna["sen"+str(j)][tokenloc]={}
+                sentences_Senna["sen"+str(j)][tokenloc][tokens[0]]={}
 		for element in tokens[1:]:
 		    #print element
-		    sentences_Senna["sen"+str(j)][tokens[0]][counter]=element
+		    sentences_Senna["sen"+str(j)][tokenloc][tokens[0]][counter]=element
 
 		    counter+=1
 	   else: 
 	     j+=1 
 	     #print "end"
+	     tokenloc=0
 	     sentences_Senna["sen"+str(j)]={}
 	      
 		#print sentences_Senna["sen0"]["Tanks"]

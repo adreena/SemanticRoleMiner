@@ -5,5 +5,5 @@ inputFile="~/srl/python/SemanticRoleMiner/test/test_input1.txt"
 myTestFile=SenSta(inputFile)
 myTestFile.makeSenna()
 myTestFile.makeStanf()
-print myTestFile.sennaDict['sen0']['Tanks']
+print myTestFile.sennaDict
 print myTestFile.stanfDict
