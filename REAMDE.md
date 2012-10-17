@@ -34,4 +34,4 @@ in other words, changing this sentence to machine interpretable format !
   We can then simplify subjects and objects, by means of separating their modifiers from them and describe them in triple forms.
   
   
-  
+to be continued...  
