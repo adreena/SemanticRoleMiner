@@ -1,0 +1,12 @@
+class SenSta:
+   
+   sennaOutput="1"
+   stanOutput ="2"
+
+
+   def getSennaOutput(self):
+       return sennaOutput
+   def getStanOutput():
+       return stanOutput
+
+
