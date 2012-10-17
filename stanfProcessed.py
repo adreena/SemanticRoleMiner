@@ -22,7 +22,8 @@ def modifyStanf(inputFile):
 	       root=root.split(" ")
 	       index=root[-1]
 	       root=root[-2]
-	       sentences_Stanf["sen"+str(i)]["root"]=root
+	       sentences_Stanf["sen"+str(i)]["root"]=(index,root)
+
 	return sentences_Stanf   
         #Third , now root detected 
 	   #going to sennaIterator to find target column

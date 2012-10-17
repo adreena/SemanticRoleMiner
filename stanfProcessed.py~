@@ -1,4 +1,4 @@
-def makeStanf(inputFile):
+def modifyStanf(inputFile):
 
 	sentences_Stanf={}
 	i=-1
