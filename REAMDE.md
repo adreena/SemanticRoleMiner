@@ -18,12 +18,13 @@ Stanford parser serves us with a set of different information about each token:
                   partmod(Tanks-1, used-2)
                   ...
 
-My chanlleng is using both of these formats and create meaningful triples (rdf) for further query purposes and building machine readable strucre out of them.
-in other words, changes this sentence to machine interpretable format !
+My challenge is using both of these formats and creating meaningful triples (rdf) for further query purposes and building machine readable strucre out of them.
+in other words, changing this sentence to machine interpretable format !
 
 ------------------------------------
  
- First Step:
+ *First Step:
+ 
   finding root predicate root(ROOT,verb) from stanford output. and finding its corresponding argmuments from Senna output.
   
   why root? root is main joint node , connecting all other nodes together, once the root of the sentence is found, main subject and object are targeted.
