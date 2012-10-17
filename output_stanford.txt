@@ -1,0 +1,88 @@
+(ROOT
+  (S
+    (NP
+      (NP (NNS Tanks))
+      (VP (VBN used)
+        (PP (IN for)
+          (NP
+            (NP (NN storage))
+            (PP (IN of)
+              (NP (NN process) (NNS waters)))))))
+    (VP (VBP have)
+      (NP
+        (NP (JJ apparent) (JJ visible) (NN debris))
+        (, ,)
+        (NP (NN filth))
+        (, ,)
+        (CC and)
+        (NP (JJ microbiological) (NN contamination))))
+    (. .)))
+
+nsubj(have-8, Tanks-1)
+partmod(Tanks-1, used-2)
+prep_for(used-2, storage-4)
+nn(waters-7, process-6)
+prep_of(storage-4, waters-7)
+root(ROOT-0, have-8)
+amod(debris-11, apparent-9)
+amod(debris-11, visible-10)
+dobj(have-8, debris-11)
+dobj(have-8, filth-13)
+conj_and(debris-11, filth-13)
+amod(contamination-17, microbiological-16)
+dobj(have-8, contamination-17)
+conj_and(debris-11, contamination-17)
+
+(ROOT
+  (S
+    (S
+      (NP
+        (NP (NN Sand))
+        (CC and)
+        (NP
+          (NP (VBN activated) (NN carbon) (NN filter) (NNS units))
+          (VP (VBN used)
+            (PP (IN in)
+              (NP
+                (NP (NN manufacturing))
+                (PP (IN of)
+                  (NP (NN water))))))))
+      (VP (VBP are) (RB not)
+        (VP (VBN sanitized))))
+    (, ,)
+    (CC and)
+    (S
+      (NP
+        (NP (NN ventilation))
+        (PP (IN for)
+          (NP (NNS tanks))))
+      (VP (VBZ is) (RB not)
+        (ADJP (JJ filtered)
+          (S
+            (VP (TO to)
+              (VP (VB protect)
+                (PP (IN against)
+                  (NP (NN contamination)))))))))
+    (. .)))
+
+nsubjpass(sanitized-14, Sand-1)
+amod(units-6, activated-3)
+nn(units-6, carbon-4)
+nn(units-6, filter-5)
+conj_and(Sand-1, units-6)
+nsubjpass(sanitized-14, units-6)
+partmod(units-6, used-7)
+prep_in(used-7, manufacturing-9)
+prep_of(manufacturing-9, water-11)
+auxpass(sanitized-14, are-12)
+neg(sanitized-14, not-13)
+root(ROOT-0, sanitized-14)
+nsubj(filtered-22, ventilation-17)
+prep_for(ventilation-17, tanks-19)
+cop(filtered-22, is-20)
+neg(filtered-22, not-21)
+conj_and(sanitized-14, filtered-22)
+aux(protect-24, to-23)
+xcomp(filtered-22, protect-24)
+prep_against(protect-24, contamination-26)
+
