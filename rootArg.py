@@ -13,7 +13,7 @@ file_stanford_input.close()
 file_senna_input.close()
 
 sentences_Stan={}
-i=0
+i=-1
 #separating sentences by iterator
 for line in stanIterator.split("\n"):
     
@@ -35,8 +35,11 @@ for line in stanIterator.split("\n"):
        sentences_Stan["sen"+str(i)]["root"]=root
    #Third , now root detected 
    #going to sennaIterator to find target column
-       
+#output of stanford 
+#2 sentences are identified sentences_Stan={'sen2': {'root': 'sanitized'}, 'sen1': {'root': 'have'}}
+#for each a root is found       
 
+#------------------------------------------------------------------------------------------------------------------
 #preprocessing senna file
 j=0
 sentences_Senna={}
@@ -64,7 +67,12 @@ print sentences_Stan
 print sentences_Senna["sen0"]["Tanks"]
 print sentences_Senna["sen0"]["used"]
 print sentences_Senna["sen1"]["Sand"]
-#print sentences_Senna["sen1"]
+# outputs of senna proccess
+# 2 sentences are identified sentences_senna{"sen0"={"Tanks"={"0"=NNS,...},"used"={"0"=VBN,...}}, "sen1"={"Sand"={...},"and"={}, "activated={}"}}
+#sentences_Senna["sen0"]["Tanks"] => {0: 'NNS', 1: 'S-NP', 2: 'O', 3: '-', 4: 'S-A0', 5: 'B-A0', 6: '(S1(S(NP(NP*)'}
+#sentences_Senna["sen0"]["used"]  => {0: 'VBN', 1: 'S-VP', 2: 'O', 3: 'used', 4: 'S-V', 5: 'I-A0', 6: '(VP*'}
+#sentences_Senna["sen1"]["Sand"]  => {0: 'NN', 1: 'S-NP', 2: 'S-PER', 3: '-', 4: 'O', 5: 'O', 6: 'B-A1', 7: 'O', 8: 'O', 9: '(S1(S(NP*)'}
+
 
 
 
