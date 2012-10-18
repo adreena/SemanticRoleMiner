@@ -15,7 +15,7 @@ def modifySenna(inputFile):
 	   #print tokens
            tokenloc+=1
 	   if tokens[0]!=".": 
-		counter=0
+		counter=1
 		sentences_Senna["sen"+str(j)][tokenloc]={}
                 sentences_Senna["sen"+str(j)][tokenloc][tokens[0]]={}
 		for element in tokens[1:]:
