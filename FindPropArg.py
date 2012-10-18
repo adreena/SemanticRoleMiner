@@ -3,6 +3,7 @@
 def findArg((index,root),targetDict):
     
      tokenLabels={}
+     Labels={}
     #--Testing function arguments Perfect working
      #print index
      #print root
@@ -44,7 +45,17 @@ def findArg((index,root),targetDict):
             #print temp
             #print temp[1]
             #print word 
-            tokenLabels[word]=temp[1]    
+            #tokenLabels[word]=temp[1]
+            if temp[1] in tokenLabels:
+               tokenLabels[temp[1]].append(word)
+            else:
+               tokenLabels[temp[1]]=[]
+               tokenLabels[temp[1]].append(word) 
           
      #tokenLabels['Tanks']='A0'
      print tokenLabels
+
+
+
+
+
