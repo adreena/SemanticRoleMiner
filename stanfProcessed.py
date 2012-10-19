@@ -10,11 +10,12 @@ def modifyStanf(inputFile):
 	   #First
 	   #sentence detected , create a key in sentences dictionary
 	    if line=="(ROOT":	 
-		i+=1        
-		sentences_Stanf['sen'+str(i)]={}
+	       i+=1
+               counter=0        
+	       sentences_Stanf['sen'+str(i)]={}
 	   #Second 
 	   #finding root and its index of each sentences detected    
-	    if line[0:4]=="root":
+	    elif line[0:4]=="root":
 	       root=line.replace(",","")
 	       root=root.replace("("," ")
 	       root=root.replace("-"," ") 
@@ -22,12 +23,25 @@ def modifyStanf(inputFile):
 	       root=root.split(" ")
 	       index=root[-1]
 	       root=root[-2]
+               #print root
 	       sentences_Stanf["sen"+str(i)]["root"]=(index,root)
+            elif line== "" or line[0]==" " :
+               line=""
+               #do nothing
+            else :
+               #print line
+               sentences_Stanf["sen"+str(i)][counter]=line
+               counter+=1
 
 	return sentences_Stanf   
         #Third , now root detected 
 	   #going to sennaIterator to find target column
 	#output of stanford 
 	#2 sentences are identified sentences_Stan={'sen2': {'root': 'sanitized'}, 'sen1': {'root': 'have'}}
-	#for each a root is found       
+	#for each a root is found
+        # new version of out put:
+	#{'sen0': {0: 'nsubj(have-8, Tanks-1)', 1: 'partmod(Tanks-1, used-2)', 2: 'prep_for(used-2, storage-4)', 3: 'nn(waters-7, process-6)', 4: ..}}
+
+
+       
 
