@@ -12,8 +12,8 @@ myTestFile.makeStanf()
 
 
 #-- Test: PART1: getting info about sen0 from Senna and Stan ; generating labels to each (Token,Token_Location)  
-SEN0_SE=myTestFile.sennaDict['sen0']
-SEN0_ST=myTestFile.stanfDict['sen0']
+SEN0_SE=myTestFile.sennaDict['sen1']
+SEN0_ST=myTestFile.stanfDict['sen1']
 #print SEN0_ST['root']
 args= findArg(SEN0_ST['root'],SEN0_SE)
 #

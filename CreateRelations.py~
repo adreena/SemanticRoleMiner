@@ -34,11 +34,26 @@ def checkNegate(verb,mixedArgs):
           #print value[0].keys()
           if value[0].keys()[0]=="neg":
               neg="not"
+              break
     # print arg
      return neg
      #print "----------------"
 
-
+#-- Find direct Object for a given verb. these types of verbs usually have nsubj
+def findObj(verb,mixedArgs):
+    obj=[]
+    elements= mixedArgs.values()
+    for temp in elements:
+        if len(temp)!=0 :
+	   value=temp.values()
+           value=value[0]           
+           rel=value.keys()
+           #print rel
+           value=value.values()
+           if verb in value[0] and rel[0]=="dobj":
+              obj.append(value[0][1])
+              
+    return obj          
 
 
 
@@ -63,11 +78,22 @@ def makeRel(mixedArgs):
          #print token1 #each token along with their location
          #print token2 
  
-         if arg=="V" and rel=="nsubjpass": #this relation makes token2 as main nsubject
-                #-- token1 is verb ; hence should be checked if it's negative or positive
-                negate= checkNegate(token1,mixedArgs)      
-         	s_P_o(token2,"is"+negate,token1)
-		mainArg(token2,mixedArgs)
+         if arg=="V":
+		#-- token1 is verb ; hence should be checked if it's negative or positive
+		negate= checkNegate(token1,mixedArgs)
+		if rel=="nsubjpass": #this relation makes token2 as main nsubject     
+		 	s_P_o(token2,"is"+negate,token1)
+			mainArg(token2,mixedArgs)
+                elif rel=="nsubj":  #this relation takes verb as the name of relation and I need to search for object of the verb
+                        obj=findObj(token1,mixedArgs)
+                        for item in obj:
+			   s_P_o(token2,str(negate)+str(token1),item)
          elif rel=="nn" or rel=="amod":
                 s_P_o(token1,"is",token2)
+
+         
+
+
+
+
          
