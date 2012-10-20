@@ -71,7 +71,7 @@ def findArg((index,root),targetDict):
 
 def findParts(targetTuple,AR):
     newAR={}
-    print targetTuple
+    #print targetTuple
     dep=targetTuple[0]
     part1=targetTuple[1]
    # print dep
@@ -92,11 +92,11 @@ def findParts(targetTuple,AR):
 	       break # good point to break out of loop as the first matching case is found
        if sw1==1 and sw2==1 : # means 2 parts are found
            #print arg, part1, part2       #             A1   ['debris', '11'] ['contamination', '17']
-           print dep, arg, part1 , part2 #  conj_and   A1   ['debris', '11'] ['contamination', '17']
+           #print dep, arg, part1 , part2 #  conj_and   A1   ['debris', '11'] ['contamination', '17']
            newAR[arg]={}
            #print part1
            newAR[arg][dep]=(part1,part2)
-           print newAR
+           #print newAR
 	   #output :['conj_and', ['debris', '11'], ['contamination', '17']]
            #        {'A1': {'conj_and': (['debris', '11'], ['contamination', '17'])}}
 	   break
@@ -125,9 +125,9 @@ def mixDepArg(ST,AR):
          #print temp
          #print newtemp
          mixDict[ids]=newtemp
-         print "----"
+         #print "----"
         
      if mixDict!="Null":
-        print mixDict       
+        return mixDict       
 
 

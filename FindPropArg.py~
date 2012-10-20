@@ -80,7 +80,7 @@ def findParts(targetTuple,AR):
     part2=targetTuple[2]
     #print part1, part2
     for arg in AR:
-       print arg
+       #print arg
        for tup in AR[arg]:
            #print tup[0]
            if tup[0]==part1[0] and str(tup[1])==part1[1]: #finding first match
@@ -96,7 +96,7 @@ def findParts(targetTuple,AR):
            newAR[arg]={}
            #print part1
            newAR[arg][dep]=(part1,part2)
-           print newAR
+           #print newAR
 	   #output :['conj_and', ['debris', '11'], ['contamination', '17']]
            #        {'A1': {'conj_and': (['debris', '11'], ['contamination', '17'])}}
 	   break
@@ -125,9 +125,9 @@ def mixDepArg(ST,AR):
          #print temp
          #print newtemp
          mixDict[ids]=newtemp
-         print "----"
+         #print "----"
         
      if mixDict!="Null":
-        print mixDict       
+        return mixDict       
 
 
