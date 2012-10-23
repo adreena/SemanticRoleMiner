@@ -5,6 +5,8 @@ def s_P_o(token2,rel,token1):
     
     print str(token2)+rel+str(token1)
 
+
+
 def mainArg(token,mixedArgs):
     elements=mixedArgs.values()
     for temp in elements:
@@ -22,6 +24,9 @@ def mainArg(token,mixedArgs):
            #if part1==token or part2==token:
               #print token, arg
     print "----"
+
+
+
 #-- Check if verb is negate or not
 def checkNegate(verb,mixedArgs):
      elements = mixedArgs.values()
@@ -88,6 +93,9 @@ def makeRel(mixedArgs):
                         obj=findObj(token1,mixedArgs)
                         for item in obj:
 			   s_P_o(token2,str(negate)+str(token1),item)
+                           mainArg(item,mixedArgs)
+                        mainArg(token2,mixedArgs)
+                        
          elif rel=="nn" or rel=="amod":
                 s_P_o(token1,"is",token2)
 
