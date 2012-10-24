@@ -5,9 +5,9 @@ def findArg((index,root),targetDict):
      tokenLabels={}
      Labels={}
     #---Testing function arguments Perfect working
-     #print index
-     #print root
-     #print targetDict
+     print index
+     print root
+     print targetDict
 
      #--Finding the target column for retreiving correct args
      #--going through root element to find where predicate has happened its column is marked as 'V'
@@ -16,8 +16,8 @@ def findArg((index,root),targetDict):
 
      targetColumn='Null'
      for element_id in targetDict[int(index)][root]:
-         #print element_id
-         #print targetDict[int(index)][root][element_id]
+         print element_id
+         print targetDict[int(index)][root][element_id]
          take=targetDict[int(index)][root][element_id]
          #print take
          #print take[-1] trying to find V in S-V as verb
@@ -71,7 +71,7 @@ def findArg((index,root),targetDict):
 
 def findParts(targetTuple,AR):
     newAR={}
-    print targetTuple
+    #print targetTuple
     dep=targetTuple[0]
     part1=targetTuple[1]
    # print dep

@@ -1,0 +1,76 @@
+#NOTE : I REMOVED _ underscore FROM INPUT FILE;
+
+Senna :
+    {'sen0': 
+ 	{1: {'A': {1: 'DT', 2: 'B-NP', 3: 'O', 4: '-', 5: 'B-A1', 6: 'B-A1', 7: '(S1(S(NP(NP(NP*'}}, 
+	 2: {'total': {1: 'NN', 2: 'E-NP', 3: 'O', 4: '-', 5: 'I-A1', 6: 'I-A1', 7: '*)'}},
+	 3: {'of': {1: 'IN', 2: 'S-PP', 3: 'O', 4: '-', 5: 'I-A1', 6: 'I-A1', 7: '(PP*'}},
+	 4: {'316': {1: 'CD', 2: 'B-NP', 3: 'O', 4: '-', 5: 'I-A1', 6: 'I-A1', 7: '(NP*'}},
+	 5: {'individuals': {1: 'NNS', 2: 'E-NP', 3: 'O', 4: '-', 5: 'E-A1', 6: 'I-A1', 7: '*)))'}},
+	 6: {'infected': {1: 'VBN', 2: 'S-VP', 3: 'O', 4: 'infected', 5: 'S-V', 6: 'I-A1', 7: '(VP*'}},
+	 7: {'with': {1: 'IN', 2: 'S-PP', 3: 'O', 4: '-', 5: 'B-A2', 6: 'I-A1', 7: '(PP*'}},
+	 8: {'the': {1: 'DT', 2: 'B-NP', 3: 'O', 4: '-', 5: 'I-A2', 6: 'I-A1', 7: '(NP(NP*'}},
+	 9: {'outbreak': {1: 'NN', 2: 'I-NP', 3: 'O', 4: '-', 5: 'I-A2', 6: 'I-A1', 7: '*'}},
+	10: {'strains': {1: 'NNS', 2: 'E-NP', 3: 'O', 4: '-', 5: 'I-A2', 6: 'I-A1', 7: '*)'}},
+	11: {'of': {1: 'IN', 2: 'S-PP', 3: 'O', 4: '-', 5: 'I-A2', 6: 'I-A1', 7: '(PP*'}},
+	12: {'SalmonellaBareilly': {1: 'NNP', 2: 'B-NP', 3: 'B-MISC', 4: '-', 5: 'I-A2', 6: 'I-A1', 7: '(NP*'}},
+	13: {'or': {1: 'CC', 2: 'I-NP', 3: 'I-MISC', 4: '-', 5: 'I-A2', 6: 'I-A1', 7: '*'}}, 
+	14: {'SalmonellaNchanga': {1: 'NNP', 2: 'E-NP', 3: 'E-MISC', 4: '-', 5: 'E-A2', 6: 'E-A1', 7: '*))))))'}}, 
+	15: {'have': {1: 'VBP', 2: 'B-VP', 3: 'O', 4: '-', 5: 'O', 6: 'O', 7: '(VP*'}}, 
+	16: {'been': {1: 'VBN', 2: 'I-VP', 3: 'O', 4: '-', 5: 'O', 6: 'O', 7: '(VP*'}}, 
+	17: {'reported': {1: 'VBN', 2: 'E-VP', 3: 'O', 4: 'reported', 5: 'O', 6: 'S-V', 7: '(VP*'}}, 
+	18: {'from': {1: 'IN', 2: 'S-PP', 3: 'O', 4: '-', 5: 'O', 6: 'B-A0', 7: '(PP*'}}, 
+	19: {'26': {1: 'CD', 2: 'B-NP', 3: 'O', 4: '-', 5: 'O', 6: 'I-A0', 7: '(NP(NP*'}}, 
+	20: {'states': {1: 'NNS', 2: 'E-NP', 3: 'O', 4: '-', 5: 'O', 6: 'I-A0', 7: '*)'}}, 
+	21: {'and': {1: 'CC', 2: 'O', 3: 'O', 4: '-', 5: 'O', 6: 'I-A0', 7: '*'}}, 
+	22: {'the': {1: 'DT', 2: 'B-NP', 3: 'O', 4: '-', 5: 'O', 6: 'I-A0', 7: '(NP(NP*'}}, 
+	23: {'District': {1: 'NNP', 2: 'E-NP', 3: 'B-ORG', 4: '-', 5: 'O', 6: 'I-A0', 7: '*)'}},
+ 	24: {'of': {1: 'IN', 2: 'S-PP', 3: 'I-ORG', 4: '-', 5: 'O', 6: 'I-A0', 7: '(PP*'}}, 
+	25: {'Columbia': {1: 'NNP', 2: 'S-NP', 3: 'E-ORG', 4: '-', 5: 'O', 6: 'E-A0', 7: '(NP*))))))))'}}}, 'sen1': {}}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Stanf:  
+    {'sen0': {
+	0: 'det(total-2, A-1)', 
+	1: 'nsubjpass(reported-17, total-2)', 
+	2: 'amod(individuals-5, 316-4)', 
+	3: 'prep_of(total-2, individuals-5)', 
+	4: 'partmod(individuals-5, infected-6)', 
+	5: 'det(strains-10, the-8)', 
+	6: 'nn(strains-10, outbreak-9)', 
+	7: 'prep_with(infected-6, strains-10)', 
+	8: 'prep_of(strains-10, SalmonellaBareilly-12)', 
+	9: 'prep_of(strains-10, SalmonellaNchanga-14)', 
+       10: 'conj_or(SalmonellaBareilly-12, SalmonellaNchanga-14)', 
+       11: 'aux(reported-17, have-15)', 
+       12: 'auxpass(reported-17, been-16)', 
+       13: 'num(states-20, 26-19)', 
+       14: 'prep_from(reported-17, states-20)', 
+       15: 'det(District-23, the-22)', 
+       16: 'prep_from(reported-17, District-23)', 
+       17: 'conj_and(states-20, District-23)', 
+       18: 'prep_of(District-23, Columbia-25)', 
+   'root': ('17', 'reported')}}
+
+----------------------------------------------------------------------------------------------------------------------------
+FUNCTION RESULTS
+----------------------------------------------------------------------------------------------------------------------------
+--findArg()
+
+SENNA ARG LABELS:
+
+'A1': [('A', 1), ('total', 2), ('of', 3), ('316', 4), ('individuals', 5), ('infected', 6), ('with', 7), ('the', 8), ('outbreak', 9), ('strains', 10), ('of', 11), ('SalmonellaBareilly', 12), ('or', 13), ('SalmonellaNchanga', 14)],
+ 
+'A0': [('from', 18), ('26', 19), ('states', 20), ('and', 21), ('the', 22), ('District', 23), ('of', 24), ('Columbia', 25)], 
+ 'V': [('reported', 17)]}
+
+
+
+
+
+
+
+
+
+

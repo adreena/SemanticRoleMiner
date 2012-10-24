@@ -60,6 +60,30 @@ def findObj(verb,mixedArgs):
               
     return obj          
 
+#-- Find hidden relations 
+
+def inRel(token,mixedArgs):
+    sbj=[]
+    sbj.append(token)
+    elements=mixedArgs.values()
+    #find prep
+    for temp in elements:
+        #print temp
+        if len(temp)!=0:
+           value=temp.values()
+           value=value[0]
+           rel=value.keys()
+           val=value.values()
+           val=val[0]
+           rel=rel[0]
+           rel=rel.split("_")
+	   #print rel[0]
+	   #print val[0]
+           if rel[0]=='prep' and val[0]==token:
+              sbj.append(rel[1])
+              sbj.append(val[1])
+
+    return sbj
 
 
 #-- I first extracted arg, rel, token1 and token2
@@ -86,9 +110,10 @@ def makeRel(mixedArgs):
          if arg=="V":
 		#-- token1 is verb ; hence should be checked if it's negative or positive
 		negate= checkNegate(token1,mixedArgs)
-		if rel=="nsubjpass": #this relation makes token2 as main nsubject     
-		 	s_P_o(token2,"is"+negate,token1)
-			mainArg(token2,mixedArgs)
+		if rel=="nsubjpass": #this relation makes token2 as main nsubject 
+                        sbj=inRel(token2,mixedArgs)    
+		 	s_P_o(str(sbj),"is"+negate,token1)
+			#mainArg(token2,mixedArgs)
                 elif rel=="nsubj":  #this relation takes verb as the name of relation and I need to search for object of the verb
                         obj=findObj(token1,mixedArgs)
                         for item in obj:

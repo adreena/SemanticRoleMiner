@@ -9,9 +9,9 @@
        outbreak	        NN	      I-NP	         O	              -	      I-A2	      I-A1	*
         strains	       NNS	      E-NP	         O	              -	      I-A2	      I-A1	*)
              of	        IN	      S-PP	         O	              -	      I-A2	      I-A1	(PP*
-SalmonellaBareilly	       NNP	      B-NP	    B-MISC	              -	      I-A2	      I-A1	(NP*
+SalmonellaBareilly     NNP	      B-NP	    B-MISC	              -	      I-A2	      I-A1	(NP*
              or	        CC	      I-NP	    I-MISC	              -	      I-A2	      I-A1	*
-SalmonellaNchanga	       NNP	      E-NP	    E-MISC	              -	      E-A2	      E-A1	*))))))
+SalmonellaNchanga      NNP	      E-NP	    E-MISC	              -	      E-A2	      E-A1	*))))))
            have	       VBP	      B-VP	         O	              -	         O	         O	(VP*
            been	       VBN	      I-VP	         O	              -	         O	         O	(VP*
        reported	       VBN	      E-VP	         O	       reported	         O	       S-V	(VP*
