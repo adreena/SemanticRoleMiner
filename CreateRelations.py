@@ -100,6 +100,7 @@ def makeRel(mixedArgs):
       #print arg
       if len(arg)!=0:
          arg=arg[0]
+         #print "arg:"+str(arg)
          elements=elements[arg] # returns a list of dependency rel
          #print rel
          rel=elements.keys()
@@ -108,10 +109,10 @@ def makeRel(mixedArgs):
          elements=elements[rel] #a tuple of 2 tokens
          token1=elements[0]
          token2=elements[1]
-         #print token1 #each token along with their location
-         #print token2 
+         print token1 #each token along with their location
+         print token2 
  
-         if arg=="V":
+         if arg=="Link":
 		#-- token1 is verb ; hence should be checked if it's negative or positive
 		negate= checkNegate(token1,mixedArgs)
 		if rel=="nsubjpass": #this relation makes token2 as main nsubject 

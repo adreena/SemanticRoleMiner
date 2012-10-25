@@ -12,6 +12,7 @@ class SenSta:
    stanfDict={}
    rootArgs={}
    rootArgsDomain={}
+   otherPredicates={}
    def __init__(self,arg):
 	self.inputFile=arg
 

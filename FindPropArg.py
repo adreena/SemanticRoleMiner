@@ -1,5 +1,20 @@
 #Goal : For each sentence args for a root are investigated
 
+
+def findPreds(senna):
+    elementID=senna.values()
+    for i in elementID:
+        token=i.keys()
+        cols=i.values()
+	cols=cols[0]
+        #print cols
+        tok_keys=cols.keys()
+        tok_tags=cols.values()
+        for col, tag in cols.items():
+            if tag[-1]=="V":
+	       print tag , col 
+
+
 def findDomain(args):
 
     elements= args.keys()
@@ -72,16 +87,6 @@ def findArg((index,root),targetDict):
           
      #tokenLabels['Tanks']='A0'
      return tokenLabels
-     #--- Outout Interpretation
-     #--- for a root it find the args {'A0':[], 'A1':[]}
-     #--- for each arg it find all tokens labeld as that arg along with their location in the sentence , for avoiding any conflicts suh as having 2 ands or 2 sam words
-     #--- 'A0-root':[('token1','token1Location'),('token2','token2Location')]  
-     #--- Real output:
-     #--- sentence: Tanks used for storage of process waters have apparent visible debris, filth , and microbiological contamination.
-     #		   [ ----------------A0--------------------]     [----------------------------------A1-----------------------------] 
-     #--- root: have with label V => 'V': [('have', 8)]
-     #--- {'A1-have': [('apparent', 9), ('visible', 10), ('debris', 11), (',', 12), ('filth', 13), (',', 14), ('and', 15), ('microbiological', 16), ('contamination', 17)], 
-     #---  'A0-have': [('Tanks', 1), ('used', 2), ('for', 3), ('storage', 4), ('of', 5), ('process', 6), ('waters', 7)], 'V': [('have', 8)]}
 
 #-------------------------------------------------------------------------------------------
 
@@ -104,21 +109,21 @@ def findParts(targetTuple,AR,root):
           
            if tup[0]==part1[0] and str(tup[1])==part1[1]: #finding first match
                sw1=1 
-               print arg, arg[0]
-               print tup[0]
+               #print arg, arg[0]
+               #print tup[0]
 	       if arg[0]=="V":
                   verbconnection=1
-                  print "1"
+                  #print "1"
                   #print "hi"
-		  newAR="V-reported"
+		  #newAR="V-"+str(root)
            elif tup[0]==part2[0] and str(tup[1])==part2[1]: #finding second match
                sw2=1
-               print  arg, arg[0]
-               print tup[0]
+               #print  arg, arg[0]
+               #print tup[0]
                if arg[0]=="V":
                   verbconnection=1
-                  print "1"
-		  newAR="V-reported"
+                  #print "1"
+		  #newAR="V-"str(root)
            if sw1==1 and sw2==1:
 	       break # good point to break out of loop as the first matching case is found
 
@@ -127,7 +132,7 @@ def findParts(targetTuple,AR,root):
            #print dep, arg, part1 , part2 #  conj_and   A1   ['debris', '11'] ['contamination', '17']
            #print verbconnection  
 	   if verbconnection==1: 
-               newAR="Link"
+               newAR="Link-"+str(root)
            else :
                newAR=arg
            #print part1

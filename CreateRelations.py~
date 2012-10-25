@@ -5,12 +5,6 @@ def s_P_o(token2,rel,token1):
     
     print str(token2)+rel+str(token1)
 
-def findDomain(arg,mixedArgs):
-   elements=mixedArgs.values()
-   for temp in elements:
-        if len(temp)!=0:
-           arg1=temp.keys()[0]
-           print arg
 
 
 def mainArg(token,mixedArgs):
@@ -106,6 +100,7 @@ def makeRel(mixedArgs):
       #print arg
       if len(arg)!=0:
          arg=arg[0]
+         #print "arg:"+str(arg)
          elements=elements[arg] # returns a list of dependency rel
          #print rel
          rel=elements.keys()
@@ -117,7 +112,7 @@ def makeRel(mixedArgs):
          #print token1 #each token along with their location
          #print token2 
  
-         if arg=="V":
+         if arg=="Link":
 		#-- token1 is verb ; hence should be checked if it's negative or positive
 		negate= checkNegate(token1,mixedArgs)
 		if rel=="nsubjpass": #this relation makes token2 as main nsubject 
@@ -133,9 +128,6 @@ def makeRel(mixedArgs):
                         
          elif rel=="nn" or rel=="amod":
                 s_P_o(token1,"is",token2)
-         if arg!="V":
-            findDomain(arg,mixedArgs)
-         
 
 
 
