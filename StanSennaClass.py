@@ -10,6 +10,8 @@ class SenSta:
    stanOutFile ="/home/kimia/srl/python/SemanticRoleMiner/test/stan"
    sennaDict={}
    stanfDict={}
+   rootArgs={}
+   argDomains={}
    def __init__(self,arg):
 	self.inputFile=arg
 

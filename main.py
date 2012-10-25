@@ -17,14 +17,18 @@ SEN0_SE=myTestFile.sennaDict['sen0']
 SEN0_ST=myTestFile.stanfDict['sen0']
 #print SEN0_ST['root']
 args= findArg(SEN0_ST['root'],SEN0_SE)
+myTestFile.rootArgs=args
+print myTestFile.rootArgs
 #
 #print "SENNA DICTIONARY:\n"+str(SEN0_SE)
 #print "=-----------"
 #print "STANFORD DICTIONARY:\n"+str(SEN0_ST)
 #print "------------"
-print "SENNA ARG LABELS:\n"+str(args)
-#findDomain(args)
-
+#print "SENNA ARG LABELS:\n"+str(args)
+ 
+# domain of each arg
+myTestFile.argDomains=findDomain(args)
+print myTestFile.argDomains
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
 #mixedArgs=mixDepArg(SEN0_ST,args)

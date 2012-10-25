@@ -1,8 +1,16 @@
 #Goal : For each sentence args for a root are investigated
 
 def findDomain(args):
-    elements=args.keys()
-    print elements
+
+    elements= args.keys()
+    domains={}
+    for label in elements:
+        first=args[label][0][1]       
+	#print args[label][0]    #first token with this label 
+	last=args[label][-1][1]
+        #print args[label][-1]   #last token with this label
+        domains[label]=(first,last)
+        
    
 
 
@@ -54,7 +62,7 @@ def findArg((index,root),targetDict):
 		    #print temp[0] for begining and ending
 		    #print temp[1]
                     myArg=temp[1]+"-"+root
-		    print word 
+		    #print word 
 		    #tokenLabels[word]=temp[1]
 		    if myArg in tokenLabels:
 		       tokenLabels[myArg].append((word,key))

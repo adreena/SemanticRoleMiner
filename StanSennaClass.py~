@@ -10,6 +10,7 @@ class SenSta:
    stanOutFile ="/home/kimia/srl/python/SemanticRoleMiner/test/stan"
    sennaDict={}
    stanfDict={}
+   argDomains={}
    def __init__(self,arg):
 	self.inputFile=arg
 
@@ -33,5 +34,16 @@ class SenSta:
         cmd=os.system('cd /home/kimia/srl/stanford-parser/ \n ./lexparser.sh '+self.inputFile+' >'+self.stanOutFile+'output1.txt')
         self.stanfDict=modifyStanf(self.stanOutFile+'output1.txt')
         return self.stanfDict
+
+  # output => { 'sen0': {
+  #			 0: 'nsubj(have-8, Tanks-1)', 
+  #			 1: 'partmod(Tanks-1, used-2)', 
+  #			 2: 'prep_for(used-2, storage-4)', 
+  #			 3: 'nn(waters-7, process-6)', ... }
+  #             'sen1': {
+  #                    }
+
+
+
 
 
