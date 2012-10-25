@@ -5,6 +5,12 @@ def s_P_o(token2,rel,token1):
     
     print str(token2)+rel+str(token1)
 
+def findDomain(arg,mixedArgs):
+   elements=mixedArgs.values()
+   for temp in elements:
+        if len(temp)!=0:
+           arg1=temp.keys()[0]
+           print arg
 
 
 def mainArg(token,mixedArgs):
@@ -116,7 +122,7 @@ def makeRel(mixedArgs):
 		negate= checkNegate(token1,mixedArgs)
 		if rel=="nsubjpass": #this relation makes token2 as main nsubject 
                        # sbj=inRel(token2,)    
-		 	s_P_o(str(sbj),"is"+negate,token1)
+		 	s_P_o(token2,"is"+negate,token1)
 			#mainArg(token2,mixedArgs)
                 elif rel=="nsubj":  #this relation takes verb as the name of relation and I need to search for object of the verb
                         obj=findObj(token1,mixedArgs)
@@ -127,7 +133,8 @@ def makeRel(mixedArgs):
                         
          elif rel=="nn" or rel=="amod":
                 s_P_o(token1,"is",token2)
-
+         if arg!="V":
+            findDomain(arg,mixedArgs)
          
 
 

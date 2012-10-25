@@ -128,8 +128,6 @@ def makeRel(mixedArgs):
          elif rel=="nn" or rel=="amod":
                 s_P_o(token1,"is",token2)
 
-         
-
 
 
 
