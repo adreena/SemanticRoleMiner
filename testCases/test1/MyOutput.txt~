@@ -60,10 +60,12 @@ FUNCTION RESULTS
 -----------output
 SENNA ARG LABELS:
 
-'A1': [('A', 1), ('total', 2), ('of', 3), ('316', 4), ('individuals', 5), ('infected', 6), ('with', 7), ('the', 8), ('outbreak', 9), ('strains', 10), ('of', 11), ('SalmonellaBareilly', 12), ('or', 13), ('SalmonellaNchanga', 14)],
- 
-'A0': [('from', 18), ('26', 19), ('states', 20), ('and', 21), ('the', 22), ('District', 23), ('of', 24), ('Columbia', 25)], 
- 'V': [('reported', 17)]}
+{'A1-reported': [('A', 1), ('total', 2), ('of', 3), ('316', 4), ('individuals', 5), ('infected', 6), ('with', 7), ('the', 8), ('outbreak', 9), ('strains', 10), ('of', 11), ('SalmonellaBareilly', 12), ('or', 13), ('SalmonellaNchanga', 14)], 
+
+'V-reported': [('reported', 17)], 
+
+'A0-reported': [('from', 18), ('26', 19), ('states', 20), ('and', 21), ('the', 22), ('District', 23), ('of', 24), ('Columbia', 25)]}
+
 
 -------------
 ---mixedArgs()
@@ -76,7 +78,8 @@ SENNA ARG LABELS:
  5: {'A1-reported': {'det': (['strains', '10'], ['the', '8'])}},
  6: {'A1-reported': {'nn': (['strains', '10'], ['outbreak', '9'])}},
  7: {'A1-reported': {'prep_with': (['infected', '6'], ['strains', '10'])}},
- 8: {'A1-reported': {'prep_of': (['strains', '10'], ['SalmonellaBareilly', '12'])}},
+ 8: {'A1-reported': {'prep_of':
+ (['strains', '10'], ['SalmonellaBareilly', '12'])}},
  9: {'A1-reported': {'prep_of': (['strains', '10'], ['SalmonellaNchanga', '14'])}},
  10: {'A1-reported': {'conj_or': (['SalmonellaBareilly', '12'], ['SalmonellaNchanga', '14'])}},
  11: {},

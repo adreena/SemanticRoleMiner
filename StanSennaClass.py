@@ -11,7 +11,7 @@ class SenSta:
    sennaDict={}
    stanfDict={}
    rootArgs={}
-   argDomains={}
+   rootArgsDomain={}
    def __init__(self,arg):
 	self.inputFile=arg
 

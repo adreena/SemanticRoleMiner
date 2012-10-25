@@ -10,7 +10,7 @@ def findDomain(args):
 	last=args[label][-1][1]
         #print args[label][-1]   #last token with this label
         domains[label]=(first,last)
-        
+    return domains    
    
 
 
@@ -86,38 +86,52 @@ def findArg((index,root),targetDict):
 #-------------------------------------------------------------------------------------------
 
 def findParts(targetTuple,AR,root):
-    newAR={}
-    print "targettuple"+str(targetTuple)
+    newAR=""
+    #print "targettuple"+str(targetTuple)
     dep=targetTuple[0]
     part1=targetTuple[1]
-    #print part1
+    #print "dep"+str(dep)
     sw1=0
     sw2=0
     part2=targetTuple[2]
     #print part1, part2
+    #print AR
+    verbconnection=0
     for arg in AR:
-       print arg
+       newAR=""
+       
        for tup in AR[arg]:
-           print tup
+          
            if tup[0]==part1[0] and str(tup[1])==part1[1]: #finding first match
-               sw1=1
-               print tup[0], part1[1]
+               sw1=1 
+               print arg, arg[0]
+               print tup[0]
+	       if arg[0]=="V":
+                  verbconnection=1
+                  print "1"
+                  #print "hi"
+		  newAR="V-reported"
            elif tup[0]==part2[0] and str(tup[1])==part2[1]: #finding second match
                sw2=1
-               print "there"
+               print  arg, arg[0]
+               print tup[0]
+               if arg[0]=="V":
+                  verbconnection=1
+                  print "1"
+		  newAR="V-reported"
            if sw1==1 and sw2==1:
-               print targetTuple
 	       break # good point to break out of loop as the first matching case is found
+
        if sw1==1 and sw2==1 : # means 2 parts are found
-           print arg, part1, part2       #             A1   ['debris', '11'] ['contamination', '17']
+           #print arg, part1, part2       #             A1   ['debris', '11'] ['contamination', '17']
            #print dep, arg, part1 , part2 #  conj_and   A1   ['debris', '11'] ['contamination', '17']
-           
-	   newAR[arg]={}
+           #print verbconnection  
+	   if verbconnection==1: 
+               newAR="Link"
+           else :
+               newAR=arg
            #print part1
-           newAR[arg][dep]=(part1,part2)
-           #print newAR
-	   #output :['conj_and', ['debris', '11'], ['contamination', '17']]
-           #        {'A1': {'conj_and': (['debris', '11'], ['contamination', '17'])}}
+	  
 	   break
     return newAR
 
@@ -129,6 +143,7 @@ def mixDepArg(ST,AR):
      #print root
      for ids in ST:
        if ids!="root":
+         #print ids
          items= ST[ids] 
          #print items  #amod(debris-11, visible-10)
          items=items.replace("(", ",")
@@ -143,10 +158,13 @@ def mixDepArg(ST,AR):
          #print temp[1]
          temp[2]= temp[2].split("-") 
          #print temp  #['amod', ['debris', '11'], ['visible', '10']]
-         newtemp=findParts(temp, AR,root)
          #print temp
-         #print newtemp
-         mixDict[ids]=newtemp
+         newAR=findParts(temp, AR,root)
+         #print newAr
+         mixDict[ids]={}
+         mixDict[ids][newAR]={}
+         mixDict[ids][newAR][temp[0]]=[temp[1],temp[2]]
+ 
          #print "----"
         
      if mixDict!="Null":
