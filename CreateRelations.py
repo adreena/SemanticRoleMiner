@@ -71,7 +71,10 @@ def inRel(token,mixedArgs):
         #print temp
         if len(temp)!=0:
            value=temp.values()
+           arg= temp.keys()
+           arg=arg[0]
            value=value[0]
+	   #print arg
            rel=value.keys()
            val=value.values()
            val=val[0]
@@ -82,6 +85,7 @@ def inRel(token,mixedArgs):
            if rel[0]=='prep' and val[0]==token:
               sbj.append(rel[1])
               sbj.append(val[1])
+           
 
     return sbj
 
@@ -111,8 +115,8 @@ def makeRel(mixedArgs):
 		#-- token1 is verb ; hence should be checked if it's negative or positive
 		negate= checkNegate(token1,mixedArgs)
 		if rel=="nsubjpass": #this relation makes token2 as main nsubject 
-                        sbj=inRel(token2,mixedArgs)    
-		 	s_P_o(str(sbj),"is"+negate,token1)
+                       # sbj=inRel(token2,)    
+		 	s_P_o(token2,"is"+negate,token1)
 			#mainArg(token2,mixedArgs)
                 elif rel=="nsubj":  #this relation takes verb as the name of relation and I need to search for object of the verb
                         obj=findObj(token1,mixedArgs)

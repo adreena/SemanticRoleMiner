@@ -56,8 +56,8 @@ Stanf:
 ----------------------------------------------------------------------------------------------------------------------------
 FUNCTION RESULTS
 ----------------------------------------------------------------------------------------------------------------------------
---findArg()
-
+---findArg()
+-----------output
 SENNA ARG LABELS:
 
 'A1': [('A', 1), ('total', 2), ('of', 3), ('316', 4), ('individuals', 5), ('infected', 6), ('with', 7), ('the', 8), ('outbreak', 9), ('strains', 10), ('of', 11), ('SalmonellaBareilly', 12), ('or', 13), ('SalmonellaNchanga', 14)],
@@ -65,8 +65,38 @@ SENNA ARG LABELS:
 'A0': [('from', 18), ('26', 19), ('states', 20), ('and', 21), ('the', 22), ('District', 23), ('of', 24), ('Columbia', 25)], 
  'V': [('reported', 17)]}
 
+-------------
+---mixedArgs()
+------------
+{0: {'A1-reported': {'det': (['total', '2'], ['A', '1'])}}, 
 
+ 2: {'A1-reported': {'amod': (['individuals', '5'], ['316', '4'])}},
+ 3: {'A1-reported': {'prep_of': (['total', '2'], ['individuals', '5'])}},
+ 4: {'A1-reported': {'partmod': (['individuals', '5'], ['infected', '6'])}},
+ 5: {'A1-reported': {'det': (['strains', '10'], ['the', '8'])}},
+ 6: {'A1-reported': {'nn': (['strains', '10'], ['outbreak', '9'])}},
+ 7: {'A1-reported': {'prep_with': (['infected', '6'], ['strains', '10'])}},
+ 8: {'A1-reported': {'prep_of': (['strains', '10'], ['SalmonellaBareilly', '12'])}},
+ 9: {'A1-reported': {'prep_of': (['strains', '10'], ['SalmonellaNchanga', '14'])}},
+ 10: {'A1-reported': {'conj_or': (['SalmonellaBareilly', '12'], ['SalmonellaNchanga', '14'])}},
+ 11: {},
+ 12: {},
+ 13: {'A0-reported': {'num': (['states', '20'], ['26', '19'])}},
+ 15: {'A0-reported': {'det': (['District', '23'], ['the', '22'])}},
+ 17: {'A0-reported': {'conj_and': (['states', '20'], ['District', '23'])}},
+ 18: {'A0-reported': {'prep_of': (['District', '23'], ['Columbia', '25'])}}}
 
+  1: {'V-reported': {'nsubjpass': (['reported', '17'], ['total', '2'])}},
+ 16: {'V-reported': {'prep_from': (['reported', '17'], ['District', '23'])}},
+ 14: {'V-reported': {'prep_from': (['reported', '17'], ['states', '20'])}},
+-----------
+---makeRel()
+-----------
+['total', '2']is['reported', '17']
+(['total', '2'], 'is', 'A1')
+----
+['individuals', '5']is['316', '4']
+['strains', '10']is['outbreak', '9']
 
 
 

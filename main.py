@@ -27,10 +27,10 @@ args= findArg(SEN0_ST['root'],SEN0_SE)
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
 mixedArgs=mixDepArg(SEN0_ST,args)
-#print mixedArgs
+print mixedArgs
 
 #-- Part3: Creating Relations by dependencies and args
-makeRel(mixedArgs)
+#makeRel(mixedArgs)
 
 
 

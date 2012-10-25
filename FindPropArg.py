@@ -69,7 +69,7 @@ def findArg((index,root),targetDict):
 
 #-------------------------------------------------------------------------------------------
 
-def findParts(targetTuple,AR):
+def findParts(targetTuple,AR,root):
     newAR={}
     #print targetTuple
     dep=targetTuple[0]
@@ -93,9 +93,10 @@ def findParts(targetTuple,AR):
        if sw1==1 and sw2==1 : # means 2 parts are found
            #print arg, part1, part2       #             A1   ['debris', '11'] ['contamination', '17']
            #print dep, arg, part1 , part2 #  conj_and   A1   ['debris', '11'] ['contamination', '17']
-           newAR[arg]={}
+           a=arg+"-"+root
+	   newAR[a]={}
            #print part1
-           newAR[arg][dep]=(part1,part2)
+           newAR[a][dep]=(part1,part2)
            #print newAR
 	   #output :['conj_and', ['debris', '11'], ['contamination', '17']]
            #        {'A1': {'conj_and': (['debris', '11'], ['contamination', '17'])}}
@@ -105,6 +106,9 @@ def findParts(targetTuple,AR):
 def mixDepArg(ST,AR):
      mixDict={}
      temp=[]
+     root=ST["root"]
+     root=root[1]
+     #print root
      for ids in ST:
        if ids!="root":
          items= ST[ids] 
@@ -121,7 +125,7 @@ def mixDepArg(ST,AR):
          #print temp[1]
          temp[2]= temp[2].split("-") 
          #print temp  #['amod', ['debris', '11'], ['visible', '10']]
-         newtemp=findParts(temp, AR)
+         newtemp=findParts(temp, AR,root)
          #print temp
          #print newtemp
          mixDict[ids]=newtemp
