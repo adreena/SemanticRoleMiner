@@ -5,7 +5,7 @@ def findPreds(senna):
     preds={}
     #print senna
     #print senna.keys()
-
+    counter=0
     for sennaKey,sennaVal in senna.items():
         token=sennaVal.keys()
         cols=sennaVal.values()
@@ -15,14 +15,10 @@ def findPreds(senna):
         tok_tags=cols.values()
         for col, tag in cols.items():
             if tag[-1]=="V" :
-               #a=[]
-               #a.append(token)
-               
-	       #print tag , col, token[0]
-               #print root, rootID 
-
-	       token.append(str(sennaKey))
-               preds[str(col)]=token
+               preds[counter]=[]
+               preds[counter].append(token)
+               preds[counter].append(str(col))
+               counter+=1
     return preds
 #-----------------------------------------------------------------
 
@@ -40,7 +36,7 @@ def findDomain(args):
    
 #------------------------------------------------------------------
 
-def findArg(verb,targetDict):
+def findArg(verb,targetDict,targetCol):
     
      tokenLabels={}
      Labels={}
@@ -69,7 +65,9 @@ def findArg(verb,targetDict):
          token=item.keys()
          #print token
 	 val=val[0]
-         arg=val[targetColumn]
+	 #print "bol"+str(targetColumn)
+         
+         arg=val[int(targetCol)]
 	 if arg!="O":
 	 	arg=arg.split("-")
          	arg=arg[1]

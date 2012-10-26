@@ -17,12 +17,16 @@ myTestFile.makeStanf()
 SEN0_SE=myTestFile.sennaDict['sen0']
 SEN0_ST=myTestFile.stanfDict['sen0']
 root=myTestFile.findRoot(SEN0_ST)
-
-#allPreds=findPreds(SEN0_SE)
+#print root
+allPreds=findPreds(SEN0_SE)
 #myTestFile.allPredicates=allPreds
-#print myTestFile.allPredicates
-
-rootArgs= findArg(root,SEN0_SE)
+print allPreds
+pred1=allPreds[1]
+print pred1
+Col=pred1[1]
+print Col
+root=pred1[0][0]
+rootArgs= findArg(root,SEN0_SE,Col)
 print rootArgs
 #myTestFile.rootArgs=rootArgs
 
