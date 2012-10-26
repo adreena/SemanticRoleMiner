@@ -15,22 +15,21 @@ def modifyStanf(inputFile):
 	       sentences_Stanf['sen'+str(i)]={}
 	   #Second 
 	   #finding root and its index of each sentences detected    
-	    elif line[0:4]=="root":
-	       root=line.replace(",","")
-	       root=root.replace("("," ")
-	       root=root.replace("-"," ") 
-	       root=root.replace(")","")
-	       root=root.split(" ")
-	       index=root[-1]
-	       root=root[-2]
-               #print root
-	       sentences_Stanf["sen"+str(i)]["root"]=(index,root)
+
             elif line== "" or line[0]==" " :
                line=""
                #do nothing
             else :
                #print line
-               sentences_Stanf["sen"+str(i)][counter]=line
+               line=line.replace(",","")
+               line=line.replace("("," ")
+               line=line.replace(")","")
+               line=line.split(" ")
+               #print line[0], line[1], line[2]
+               sentences_Stanf["sen"+str(i)][counter]={}
+	       sentences_Stanf["sen"+str(i)][counter][line[0]]=[]
+               sentences_Stanf["sen"+str(i)][counter][line[0]].append(line[1])
+	       sentences_Stanf["sen"+str(i)][counter][line[0]].append(line[2])   	
                counter+=1
 
 	return sentences_Stanf   

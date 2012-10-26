@@ -2,18 +2,29 @@
 
 
 def findPreds(senna):
-    elementID=senna.values()
-    for i in elementID:
-        token=i.keys()
-        cols=i.values()
+    preds={}
+    #print senna
+    #print senna.keys()
+
+    for sennaKey,sennaVal in senna.items():
+        token=sennaVal.keys()
+        cols=sennaVal.values()
 	cols=cols[0]
         #print cols
         tok_keys=cols.keys()
         tok_tags=cols.values()
         for col, tag in cols.items():
-            if tag[-1]=="V":
-	       print tag , col 
+            if tag[-1]=="V" :
+               #a=[]
+               #a.append(token)
+               
+	       #print tag , col, token[0]
+               #print root, rootID 
 
+	       token.append(str(sennaKey))
+               preds[str(col)]=token
+    return preds
+#-----------------------------------------------------------------
 
 def findDomain(args):
 
@@ -27,63 +38,48 @@ def findDomain(args):
         domains[label]=(first,last)
     return domains    
    
+#------------------------------------------------------------------
 
-
-def findArg((index,root),targetDict):
+def findArg(verb,targetDict):
     
      tokenLabels={}
      Labels={}
     #---Testing function arguments Perfect working
-     #print index
-     #print root
+     #print verb
      #print targetDict
+     root=verb.split("-")
+     index=root[1]
+     root=root[0]
+     
 
      #--Finding the target column for retreiving correct args
-     #--going through root element to find where predicate has happened its column is marked as 'V'
-     #--I take all elements of root row and check for detection of V 
-     #--to mark its id as target column
-
      targetColumn='Null'
-     for element_id in targetDict[int(index)][root]:
+     for element_id in targetDict[int(index)][str(verb)]:
          #print element_id
-         #print targetDict[int(index)][root][element_id]
-         take=targetDict[int(index)][root][element_id]
-         #print take
-         #print take[-1] trying to find V in S-V as verb
+         #print targetDict[int(index)]["reported-17"][element_id]
+         take=targetDict[int(index)][str(verb)][element_id]   
          if take[-1]=="V":
             #print element_id
             targetColumn=element_id
-     #print targetColumn
-     #sanityCheck of right column Id 
-     #print targetDict[int(index)][root]
-     #tok=targetDict[1]
-     #print tok
-     #for key in tok:
-     #   print tok[key][targetColumn]
      
 
-     # having all args for all tokens  
-     for key in targetDict:
-         token=targetDict[key]
+     #--having all args for all tokens  
+     for item in targetDict.values():
+         val=item.values()
+         token=item.keys()
          #print token
-         #--token is now a dictionary 
-         #print key #--token location in the sentence
-         #print "**"+str(key)
-         for word in token:
-            #print targetDict[key][word][targetColumn] # This the target Column or Label for each column
-            modify=targetDict[key][word][targetColumn]
-            if modify!="O":
-		    temp=modify.split('-')
-		    #print temp[0] for begining and ending
-		    #print temp[1]
-                    myArg=temp[1]+"-"+root
-		    #print word 
-		    #tokenLabels[word]=temp[1]
-		    if myArg in tokenLabels:
-		       tokenLabels[myArg].append((word,key))
-		    else:
-		       tokenLabels[myArg]=[]
-		       tokenLabels[myArg].append((word,key)) 
+	 val=val[0]
+         arg=val[targetColumn]
+	 if arg!="O":
+	 	arg=arg.split("-")
+         	arg=arg[1]
+                myArg=arg+"-"+root
+		#print myArg 
+		if myArg in tokenLabels:
+		   tokenLabels[myArg].append(token)
+		else:
+		   tokenLabels[myArg]=[]
+		   tokenLabels[myArg].append(token) 
           
      #tokenLabels['Tanks']='A0'
      return tokenLabels

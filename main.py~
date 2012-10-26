@@ -16,11 +16,18 @@ myTestFile.makeStanf()
 #-- Test: PART1: getting info about sen0 from Senna and Stan ; generating labelels to each (Token,Token_Location)  
 SEN0_SE=myTestFile.sennaDict['sen0']
 SEN0_ST=myTestFile.stanfDict['sen0']
-#print SEN0_ST['root']
-rootArgs= findArg(SEN0_ST['root'],SEN0_SE)
-myTestFile.rootArgs=args
+root=myTestFile.findRoot(SEN0_ST)
 
-otherPreds=findPreds(SEN0_SE)
+#allPreds=findPreds(SEN0_SE)
+#myTestFile.allPredicates=allPreds
+#print myTestFile.allPredicates
+
+rootArgs= findArg(root,SEN0_SE)
+print rootArgs
+#myTestFile.rootArgs=rootArgs
+
+
+
 
 #print myTestFile.rootArgs
 #

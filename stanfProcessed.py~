@@ -15,22 +15,21 @@ def modifyStanf(inputFile):
 	       sentences_Stanf['sen'+str(i)]={}
 	   #Second 
 	   #finding root and its index of each sentences detected    
-	    elif line[0:4]=="root":
-	       root=line.replace(",","")
-	       root=root.replace("("," ")
-	       root=root.replace("-"," ") 
-	       root=root.replace(")","")
-	       root=root.split(" ")
-	       index=root[-1]
-	       root=root[-2]
-               #print root
-	       sentences_Stanf["sen"+str(i)]["root"]=(index,root)
+
             elif line== "" or line[0]==" " :
                line=""
                #do nothing
             else :
                #print line
-               sentences_Stanf["sen"+str(i)][counter]=line
+               line=line.replace(",","")
+               line=line.replace("("," ")
+               line=line.replace(")","")
+               line=line.split(" ")
+               print line[0], line[1], line[2]
+               sentences_Stanf["sen"+str(i)][counter]={}
+	       sentences_Stanf["sen"+str(i)][counter][line[0]]=[]
+               sentences_Stanf["sen"+str(i)][counter][line[0]].append(line[1])
+	       sentences_Stanf["sen"+str(i)][counter][line[0]].append(line[2])   	
                counter+=1
 
 	return sentences_Stanf   
@@ -40,10 +39,7 @@ def modifyStanf(inputFile):
 	#2 sentences are identified sentences_Stan={'sen2': {'root': 'sanitized'}, 'sen1': {'root': 'have'}}
 	#for each a root is found
         # new version of out put:
-        #{ 'sen0': {1: {'Tanks': {0: 'NNS', 1: 'S-NP', 2: 'O', 3: '-', 4: 'S-A0', 5: 'B-A0', 6: '(S1(S(NP(NP*)'}}, 
-        # 2: {'used': {0: 'VBN', 1: 'S-VP', 2: 'O', 3: 'used', 4: 'S-V', 5: 'I-A0', 6: '(VP*'}}, 
-        # 3: {'for': {0: 'IN', 1: 'S-PP', 2: 'O', 3: '-', 4: 'B-A1', 5: 'I-A0', 6: '(PP*'}}, ...}, 'sen1':{}}
-
+	#{'sen0': {0: 'nsubj(have-8, Tanks-1)', 1: 'partmod(Tanks-1, used-2)', 2: 'prep_for(used-2, storage-4)', 3: 'nn(waters-7, process-6)', 4: ..}}
 
 
        
