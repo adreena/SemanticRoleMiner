@@ -1,14 +1,14 @@
 #Goal : For each sentence args for a root are investigated
 
 
-def findPreds(senna):
+def findPreds(sentence):
     preds={}
-    #print senna
+    #print sentence
     #print senna.keys()
     counter=0
-    for sennaKey,sennaVal in senna.items():
-        token=sennaVal.keys()
-        cols=sennaVal.values()
+    for senKey,senVal in sentence.items():
+        token=senVal.keys()
+        cols=senVal.values()
 	cols=cols[0]
         #print cols
         tok_keys=cols.keys()
@@ -24,14 +24,21 @@ def findPreds(senna):
 
 def findDomain(args):
 
-    elements= args.keys()
+    elements= args.values()
+    #print elements
     domains={}
-    for label in elements:
-        first=args[label][0][1]       
-	#print args[label][0]    #first token with this label 
-	last=args[label][-1][1]
-        #print args[label][-1]   #last token with this label
-        domains[label]=(first,last)
+    for key,val in args.items():
+        first=val[0][0]
+        first=first.split("-")
+        first=first[1]
+        #print first
+        last=val[-1][0]
+        last=last.split("-")
+        last=last[1]
+        #print last
+        domains[key]=[]
+        domains[key].append(first)
+        domains[key].append(last)
     return domains    
    
 #------------------------------------------------------------------
