@@ -22,7 +22,7 @@ allPreds=findPreds(SEN0_SE)
 #myTestFile.allPredicates=allPreds
 #print allPreds
 
-#---- testing
+#---- testing predicates ------------
 pred1=allPreds[1]
 #print pred1
 Col=pred1[1]
@@ -38,15 +38,17 @@ pred0Args= findArg(pred0,SEN0_SE,Col)
 #print pred0Args
 
 #-------------------------------------
- 
 # Domain of each arg
 rootArgsDomain=findDomain(rootArgs)
 #print rootArgsDomain
 pred0ArgDomain=findDomain(pred0Args)
-print pred0ArgDomain
+#print pred0ArgDomain
+
+#------------------------------------
+
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
-#mixedArgs=mixDepArg(SEN0_ST,args)
-#print mixedArgs
+rootMixedArgs=mixDepArg(SEN0_ST,rootArgs)
+print rootmixedArgs
 
 #-- Part3: Creating Relations by dependencies and args
 #makeRel(mixedArgs,myTestFile.rootArgsDomain)

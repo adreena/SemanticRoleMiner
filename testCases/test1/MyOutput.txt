@@ -70,6 +70,14 @@ verb:infected
  'A1-infected': [['A-1'], ['total-2'], ['of-3'], ['316-4'], ['individuals-5']], 
  'A2-infected': [['with-7'], ['the-8'], ['outbreak-9'], ['strains-10'], ['of-11'], ['SalmonellaBareilly-12'], ['or-13'], ['SalmonellaNchanga-14']]}
 
+---------------
+---findDomain()
+---------------
+#for verb reported
+{'A1-reported': ['1', '14'], 'V-reported': ['17', '17'], 'A0-reported': ['18', '25']}
+
+#for verb infected
+{'V-infected': ['6', '6'], 'A1-infected': ['1', '5'], 'A2-infected': ['7', '14']}
 
 
 -------------
@@ -121,12 +129,6 @@ verb:infected
  1: {'Link-reported': {'nsubjpass': [['reported', '17'], ['total', '2']]}},
  14: {'Link-reported': {'prep_from': [['reported', '17'], ['states', '20']]}},
  16: {'Link-reported': {'prep_from': [['reported', '17'], ['District', '23']]}},
----------------
----findDomain()
----------------
-#for verb reported
-{'A1-reported': (1, 14), 'V-reported': (17, 17), 'A0-reported': (18, 25)}
-
 
 -----------
 ---makeRel()

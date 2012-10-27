@@ -31,12 +31,15 @@ def findDomain(args):
         first=val[0][0]
         first=first.split("-")
         first=first[1]
-        print first
+        #print first
         last=val[-1][0]
         last=last.split("-")
         last=last[1]
-        print last
-    #return domains    
+        #print last
+        domains[key]=[]
+        domains[key].append(first)
+        domains[key].append(last)
+    return domains    
    
 #------------------------------------------------------------------
 
@@ -137,40 +140,36 @@ def findParts(targetTuple,AR,root):
 	  
 	   break
     return newAR
-
+#-----------------------------------------------------------
 def mixDepArg(ST,AR):
      mixDict={}
+     counter=0
      temp=[]
-     root=ST["root"]
-     root=root[1]
-     #print root
-     for ids in ST:
-       if ids!="root":
-         #print ids
-         items= ST[ids] 
-         #print items  #amod(debris-11, visible-10)
-         items=items.replace("(", ",")
-         items=items.replace(")", " ")
-	 items=items.replace(" ", "")
-         #print items
-         temp=items.split(",")
-         #print temp  #['amod','debris-11','visible-10']
-         #print temp[0]
-         #print temp[1]
-         temp[1]= temp[1].split("-") #spliting the word from its location into : temp[1]=debris-11 becomes =>temp[1][0]=debris temp[1][1]=11
-         #print temp[1]
-         temp[2]= temp[2].split("-") 
-         #print temp  #['amod', ['debris', '11'], ['visible', '10']]
-         #print temp
-         newAR=findParts(temp, AR,root)
-         #print newAr
-         mixDict[ids]={}
-         if newAR!="":
-         	mixDict[ids][newAR]={}
-         	mixDict[ids][newAR][temp[0]]=[temp[1],temp[2]]
- 
-         #print "----"
-        
+     #print AR
+     for val in ST.values():
+       #print val
+       dep=val.keys()
+       dep=dep[0]
+       tokens=val.values()
+       tokens=tokens[0]
+       part1=[]
+       part1.append(tokens[0])
+       part2=[]
+       part2.append(tokens[1])
+      # print dep,part1,part2
+       for ar,val in AR.items():
+           print val
+           if part1 in val and part2 in val:
+              d={}
+              d[dep]=(part1,part2)
+              #print d
+              a={}
+              a[ar]=d
+              mixDict[counter]=a
+              counter+=1
+	   elif part1 in val: 
+              print "hi" 
+           
      if mixDict!="Null":
         return mixDict       
 
