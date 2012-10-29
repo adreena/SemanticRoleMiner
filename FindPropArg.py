@@ -141,11 +141,19 @@ def findParts(targetTuple,AR,root):
 	   break
     return newAR
 #-----------------------------------------------------------
-def mixDepArg(ST,AR):
+def mixDepArg(ST,AR, verb):
      mixDict={}
      counter=0
      temp=[]
-     #print AR
+     plainverb=verb.split("-")
+     plainverb=plainverb[0]
+     verb1=[] # modifying the proper format for verb
+     verb1.append(verb)
+     verb=verb1
+     #print verb
+     #print "ST"+str(ST)
+     #print "AR"+str(AR)
+     #print "---------------"
      for val in ST.values():
        #print val
        dep=val.keys()
@@ -156,10 +164,10 @@ def mixDepArg(ST,AR):
        part1.append(tokens[0])
        part2=[]
        part2.append(tokens[1])
-      # print dep,part1,part2
+       #print dep,part1,part2
        for ar,val in AR.items():
-           print val
-           if part1 in val and part2 in val:
+          # print val
+           if part1 in val and part2 in val: # having both parts of dependency 
               d={}
               d[dep]=(part1,part2)
               #print d
@@ -167,8 +175,16 @@ def mixDepArg(ST,AR):
               a[ar]=d
               mixDict[counter]=a
               counter+=1
-	   elif part1 in val: 
-              print "hi" 
+	   elif part2 in val and part1==verb:  # I want to label these types of dependencies as a link from verb to the token "Link-verb" 
+              #print "hi"
+              #print ar
+              d={}
+              d[dep]=(part1,part2)
+              #print d
+              a={}
+              a["Link-"+plainverb]=d
+              mixDict[counter]=a
+              counter+=1
            
      if mixDict!="Null":
         return mixDict       

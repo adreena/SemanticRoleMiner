@@ -47,7 +47,7 @@ pred0ArgDomain=findDomain(pred0Args)
 #------------------------------------
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
-rootMixedArgs=mixDepArg(SEN0_ST,rootArgs)
+rootMixedArgs=mixDepArg(SEN0_ST,rootArgs,root)
 print rootMixedArgs
 
 #-- Part3: Creating Relations by dependencies and args
