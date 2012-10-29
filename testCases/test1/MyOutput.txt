@@ -57,6 +57,10 @@ Stanf:
 ----------------------------------------------------------------------------------------------------------------------------
 FUNCTION RESULTS
 ----------------------------------------------------------------------------------------------------------------------------
+---findPreds()
+------------output
+{0: [['infected-6'], '5'], 1: [['reported-17'], '6']}
+
 ---findArg()
 -----------output
 SENNA ARG LABELS:
@@ -85,6 +89,7 @@ verb:infected
 ---mixedArgs()
 ------------
 
+***verb: root -> reported
 
 {0: {'A1-reported': {'det': (['total-2'], ['A-1'])}},
  2: {'A1-reported': {'amod': (['individuals-5'], ['316-4'])}},
@@ -102,14 +107,24 @@ verb:infected
 15: {'A0-reported': {'conj_and': (['states-20'], ['District-23'])}}, 
 16: {'A0-reported': {'prep_of': (['District-23'], ['Columbia-25'])}}}
 
-
 1: {'Link-reported': {'nsubjpass': (['reported-17'], ['total-2'])}}
 12: {'Link-reported': {'prep_from': (['reported-17'], ['states-20'])}}, 
 14: {'Link-reported': {'prep_from': (['reported-17'], ['District-23'])}}, 
 
+***verb: infected
 
+{0: {'A1-infected': {'det': (['total-2'], ['A-1'])}},
+ 1: {'A1-infected': {'amod': (['individuals-5'], ['316-4'])}},
+ 2: {'A1-infected': {'prep_of': (['total-2'], ['individuals-5'])}},
 
+ 4: {'A2-infected': {'det': (['strains-10'], ['the-8'])}},
+ 5: {'A2-infected': {'nn': (['strains-10'], ['outbreak-9'])}},
+ 7: {'A2-infected': {'prep_of': (['strains-10'], ['SalmonellaBareilly-12'])}},
+ 8: {'A2-infected': {'prep_of': (['strains-10'], ['SalmonellaNchanga-14'])}},
+ 9: {'A2-infected': {'conj_or': (['SalmonellaBareilly-12'], ['SalmonellaNchanga-14'])}}}
 
+ 6: {'Link-infected': {'prep_with': (['infected-6'], ['strains-10'])}},
+ 3: {'Link-infected': {'partmod': (['individuals-5'], ['infected-6'])}},
 
 -----------
 ---makeRel()

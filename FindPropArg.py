@@ -77,15 +77,18 @@ def findArg(verb,targetDict,targetCol):
          arg=val[int(targetCol)]
 	 if arg!="O":
 	 	arg=arg.split("-")
-         	arg=arg[1]
-                myArg=arg+"-"+root
+                if arg[1]=="AM":
+                  arg=arg[1]+"-"+arg[2]
+		else:         	
+		  arg=arg[1]
+		myArg=arg+"-"+root
 		#print myArg 
 		if myArg in tokenLabels:
 		   tokenLabels[myArg].append(token)
 		else:
 		   tokenLabels[myArg]=[]
 		   tokenLabels[myArg].append(token) 
-          
+		  
      #tokenLabels['Tanks']='A0'
      return tokenLabels
 
@@ -175,7 +178,7 @@ def mixDepArg(ST,AR, verb):
               a[ar]=d
               mixDict[counter]=a
               counter+=1
-	   elif part2 in val and part1==verb:  # I want to label these types of dependencies as a link from verb to the token "Link-verb" 
+	   elif (part2 in val and part1==verb) or (part1 in val and part2==verb):  # I want to label these types of dependencies as a link from verb to the token "Link-verb" 
               #print "hi"
               #print ar
               d={}

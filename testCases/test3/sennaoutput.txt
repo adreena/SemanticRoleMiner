@@ -1,0 +1,25 @@
+             In	        IN	      S-PP	         O	              -	  B-AM-DIS	      B-A1	(S1(S(S(PP*
+          total	        NN	      S-NP	         O	              -	  E-AM-DIS	      I-A1	(NP*))
+              ,	         ,	         O	         O	              -	         O	      I-A1	*
+             36	        CD	      S-NP	         O	              -	      B-A1	      I-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	(PP*
+           more	       JJR	      B-NP	         O	              -	      I-A1	      I-A1	(NP(QP*
+           than	        IN	      I-NP	         O	              -	      I-A1	      I-A1	*
+            200	        CD	      I-NP	         O	              -	      I-A1	      I-A1	*)
+        workers	       NNS	      E-NP	         O	              -	      E-A1	      I-A1	*)))
+           have	       VBP	      B-VP	         O	              -	         O	      I-A1	(VP*
+         fallen	       VBN	      E-VP	         O	         fallen	       S-V	      I-A1	(VP*
+            ill	        RB	    S-ADVP	         O	              -	      S-A2	      I-A1	(ADVP*)
+             in	        IN	      S-PP	         O	              -	  B-AM-TMP	      I-A1	(PP*
+            the	        DT	      B-NP	         O	              -	  I-AM-TMP	      I-A1	(NP(NP*
+              2	        CD	      I-NP	         O	              -	  I-AM-TMP	      I-A1	*
+          weeks	       NNS	      E-NP	         O	              -	  I-AM-TMP	      I-A1	*)
+          since	        IN	    S-SBAR	         O	              -	  I-AM-TMP	      I-A1	(PP*
+            the	        DT	      B-NP	         O	              -	  I-AM-TMP	      I-A1	(NP*
+       outbreak	        NN	      E-NP	         O	              -	  E-AM-TMP	      E-A1	*)))))))
+              ,	         ,	         O	         O	              -	         O	         O	*
+          their	      PRP$	      B-NP	         O	              -	         O	      B-A0	(NP*
+          union	        NN	      E-NP	         O	              -	         O	      E-A0	*)
+           said	       VBD	      S-VP	         O	           said	         O	       S-V	(VP*)
+              .	         .	         O	         O	              -	         O	         O	*))
+

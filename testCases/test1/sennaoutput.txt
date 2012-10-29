@@ -1,23 +1,17 @@
-              A	        DT	      B-NP	         O	              -	      B-A1	      B-A1	(S1(S(NP(NP*
+              A	        DT	      B-NP	         O	              -	      B-A1	      B-A1	(S1(S(NP(NP(NP*
           total	        NN	      E-NP	         O	              -	      I-A1	      I-A1	*)
              of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	(PP*
-            316	        CD	      B-NP	         O	              -	      I-A1	      I-A1	(NP(NP*
-    individuals	       NNS	      E-NP	         O	              -	      E-A1	      I-A1	*)
+            316	        CD	      B-NP	         O	              -	      I-A1	      I-A1	(NP*
+    individuals	       NNS	      E-NP	         O	              -	      E-A1	      I-A1	*)))
        infected	       VBN	      S-VP	         O	       infected	       S-V	      I-A1	(VP*
            with	        IN	      S-PP	         O	              -	      B-A2	      I-A1	(PP*
             the	        DT	      B-NP	         O	              -	      I-A2	      I-A1	(NP(NP*
        outbreak	        NN	      I-NP	         O	              -	      I-A2	      I-A1	*
         strains	       NNS	      E-NP	         O	              -	      I-A2	      I-A1	*)
              of	        IN	      S-PP	         O	              -	      I-A2	      I-A1	(PP*
-              _	        FW	      B-NP	         O	              -	      I-A2	      I-A1	(NP*
-     Salmonella	        FW	      I-NP	    S-MISC	              -	      I-A2	      I-A1	*
-              _	        FW	      I-NP	         O	              -	      I-A2	      I-A1	*
-       Bareilly	       NNP	      I-NP	     S-LOC	              -	      I-A2	      I-A1	*))
-             or	        CC	      I-NP	         O	              -	      I-A2	      I-A1	(NX*
-              _	       VBP	      I-NP	         O	              -	      I-A2	      I-A1	(NX*
-     Salmonella	       NNP	      I-NP	    S-MISC	              -	      I-A2	      I-A1	*
-              _	        NN	      I-NP	         O	              -	      I-A2	      I-A1	*
-        Nchanga	       NNP	      E-NP	     S-ORG	              -	      E-A2	      E-A1	*))))))))
+SalmonellaBareilly	       NNP	      B-NP	    B-MISC	              -	      I-A2	      I-A1	(NP*
+             or	        CC	      I-NP	    I-MISC	              -	      I-A2	      I-A1	*
+SalmonellaNchanga	       NNP	      E-NP	    E-MISC	              -	      E-A2	      E-A1	*))))))
            have	       VBP	      B-VP	         O	              -	         O	         O	(VP*
            been	       VBN	      I-VP	         O	              -	         O	         O	(VP*
        reported	       VBN	      E-VP	         O	       reported	         O	       S-V	(VP*
