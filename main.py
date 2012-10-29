@@ -29,13 +29,13 @@ Col=pred1[1]
 #print Col
 root=pred1[0][0]
 rootArgs= findArg(root,SEN0_SE,Col)
-print rootArgs
+#print rootArgs
 
 pred0=allPreds[0]
 Col=pred0[1]
 pred0=pred0[0][0]
 pred0Args= findArg(pred0,SEN0_SE,Col)
-print pred0Args
+#print pred0Args
 
 #-------------------------------------
 # Domain of each arg
@@ -48,9 +48,9 @@ pred0ArgDomain=findDomain(pred0Args)
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
 rootMixedArgs=mixDepArg(SEN0_ST,rootArgs,root)
-#print rootMixedArgs
+print rootMixedArgs
 pred0MixedArgs=mixDepArg(SEN0_ST,pred0Args,pred0)
-#print pred0MixedArgs
+print pred0MixedArgs
 
 #-- Part3: Creating Relations by dependencies and args
 #makeRel(mixedArgs,myTestFile.rootArgsDomain)

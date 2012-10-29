@@ -147,6 +147,8 @@ def findParts(targetTuple,AR,root):
 def mixDepArg(ST,AR, verb):
      mixDict={}
      counter=0
+     switch=0
+     take_arg=[]
      temp=[]
      plainverb=verb.split("-")
      plainverb=plainverb[0]
@@ -159,6 +161,7 @@ def mixDepArg(ST,AR, verb):
      #print "---------------"
      for val in ST.values():
        #print val
+       
        dep=val.keys()
        dep=dep[0]
        tokens=val.values()
@@ -168,17 +171,18 @@ def mixDepArg(ST,AR, verb):
        part2=[]
        part2.append(tokens[1])
        #print dep,part1,part2
-       for ar,val in AR.items():
-          # print val
-           if part1 in val and part2 in val: # having both parts of dependency 
-              d={}
+       for ar,value in AR.items():
+           #print ar
+           if part1 in value and part2 in value: # having both parts of dependency 
+              #print value
+	      d={}
               d[dep]=(part1,part2)
               #print d
               a={}
               a[ar]=d
               mixDict[counter]=a
               counter+=1
-	   elif (part2 in val and part1==verb) or (part1 in val and part2==verb):  # I want to label these types of dependencies as a link from verb to the token "Link-verb" 
+	   elif (part2 in value and part1==verb) or (part1 in value and part2==verb):  # I want to label these types of dependencies as a link from verb to the token "Link-verb" 
               #print "hi"
               #print ar
               d={}
@@ -188,6 +192,22 @@ def mixDepArg(ST,AR, verb):
               a["Link-"+plainverb]=d
               mixDict[counter]=a
               counter+=1
+           elif ((part1 in value and part2 not in value)or(part2 in value and part1 not in value) )and (part1!=verb and part2!=verb):
+              #print part1,part2, ar
+              
+              take_arg.append(ar)
+	      switch+=1
+              if switch==2 :
+                 #ar="Link-"+str(ar[0])+str(ar[1])
+                 d={}
+                 d[dep]=(part1,part2)
+                 #print d
+                 a={}
+                 #print "Link-"+str(take_arg[0])+"-"+str(take_arg[1])
+                 a["Link-"+str(take_arg[0])+"-"+str(take_arg[1])]=d
+                 mixDict[counter]=a
+                 counter+=1
+                 
            
      if mixDict!="Null":
         return mixDict       
