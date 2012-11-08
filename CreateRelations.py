@@ -130,6 +130,27 @@ def makeRel(mixedArgs):
                 s_P_o(token1,"is",token2)
 
 
-
-
+#------------
+# making St0-verb
+def makeSt0(Args):
+    verb="Not Found"
+    Arg0="No-Arg0"
+    Arg1="No-Arg1"
+    for key,val in Args.items():
+        #print key
+        #print val
+        #print key[0:2]
+        # I just need the keys for now
+        if key[0]=="V":
+           key=key.replace("V-","")
+           verb=key
+           #print "verb is "+str(key)
+        elif key[0:2]=="A0":
+           Arg0="Arg0"
+        elif key[0:2]=="A1":
+           Arg1="Arg1"  
+    
+    Arg0=Arg0+"-"+str(verb)
+    Arg1=Arg1+"-"+str(verb)
+    print str(Arg0)+" "+str(verb)+" "+str(Arg1)
          

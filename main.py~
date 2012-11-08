@@ -5,6 +5,7 @@ from FindPropArg import findPreds
 from FindPropArg import mixDepArg
 from FindPropArg import findDomain
 from CreateRelations import makeRel
+from CreateRelations import makeSt0
 
 #working with class object myTestFile
 inputFile="~/srl/python/SemanticRoleMiner/testCases/test3/test_input.txt"
@@ -47,14 +48,14 @@ pred0ArgDomain=findDomain(pred0Args)
 #------------------------------------
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
-#rootMixedArgs=mixDepArg(SEN0_ST,rootArgs,root)
-print rootMixedArgs
+rootMixedArgs=mixDepArg(SEN0_ST,rootArgs,root)
+#print rootMixedArgs
 pred0MixedArgs=mixDepArg(SEN0_ST,pred0Args,pred0)
-print pred0MixedArgs
+#print pred0MixedArgs
 
-#-- Part3: Creating Relations by dependencies and args
-#makeRel(mixedArgs,myTestFile.rootArgsDomain)
-
-
+#-----------------------------------
+#-- Making relations
+#print rootArgs
+makeSt0(rootArgs)
 
 
