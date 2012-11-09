@@ -6,9 +6,10 @@ from FindPropArg import mixDepArg
 from FindPropArg import findDomain
 from CreateRelations import makeRel
 from CreateRelations import makeSt0
+from CreateRelations import makeSt1
 
 #working with class object myTestFile
-inputFile="~/srl/python/SemanticRoleMiner/testCases/test3/test_input.txt"
+inputFile="~/srl/python/SemanticRoleMiner/testCases/test1/test_input.txt"
 myTestFile=SenSta(inputFile)
 myTestFile.makeSenna()
 myTestFile.makeStanf()
@@ -56,6 +57,20 @@ pred0MixedArgs=mixDepArg(SEN0_ST,pred0Args,pred0)
 #-----------------------------------
 #-- Making relations
 #print rootArgs
-makeSt0(rootArgs)
+rootSt0=makeSt0(rootArgs)
+print "St0-"+str(root)+": "+str(rootSt0)
+pred0St0=makeSt0(pred0Args)
+print "St0-"+str(pred0)+": "+str(pred0St0)
+
+
+rootSt1=makeSt1(rootMixedArgs)
+if rootSt1!=None:
+   print "St1-"+str(root)+": "+str(rootSt1)+" St0-"+str(root)
+
+pred0St1=makeSt1(pred0MixedArgs)
+if pred0St1!=None:
+   print "St1-"+str(pred0)+": "+"St0-"+str(pred0)+ " "+str(pred0St1)+" Arg2-"+str(pred0)
+
+
 
 

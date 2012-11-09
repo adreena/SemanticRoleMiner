@@ -152,5 +152,58 @@ def makeSt0(Args):
     
     Arg0=Arg0+"-"+str(verb)
     Arg1=Arg1+"-"+str(verb)
-    print str(Arg0)+" "+str(verb)+" "+str(Arg1)
+    return str(Arg0)+" "+str(verb)+" "+str(Arg1)
          
+def makeSt1(Args):
+   #seeking for Arg2
+   Arg2=""
+   depFound=""
+   verb=""
+   target=""
+   listArg=[]
+   listLink=[]
+   vals=Args.values()
+   for item in vals: 
+	#print item
+        arg=item.keys()
+        arg=arg[0]
+        dep=item.values()
+        dep=dep[0]
+        #dep=dep[0].keys()[0]
+        if arg[0:2]=="A2":
+           Arg2="A2"
+           verb=arg.split("-")
+           verb=verb[-1]
+           #print dep
+           #print dep.values()[0][0]
+ 	   if dep.values()[0][0][0] not in listArg:
+              listArg.append(dep.values()[0][0][0])
+           if dep.values()[0][1][0] not in listArg:
+              listArg.append(dep.values()[0][1][0])
+        elif arg[0:4]=="Link":
+           listLink.append(dep)
+   #print listArg
+   #print listLink
+   for link in listLink:
+       dep=link.keys()[0]
+       vals=link[dep]
+       val1=vals[0][0]
+       val2=vals[1][0]
+       #print val1, val2, verb
+       if val1.split("-")[0]!=verb:
+         if val1 in listArg:
+             depFound=dep
+             target=val1
+             break
+       elif val2.split("-")[0]!=verb :
+          if val2 in listArg[0]:
+             depFound=dep
+             target=val2
+             break
+
+
+   if depFound!="":
+      return depFound 
+
+
+
