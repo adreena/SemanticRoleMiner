@@ -6,10 +6,10 @@ from FindPropArg import mixDepArg
 from FindPropArg import findDomain
 from CreateRelations import makeRel
 from CreateRelations import makeSt0
-from CreateRelations import makeSt1
+from CreateRelations import makeSt
 
 #working with class object myTestFile
-inputFile="~/srl/python/SemanticRoleMiner/testCases/test1/test_input.txt"
+inputFile="~/srl/python/SemanticRoleMiner/testCases/test2/test_input.txt"
 myTestFile=SenSta(inputFile)
 myTestFile.makeSenna()
 myTestFile.makeStanf()
@@ -57,20 +57,47 @@ pred0MixedArgs=mixDepArg(SEN0_ST,pred0Args,pred0)
 #-----------------------------------
 #-- Making relations
 #print rootArgs
-rootSt0=makeSt0(rootArgs)
-print "St0-"+str(root)+": "+str(rootSt0)
-pred0St0=makeSt0(pred0Args)
-print "St0-"+str(pred0)+": "+str(pred0St0)
+
+statement={}
 
 
-rootSt1=makeSt1(rootMixedArgs)
+rootSt0=makeSt0(root,rootArgs)
+#print "St0-"+str(root)+": "+rootSt0
+statement["St0-"+str(root)]=rootSt0
+pred0St0=makeSt0(pred0,pred0Args)
+#print "St0-"+str(pred0)+": "+pred0St0
+statement["St0-"+str(pred0)]=pred0St0
+
+rootSt1=makeSt("A2",root,rootMixedArgs,rootArgsDomain)
 if rootSt1!=None:
-   print "St1-"+str(root)+": "+str(rootSt1)+" St0-"+str(root)
+   #print "St1-"+str(root0)+": "+"St0-"+str(root)+" "+rootSt1
+   statement["St1-"+str(root)]="St0-"+str(root)+" "+rootSt1
 
-pred0St1=makeSt1(pred0MixedArgs)
+#A2
+pred0St1=makeSt("A2",pred0,pred0MixedArgs,pred0ArgDomain)
 if pred0St1!=None:
-   print "St1-"+str(pred0)+": "+"St0-"+str(pred0)+ " "+str(pred0St1)+" Arg2-"+str(pred0)
+   #print "St1-"+str(pred0)+": "+"St0-"+str(pred0)+" "+pred0St1
+   statement["St1-"+str(pred0)]="St0-"+str(pred0)+" "+pred0St1
+
+#A3
+rootSt2=makeSt("A3",root,rootMixedArgs,rootArgsDomain)
+if rootSt2!=None:
+   statement["St2-"+str(root)]="St0-"+str(root)+" "+rootSt2
+
+pred0St2=makeSt("A3",pred0,pred0MixedArgs,pred0ArgDomain)
+if pred0St2!=None:
+   statement["St2-"+str(pred0)]="St0-"+str(pred0)+" "+pred0St2
 
 
+#A4
+rootSt3=makeSt("A4",root,rootMixedArgs,rootArgsDomain)
+if rootSt3!=None:
+   statement["St3-"+str(root)]="St0-"+str(root)+" "+rootSt3
+
+pred0St3=makeSt("A4",pred0,pred0MixedArgs,pred0ArgDomain)
+if pred0St3!=None:
+   statement["St3-"+str(pred0)]="St0-"+str(pred0)+" "+pred0St3
+
+print statement
 
 
