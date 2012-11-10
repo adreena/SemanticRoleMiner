@@ -68,35 +68,90 @@ pred0St0=makeSt0(pred0,pred0Args)
 #print "St0-"+str(pred0)+": "+pred0St0
 statement["St0-"+str(pred0)]=pred0St0
 
-rootSt1=makeSt("A2",root,rootMixedArgs,rootArgsDomain)
-if rootSt1!=None:
-   #print "St1-"+str(root0)+": "+"St0-"+str(root)+" "+rootSt1
-   statement["St1-"+str(root)]="St0-"+str(root)+" "+rootSt1
 
 #A2
+i=0
+rootSt1=makeSt("A2",root,rootMixedArgs,rootArgsDomain)
+if rootSt1!=None:
+   for item in rootSt1:
+        #print "St0-"+str(root)+" "+item
+	statement["St1"+str(i)+"-"+str(root)]="St0-"+str(root)+" "+item
+        i+=1
+
+i=0
 pred0St1=makeSt("A2",pred0,pred0MixedArgs,pred0ArgDomain)
 if pred0St1!=None:
-   #print "St1-"+str(pred0)+": "+"St0-"+str(pred0)+" "+pred0St1
-   statement["St1-"+str(pred0)]="St0-"+str(pred0)+" "+pred0St1
+   for item in pred0St1:
+	#print "St0-"+str(pred0)+" "+item
+	statement["St1"+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
+        i+=1
+
 
 #A3
 rootSt2=makeSt("A3",root,rootMixedArgs,rootArgsDomain)
 if rootSt2!=None:
-   statement["St2-"+str(root)]="St0-"+str(root)+" "+rootSt2
+   for item in rootSt2:
+	#print "St0-"+str(root)+" "+item
+	statement["St2"+str(i)+"-"+str(root)]="St0-"+str(root)+" "+item
+        i+=1
 
 pred0St2=makeSt("A3",pred0,pred0MixedArgs,pred0ArgDomain)
+i=0
 if pred0St2!=None:
-   statement["St2-"+str(pred0)]="St0-"+str(pred0)+" "+pred0St2
+   for item in pred0St2:
+	#print "St0-"+str(pred0)+" "+item
+	statement["St2"+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
+        i+=1
 
 
 #A4
 rootSt3=makeSt("A4",root,rootMixedArgs,rootArgsDomain)
 if rootSt3!=None:
-   statement["St3-"+str(root)]="St0-"+str(root)+" "+rootSt3
+   for item in rootSt3:
+	#print "St0-"+str(root)+" "+item
+	statement["St3"+str(i)+"-"+str(root)]="St0-"+str(root)+" "+item
+        i+=1
 
 pred0St3=makeSt("A4",pred0,pred0MixedArgs,pred0ArgDomain)
+i=0
 if pred0St3!=None:
-   statement["St3-"+str(pred0)]="St0-"+str(pred0)+" "+pred0St3
+   for item in pred0St3:
+	#print "St0-"+str(pred0)+" "+item
+	statement["St3"+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
+        i+=1
+
+#AM-TMP
+i=0
+rootSt4=makeSt("AM-TMP",root,rootMixedArgs,rootArgsDomain)
+if rootSt4!=None:
+   for item in rootSt4:
+	#print "St0-"+str(root)+" "+item
+	statement["St4"+str(i)+"-"+str(root)]="St0-"+str(root)+" "+item
+        i+=1
+
+i=0
+pred0St4=makeSt("AM-TMP",pred0,pred0MixedArgs,pred0ArgDomain)
+if pred0St4!=None:
+   for item in pred0St4:
+	#print "St0-"+str(pred0)+" "+item
+	statement["St4"+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
+        i+=1
+
+#AM-DIS
+rootSt5=makeSt("AM-DIS",root,rootMixedArgs,rootArgsDomain)
+if rootSt5!=None:
+   for item in rootSt5:
+	#print "St0-"+str(root)+" "+item
+	statement["St5"+str(i)+"-"+str(root)]="St0-"+str(root)+" "+item
+        i+=1
+pred0St5=makeSt("AM-DIS",pred0,pred0MixedArgs,pred0ArgDomain)
+i=0
+if pred0St5!=None:
+   for item in pred0St5:
+	#print "St0-"+str(pred0)+" "+item
+	statement["St5"+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
+        i+=1
+
 
 print statement
 

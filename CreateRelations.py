@@ -157,6 +157,8 @@ def makeSt0(verb,Args):
 def makeSt(target,verb,Args,ArgsDomain):
    dom=""
    dep=""
+   St=[]
+   #print target
    #print str(target)+"-"+verb.split("-")[0], ArgsDomain.keys()
    for key,val in ArgsDomain.items():
        if (str(target)+"-"+verb.split("-")[0]) in key:
@@ -175,14 +177,18 @@ def makeSt(target,verb,Args,ArgsDomain):
             token2=k.values()[0][1][0]
             if token2==verb:
               if int(token1.split("-")[-1])>=int(dom[0]) and int(token1.split("-")[-1])<=int(dom[1]):
-		 #print token1,dep
-                 break
+		 #print "1",token1,dep
+                 temp=str(dep)+" "+str(target)+"-"+verb
+                 if temp not in St: St.append(temp)
+                 
             else:
               #print token2,token2.split("-")[-1]
               if int(token2.split("-")[-1])>=int(dom[0]) and int(token2.split("-")[-1])<=int(dom[1]):
-		 #print token2, dep
-                 break
-
-       return str(dep)+" "+str(target)+"-"+verb
+		 #print token1,token2, dep
+                 temp=str(dep)+" "+str(target)+"-"+verb
+                 if temp not in St: St.append(temp)
+                 
+       #print dep, target
+       return St
 
 
