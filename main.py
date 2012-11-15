@@ -7,6 +7,10 @@ from FindPropArg import findDomain
 from CreateRelations import makeRel
 from CreateRelations import makeSt0
 from CreateRelations import makeSt
+from CreateRelations import makeSubSt
+from CreateRelations import verbDepArg
+
+
 
 #working with class object myTestFile
 inputFile="~/srl/python/SemanticRoleMiner/testCases/test3/test_input.txt"
@@ -41,7 +45,7 @@ pred0Args= findArg(pred0,SEN0_SE,Col)
 
 #-------------------------------------
 # Domain of each arg
-rootArgsDomain=findDomain(rootArgs)
+rootArgDomain=findDomain(rootArgs)
 #print rootArgsDomain
 pred0ArgDomain=findDomain(pred0Args)
 #print pred0ArgDomain
@@ -69,11 +73,13 @@ pred0St0=makeSt0(pred0,pred0Args)
 #print "St0-"+str(pred0)+": "+pred0St0
 statement["St0-"+str(pred0)]=pred0St0
 
+pr=allPreds.values()
+#print pr
 
 for arg,st in args.items():
    i=0
-   print arg, st
-   rootSt=makeSt(arg,root,rootMixedArgs,rootArgsDomain)
+   #print root
+   rootSt=makeSt(arg,root,rootMixedArgs,rootArgDomain)
    if rootSt!=None:
       for item in rootSt:
          #print "St0-"+str(root)+" "+item
@@ -87,9 +93,31 @@ for arg,st in args.items():
 	 statement[str(st)+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
          i+=1
 
+#print statement
 
 
+#-----------------------------------
+#--verbDependencyArg
+start=100
+vda=verbDepArg(root,rootMixedArgs,rootArgDomain)
+for tuples in vda.values():
+    statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
+    start+=1
+
+vda=verbDepArg(pred0,pred0MixedArgs,pred0ArgDomain)
+for tuples in vda.values():
+    statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
+    start+=1
+
+#-----------------------------------
+#-- makeSubRelations
+newSts=makeSubSt(root,rootMixedArgs)
+for item in newSts.values():
+    #print item
+    statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
+    start+=1
 
 print statement
+
 
 

@@ -192,3 +192,57 @@ def makeSt(target,verb,Args,ArgsDomain):
        return St
 
 
+def verbDepArg(verb,Args,Domains):
+   #print Args
+   results={}
+   tokens=Args.values()
+   dom1=Domains.values()
+   #print Domains
+   counter=0
+   for key in tokens:
+       label=key.keys()[0]
+       dep=key.values()[0].keys()[0]
+       token=key.values()[0].values()[0]
+       token1=token[0][0]
+       token2=token[1][0]
+       if label==( "Link-"+str(verb.split("-")[0])):
+          #print "label"
+          #print label,token1,token2
+          val=int(token1.split("-")[-1])
+          tok=token1
+          lab=""
+          if token1==verb:
+              val=int(token2.split("-")[-1])
+              tok=token2
+          for a,dom in Domains.items():
+              domain=dom
+              d1=domain[0]
+              d2=domain[1]
+              if val>=int(d1) and val<=int(d2):
+                 lab=a
+                 #print "*"
+                 #print lab, tok, val, d1,d2
+                 #print "----"
+          #print lab,tok,dep
+          results[counter]=(lab+"-"+str(verb.split("-")[-1]),dep,tok)
+          counter+=1
+   return results
+
+
+
+def makeSubSt(verb,Args):
+   newSts={}
+   counter=0
+   tokens=Args.values()
+   for item in tokens:
+       if item.keys()[0]!= "Link-"+str(verb.split("-")[0]):
+               #print item.keys()[0]
+	       fruit=item.values()[0]
+	       dep=fruit.keys()[0]
+	       token1=fruit.values()[0][0][0]
+	       token2=fruit.values()[0][1][0]
+	       #print dep,token1,token2
+               newSts[counter]=(token1,dep,token2)
+               counter+=1
+   return newSts
+
