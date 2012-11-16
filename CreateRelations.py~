@@ -236,7 +236,7 @@ def makeSubSt(verb,Args):
    tokens=Args.values()
    for item in tokens:
        if item.keys()[0]!= "Link-"+str(verb.split("-")[0]):
-               print item.keys()[0]
+               #print item.keys()[0]
 	       fruit=item.values()[0]
 	       dep=fruit.keys()[0]
 	       token1=fruit.values()[0][0][0]
@@ -245,4 +245,24 @@ def makeSubSt(verb,Args):
                newSts[counter]=(token1,dep,token2)
                counter+=1
    return newSts
+
+
+def refine(st):
+  newst=[]
+  for item in st:
+    item=item.replace("A0-","")
+    item=item.replace("A1-","")
+    item=item.replace("A2-","")
+    item=item.replace("A3-","")
+    item=item.replace("A4-","")
+    item=item.replace("St0","")
+    newst.append(item)
+  return newst
+
+
+
+
+
+
+
 

@@ -13,7 +13,7 @@ from CreateRelations import verbDepArg
 
 
 #working with class object myTestFile
-inputFile="~/srl/python/SemanticRoleMiner/testCases/test3/test_input.txt"
+inputFile="~/srl/python/SemanticRoleMiner/testCases/test1/test_input.txt"
 myTestFile=SenSta(inputFile)
 myTestFile.makeSenna()
 myTestFile.makeStanf()
@@ -73,7 +73,9 @@ pred0St0=makeSt0(pred0,pred0Args)
 #print "St0-"+str(pred0)+": "+pred0St0
 statement["St0-"+str(pred0)]=pred0St0
 
-pr=allPreds.values()
+predicates=[]
+for key,val in allPreds.items():
+    predicates.append(val[0][0])
 #print pr
 
 for arg,st in args.items():
@@ -111,11 +113,27 @@ for tuples in vda.values():
 
 #-----------------------------------
 #-- makeSubRelations
+
+values=statement.values()
 newSts=makeSubSt(root,rootMixedArgs)
 for item in newSts.values():
+    thing=item[0]+" "+item[1]+" "+item[2] 
+    if thing not in values and (item[0] not in predicates) and (item[2] not in predicates):
+      # print thing
+       statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
+       start+=1
+
+
+values=statement.values()
+newSts=makeSubSt(pred0,pred0MixedArgs)
+for item in newSts.values():
     #print item
-    statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
-    start+=1
+    thing=item[0]+" "+item[1]+" "+item[2]
+    
+    if thing not in values and (item[0] not in predicates) and (item[2] not in predicates):
+      # print thing
+       statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
+       start+=1
 
 print statement
 
