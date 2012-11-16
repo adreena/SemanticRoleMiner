@@ -6,8 +6,8 @@ from stanfProcessed import modifyStanf
 class SenSta:
 
    inputFile="Null"
-   sennaOutFile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test1/senna"
-   stanOutFile ="/home/kimia/srl/python/SemanticRoleMiner/testCases/test1/stan"
+   sennaOutFile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test2/senna"
+   stanOutFile ="/home/kimia/srl/python/SemanticRoleMiner/testCases/test2/stan"
    sennaDict={}
    stanfDict={}
    root=""

@@ -192,7 +192,7 @@ def makeSt(target,verb,Args,ArgsDomain):
        return St
 
 
-def verbDepArg(verb,Args,Domains):
+def verbDepArg(verb,Args,Domains,Predicates):
    #print Args
    results={}
    tokens=Args.values()
@@ -224,15 +224,20 @@ def verbDepArg(verb,Args,Domains):
                  #print lab, tok, val, d1,d2
                  #print "----"
           #print lab,tok,dep
+          if tok in Predicates:
+	     #print tok
+             tok="St0-"+str(tok)
           results[counter]=(lab+"-"+str(verb.split("-")[-1]),dep,tok)
           counter+=1
    return results
 
 
 
-def makeSubSt(verb,Args):
+def makeSubSt(verb,Args,Predicates,statements):
    newSts={}
    counter=0
+   sw=0
+   values=statements.values()
    tokens=Args.values()
    for item in tokens:
        if item.keys()[0]!= "Link-"+str(verb.split("-")[0]):
@@ -241,7 +246,18 @@ def makeSubSt(verb,Args):
 	       dep=fruit.keys()[0]
 	       token1=fruit.values()[0][0][0]
 	       token2=fruit.values()[0][1][0]
-	       #print dep,token1,token2
+	       #print dep,token1,token2 
+               toAdd=token2+" "+dep+" "+token1
+               #print len(toAdd), toAdd
+               if token2 in Predicates :
+                  sw=0
+                  for i in values:
+                     #print i,"----"+ i[len(i)-len(toAdd):]
+                     exception=i[len(i)-len(toAdd):]
+                     if toAdd==exception:
+                        sw=1
+                  if sw==0:
+ 		     token2="St0-"+str(token2)
                newSts[counter]=(token1,dep,token2)
                counter+=1
    return newSts

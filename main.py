@@ -13,7 +13,7 @@ from CreateRelations import verbDepArg
 
 
 #working with class object myTestFile
-inputFile="~/srl/python/SemanticRoleMiner/testCases/test1/test_input.txt"
+inputFile="~/srl/python/SemanticRoleMiner/testCases/test2/test_input.txt"
 myTestFile=SenSta(inputFile)
 myTestFile.makeSenna()
 myTestFile.makeStanf()
@@ -101,36 +101,39 @@ for arg,st in args.items():
 #-----------------------------------
 #--verbDependencyArg
 start=100
-vda=verbDepArg(root,rootMixedArgs,rootArgDomain)
+vda=verbDepArg(root,rootMixedArgs,rootArgDomain,predicates)
 for tuples in vda.values():
     statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
     start+=1
 
-vda=verbDepArg(pred0,pred0MixedArgs,pred0ArgDomain)
+vda=verbDepArg(pred0,pred0MixedArgs,pred0ArgDomain,predicates)
 for tuples in vda.values():
     statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
     start+=1
 
+#print statement
 #-----------------------------------
 #-- makeSubRelations
 
 values=statement.values()
-newSts=makeSubSt(root,rootMixedArgs)
+newSts=makeSubSt(root,rootMixedArgs,predicates,statement)
 for item in newSts.values():
     thing=item[0]+" "+item[1]+" "+item[2] 
-    if thing not in values and (item[0] not in predicates) and (item[2] not in predicates):
+    thing2=item[2]+" "+item[1]+" "+item[0]
+    if (thing not in values) and (thing2 not in values) and (item[0] not in predicates) and (item[2] not in predicates):
       # print thing
        statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
        start+=1
 
 
 values=statement.values()
-newSts=makeSubSt(pred0,pred0MixedArgs)
+newSts=makeSubSt(pred0,pred0MixedArgs,predicates,statement)
 for item in newSts.values():
     #print item
+
     thing=item[0]+" "+item[1]+" "+item[2]
-    
-    if thing not in values and (item[0] not in predicates) and (item[2] not in predicates):
+    thing2=item[2]+" "+item[1]+" "+item[0] # to avoid bidirectional redundancy 
+    if (thing not in values) and (thing2 not in values) and (item[0] not in predicates) and (item[2] not in predicates):
       # print thing
        statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
        start+=1
