@@ -1,0 +1,25 @@
+digraph sample {
+"salmonella-22" -> "gastroenteritis-24" [ label = "conj_and" ];
+"outbreak-20" -> "gastroenteritis-24" [ label = "prep_of" ];
+"platform-6" -> "gas-4" [ label = "nn" ];
+"platform-6" -> "a-3" [ label = "det" ];
+"outbreak-20" -> "a-18" [ label = "det" ];
+"barge-13" -> "their-12" [ label = "poss" ];
+"outbreak-20" -> "salmonella-22" [ label = "prep_of" ];
+"outbreak-20" -> "major-19" [ label = "amod" ];
+"Workers-1" -> "platform-6" [ label = "prep_on" ];
+"platform-6" -> "production-5" [ label = "nn" ];
+"Strait-10" -> "the-8" [ label = "det" ];
+"Strait-10" -> "Bass-9" [ label = "nn" ];
+"St0-want-11" -> "A1-want-11" [ label = "A1" ];
+"A1-want-11" -> "St0-returned-14" [ label = "ccomp" ];
+"St0-returned-14" -> "A4-returned-14" [ label = "A4" ];
+"A4-returned-14" -> "port-16" [ label = "prep_to" ];
+"St0-returned-14" -> "A1-returned-14" [ label = "A1" ];
+"A1-returned-14" -> "barge-13" [ label = "nsubj" ];
+"St0-want-11" -> "A0-want-11" [ label = "A0" ];
+"A0-want-11" -> "Workers-1" [ label = "nsubj" ];
+"St0-returned-14" -> "AM-TMP-returned-14" [ label = "AM" ];
+"AM-TMP-returned-14" -> "outbreak-20" [ label = "prep_after" ];
+"platform-6" -> "Strait-10" [ label = "prep_in" ];
+}

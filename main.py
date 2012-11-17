@@ -9,11 +9,11 @@ from CreateRelations import makeSt0
 from CreateRelations import makeSt
 from CreateRelations import makeSubSt
 from CreateRelations import verbDepArg
-
+from Visualizer import makeGephi
 
 
 #working with class object myTestFile
-inputFile="~/srl/python/SemanticRoleMiner/testCases/test2/test_input.txt"
+inputFile="srl/python/SemanticRoleMiner/testCases/test2"
 myTestFile=SenSta(inputFile)
 myTestFile.makeSenna()
 myTestFile.makeStanf()
@@ -42,14 +42,18 @@ Col=pred0[1]
 pred0=pred0[0][0]
 pred0Args= findArg(pred0,SEN0_SE,Col)
 #print pred0Args
-
+Preds={}
+Preds[0]=root
+Preds[1]=pred0
 #-------------------------------------
 # Domain of each arg
 rootArgDomain=findDomain(rootArgs)
 #print rootArgsDomain
 pred0ArgDomain=findDomain(pred0Args)
 #print pred0ArgDomain
-
+ArgDomains={}
+ArgDomains[0]=rootArgDomain
+ArgDomains[1]=pred0ArgDomain
 #------------------------------------
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
@@ -58,87 +62,69 @@ rootMixedArgs=mixDepArg(SEN0_ST,rootArgs,root)
 pred0MixedArgs=mixDepArg(SEN0_ST,pred0Args,pred0)
 #print pred0MixedArgs
 
+MixedArgs={}
+MixedArgs[0]=rootMixedArgs
+MixedArgs[1]=pred0MixedArgs
+
+
+#print rootMixedArgs
+#print "-----"
+#for key,val in MixedArgs.items():
+    #print key, val
 #-----------------------------------
 #-- Making relations
 #print rootArgs
 
-args={"A2":"St1","A3":"St2","A4":"St3","AM-TMP":"St4","AM-DIS":"St5"}
 statement={}
 
 
 rootSt0=makeSt0(root,rootArgs)
-#print "St0-"+str(root)+": "+rootSt0
-statement["St0-"+str(root)]=rootSt0
 pred0St0=makeSt0(pred0,pred0Args)
-#print "St0-"+str(pred0)+": "+pred0St0
-statement["St0-"+str(pred0)]=pred0St0
+
 
 predicates=[]
 for key,val in allPreds.items():
     predicates.append(val[0][0])
 #print pr
 
-for arg,st in args.items():
-   i=0
-   #print root
-   rootSt=makeSt(arg,root,rootMixedArgs,rootArgDomain)
-   if rootSt!=None:
-      for item in rootSt:
-         #print "St0-"+str(root)+" "+item
-	 statement[str(st)+str(i)+"-"+str(root)]="St0-"+str(root)+" "+item
-         i+=1
-   i=0
-   pred0St=makeSt(arg,pred0,pred0MixedArgs,pred0ArgDomain)
-   if pred0St!=None:
-      for item in pred0St:
-	 #print "St0-"+str(pred0)+" "+item
-	 statement[str(st)+str(i)+"-"+str(pred0)]="St0-"+str(pred0)+" "+item
-         i+=1
-
-#print statement
-
-
 #-----------------------------------
 #--verbDependencyArg
 start=100
-vda=verbDepArg(root,rootMixedArgs,rootArgDomain,predicates)
-for tuples in vda.values():
-    statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
-    start+=1
-
-vda=verbDepArg(pred0,pred0MixedArgs,pred0ArgDomain,predicates)
-for tuples in vda.values():
-    statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
-    start+=1
+for key,verb in Preds.items():
+	vda=verbDepArg(verb,MixedArgs[key],ArgDomains[key],predicates)
+	fixSt0="St0-"+verb
+	#print vda
+	for tuples in vda.values():
+	    test=fixSt0+" "+tuples[0].split("-")[0]+" "+tuples[0]
+	    #print test
+	    if test not in statement.values():
+	       statement[str(start)]=test
+	       start+=1
+	    statement[str(start)]=tuples[0]+" "+tuples[1]+" "+tuples[2]
+	    start+=1
 
 #print statement
 #-----------------------------------
 #-- makeSubRelations
 
-values=statement.values()
-newSts=makeSubSt(root,rootMixedArgs,predicates,statement)
-for item in newSts.values():
-    thing=item[0]+" "+item[1]+" "+item[2] 
-    thing2=item[2]+" "+item[1]+" "+item[0]
-    if (thing not in values) and (thing2 not in values) and (item[0] not in predicates) and (item[2] not in predicates):
-      # print thing
-       statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
-       start+=1
 
-
-values=statement.values()
-newSts=makeSubSt(pred0,pred0MixedArgs,predicates,statement)
-for item in newSts.values():
-    #print item
-
-    thing=item[0]+" "+item[1]+" "+item[2]
-    thing2=item[2]+" "+item[1]+" "+item[0] # to avoid bidirectional redundancy 
-    if (thing not in values) and (thing2 not in values) and (item[0] not in predicates) and (item[2] not in predicates):
-      # print thing
-       statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
-       start+=1
+for key,verb in Preds.items():
+    	#print key, p, MixedArgs[key]
+	values=statement.values()
+	newSts=makeSubSt(verb,MixedArgs[key],predicates,statement)
+	for item in newSts.values():
+	    thing=item[0]+" "+item[1]+" "+item[2] 
+	    thing2=item[2]+" "+item[1]+" "+item[0]
+	    if (thing not in values) and (thing2 not in values) and (item[0] not in predicates) and (item[2] not in predicates):
+	      # print thing
+	       statement[str(start)]=item[0]+" "+item[1]+" "+item[2]
+	       start+=1
 
 print statement
 
+#---------------------------------------------
+#-- visualization
+
+#makeGephi(statement,inputFile)
 
 

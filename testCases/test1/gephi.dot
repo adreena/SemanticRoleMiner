@@ -1,0 +1,23 @@
+digraph sample {
+"District-23" -> "Columbia-25" [ label = "prep_of" ];
+"SalmonellaBareilly-12" -> "SalmonellaNchanga-14" [ label = "conj_or" ];
+"states-20" -> "District-23" [ label = "conj_and" ];
+"states-20" -> "26-19" [ label = "num" ];
+"District-23" -> "the-22" [ label = "det" ];
+"strains-10" -> "SalmonellaNchanga-14" [ label = "prep_of" ];
+"strains-10" -> "SalmonellaBareilly-12" [ label = "prep_of" ];
+"A2-infected-6" -> "strains-10" [ label = "prep_with" ];
+"total-2" -> "A-1" [ label = "det" ];
+"total-2" -> "individuals-5" [ label = "prep_of" ];
+"individuals-5" -> "316-4" [ label = "amod" ];
+"strains-10" -> "outbreak-9" [ label = "nn" ];
+"strains-10" -> "the-8" [ label = "det" ];
+"St0-reported-17" -> "A0-reported-17" [ label = "A0" ];
+"A0-reported-17" -> "states-20" [ label = "prep_from" ];
+"St0-reported-17" -> "A1-reported-17" [ label = "A1" ];
+"A1-reported-17" -> "total-2" [ label = "nsubjpass" ];
+"A1-infected-6" -> "individuals-5" [ label = "partmod" ];
+"St0-infected-6" -> "A2-infected-6" [ label = "A2" ];
+"A0-reported-17" -> "District-23" [ label = "prep_from" ];
+"St0-infected-6" -> "A1-infected-6" [ label = "A1" ];
+}

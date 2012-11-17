@@ -6,16 +6,18 @@ from stanfProcessed import modifyStanf
 class SenSta:
 
    inputFile="Null"
-   sennaOutFile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test2/senna"
-   stanOutFile ="/home/kimia/srl/python/SemanticRoleMiner/testCases/test2/stan"
+   sennaOutFile=""
+   stanOutFile =""
    sennaDict={}
    stanfDict={}
    root=""
    rootArgsDomain={}
    allPredicates={}
    def __init__(self,arg):
-	self.inputFile=arg
-
+	self.inputFile="/home/kimia/"+arg+"/test_input.txt"
+        #print "*&*&*"+arg + "&^&^&^"+ self.inputFile
+        self.sennaOutFile="/home/kimia/"+arg+"/senna"
+        self.stanOutFile="/home/kimia/"+arg+"/stan"
 
    def makeSenna(self):
         #running senna to generate sennaoutput 
