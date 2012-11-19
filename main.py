@@ -29,15 +29,31 @@ allPreds=findPreds(SEN0_SE)
 #print allPreds
 
 #---- testing predicates ------------
-pred1=allPreds[1]
+i=1
+PRED={}
+ARGS={}
+for item in allPreds.values():
+    verb=item[0][0]
+    col=item[1]
+    if verb==root:
+       PRED[0]=verb
+       ARGS[0]=findArg(root,SEN0_SE,col)
+    else:
+       PRED[i]=verb
+       ARGS[i]=findArg(verb,SEN0_SE,col)
+       i+=1 
+print PRED
+print ARGS
+
+
+pred1=allPreds[0]
 #print pred1
 Col=pred1[1]
 #print Col
-root=pred1[0][0]
 rootArgs= findArg(root,SEN0_SE,Col)
 #print rootArgs
 
-pred0=allPreds[0]
+pred0=allPreds[1]
 Col=pred0[1]
 pred0=pred0[0][0]
 pred0Args= findArg(pred0,SEN0_SE,Col)
@@ -45,21 +61,35 @@ pred0Args= findArg(pred0,SEN0_SE,Col)
 Preds={}
 Preds[0]=root
 Preds[1]=pred0
+
+#print Preds
+#print root,pred0
+
 #-------------------------------------
 # Domain of each arg
+ARGDOM={}
+for key,val in ARGS.items():
+    #print key
+    #print val
+    ARGDOM[key]=findDomain(val)
+
 rootArgDomain=findDomain(rootArgs)
-#print rootArgsDomain
+
 pred0ArgDomain=findDomain(pred0Args)
-#print pred0ArgDomain
+
 ArgDomains={}
 ArgDomains[0]=rootArgDomain
 ArgDomains[1]=pred0ArgDomain
+
+#print ArgDomains
+#print ARGDOM[0]
+#rootArgDomain
 #------------------------------------
 
 #-- Test: PART2: combining dependecy-relations with labels ; A1=[ partmod[ (Token1,loc1),(Token2,loc2)] , ....      ]
-rootMixedArgs=mixDepArg(SEN0_ST,rootArgs,root)
+rootMixedArgs=mixDepArg(SEN0_ST,ARGS[0],PRED[0])
 #print rootMixedArgs
-pred0MixedArgs=mixDepArg(SEN0_ST,pred0Args,pred0)
+pred0MixedArgs=mixDepArg(SEN0_ST,ARGS[1],PRED[1])
 #print pred0MixedArgs
 
 MixedArgs={}
@@ -90,7 +120,7 @@ for key,val in allPreds.items():
 #-----------------------------------
 #--verbDependencyArg
 start=100
-for key,verb in Preds.items():
+for key,verb in PRED.items():
 	vda=verbDepArg(verb,MixedArgs[key],ArgDomains[key],predicates)
 	fixSt0="St0-"+verb
 	#print vda
@@ -108,7 +138,7 @@ for key,verb in Preds.items():
 #-- makeSubRelations
 
 
-for key,verb in Preds.items():
+for key,verb in PRED.items():
     	#print key, p, MixedArgs[key]
 	values=statement.values()
 	newSts=makeSubSt(verb,MixedArgs[key],predicates,statement)
@@ -126,5 +156,6 @@ print statement
 #-- visualization
 
 #makeGephi(statement,inputFile)
+
 
 
