@@ -51,7 +51,7 @@ if __name__=="__main__":
 
 	#----------------------------------------------
         # add statement with rdf Library
-	makeGraph(statement)
+	makeGraph(statement,inputFile)
         
 
 	#---------------------------------------------

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://A1-isolated-18">
+    <ns1:dobj rdf:resource="http://salmonellae-19"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://packages-28">
+    <ns1:amod rdf:resource="http://intact-27"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://laboratories-8">
+    <ns1:nn rdf:resource="http://health-7"/>
+    <ns1:nn rdf:resource="http://state-5"/>
+    <ns1:amod rdf:resource="http://public-6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A2-scrape-34">
+    <ns1:nn rdf:resource="http://tuna-33"/>
+    <ns1:nn rdf:resource="http://fin-32"/>
+    <ns1:amod rdf:resource="http://yellow-31"/>
+    <ns1:amod rdf:resource="http://frozen-30"/>
+    <ns1:prep_of rdf:resource="http://packages-28"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Connecticut-10">
+    <ns1:conj_and rdf:resource="http://Wisconsin-16"/>
+    <ns1:conj_and rdf:resource="http://Pennsylvania-14"/>
+    <ns1:conj_and rdf:resource="http://Maryland-12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A1-conducted-3">
+    <ns1:partmod rdf:resource="http://testing-2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://53-21">
+    <ns1:prep_of rdf:resource="http://samples-24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://St0-conducted-3">
+    <ns1:A0 rdf:resource="http://A0-conducted-3"/>
+    <ns1:A1 rdf:resource="http://A1-conducted-3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://St0-scrape-34">
+    <ns1:A2 rdf:resource="http://A2-scrape-34"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://St0-isolated-18">
+    <ns1:A0 rdf:resource="http://A0-isolated-18"/>
+    <ns1:A3 rdf:resource="http://A3-isolated-18"/>
+    <ns1:A1 rdf:resource="http://A1-isolated-18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://testing-2">
+    <ns1:nn rdf:resource="http://Laboratory-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://product-43">
+    <ns1:nn rdf:resource="http://scrape-41"/>
+    <ns1:nn rdf:resource="http://tuna-42"/>
+    <ns1:det rdf:resource="http://the-39"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A0-conducted-3">
+    <ns1:agent rdf:resource="http://laboratories-8"/>
+    <ns1:prep_in rdf:resource="http://Wisconsin-16"/>
+    <ns1:prep_in rdf:resource="http://Pennsylvania-14"/>
+    <ns1:prep_in rdf:resource="http://Connecticut-10"/>
+    <ns1:prep_in rdf:resource="http://Maryland-12"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A3-isolated-18">
+    <ns1:prep_from rdf:resource="http://53-21"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sushi-36">
+    <ns1:partmod rdf:resource="http://prepared-37"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://samples-24">
+    <ns1:num rdf:resource="http://55-23"/>
+    <ns1:partmod rdf:resource="http://St0-taken-25"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://St0-implicated-40">
+    <ns1:A1 rdf:resource="http://A1-implicated-40"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://prepared-37">
+    <ns1:prep_with rdf:resource="http://product-43"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A0-isolated-18">
+    <ns1:nsubj rdf:resource="http://testing-2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A1-implicated-40">
+    <ns1:amod rdf:resource="http://product-43"/>
+  </rdf:Description>
+</rdf:RDF>
+

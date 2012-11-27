@@ -16,7 +16,7 @@ if __name__=="__main__":
         
 
 
-	inputFile="srl/python/SemanticRoleMiner/testCases/test3"
+	inputFile="srl/python/SemanticRoleMiner/testCases/test4"
 	myTestFile=SenSta(inputFile)
 	myTestFile.makeSenna()
 	myTestFile.makeStanf()
