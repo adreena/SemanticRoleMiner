@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns="http://">
+  <rdf:Description rdf:about="http://St0-said-23">
+    <ns:A0>
+      <rdf:Description rdf:about="http://A0-said-23">
+        <ns:nsubj>
+          <rdf:Description rdf:about="http://union-22">
+            <ns:poss rdf:resource="http://their-21" />
+          </rdf:Description>
+        </ns:nsubj>
+      </rdf:Description>
+    </ns:A0>
+    <ns:A1>
+      <rdf:Description rdf:about="http://A1-said-23">
+        <ns:ccomp>
+          <rdf:Description rdf:about="http://St0-fallen-11">
+            <ns:A2>
+              <rdf:Description rdf:about="http://A2-fallen-11">
+                <ns:acomp>
+                  <rdf:Description rdf:about="http://ill-12">
+                    <ns:prep_in>
+                      <rdf:Description rdf:about="http://weeks-16">
+                        <ns:det rdf:resource="http://the-14" />
+                        <ns:num rdf:resource="http://2-15" />
+                      </rdf:Description>
+                    </ns:prep_in>
+                  </rdf:Description>
+                </ns:acomp>
+              </rdf:Description>
+            </ns:A2>
+            <ns:AM>
+              <rdf:Description rdf:about="http://AM-TMP-fallen-11">
+                <ns:prep_since>
+                  <rdf:Description rdf:about="http://outbreak-19">
+                    <ns:det rdf:resource="http://the-18" />
+                  </rdf:Description>
+                </ns:prep_since>
+              </rdf:Description>
+            </ns:AM>
+            <ns:A1>
+              <rdf:Description rdf:about="http://A1-fallen-11">
+                <ns:nsubj>
+                  <rdf:Description rdf:about="http://36-4">
+                    <ns:prep_of>
+                      <rdf:Description rdf:about="http://workers-9">
+                        <ns:num>
+                          <rdf:Description rdf:about="http://200-8">
+                            <ns:quantmod>
+                              <rdf:Description rdf:about="http://than-7">
+                                <ns:mwe rdf:resource="http://more-6" />
+                              </rdf:Description>
+                            </ns:quantmod>
+                          </rdf:Description>
+                        </ns:num>
+                      </rdf:Description>
+                    </ns:prep_of>
+                  </rdf:Description>
+                </ns:nsubj>
+              </rdf:Description>
+            </ns:A1>
+            <ns:AM>
+              <rdf:Description rdf:about="http://AM-DIS-fallen-11">
+                <ns:prep_in rdf:resource="http://total-2" />
+              </rdf:Description>
+            </ns:AM>
+          </rdf:Description>
+        </ns:ccomp>
+      </rdf:Description>
+    </ns:A1>
+  </rdf:Description>
+</rdf:RDF>

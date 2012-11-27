@@ -5,6 +5,7 @@ from FindPropArg import Find_ArgDom_MixArgDep
 from CreateRelations import makeStatements
 from Visualizer import makeGephi
 from mygui import ViewResults
+from myRDFlib import makeGraph
 #working with class object myTestFile
 #import wx
 if __name__=="__main__":
@@ -15,7 +16,7 @@ if __name__=="__main__":
         
 
 
-	inputFile="srl/python/SemanticRoleMiner/testCases/test1"
+	inputFile="srl/python/SemanticRoleMiner/testCases/test3"
 	myTestFile=SenSta(inputFile)
 	myTestFile.makeSenna()
 	myTestFile.makeStanf()
@@ -41,12 +42,17 @@ if __name__=="__main__":
 	# manipulating all statements 
 
 	statement=makeStatements(PRED,ARGDOM,MIXARGS)
-	print statement
-
+	#print statement
+        
 	#---------------------------------------------
 	#-- visualization
 
 	#makeGephi(statement,inputFile)
+
+	#----------------------------------------------
+        # add statement with rdf Library
+	makeGraph(statement)
+        
 
 	#---------------------------------------------
 	#--- GUI

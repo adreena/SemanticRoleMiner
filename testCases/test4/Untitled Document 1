@@ -1,0 +1,77 @@
+{
+'100': 'St0-isolated-18 A0 A0-isolated-18', 
+'101': 'A0-isolated-18 nsubj testing-2', 
+'102': 'St0-isolated-18 A1 A1-isolated-18', 
+'103': 'A1-isolated-18 dobj salmonellae-19',
+'104': 'St0-isolated-18 A4 A4-isolated-18', 
+'105': 'A4-isolated-18 prep_from 53-21',
+
+
+
+ 
+'106': 'St0-conducted-3 A1 A1-conducted-3', 
+'107': 'A1-conducted-3 partmod testing-2',
+'108': 'St0-conducted-3 A0 A0-conducted-3', 
+'109': 'A0-conducted-3 agent laboratories-8',
+'110': 'A0-conducted-3 prep_in Connecticut-10',
+'111': 'A0-conducted-3 prep_in Maryland-12', 
+'112': 'A0-conducted-3 prep_in Pennsylvania-14',
+'113': 'A0-conducted-3 prep_in Wisconsin-16', 
+
+
+'114': 'St0-scrape-38 A2 A2-scrape-38',
+'115': 'A2-scrape-38 amod frozen-34', 
+'116': 'A2-scrape-38 amod yellow-35', 
+'117': 'A2-scrape-38 nn fin-36', 
+'118': 'A2-scrape-38 nn tuna-37', 
+'119': 'A2-scrape-38 prep_of packages-32', 
+
+
+
+
+'120': 'St0-implicated-44 A1 A1-implicated-44', 
+'121': 'A1-implicated-44 amod product-47',
+
+
+'122': 'testing-2 nn Laboratory-1', 
+
+'123': 'laboratories-8 nn state-5', 
+'124': 'laboratories-8 amod public-6', 
+'125': 'laboratories-8 nn health-7',
+
+'126': 'Connecticut-10 conj_and Maryland-12', 
+'127': 'Connecticut-10 conj_and Pennsylvania-14',
+'128': 'Connecticut-10 conj_and Wisconsin-16',
+
+'129': 'percent-24 num 96-23', 
+'130': '53-21 appos percent-24', 
+'131': 'samples-28 num 55-27', 
+'132': '53-21 prep_of samples-28', 
+'133': 'samples-28 partmod St0-taken-29', 
+'134': 'packages-32 amod intact-31', 
+'135': 'sushi-40 partmod prepared-41', 
+'136': 'product-47 det the-43' 
+'137': 'product-47 nn scrape-45', 
+'138': 'product-47 nn tuna-46', 
+'139': 'prepared-41 prep_with product-47', 
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+
+
+
+
+
+
+}
