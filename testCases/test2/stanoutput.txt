@@ -1,7 +1,7 @@
 (ROOT
   (S
     (NP
-      (NP (NNS Workers))
+      (NP (NNS workers))
       (PP (IN on)
         (NP
           (NP (DT a) (NN gas) (NN production) (NN platform))
@@ -23,11 +23,11 @@
                     (NNS gastroenteritis)))))))))
     (. .)))
 
-nsubj(want-11, Workers-1)
+nsubj(want-11, workers-1)
 det(platform-6, a-3)
 nn(platform-6, gas-4)
 nn(platform-6, production-5)
-prep_on(Workers-1, platform-6)
+prep_on(workers-1, platform-6)
 det(Strait-10, the-8)
 nn(Strait-10, Bass-9)
 prep_in(platform-6, Strait-10)

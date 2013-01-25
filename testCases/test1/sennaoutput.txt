@@ -1,4 +1,4 @@
-              A	        DT	      B-NP	         O	              -	      B-A1	      B-A1	(S1(S(NP(NP(NP*
+              a	        DT	      B-NP	         O	              -	      B-A1	      B-A1	(S1(S(NP(NP(NP*
           total	        NN	      E-NP	         O	              -	      I-A1	      I-A1	*)
              of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	(PP*
             316	        CD	      B-NP	         O	              -	      I-A1	      I-A1	(NP*

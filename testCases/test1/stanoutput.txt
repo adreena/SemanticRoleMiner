@@ -1,7 +1,7 @@
 (ROOT
   (S
     (NP
-      (NP (DT A) (NN total))
+      (NP (DT a) (NN total))
       (PP (IN of)
         (NP
           (NP (JJ 316) (NNS individuals))
@@ -26,7 +26,7 @@
                   (NP (NNP Columbia)))))))))
     (. .)))
 
-det(total-2, A-1)
+det(total-2, a-1)
 nsubjpass(reported-17, total-2)
 amod(individuals-5, 316-4)
 prep_of(total-2, individuals-5)

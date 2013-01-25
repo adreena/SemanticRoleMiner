@@ -1,11 +1,11 @@
-     Laboratory	        NN	      B-NP	         O	              -	      B-A1	      B-A0	         O	         O	         O	(S1(S(NP(NP*
+     laboratory	        NN	      B-NP	         O	              -	      B-A1	      B-A0	         O	         O	         O	(S1(S(NP(NP*
         testing	        NN	      E-NP	         O	              -	      E-A1	      I-A0	         O	         O	         O	*)
       conducted	       VBN	      S-VP	         O	      conducted	       S-V	      I-A0	         O	         O	         O	(VP*
              by	        IN	      S-PP	         O	              -	      B-A0	      I-A0	         O	         O	         O	(PP*
-          state	        NN	      B-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	(NP(NP*
+          state	        NN	      B-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	(NP*
          public	        JJ	      I-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
          health	        NN	      I-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-   laboratories	       NNS	      E-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*)
+   laboratories	       NNS	      E-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*))
              in	        IN	      S-PP	         O	              -	      I-A0	      I-A0	         O	         O	         O	(PP*
     Connecticut	       NNP	      S-NP	     S-LOC	              -	      I-A0	      I-A0	         O	         O	         O	(NP(NP*)
               ,	         ,	         O	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
@@ -13,7 +13,7 @@
               ,	         ,	         O	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
    Pennsylvania	       NNP	      S-NP	     S-LOC	              -	      I-A0	      I-A0	         O	         O	         O	(NP*)
             and	        CC	         O	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-      Wisconsin	       NNP	      S-NP	     S-LOC	              -	      E-A0	      E-A0	         O	         O	         O	(NP*)))))))
+      Wisconsin	       NNP	      S-NP	     S-LOC	              -	      E-A0	      E-A0	         O	         O	         O	(NP*)))))
             has	       VBZ	      B-VP	         O	              -	         O	         O	         O	         O	         O	(VP*
        isolated	       VBN	      E-VP	         O	       isolated	         O	       S-V	         O	         O	         O	(NP*
     salmonellae	        NN	      S-NP	         O	              -	         O	      S-A1	         O	         O	         O	*)

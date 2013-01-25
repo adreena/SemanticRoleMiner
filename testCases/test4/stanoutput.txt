@@ -1,7 +1,7 @@
 (ROOT
   (S
     (NP
-      (NP (NNP Laboratory) (NN testing))
+      (NP (NN laboratory) (NN testing))
       (VP (VBN conducted)
         (PP (IN by)
           (NP (NN state) (JJ public) (NN health) (NNS laboratories)))
@@ -32,7 +32,7 @@
                           (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (NN product)))))))))))))
     (. .)))
 
-nn(testing-2, Laboratory-1)
+nn(testing-2, laboratory-1)
 nsubj(isolated-18, testing-2)
 partmod(testing-2, conducted-3)
 nn(laboratories-8, state-5)

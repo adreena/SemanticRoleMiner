@@ -1,7 +1,4 @@
-             In	        IN	      S-PP	         O	              -	  B-AM-DIS	      B-A1	(S1(S(S(PP*
-          total	        NN	      S-NP	         O	              -	  E-AM-DIS	      I-A1	(NP*))
-              ,	         ,	         O	         O	              -	         O	      I-A1	*
-             36	        CD	      S-NP	         O	              -	      B-A1	      I-A1	(NP(NP*)
+             36	        CD	      S-NP	         O	              -	      B-A1	      B-A1	(S1(S(S(NP(NP*)
              of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	(PP*
            more	       JJR	      B-NP	         O	              -	      I-A1	      I-A1	(NP(QP*
            than	        IN	      I-NP	         O	              -	      I-A1	      I-A1	*

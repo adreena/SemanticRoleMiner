@@ -1,4 +1,4 @@
-        Workers	       NNS	      S-NP	         O	              -	      B-A0	         O	(S1(S(NP(NP*)
+        workers	       NNS	      S-NP	         O	              -	      B-A0	         O	(S1(S(NP(NP*)
              on	        IN	      S-PP	         O	              -	      I-A0	         O	(PP*
               a	        DT	      B-NP	         O	              -	      I-A0	         O	(NP*
             gas	        NN	      I-NP	         O	              -	      I-A0	         O	*

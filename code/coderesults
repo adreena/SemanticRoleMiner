@@ -1,0 +1,53 @@
+
+testcase 1
+"a total of 316 individuals infected with the outbreak strains of SalmonellaBareilly or SalmonellaNchanga have been reported from 26 states and the District of Columbia."
+
+a total of 316 individuals infected with the outbreak strains of SalmonellaBareilly SalmonellaNchanga  .
+
+a total of 316 individuals have reported from 26 states and the District of Columbia  .
+
+----------------------------------------------------------------------------------------------
+
+testcase 2  (problem with connection between 2 words)
+"workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis."
+
+workers on a gas production platform in the Bass Strait want  .
+
+their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
+
+----------------------------------------------------------------------------------------------
+
+testcase3 (poblem with in total) 
+"in total, 36 of more than 200 workers have fallen ill in the 2 weeks since the outbreak, their union said."
+
+in total , 36 of more than 200 workers fallen ill in the 2 weeks the outbreak  .
+in their union said  .
+
+--without in total: problem with connection between 2 verbs
+
+36 of more than 200 workers fallen ill in the 2 weeks the outbreak  .
+
+their union said  .
+
+
+----------------------------------------------------------------------------------------------
+testcase 4
+
+"laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product."
+
+
+1- laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
+
+2- laboratory testing has isolated salmonellae from 53 of 55 samples  .
+
+3- 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+
+4- sushi prepared with the scrape tuna product  .
+
+5- the implicated scrape tuna product  .
+
+
+
+
+
+

@@ -3,58 +3,58 @@
    xmlns:ns1="http://"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://36-4">
-    <ns1:prep_of rdf:resource="http://workers-9"/>
-  </rdf:Description>
   <rdf:Description rdf:about="http://than-7">
     <ns1:mwe rdf:resource="http://more-6"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://AM-DIS-fallen-11">
+    <ns1:prep_in rdf:resource="http://total-2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ill-12">
+    <ns1:prep_in rdf:resource="http://weeks-16"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://36-4">
+    <ns1:prep_of rdf:resource="http://workers-9"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://St0-fallen-11">
-    <ns1:A2 rdf:resource="http://A2-fallen-11"/>
-    <ns1:A1 rdf:resource="http://A1-fallen-11"/>
     <ns1:AM rdf:resource="http://AM-TMP-fallen-11"/>
     <ns1:AM rdf:resource="http://AM-DIS-fallen-11"/>
+    <ns1:A2 rdf:resource="http://A2-fallen-11"/>
+    <ns1:A1 rdf:resource="http://A1-fallen-11"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A0-said-23">
+    <ns1:nsubj rdf:resource="http://union-22"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://AM-TMP-fallen-11">
+    <ns1:prep_since rdf:resource="http://outbreak-19"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://workers-9">
     <ns1:num rdf:resource="http://200-8"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://A0-said-23">
-    <ns1:nsubj rdf:resource="http://union-22"/>
+  <rdf:Description rdf:about="http://weeks-16">
+    <ns1:det rdf:resource="http://the-14"/>
+    <ns1:num rdf:resource="http://2-15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://St0-said-23">
+    <ns1:A0 rdf:resource="http://A0-said-23"/>
+    <ns1:A1 rdf:resource="http://A1-said-23"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A1-said-23">
+    <ns1:ccomp rdf:resource="http://St0-fallen-11"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://A1-fallen-11">
+    <ns1:nsubj rdf:resource="http://36-4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://outbreak-19">
+    <ns1:det rdf:resource="http://the-18"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://union-22">
+    <ns1:poss rdf:resource="http://their-21"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://A2-fallen-11">
     <ns1:acomp rdf:resource="http://ill-12"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://200-8">
     <ns1:quantmod rdf:resource="http://than-7"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://outbreak-19">
-    <ns1:det rdf:resource="http://the-18"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://St0-said-23">
-    <ns1:A0 rdf:resource="http://A0-said-23"/>
-    <ns1:A1 rdf:resource="http://A1-said-23"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://AM-TMP-fallen-11">
-    <ns1:prep_since rdf:resource="http://outbreak-19"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ill-12">
-    <ns1:prep_in rdf:resource="http://weeks-16"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://union-22">
-    <ns1:poss rdf:resource="http://their-21"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://A1-fallen-11">
-    <ns1:nsubj rdf:resource="http://36-4"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://A1-said-23">
-    <ns1:ccomp rdf:resource="http://St0-fallen-11"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://weeks-16">
-    <ns1:det rdf:resource="http://the-14"/>
-    <ns1:num rdf:resource="http://2-15"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://AM-DIS-fallen-11">
-    <ns1:prep_in rdf:resource="http://total-2"/>
   </rdf:Description>
 </rdf:RDF>
 
