@@ -1,0 +1,7 @@
+            Tom	       NNP	      S-NP	     S-PER	              -	      S-A0	      S-A0	(S1(S(NP*)
+          likes	       VBZ	      B-VP	         O	          likes	       S-V	         O	(VP*
+             to	        TO	      I-VP	         O	              -	      B-A1	         O	(S(VP*
+            eat	        VB	      E-VP	         O	            eat	      I-A1	       S-V	(VP*
+           fish	        NN	      S-NP	         O	              -	      E-A1	      S-A1	(NP*)))))
+              .	         .	         O	         O	              -	         O	         O	*))
+

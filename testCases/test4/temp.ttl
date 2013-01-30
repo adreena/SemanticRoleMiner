@@ -1,0 +1,61 @@
+@prefix ns1: <http://> .
+
+ns1:St0-conducted-3 ns1:A0 ns1:A0-conducted-3;
+    ns1:A1 ns1:A1-conducted-3 .
+
+ns1:St0-implicated-40 ns1:A1 ns1:A1-implicated-40 .
+
+ns1:St0-isolated-18 ns1:A0 ns1:A0-isolated-18;
+    ns1:A1 ns1:A1-isolated-18;
+    ns1:A3 ns1:A3-isolated-18 .
+
+ns1:St0-scrape-34 ns1:A2 ns1:A2-scrape-34 .
+
+ns1:sushi-36 ns1:partmod ns1:prepared-37 .
+
+<http://53-21> ns1:prep_of ns1:samples-24 .
+
+ns1:A0-conducted-3 ns1:agent ns1:laboratories-8;
+    ns1:prep_in ns1:Connecticut-10,
+        ns1:Maryland-12,
+        ns1:Pennsylvania-14,
+        ns1:Wisconsin-16 .
+
+ns1:A0-isolated-18 ns1:nsubj ns1:testing-2 .
+
+ns1:A1-conducted-3 ns1:partmod ns1:testing-2 .
+
+ns1:A1-implicated-40 ns1:amod ns1:product-43 .
+
+ns1:A1-isolated-18 ns1:dobj ns1:salmonellae-19 .
+
+ns1:A2-scrape-34 ns1:amod ns1:frozen-30,
+        ns1:yellow-31;
+    ns1:nn ns1:fin-32,
+        ns1:tuna-33;
+    ns1:prep_of ns1:packages-28 .
+
+ns1:A3-isolated-18 ns1:prep_from <http://53-21> .
+
+ns1:Connecticut-10 ns1:conj_and ns1:Maryland-12,
+        ns1:Pennsylvania-14,
+        ns1:Wisconsin-16 .
+
+ns1:laboratories-8 ns1:amod ns1:public-6;
+    ns1:nn ns1:health-7,
+        ns1:state-5 .
+
+ns1:packages-28 ns1:amod ns1:intact-27 .
+
+ns1:prepared-37 ns1:prep_with ns1:product-43 .
+
+ns1:samples-24 ns1:num <http://55-23>;
+    ns1:partmod ns1:St0-taken-25 .
+
+ns1:product-43 ns1:det ns1:the-39;
+    ns1:nn ns1:scrape-41,
+        ns1:tuna-42 .
+
+ns1:testing-2 ns1:nn ns1:Laboratory-1 .
+
+

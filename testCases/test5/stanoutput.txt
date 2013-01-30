@@ -1,0 +1,19 @@
+(ROOT
+  (S
+    (SBAR (IN that)
+      (S
+        (NP (PRP she))
+        (VP (VBD lied))))
+    (VP (VBD was)
+      (VP (VBN suspected)
+        (PP (IN by)
+          (NP (NN everyone)))))
+    (. .)))
+
+dep(lied-3, that-1)
+nsubj(lied-3, she-2)
+csubjpass(suspected-5, lied-3)
+auxpass(suspected-5, was-4)
+root(ROOT-0, suspected-5)
+agent(suspected-5, everyone-7)
+

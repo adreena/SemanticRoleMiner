@@ -1,0 +1,27 @@
+(ROOT
+  (S
+    (NP (NN laboratory) (NN testing))
+    (VP (VBD conducted)
+      (PP (IN by)
+        (NP (NN state) (JJ public) (NN health) (NNS laboratories)))
+      (PP (IN in)
+        (NP (NNP Connecticut) (, ,) (NNP Maryland) (, ,) (NNP Pennsylvania)
+          (CC and)
+          (NNP Wisconsin))))
+    (. .)))
+
+nn(testing-2, laboratory-1)
+nsubj(conducted-3, testing-2)
+root(ROOT-0, conducted-3)
+nn(laboratories-8, state-5)
+amod(laboratories-8, public-6)
+nn(laboratories-8, health-7)
+prep_by(conducted-3, laboratories-8)
+prep_in(conducted-3, Connecticut-10)
+prep_in(conducted-3, Maryland-12)
+conj_and(Connecticut-10, Maryland-12)
+prep_in(conducted-3, Pennsylvania-14)
+conj_and(Connecticut-10, Pennsylvania-14)
+prep_in(conducted-3, Wisconsin-16)
+conj_and(Connecticut-10, Wisconsin-16)
+

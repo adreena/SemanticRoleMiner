@@ -1,83 +1,210 @@
 import sys
-
-sennafile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test3/sennaoutput.txt"
-stanfile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test3/stanoutput.txt"
-def modifySenna(inputFile):
-         
-	j=0
-    #print inputFile
-	dummyfile=open(inputFile,'r')
-	sennaIterator=dummyfile.read()
-	sentences_Senna={}
-	tokenloc=0
-	sentences_Senna["sen0"]={}
-	for line in sennaIterator.split("\n"):
-           if line!="":
-				#print line
-				tokens=line.replace(" ","")
-				tokens=tokens.replace("\t","|")
-				tokens=tokens.split("|")
-				#print tokens
-				tokenloc+=1
-				if tokens[0]!=".":
-					counter=1
-					sentences_Senna["sen"+str(j)][tokenloc]={}
-					sentences_Senna["sen"+str(j)][tokenloc][str(tokens[0])+"-"+str(tokenloc)]={}
-					for element in tokens[1:]:
-					#print element +"---"
-						sentences_Senna["sen"+str(j)][tokenloc][str(tokens[0])+"-"+str(tokenloc)][counter]=element
-
-						counter+=1
-				else:
-					j+=1
-					#print "end"
-					tokenloc=0
-					sentences_Senna["sen"+str(j)]={}
-
-	return sentences_Senna
+from StanSennaClass import SenSta
+import os
+from nltk.corpus import propbank
+from sennaProcessed import modifySenna
+from stanfProcessed import modifyStanf
+import en #for converting verbs into present tense
 
 
-def modifyStanf(inputFile):
 
-	sentences_Stanf={}
-	i=-1
-	dummyfile=open(inputFile,'r')
-	stanfIterator=dummyfile.read()
-	#separating sentences by iterator
-	for line in stanfIterator.split("\n"):
+#------------------------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+######################################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------------------
+#--- Finding all the tokens directly connected to verb, input is all tokens and Stanford parser output which cotains dependecies. output is rellist conatining all related tokens to verb.
+#------------------------------------------------------------------
+def verbRelatives(vlist,Stan):
+	rellist=[]
+	verb=vlist[0]
+	#print verb
+	for item in Stan:
+		tok1=item.values()[0][0]
+		tok2=item.values()[0][1]
+		if tok1==verb and tok2!= 'ROOT-0':
+			rellist.append(tok2)
+		elif tok2==verb and tok1!='ROOT-0':
+			rellist.append(tok1)
+	return rellist
+#------------------------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+######################################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------------------
+#---- rolFinder gets the verb , makes it present tense using en library, and then by using propBank library finds all roles of the verb version.01. because senna doesn't provide the version of the verb ! I am assuming one 01 at the end of each verb. Output returns a dictionary of {"A0":"", "A1":""...}
+#------------------------------------------------------------------
+def roleFinder(verb):
+	#--converting verb into its present tense
+	targetverb=en.verb.present(verb)	
+	propVerb=targetverb+".01"
+	#print propVerb
+	allroles={}
+	roles=propbank.roleset(propVerb)
+	for role in roles.findall('roles/role'):
+		role.attrib['descr']=role.attrib['descr'].replace(" ","-")
+		allroles["A"+str(role.attrib['n'])]=role.attrib['descr']
 
-		#First
-		#sentence detected , create a key in sentences dictionary
-		if line=="(ROOT":
-			i+=1
-			counter=0
-			sentences_Stanf['sen'+str(i)]={}
-		#Second
-		#finding root and its index of each sentences detected
-		elif line== "" or line[0]==" " :
-			line=""
-               #do nothing
-		else :
-			#print line
-			line=line.replace(",","")
-			line=line.replace("("," ")
-			line=line.replace(")","")
-			line=line.split(" ")
-			#print line[0], line[1], line[2]
-			sentences_Stanf["sen"+str(i)][counter]={}
-			sentences_Stanf["sen"+str(i)][counter][line[0]]=[]
-			sentences_Stanf["sen"+str(i)][counter][line[0]].append(line[1])
-			sentences_Stanf["sen"+str(i)][counter][line[0]].append(line[2])
-			counter+=1
-	return sentences_Stanf
+	return allroles
+#------------------------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+######################################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------------------
 
 #----------------------------------------
-def verbLinks(vbn,deplist):
+#--- translating list of word connected to verb into triples, "vlist" is a list of all tokens in the "result" sentence , in this list the first item is always the verb of the sentence.  
+#----------------------------------------
+def translateSent(vlist,result):
+	STs=[]
+
+
+	#--- Stanford Translations Dictionary
+	dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"is-Arg1","iobj":"to","neg":"not", "nn":"--","nsubj":"is-Arg0", "nsubjpass":"is-Arg0","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
+
+
+
+	#--- SenSta class accepts a sentence written in a file format, so for every sentence being sent to translateSent() in "result" argument , the sentence is first saved into a file with base directory mentioned in "inputFile"
+	
+	#-- 1- writing the sentence in file.
+	stanfile=open("/home/kimia/srl/python/SemanticRoleMiner/code/test_input.txt","w")
+	stanfile.write(result)
+	stanfile.close()
+
+
+	sbj={}
+	obj=[]
+	i=0
+
+
+	#-- 2- the first verb in vlist is the targetverb which is splited from its location of the main text. verb is set to default value of "not found".
+	targetverb=vlist[0].split("-")[0:-1][0]
+
+	
+	verb="not found"
+
+	#-- 3- processing stanford-parser and senna on the textfile, the results are store into 2 dictionaries , Stan and Senn
+        inputFile="srl/python/SemanticRoleMiner/code"
+	myTestFile=SenSta(inputFile)
+	myTestFile.makeSenna()
+	myTestFile.makeStanf()
+	Stan= myTestFile.stanfDict['sen0'].values()
+	Senn= myTestFile.sennaDict['sen0'].values()
+	
+
+	#--4  Senna Translation-----------------------------
+	#--   4-1 Find roles , calling roleFinder with targetverb, example : targetverb="conducted-2" , allRoles={"A0":"conductor", "A1":".."..}
+	allRoles={}	
+	allRoles=roleFinder(targetverb) 
+
+	#--  4-2 Finding relatives of a verb, all directly connected tokens are gathered in verbRel.
+	verbRel=[]
+	verbRel=verbRelatives(vlist,Stan)
+	
+
+	#-- 4-3 Discovering the arg labels senna has assigned to the tokens, all Args are gathered in roleDep example:[('testing-2', 'A1'), ('laboratories-8', 'A0'),...]
+	roleDep=[]
+	for item in Senn:
+		if item.keys()[0] in verbRel:
+			
+			values=item.values()[0].values()
+			
+			if values[4]!='O':
+				val1=item.keys()[0]
+				val2=values[4].split("-")[-1]
+				roleDep.append((val1,val2))
+				
+	#-- 4-4 Translating Args into rolesets, if the Arg is not in allRole list , it's printed itself. 
+	for item in roleDep:
+		token=item[0]
+		role=item[1]
+		
+		if role in allRoles.keys():
+			
+			print token," is ",allRoles[role]
+			STs.append((token,"is",allRoles[role]))
+		else:
+			print token," is ",role
+			STs.append((token,"is",role))
+
+
+
+	#-- 5- Stan Translation-----------------------------------
+	
+	#-- 5-1 Stan list has all dependencies with the single-verb sentence. in this loop I'm finding the root of these depndenies as "verb" for further loops. 
+	for item in Stan:
+		print item
+		if item.keys()[0]=='root':
+			verb=item.values()[0][1]
+			break
+	print targetverb,verb
+	#-- 5-2 in some cases there are no verb in sentence , this loop prints statements containing verb and the verb is the root.
+	if verb !="notfound" and targetverb==verb.split("-")[0:-1][0]:
+		for triple in Stan:
+			pred=triple.keys()[0]
+			tok1=triple.values()[0][0]
+			tok2=triple.values()[0][1]
+
+			#-- 5-2-1 finding the quivalent predicate from dictionary of stanford dependecnies.
+			#--       also nsbj,nsujpass are gathered in sbj[] to make verb-dependencies with 
+			#	  other tokens directly connected to the verb in obj[]. 
+			if pred in dictionary.keys():
+				if dictionary[pred]=="is-Arg0":	
+					
+					sbj[i]=(tok2,tok1)
+					i+=1
+				elif tok1==verb or tok2==verb:
+					if tok1==verb: obj.append([pred,tok2])
+					else: obj.append([pred,tok1])
+				else:		
+					print tok1," ",dictionary[pred]," ",tok2
+					STs.append((tok1,dictionary[pred],tok2))
+	
+
+		#-- 5-2-2 printing statments withe predicate --verb-- among subjects and other objects directly connected to verb. 
+		#--       the location of each token is mentioned but for the verb it's omitted.  
+		for subject in sbj.values():
+			for objects in obj:
+				pred=dictionary[objects[0]]
+				damnVerb=subject[1].split("-")[0:-1][0]
+				
+				if str(pred)!="is-Arg1":
+					print subject[0]," ",damnVerb+"-"+str(pred)," ",objects[1]
+					STs.append((subject[0],damnVerb+"-"+str(pred),objects[1]))
+				else:
+					print subject[0]," ",damnVerb," ",objects[1]
+					STs.append((subject[0],damnVerb,objects[1]))
+
+	#-- 5-2-3 some sentences in stanford doesn't detect a verb as root. 
+	# 	  this is the loop for including relations in sentences without a verb-root
+	else:
+		for triple in Stan:
+			pred=triple.keys()[0]
+			tok1=triple.values()[0][0]
+			tok2=triple.values()[0][1]
+			#print pred,tok1,tok2
+			if pred in dictionary.keys():
+				pred=triple.keys()[0]
+				tok1=triple.values()[0][0]
+				tok2=triple.values()[0][1]
+				print tok1," ",dictionary[pred]," ",tok2
+				STs.append(tok1,dictionary[pred],tok2)
+
+
+#------------------------------------------------------------------------------------------------------------------------------------
+######################################################################################################################################
+######################################################################################################################################
+######################################################################################################################################
+#------------------------------------------------------------------------------------------------------------------------------------
+	
+
+#----------------------------------------
+def verbLinks(vbn,deplist,VBNs):
 	vlist=[]
 	vlist.append(vbn)
 	for item in vlist:
 		#print "from vlist : ",item
-		for dep in allDeps:
+		for dep in deplist:
 			#print "checking dep: ",dep
 			if item in dep:
 				tok1=dep[0]
@@ -95,6 +222,10 @@ def verbLinks(vbn,deplist):
 #-----------------------------------------
 def scanVerb(sen,vlist):
 	banlist=['by','from','and','in',',','of','with','on','at','under','to','after']
+	doublewords=["becasue","instead","such","addition","due","all","rather","well"]
+	doublewordlist=[["becasue","of"],["instead","of"], ["such","as"], ["due","to"],["all","but"],["rather","than"]  ]
+	triplewords=["addition","well"]
+	triplewordslist=[["in","addition","to"],["as","well","as"]]
 	sen=sen.replace(","," , ") # should give the same sentence to stanford
 	sen=sen.replace(".","")
 	sen=sen.replace("  "," ")
@@ -109,7 +240,7 @@ def scanVerb(sen,vlist):
 		item=item+"-"+str(index+1)
 		newsenlist.append(item)
 
-	#print "sentence list: ", newsenlist #now i have the whole sentence in form of a list
+	#print "sentence list: ", newsenlist #now i have the whole sentence in form of a list , indexing words
 	for item in newsenlist: 
 		index=newsenlist.index(item)
 		if item in vlist:
@@ -124,79 +255,20 @@ def scanVerb(sen,vlist):
 				if( newsenlist[index-1] in vlist or newsenlist[index+1] in vlist): 
 					#print item.split("-")[0]
 					newsen+=str(item.split("-")[0])+" "
+		#elif item.split("-")[0] in mulitwordlist:
+		#	if (index>0 and index<len(newsenlist)): #checking if preposition is between 2 related words
+		#		if( newsenlist[index-1] in vlist and newsenlist[index+1] in vlist): 
+					#print item.split("-")[0]
+		#			newsen+=str(item.split("-")[0])+" "
+		#	if (index==0 or index==len(newsenlist)): #checking if preposition is before related words in the beginning or in the end
+		#		if( newsenlist[index-1] in vlist or newsenlist[index+1] in vlist): 
+		#			#print item.split("-")[0]
+		#			newsen+=str(item.split("-")[0])+" "
+
 				
-	print newsen+" ."
+	return newsen+" ."
 
 #-----------------------------------------
-Senna=modifySenna(sennafile)
-VBNs=[]
-Preps={}
-for sen,val in Senna.items():
-	for num,token in val.items():
-		for a,b in token.items():
-			if b[1][0:2]=="VB":
-				VBNs.append(a)
-
-#print VBNs
-
-Stan=modifyStanf(stanfile)
-for key,val in Stan.items():
-    for i, prep in val.items():
-        pred=prep.keys()[0]
-        rel=prep.values()[0]
-        token1=rel[0]
-        token2=rel[1]
-        if token1 in VBNs:
-           Preps[token1]=(pred,token2)
-        elif token2 in VBNs:
-           Preps[token2]=(pred,token1)
-	
-#print Preps
-
-
-
-i=0
-vals=Stan.values()[0]
-temp=vals.values()  
-allDeps=[] #all relations in one list
-newlist=[]
-for v in temp:
-    #print v.keys()[0]
-    #print v.values()[0]
-	a=(v.values()[0][0],v.values()[0][1])
-	if a not in allDeps:
-		allDeps.append(a)
-
-
-
-
-
-#newlist=[]
-#allDeps=[("a","b"),("b","c"),("d","e"),("g","e"),("b","d"),("t","n"),("n","p")] 
-#allDeps2=[("testing-2","Laboratory-1"),("isolated-18","testing-2"),("testing-2","conducted-3"),("laboratories-8","state-5"),("laboratories-8","public-6"),("laboratories-8","health-7"),("conducted-3","laboratories-8"),("conducted-3","Connecticut-10"),("conducted-3","Maryland-12"),("Connecticut-10","Maryland-12"),("conducted-3","Pennsylvania-14"),("Connecticut-10","Pennsylvania-14"),("conducted-3","Wisconsin-16"),("Connecticut-10","Wisconsin-16"),("isolated-18","has-17"),("ROOT-0","isolated-18"),("isolated-18","salmonellae-19"),("isolated-18","53-21"),("samples-24","55-23"),("53-21","samples-24"),("samples-24","taken-25"),("packages-28","intact-27"),("taken-25","packages-28"),("scrape-34","frozen-30"),("scrape-34","yellow-31"),("scrape-34","fin-32"),("scrape-34","tuna-33"),("packages-28","scrape-34"),("taken-25","sushi-36"),("sushi-36","prepared-37"),("product-43","the-39"),("product-43","implicated-40"),("product-43","scrape-41"),("product-43","tuna-42"),("prepared-37","product-43")]
-
-#testcase 1
-#sentence="a total of 316 individuals infected with the outbreak strains of SalmonellaBareilly or SalmonellaNchanga have been reported from 26 states and the District of Columbia."
-#testcase 2
-#sentence="workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis."
-#testcase 3
-sentence="36 of more than 200 workers have fallen ill in the 2 weeks since the outbreak, their union said."
-#testcase4
-#sentence="laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product."
-
-
-newlist=list(allDeps)
-print VBNs
-#vlist=["taken-25"]
-#mining new approach
-for vbn in VBNs:
-	print vbn
-	vlist=verbLinks(vbn,allDeps)
-	#print vlist
-	if len(vlist)>1:
-		sen=scanVerb(sentence,vlist)
-	
-
 
 
 

@@ -1,0 +1,39 @@
+@prefix ns1: <http://> .
+
+ns1:St0-want-11 ns1:A0 ns1:A0-want-11;
+    ns1:A1 ns1:A1-want-11 .
+
+ns1:A0-want-11 ns1:nsubj ns1:Workers-1 .
+
+ns1:A1-returned-14 ns1:nsubj ns1:barge-13 .
+
+ns1:A1-want-11 ns1:ccomp ns1:St0-returned-14 .
+
+ns1:A4-returned-14 ns1:prep_to ns1:port-16 .
+
+ns1:AM-TMP-returned-14 ns1:prep_after ns1:outbreak-20 .
+
+ns1:St0-returned-14 ns1:A1 ns1:A1-returned-14;
+    ns1:A4 ns1:A4-returned-14;
+    ns1:AM ns1:AM-TMP-returned-14 .
+
+ns1:Strait-10 ns1:det ns1:the-8;
+    ns1:nn ns1:Bass-9 .
+
+ns1:Workers-1 ns1:prep_on ns1:platform-6 .
+
+ns1:barge-13 ns1:poss ns1:their-12 .
+
+ns1:outbreak-20 ns1:amod ns1:major-19;
+    ns1:det ns1:a-18;
+    ns1:prep_of ns1:gastroenteritis-24,
+        ns1:salmonella-22 .
+
+ns1:platform-6 ns1:det ns1:a-3;
+    ns1:nn ns1:gas-4,
+        ns1:production-5;
+    ns1:prep_in ns1:Strait-10 .
+
+ns1:salmonella-22 ns1:conj_and ns1:gastroenteritis-24 .
+
+

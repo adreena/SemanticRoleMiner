@@ -1,0 +1,17 @@
+(ROOT
+  (S
+    (NP (NNP Tom))
+    (VP (VBZ likes)
+      (S
+        (VP (TO to)
+          (VP (VB eat)
+            (NP (NN fish))))))
+    (. .)))
+
+nsubj(likes-2, Tom-1)
+xsubj(eat-4, Tom-1)
+root(ROOT-0, likes-2)
+aux(eat-4, to-3)
+xcomp(likes-2, eat-4)
+dobj(eat-4, fish-5)
+

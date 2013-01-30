@@ -11,7 +11,7 @@ a total of 316 individuals have reported from 26 states and the District of Colu
 testcase 2  (problem with connection between 2 words)
 "workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis."
 
-workers on a gas production platform in the Bass Strait want  .
+workers on a gas production platform in the Bass Strait want  .**
 
 their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
 
@@ -21,13 +21,13 @@ testcase3 (poblem with in total)
 "in total, 36 of more than 200 workers have fallen ill in the 2 weeks since the outbreak, their union said."
 
 in total , 36 of more than 200 workers fallen ill in the 2 weeks the outbreak  .
-in their union said  .
+in their union said  .I saw the man you love.
 
 --without in total: problem with connection between 2 verbs
 
 36 of more than 200 workers fallen ill in the 2 weeks the outbreak  .
 
-their union said  .
+their union said  .***
 
 
 ----------------------------------------------------------------------------------------------
@@ -45,6 +45,28 @@ testcase 4
 4- sushi prepared with the scrape tuna product  .
 
 5- the implicated scrape tuna product  .
+
+-------------------------------------------------------------------------------------------------
+testcase 5
+"that she lied was suspected by everyone."
+['that she lied  .', 
+'suspected by everyone  .']
+
+
+-------------------------------------------------------------------------------------------------
+we have no information on whether users are at risk.
+['we have no information  .', 
+'no information on whether users are at risk  .']
+
+
+--------------------------------------------------------------------------------------------------
+he talked to him in order to secure the account.
+['he talked to him  .', 'in order to secure the account  .']
+
+-------------------------------------------------------------------------------------------------
+I saw the man you love.
+['I saw the man  .', 'the man you love  .']
+
 
 
 

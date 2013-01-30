@@ -1,0 +1,40 @@
+@prefix ns1: <http://> .
+
+ns1:St0-said-23 ns1:A0 ns1:A0-said-23;
+    ns1:A1 ns1:A1-said-23 .
+
+<http://200-8> ns1:quantmod ns1:than-7 .
+
+<http://36-4> ns1:prep_of ns1:workers-9 .
+
+ns1:A0-said-23 ns1:nsubj ns1:union-22 .
+
+ns1:A1-fallen-11 ns1:nsubj <http://36-4> .
+
+ns1:A1-said-23 ns1:ccomp ns1:St0-fallen-11 .
+
+ns1:A2-fallen-11 ns1:acomp ns1:ill-12 .
+
+ns1:AM-DIS-fallen-11 ns1:prep_in ns1:total-2 .
+
+ns1:AM-TMP-fallen-11 ns1:prep_since ns1:outbreak-19 .
+
+ns1:St0-fallen-11 ns1:A1 ns1:A1-fallen-11;
+    ns1:A2 ns1:A2-fallen-11;
+    ns1:AM ns1:AM-DIS-fallen-11,
+        ns1:AM-TMP-fallen-11 .
+
+ns1:ill-12 ns1:prep_in ns1:weeks-16 .
+
+ns1:outbreak-19 ns1:det ns1:the-18 .
+
+ns1:than-7 ns1:mwe ns1:more-6 .
+
+ns1:union-22 ns1:poss ns1:their-21 .
+
+ns1:weeks-16 ns1:det ns1:the-14;
+    ns1:num <http://2-15> .
+
+ns1:workers-9 ns1:num <http://200-8> .
+
+
