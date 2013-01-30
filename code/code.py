@@ -6,7 +6,7 @@ from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
 import en #for converting verbs into present tense
 from stemming.porter2 import stem # for removing ing,ial ,...
-
+from en import numeral
 
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
@@ -121,21 +121,20 @@ def translateSent(vlist,result):
 		
 		if role in allRoles.keys():
 			number=token.split("-")[-1][0]
-			token=en.noun.singular(token.split("-")[0:-1][0])
-			token=stem(token)
-			token=en.spelling.suggest(token)[0]
-			token+="-"+number
+			if (token.split("-")[0:-1][0]).isdigit()==False:
+				token=en.noun.singular(token.split("-")[0:-1][0])
+				token=stem(token)
+				token=en.spelling.suggest(token)[0]
+				token+="-"+number
 			print token," is ",allRoles[role]
 			STs.append((token,"is",allRoles[role]))
 		else:
 			number=token.split("-")[-1][0]
-			token=en.noun.singular(token.split("-")[0:-1][0])
-			token=stem(token)
-			token=en.spelling.suggest(token)[0]+"-"+number
+			if (token.split("-")[0:-1][0]).isdigit()==False:
+				token=en.noun.singular(token.split("-")[0:-1][0])
+				token=stem(token)
+				token=en.spelling.suggest(token)[0]+"-"+number
 			number=role.split("-")[-1][0]
-			role=en.noun.singular(role.split("-")[0:-1][0])
-			role=stem(role)
-			role=en.spelling.suggest(role)[0]+"-"+number
 			print token," is ",role
 			STs.append((token,"is",role))
 
@@ -149,7 +148,7 @@ def translateSent(vlist,result):
 		if item.keys()[0]=='root':
 			verb=item.values()[0][1]
 			break
-	#print targetverb,verb
+	print "**********",targetverb,verb
 	#-- 5-2 in some cases there are no verb in sentence , this loop prints statements containing verb and the verb is the root.
 	if verb !="notfound" and targetverb==verb.split("-")[0:-1][0]:
 		for triple in Stan:
@@ -168,21 +167,24 @@ def translateSent(vlist,result):
 				elif tok1==verb or tok2==verb:
 					if tok1==verb: 
 						number=tok2.split("-")[-1][0]
-						tok2=en.noun.singular(tok2.split("-")[0:-1][0])
-						#print tok2
-						tok2=stem(tok2)+"-"+number
-						#print tok2						
+						if (tok2.split("-")[0:-1][0]).isdigit()==False:
+							tok2=en.noun.singular(tok2.split("-")[0:-1][0])
+							#print tok2
+							tok2=stem(tok2)+"-"+number
+							#print tok2						
 						obj.append([pred,tok2])
 					else: obj.append([pred,tok1])
 				else:		
 					number=tok2.split("-")[-1][0]
-					tok2=en.noun.singular(tok2.split("-")[0:-1][0])
-					tok2=stem(tok2)
-					tok2=en.spelling.suggest(tok2)[0]+"-"+number
-					number=tok1.split("-")[-1][0]
-					tok1=en.noun.singular(tok1.split("-")[0:-1][0])
-					tok1=stem(tok1)
-					tok1=en.spelling.suggest(tok1)[0]+"-"+number
+					if (tok2.split("-")[0:-1][0]).isdigit()==False:
+						tok2=en.noun.singular(tok2.split("-")[0:-1][0])
+						tok2=stem(tok2)
+						tok2=en.spelling.suggest(tok2)[0]+"-"+number
+					if (tok1.split("-")[0:-1][0]).isdigit()==False:
+						number=tok1.split("-")[-1][0]
+						tok1=en.noun.singular(tok1.split("-")[0:-1][0])
+						tok1=stem(tok1)
+						tok1=en.spelling.suggest(tok1)[0]+"-"+number
 					print tok1," ",dictionary[pred]," ",tok2
 					STs.append((tok1,dictionary[pred],tok2))
 	
@@ -197,27 +199,31 @@ def translateSent(vlist,result):
 				if str(pred)!="is-Arg1":
 					tok1=subject[0]
 					number=tok1.split("-")[-1][0]
-					tok1=en.noun.singular(tok1.split("-")[0:-1][0])
-					tok1=stem(tok1)
-					tok1=en.spelling.suggest(tok1)[0]+"-"+number
+					if (tok1.split("-")[0:-1][0]).isdigit()==False:
+						tok1=en.noun.singular(tok1.split("-")[0:-1][0])
+						tok1=stem(tok1)
+						tok1=en.spelling.suggest(tok1)[0]+"-"+number
 					tok2=objects[1]
-					number=tok2.split("-")[-1][0]
-					tok2=en.noun.singular(tok2.split("-")[0:-1][0])
-					tok2=stem(tok2)
-					tok2=en.spelling.suggest(tok2)[0]+"-"+number
+					if (tok2.split("-")[0:-1][0]).isdigit()==False:
+						number=tok2.split("-")[-1][0]
+						tok2=en.noun.singular(tok2.split("-")[0:-1][0])
+						tok2=stem(tok2)
+						tok2=en.spelling.suggest(tok2)[0]+"-"+number
 					print tok1," ",damnVerb+"-"+str(pred)," ",tok2
 					STs.append((tok1,damnVerb+"-"+str(pred),tok2))
 				else:
 					tok1=subject[0]
-					number=tok1.split("-")[-1][0]
-					tok1=en.noun.singular(tok1.split("-")[0:-1][0])
-					tok1=stem(tok1)
-					tok1=en.spelling.suggest(tok1)[0]+"-"+number
+					if (tok1.split("-")[0:-1][0]).isdigit()==False:
+						number=tok1.split("-")[-1][0]
+						tok1=en.noun.singular(tok1.split("-")[0:-1][0])
+						tok1=stem(tok1)
+						tok1=en.spelling.suggest(tok1)[0]+"-"+number
 					tok2=objects[1]
-					number=tok2.split("-")[-1][0]
-					tok2=en.noun.singular(tok2.split("-")[0:-1][0])
-					tok2=stem(tok2)
-					tok2=en.spelling.suggest(tok2)[0]+"-"+number
+					if (tok2.split("-")[0:-1][0]).isdigit()==False:
+						number=tok2.split("-")[-1][0]
+						tok2=en.noun.singular(tok2.split("-")[0:-1][0])
+						tok2=stem(tok2)
+						tok2=en.spelling.suggest(tok2)[0]+"-"+number
 					print tok1," ",damnVerb," ",tok2
 					STs.append((tok1,damnVerb,tok2))
 
@@ -231,18 +237,21 @@ def translateSent(vlist,result):
 			#print pred,tok1,tok2
 			if pred in dictionary.keys():
 				pred=triple.keys()[0]
+				
 				tok1=triple.values()[0][0]
-				number=tok1.split("-")[-1][0]
-				tok1=en.noun.singular(tok1.split("-")[0:-1][0])
-				tok1=stem(tok1)
-				tok1=en.spelling.suggest(tok1)[0]+"-"+number			
+				if (tok1.split("-")[0:-1][0]).isdigit()==False:
+					number=tok1.split("-")[-1][0]
+					tok1=en.noun.singular(tok1.split("-")[0:-1][0])
+					tok1=stem(tok1)
+					tok1=en.spelling.suggest(tok1)[0]+"-"+number			
 				tok2=triple.values()[0][1]
-				number=tok2.split("-")[-1][0]
-				tok2=en.noun.singular(tok2.split("-")[0:-1][0])
-				tok2=stem(tok2)
-				tok2=en.spelling.suggest(tok2)[0]+"-"+number
+				if (tok2.split("-")[0:-1][0]).isdigit()==False:
+					number=tok2.split("-")[-1][0]
+					tok2=en.noun.singular(tok2.split("-")[0:-1][0])
+					tok2=stem(tok2)
+					tok2=en.spelling.suggest(tok2)[0]+"-"+number
 				print tok1," ",dictionary[pred]," ",tok2
-				STs.append(tok1,dictionary[pred],tok2)
+				STs.append((tok1,dictionary[pred],tok2))
 
 
 #------------------------------------------------------------------------------------------------------------------------------------

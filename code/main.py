@@ -20,11 +20,11 @@ from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb
 if __name__=="__main__":
 
 	#1
-	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/testCases/test4/test_input.txt","r")	
+	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/testCases/test5/test_input.txt","r")	
 	sent=sentence.readline()
 	print sent
-	sennafile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test4/sennaoutput.txt"
-	stanfile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test4/stanoutput.txt"
+	sennafile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test5/sennaoutput.txt"
+	stanfile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test5/stanoutput.txt"
 	
 	
 	
@@ -79,7 +79,7 @@ if __name__=="__main__":
 			print result
 			sen.append(result)
 			translateSent(vlist,result)
-		break
+		
 	 
 	 
 	

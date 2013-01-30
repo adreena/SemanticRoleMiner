@@ -1,18 +1,11 @@
-     laboratory	        NN	      B-NP	         O	              -	      B-A1	(S1(NP(NP*
-        testing	        NN	      E-NP	         O	              -	      E-A1	*)
-      conducted	       VBN	      S-VP	         O	      conducted	       S-V	(VP*
-             by	        IN	      S-PP	         O	              -	      B-A0	(PP*
-          state	        NN	      B-NP	         O	              -	      I-A0	(NP*
-         public	        JJ	      I-NP	         O	              -	      I-A0	*
-         health	        NN	      I-NP	         O	              -	      I-A0	*
-   laboratories	       NNS	      E-NP	         O	              -	      I-A0	*))
-             in	        IN	      S-PP	         O	              -	      I-A0	(PP*
-    Connecticut	       NNP	      S-NP	     S-LOC	              -	      I-A0	(NP*
-              ,	         ,	         O	         O	              -	      I-A0	*
-       Maryland	       NNP	      S-NP	     S-LOC	              -	      I-A0	*
-              ,	         ,	         O	         O	              -	      I-A0	*
-   Pennsylvania	       NNP	      S-NP	     S-LOC	              -	      I-A0	*
-            and	        CC	         O	         O	              -	      I-A0	*
-      Wisconsin	       NNP	      S-NP	     S-LOC	              -	      E-A0	*)))
+     laboratory	        NN	      B-NP	         O	              -	      B-A0	(S1(NP(NP*
+        testing	        NN	      E-NP	         O	              -	      E-A0	*)
+       isolated	       VBD	      S-VP	         O	       isolated	       S-V	(NP*
+    salmonellae	        NN	      S-NP	         O	              -	      S-A1	*)
+           from	        IN	      S-PP	         O	              -	      B-A3	(PP*
+             53	        CD	      S-NP	         O	              -	      I-A3	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A3	(PP*
+             55	        CD	      B-NP	         O	              -	      I-A3	(NP*
+        samples	       NNS	      E-NP	         O	              -	      E-A3	*))))
               .	         .	         O	         O	              -	         O	*))
 

@@ -1,19 +1,20 @@
 (ROOT
   (S
-    (SBAR (IN that)
-      (S
-        (NP (PRP she))
-        (VP (VBD lied))))
-    (VP (VBD was)
-      (VP (VBN suspected)
-        (PP (IN by)
-          (NP (NN everyone)))))
+    (NP (NN laboratory) (NN testing))
+    (VP (VBD isolated)
+      (NP (NN salmonellae))
+      (PP (IN from)
+        (NP
+          (NP (CD 53))
+          (PP (IN of)
+            (NP (CD 55) (NNS samples))))))
     (. .)))
 
-dep(lied-3, that-1)
-nsubj(lied-3, she-2)
-csubjpass(suspected-5, lied-3)
-auxpass(suspected-5, was-4)
-root(ROOT-0, suspected-5)
-agent(suspected-5, everyone-7)
+nn(testing-2, laboratory-1)
+nsubj(isolated-3, testing-2)
+root(ROOT-0, isolated-3)
+dobj(isolated-3, salmonellae-4)
+prep_from(isolated-3, 53-6)
+num(samples-9, 55-8)
+prep_of(53-6, samples-9)
 

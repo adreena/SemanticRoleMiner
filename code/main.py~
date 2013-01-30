@@ -79,7 +79,7 @@ if __name__=="__main__":
 			print result
 			sen.append(result)
 			translateSent(vlist,result)
-		break
+		
 	 
 	 
 	

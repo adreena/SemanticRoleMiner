@@ -1,9 +1,11 @@
-           that	        IN	    S-SBAR	         O	              -	         O	      B-A1	(S1(S(SBAR*
-            she	       PRP	      S-NP	         O	              -	      S-A0	      I-A1	(S(NP*)
-           lied	       VBD	      S-VP	         O	           lied	       S-V	      E-A1	(VP*)))
-            was	       VBD	      B-VP	         O	              -	         O	         O	(VP*
-      suspected	       VBN	      E-VP	         O	      suspected	         O	       S-V	(VP*
-             by	        IN	      S-PP	         O	              -	         O	      B-A0	(PP*
-       everyone	        NN	      S-NP	         O	              -	         O	      E-A0	(NP*))))
-              .	         .	         O	         O	              -	         O	         O	*))
+     laboratory	        NN	      B-NP	         O	              -	      B-A0	(S1(NP(NP*
+        testing	        NN	      E-NP	         O	              -	      E-A0	*)
+       isolated	       VBD	      S-VP	         O	       isolated	       S-V	(NP*
+    salmonellae	        NN	      S-NP	         O	              -	      S-A1	*)
+           from	        IN	      S-PP	         O	              -	      B-A3	(PP*
+             53	        CD	      S-NP	         O	              -	      I-A3	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A3	(PP*
+             55	        CD	      B-NP	         O	              -	      I-A3	(NP*
+        samples	       NNS	      E-NP	         O	              -	      E-A3	*))))
+              .	         .	         O	         O	              -	         O	*))
 
