@@ -1,0 +1,63 @@
+-Complete Sentence is: 
+laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product.
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
+
+      test-2  is  thing-led
+      laboratory-8  is  conductor
+      Connecticut-10  is  conductor
+      Maryland-12  is  conductor
+      Pennsylvanium-1  is  conductor
+      Wisconsin-16  is  conductor
+      test-2  --  laboratory-1
+      laboratory-8  --  state-5
+      laboratory-8  is  public-6
+      laboratory-8  --  health-7
+      test-2  conducted-by  laboratory-8
+      test-2  conducted-in  Connecticut-10
+      test-2  conducted-in  Maryland-12
+      test-2  conducted-in  Pennsylvanium-1
+      test-2  conducted-in  Wisconsin-16
+          --------------------------------------------------          
+1-laboratory testing isolated salmonellae from 53 of 55 samples  .
+
+      test-2  is  entity-causing-isolation
+      salmonella-4  is  entity-isolated
+      53-6  is  A3
+      test-2  --  laboratory-1
+      sample-9  number  55-8
+      53-6  of  sample-9
+      test-2  isolated  salmonella-4
+      test-2  isolated-from  53-6
+          --------------------------------------------------          
+2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+
+      package-8   is   entity-taken-from
+      package-8   is   or-prepositional-complement-of-arg
+      sample-4  number  55-3
+      53-1  of  sample-4
+      package-8  is  intact-7
+      scrape-14  is  frozen-10
+      scrape-14  is  yellow-11
+      scrape-14  --  fin-12
+      scrape-14  --  tuna-13
+      package-8  of  scrape-14
+      53-1  taken-from  package-8
+      53-1  taken-from  sushi-16
+          --------------------------------------------------          
+3-sushi prepared with the scrape tuna product  .
+
+      sushi-1  is  creation
+      product-7  --  scrape-5
+      product-7  --  tuna-6
+      sushi-1  prepared-with  product-7
+          --------------------------------------------------          
+4-the implicated scrape tuna product  .
+
+      product-5  is  thing-implicated
+      product-5  is  implicated-2
+      product-5  --  scrape-3
+      product-5  --  tuna-4
+          --------------------------------------------------          

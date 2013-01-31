@@ -142,7 +142,7 @@ def translateSent(vlist,result):
 				for thing in temp:
 					if thing[0]=="-": thing=thing[1:-1] # remove "-" from the begining of role term 
 					print token," is ",thing
-					STs.append((token,thing))
+					STs.append((token," is ",thing))
 			else:
 				print token," is ",allRoles[role]
 				STs.append((token,"is",allRoles[role]))
@@ -309,7 +309,7 @@ def translateSent(vlist,result):
 						tok1=en.spelling.suggest(temp2)[0]+"-"+number
 		
 				tok2=triple.values()[0][1]
-				if (tok2.split("-")[0:-1][0]).isdigit()==False and tok2!=targetverb:
+				if (tok2.split("-")[0:-1][0]).isdigit()==False and tok2.split("-")[0:-1][0]!=targetverb:
 					#print "verb ",verb,tok2
 					number=tok2.split("-")[-1][0]
 					temp1=en.noun.singular(tok2.split("-")[0:-1][0])
@@ -325,7 +325,7 @@ def translateSent(vlist,result):
 				print tok1," ",dictionary[pred]," ",tok2
 				STs.append((tok1,dictionary[pred],tok2))
 
-
+	return [STs,Stan,Senn]
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
 ######################################################################################################################################
@@ -365,16 +365,19 @@ def scanVerb(sen,vlist):
 	sen=sen.replace(".","")
 	sen=sen.replace("  "," ")
 	senlist= list(sen.split(" "))
+	senlist = [word.strip() for word in senlist] #removing \n from the last toke of the sentence
+	#print "senlist : ",senlist
 	newsenlist=[]
 	newsen=""
 	#print vlist
 	for i in range(0,len(senlist)):
 		#print item,senlist.index(item)+1
 		item=senlist[i]
+		if item[-2:-1]=="\n": item=item.replace("\n","")
 		index=i
 		item=item+"-"+str(index+1)
 		newsenlist.append(item)
-
+	print "newsenlist: ",newsenlist
 	#print "sentence list: ", newsenlist #now i have the whole sentence in form of a list , indexing words
 	for item in newsenlist: 
 		index=newsenlist.index(item)
@@ -390,15 +393,6 @@ def scanVerb(sen,vlist):
 				if( newsenlist[index-1] in vlist or newsenlist[index+1] in vlist): 
 					#print item.split("-")[0]
 					newsen+=str(item.split("-")[0])+" "
-		#elif item.split("-")[0] in mulitwordlist:
-		#	if (index>0 and index<len(newsenlist)): #checking if preposition is between 2 related words
-		#		if( newsenlist[index-1] in vlist and newsenlist[index+1] in vlist): 
-					#print item.split("-")[0]
-		#			newsen+=str(item.split("-")[0])+" "
-		#	if (index==0 or index==len(newsenlist)): #checking if preposition is before related words in the beginning or in the end
-		#		if( newsenlist[index-1] in vlist or newsenlist[index+1] in vlist): 
-		#			#print item.split("-")[0]
-		#			newsen+=str(item.split("-")[0])+" "
 
 				
 	return newsen+" ."

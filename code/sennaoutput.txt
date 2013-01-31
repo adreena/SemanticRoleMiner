@@ -1,6 +1,7 @@
-            the	        DT	      B-NP	         O	              -	         O	(S1(NP*
+            the	        DT	      B-NP	         O	              -	         O	(S1(FRAG(NP*
      implicated	       VBN	      I-NP	         O	     implicated	       S-V	*
-         scrape	        NN	      I-NP	         O	              -	         O	*
-           tuna	        NN	      E-NP	         O	              -	      S-A1	*
+         scrape	        NN	      I-NP	         O	              -	      B-A1	*
+           tuna	        NN	      I-NP	         O	              -	      I-A1	*
+        product	        NN	      E-NP	         O	              -	      E-A1	*)
               .	         .	         O	         O	              -	         O	*))
 

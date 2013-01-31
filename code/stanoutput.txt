@@ -1,8 +1,9 @@
 (ROOT
-  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (. .)))
+  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (NN product) (. .)))
 
-det(tuna-4, the-1)
-amod(tuna-4, implicated-2)
-nn(tuna-4, scrape-3)
-root(ROOT-0, tuna-4)
+det(product-5, the-1)
+amod(product-5, implicated-2)
+nn(product-5, scrape-3)
+nn(product-5, tuna-4)
+root(ROOT-0, product-5)
 

@@ -31,10 +31,10 @@ if __name__=="__main__":
 	myTestFile=SenSta(inputFile)
 	myTestFile.makeSenna()
 	myTestFile.makeStanf()
-	path="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/sennaoutput.txt"
-	sennafile=open(path,"r")
-	path="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
-	stanfile=open(path,"r")
+	sennafile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/sennaoutput.txt"
+	
+	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
+	
 	
 
 	#2
@@ -80,20 +80,52 @@ if __name__=="__main__":
 	#5
 	sen=[]
 	#print VBNs
+	output=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/results.txt",'w')
+	output.write("-Complete Sentence is: \n"+sent+"\n")
+	output.write("----------------------------------------------------------------------\n")
+	output.write("----------------------------------------------------------------------\n")
+	
+	SennaStan=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/Stan_Senna_results.txt",'w')
+
+	sentNumber=0
 	for vbn in VBNs:
 		#vbn="isolated-18"
 		vlist=verbLinks(vbn,allDeps,VBNs)
 		
-		print vlist
+		print "vlist: ",vlist
 		if len(vlist)>1:
+			STs=[]
 			result=scanVerb(sent,vlist)
 			print result
+			#-- writing each sentencealong with their triples in results.txt
+			output.write(str(sentNumber)+"-"+result+"\n\n")
+			SennaStan.write(str(sentNumber)+"-"+result+"\n\n")
 			sen.append(result)
-			translateSent(vlist,result)
-		
-	 	#break
+			STs=translateSent(vlist,result)
+			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
+			sentNumber+=1
+			output.write("          --------------------------------------------------          \n")
+
+			#-- writing each sentence stanford output in Stan_Senna_results.txt
+			stanfile=open("/home/kimia/srl/python/SemanticRoleMiner/code/stanoutput.txt","r")
+			text=stanfile.read()
+			stanfile.close()
+			SennaStan.write("-Stanford Output: ----------------------------------------------------\n")
+			SennaStan.write(text)
+			SennaStan.write("          --------------------------------------------------          \n")
+			#-- writing each sentence ssenna output in Stan_Senna_results.txt
+			sennafile=open("/home/kimia/srl/python/SemanticRoleMiner/code/sennaoutput.txt","r")
+			text=sennafile.read()
+			sennafile.close()
+			SennaStan.write("--Senna Output:------------------------------------------------------ \n")
+			SennaStan.write(text)
+			SennaStan.write("----------------------------------------------------------------------\n")
+
+			
+	 		
 	 
-	
+	SennaStan.close()
+	output.close()
 
 
 
