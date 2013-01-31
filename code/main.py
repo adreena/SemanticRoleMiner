@@ -75,7 +75,7 @@ if __name__=="__main__":
 			#print a
 			allDeps.append(a)
 
-	#print allDeps
+	print "allDeps ", allDeps
 
 	#5
 	sen=[]
@@ -92,7 +92,7 @@ if __name__=="__main__":
 		#vbn="isolated-18"
 		vlist=verbLinks(vbn,allDeps,VBNs)
 		
-		print "vlist: ",vlist
+		#print "vlist: ",vlist
 		if len(vlist)>1:
 			STs=[]
 			result=scanVerb(sent,vlist)

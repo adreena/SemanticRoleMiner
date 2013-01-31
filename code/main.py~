@@ -92,7 +92,7 @@ if __name__=="__main__":
 		#vbn="isolated-18"
 		vlist=verbLinks(vbn,allDeps,VBNs)
 		
-		print "vlist: ",vlist
+		#print "vlist: ",vlist
 		if len(vlist)>1:
 			STs=[]
 			result=scanVerb(sent,vlist)
@@ -112,7 +112,6 @@ if __name__=="__main__":
 			stanfile.close()
 			SennaStan.write("-Stanford Output: ----------------------------------------------------\n")
 			SennaStan.write(text)
-			SennaStan.write("          --------------------------------------------------          \n")
 			#-- writing each sentence ssenna output in Stan_Senna_results.txt
 			sennafile=open("/home/kimia/srl/python/SemanticRoleMiner/code/sennaoutput.txt","r")
 			text=sennafile.read()

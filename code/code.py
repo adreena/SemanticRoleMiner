@@ -113,7 +113,23 @@ def translateSent(vlist,result):
 		if item.keys()[0] in verbRel:
 			
 			values=item.values()[0].values()
-			
+			print "values of senna:",values
+			if values[2]!="O":
+				tok1=item.keys()[0]
+				tok2=values[2]
+	
+				number=tok1.split("-")[-1][0]
+				if (tok1.split("-")[0:-1][0]).isdigit()==False:
+					temp1=en.noun.singular(tok1.split("-")[0:-1][0])
+					if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+						tok1.split("-")[0:-1][0]=en.spelling.suggest(temp1)[0]+"-"+number
+					temp2=stem(tok1.split("-")[0:-1][0])
+					if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						tok1=en.spelling.suggest(temp2)[0]+"-"+number
+				print "**2222"
+				print tok1," is ",tok2
+				STs.append((tok1," is ",tok2))
+
 			if values[4]!='O':
 				val1=item.keys()[0]
 				val2=values[4].split("-")[-1]
@@ -129,20 +145,21 @@ def translateSent(vlist,result):
 			number=token.split("-")[-1][0]
 			if (token.split("-")[0:-1][0]).isdigit()==False:
 				temp1=en.noun.singular(token.split("-")[0:-1][0])
-				if temp1!=token.split("-")[0:-1][0] : #change has occured so needs spell checking
+				#print temp1
+				if temp1!=token.split("-")[0:-1][0] and token.split("-")[0:-1][0][0].islower() : #change has occured so needs spell checking and the first letter is lowercase
 					token=en.spelling.suggest(temp1)[0]+"-"+number
-					print "1",token ,temp1
+					#print "1",token ,temp1
 				temp2=stem(token.split("-")[0:-1][0])
-				if temp2 != token.split("-")[0:-1][0]: #change has occured, so needs spell checking
+				if temp2 != token.split("-")[0:-1][0] and token.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 					token=en.spelling.suggest(temp2)[0]+"-"+number
 					print "2",token
 			print "*ref*"
-			if len(allRoles[role].split(","))>1:	#sometimes we have more than 1 role
+			if len(allRoles[role].split(","))>1:	#sometimes we have more than 1 role , I take the first one
 				temp=allRoles[role].split(",")
 				for thing in temp:
-					if thing[0]=="-": thing=thing[1:-1] # remove "-" from the begining of role term 
 					print token," is ",thing
 					STs.append((token," is ",thing))
+					break
 			else:
 				print token," is ",allRoles[role]
 				STs.append((token,"is",allRoles[role]))
@@ -150,10 +167,10 @@ def translateSent(vlist,result):
 			number=token.split("-")[-1][0]
 			if (token.split("-")[0:-1][0]).isdigit()==False:
 				temp1=en.noun.singular(token.split("-")[0:-1][0])
-				if temp1!=token.split("-")[0:-1][0] : #change has occured so needs spell checking
+				if temp1!=token.split("-")[0:-1][0] and token.split("-")[0:-1][0][0].islower() : #change has occured so needs spell checking
 					token=en.spelling.suggest(temp1)[0]+"-"+number
 				temp2=stem(token.split("-")[0:-1][0])
-				if temp2 != token.split("-")[0:-1][0]: #change has occured, so needs spell checking
+				if temp2 != token.split("-")[0:-1][0] and token.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 					token=en.spelling.suggest(temp2)[0]+"-"+number
 			print "*555*"
 			print token," is ",role
@@ -193,10 +210,10 @@ def translateSent(vlist,result):
 						if (tok2.split("-")[0:-1][0]).isdigit()==False:
 
 							temp1=en.noun.singular(tok2.split("-")[0:-1][0])
-							if temp1!=tok2.split("-")[0:-1][0]: #change has occured so needs spell checking
+							if temp1!=tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 								tok2=en.spelling.suggest(temp1)[0]+"-"+number
 							temp2=stem(tok2.split("-")[0:-1][0])
-							if temp2 != tok2.split("-")[0:-1][0]: #change has occured, so needs spell checking
+							if temp2 != tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 								tok2=en.spelling.suggest(temp2)[0]+"-"+number
 						
 						obj.append([pred,tok2])
@@ -204,29 +221,29 @@ def translateSent(vlist,result):
 						number=tok1.split("-")[-1][0]
 						if (tok1.split("-")[0:-1][0]).isdigit()==False:
 							temp1=en.noun.singular(tok1.split("-")[0:-1][0])
-							if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+							if temp1!=tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 								tok1=en.spelling.suggest(temp1)[0]+"-"+number
 							temp2=stem(tok1.split("-")[0:-1][0])
-							if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+							if temp2 != tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 								tok1=en.spelling.suggest(temp2)[0]+"-"+number
-						obj.append([pred,tok1])
+						obj.append([pred,tok1]) #collecting objects
 				else:	
 						
 					number=tok2.split("-")[-1][0]
 					if (tok2.split("-")[0:-1][0]).isdigit()==False:
 						temp1=en.noun.singular(tok2.split("-")[0:-1][0])
-						if temp1!=tok2.split("-")[0:-1][0]: #change has occured so needs spell checking
+						if temp1!=tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 							tok2=en.spelling.suggest(temp1)[0]+"-"+number
 						temp2=stem(tok2.split("-")[0:-1][0])
-						if temp2 != tok2.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						if temp2 != tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 							tok2=en.spelling.suggest(temp2)[0]+"-"+number
 					number=tok1.split("-")[-1][0]
 					if (tok1.split("-")[0:-1][0]).isdigit()==False:
 						temp1=en.noun.singular(tok1.split("-")[0:-1][0])
-						if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+						if temp1!=tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 							tok1.split("-")[0:-1][0]=en.spelling.suggest(temp1)[0]+"-"+number
 						temp2=stem(tok1.split("-")[0:-1][0])
-						if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						if temp2 != tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 							tok1=en.spelling.suggest(temp2)[0]+"-"+number
 					print "**2222"
 					print tok1," ",dictionary[pred]," ",tok2
@@ -247,19 +264,19 @@ def translateSent(vlist,result):
 					if (tok1.split("-")[0:-1][0]).isdigit()==False:
 						print "*"
 						temp1=en.noun.singular(tok1.split("-")[0:-1][0])
-						if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+						if temp1!=tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 							tok1=en.spelling.suggest(temp1)[0]+"-"+number
 						temp2=stem(tok1.split("-")[0:-1][0])
-						if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						if temp2 != tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 							tok1=en.spelling.suggest(temp2)[0]+"-"+number
 					tok2=objects[1]
 					if (tok2.split("-")[0:-1][0]).isdigit()==False:
 						number=tok2.split("-")[-1][0]
 						temp1=en.noun.singular(tok2.split("-")[0:-1][0])
-						if temp1!=tok2.split("-")[0:-1][0]: #change has occured so needs spell checking
+						if temp1!=tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 							tok2=en.spelling.suggest(temp1)[0]+"-"+number
 						temp2=stem(tok2.split("-")[0:-1][0])
-						if temp2 != tok2.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						if temp2 != tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 							tok2=en.spelling.suggest(temp2)[0]+"-"+number
 					print "**"
 					print tok1," ",damnVerb+"-"+str(pred)," ",tok2
@@ -269,19 +286,19 @@ def translateSent(vlist,result):
 					if (tok1.split("-")[0:-1][0]).isdigit()==False:
 						number=tok1.split("-")[-1][0]
 						temp1=en.noun.singular(tok1.split("-")[0:-1][0])
-						if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+						if temp1!=tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 							tok1=en.spelling.suggest(temp1)[0]+"-"+number
 						temp2=stem(tok1.split("-")[0:-1][0])
-						if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						if temp2 != tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 							tok1=en.spelling.suggest(temp2)[0]+"-"+number
 					tok2=objects[1]
 					if (tok2.split("-")[0:-1][0]).isdigit()==False:
 						number=tok2.split("-")[-1][0]
 						temp1=en.noun.singular(tok2.split("-")[0:-1][0])
-						if temp1!=tok2.split("-")[0:-1][0]: #change has occured so needs spell checking
+						if temp1!=tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 							tok2=en.spelling.suggest(temp1)[0]+"-"+number
 						temp2=stem(tok2.split("-")[0:-1][0])
-						if temp2 != tok2.split("-")[0:-1][0]: #change has occured, so needs spell checking
+						if temp2 != tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 							tok2=en.spelling.suggest(temp2)[0]+"-"+number
 					print "*nbnbn5*"
 					print tok1," ",damnVerb," ",tok2
@@ -302,10 +319,10 @@ def translateSent(vlist,result):
 				if (tok1.split("-")[0:-1][0]).isdigit()==False:
 					number=tok1.split("-")[-1][0]
 					temp1=en.noun.singular(tok1.split("-")[0:-1][0])
-					if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+					if temp1!=tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 						tok1=en.spelling.suggest(temp1)[0]+"-"+number
 					temp2=stem(tok1.split("-")[0:-1][0])
-					if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+					if temp2 != tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 						tok1=en.spelling.suggest(temp2)[0]+"-"+number
 		
 				tok2=triple.values()[0][1]
@@ -313,11 +330,11 @@ def translateSent(vlist,result):
 					#print "verb ",verb,tok2
 					number=tok2.split("-")[-1][0]
 					temp1=en.noun.singular(tok2.split("-")[0:-1][0])
-					if temp1!=tok2.split("-")[0:-1][0]: #change has occured so needs spell checking
+					if temp1!=tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured so needs spell checking
 						#print "1" ,tok2
 						tok2=en.spelling.suggest(temp1)[0]+"-"+number
 					temp2=stem(tok2.split("-")[0:-1][0])
-					if temp2 != tok2.split("-")[0:-1][0]: #change has occured, so needs spell checking
+					if temp2 != tok2.split("-")[0:-1][0] and tok2.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 						#print "2" ,tok2
 						tok2=en.spelling.suggest(temp2)[0]+"-"+number
 					
