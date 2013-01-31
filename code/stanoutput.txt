@@ -1,20 +1,8 @@
 (ROOT
-  (S
-    (NP (NN laboratory) (NN testing))
-    (VP (VBD isolated)
-      (NP (NN salmonellae))
-      (PP (IN from)
-        (NP
-          (NP (CD 53))
-          (PP (IN of)
-            (NP (CD 55) (NNS samples))))))
-    (. .)))
+  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (. .)))
 
-nn(testing-2, laboratory-1)
-nsubj(isolated-3, testing-2)
-root(ROOT-0, isolated-3)
-dobj(isolated-3, salmonellae-4)
-prep_from(isolated-3, 53-6)
-num(samples-9, 55-8)
-prep_of(53-6, samples-9)
+det(tuna-4, the-1)
+amod(tuna-4, implicated-2)
+nn(tuna-4, scrape-3)
+root(ROOT-0, tuna-4)
 

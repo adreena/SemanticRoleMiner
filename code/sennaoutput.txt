@@ -1,11 +1,6 @@
-     laboratory	        NN	      B-NP	         O	              -	      B-A0	(S1(NP(NP*
-        testing	        NN	      E-NP	         O	              -	      E-A0	*)
-       isolated	       VBD	      S-VP	         O	       isolated	       S-V	(NP*
-    salmonellae	        NN	      S-NP	         O	              -	      S-A1	*)
-           from	        IN	      S-PP	         O	              -	      B-A3	(PP*
-             53	        CD	      S-NP	         O	              -	      I-A3	(NP(NP*)
-             of	        IN	      S-PP	         O	              -	      I-A3	(PP*
-             55	        CD	      B-NP	         O	              -	      I-A3	(NP*
-        samples	       NNS	      E-NP	         O	              -	      E-A3	*))))
+            the	        DT	      B-NP	         O	              -	         O	(S1(NP*
+     implicated	       VBN	      I-NP	         O	     implicated	       S-V	*
+         scrape	        NN	      I-NP	         O	              -	         O	*
+           tuna	        NN	      E-NP	         O	              -	      S-A1	*
               .	         .	         O	         O	              -	         O	*))
 

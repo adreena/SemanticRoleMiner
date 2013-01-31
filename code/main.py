@@ -1,5 +1,6 @@
 import sys
 import os
+from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
 from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb
@@ -20,12 +21,19 @@ from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb
 if __name__=="__main__":
 
 	#1
-	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/testCases/test5/test_input.txt","r")	
+	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","r")	
 	sent=sentence.readline()
-	print sent
-	sennafile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test5/sennaoutput.txt"
-	stanfile="/home/kimia/srl/python/SemanticRoleMiner/testCases/test5/stanoutput.txt"
+	sentence.close()
+
 	
+	print sent
+	inputFile="srl/python/SemanticRoleMiner/code/input"
+	myTestFile=SenSta(inputFile)
+	myTestFile.makeSenna()
+	myTestFile.makeStanf()
+	sennafile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/sennaoutput.txt"
+	
+	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
 	
 	
 
@@ -71,8 +79,11 @@ if __name__=="__main__":
 
 	#5
 	sen=[]
+	#print VBNs
 	for vbn in VBNs:
+		#vbn="isolated-18"
 		vlist=verbLinks(vbn,allDeps,VBNs)
+		
 		print vlist
 		if len(vlist)>1:
 			result=scanVerb(sent,vlist)
@@ -80,7 +91,7 @@ if __name__=="__main__":
 			sen.append(result)
 			translateSent(vlist,result)
 		
-	 
+	 	#break
 	 
 	
 
