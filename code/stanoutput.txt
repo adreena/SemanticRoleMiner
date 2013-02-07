@@ -1,9 +1,26 @@
 (ROOT
-  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (NN product) (. .)))
+  (S
+    (NP
+      (NP (DT the) (NN inspection))
+      (PP (IN of)
+        (NP (DT a) (NNP Moon) (NNP Fishery) (NN facility))))
+    (VP (VBD conducted)
+      (NP
+        (NP (NN part))
+        (PP (IN of)
+          (NP (DT this) (JJ ongoing) (NN outbreak) (NN investigation)))))
+    (. .)))
 
-det(product-5, the-1)
-amod(product-5, implicated-2)
-nn(product-5, scrape-3)
-nn(product-5, tuna-4)
-root(ROOT-0, product-5)
+det(inspection-2, the-1)
+nsubj(conducted-8, inspection-2)
+det(facility-7, a-4)
+nn(facility-7, Moon-5)
+nn(facility-7, Fishery-6)
+prep_of(inspection-2, facility-7)
+root(ROOT-0, conducted-8)
+dobj(conducted-8, part-9)
+det(investigation-14, this-11)
+amod(investigation-14, ongoing-12)
+nn(investigation-14, outbreak-13)
+prep_of(part-9, investigation-14)
 

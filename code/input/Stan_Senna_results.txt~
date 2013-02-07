@@ -1,188 +1,248 @@
-0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
-
--Stanford Output: ----------------------------------------------------
-(ROOT
-  (S
-    (NP (NN laboratory) (NN testing))
-    (VP (VBD conducted)
-      (PP (IN by)
-        (NP (NN state) (JJ public) (NN health) (NNS laboratories)))
-      (PP (IN in)
-        (NP (NNP Connecticut) (, ,) (NNP Maryland) (, ,) (NNP Pennsylvania)
-          (CC and)
-          (NNP Wisconsin))))
-    (. .)))
-
-nn(testing-2, laboratory-1)
-nsubj(conducted-3, testing-2)
-root(ROOT-0, conducted-3)
-nn(laboratories-8, state-5)
-amod(laboratories-8, public-6)
-nn(laboratories-8, health-7)
-prep_by(conducted-3, laboratories-8)
-prep_in(conducted-3, Connecticut-10)
-prep_in(conducted-3, Maryland-12)
-conj_and(Connecticut-10, Maryland-12)
-prep_in(conducted-3, Pennsylvania-14)
-conj_and(Connecticut-10, Pennsylvania-14)
-prep_in(conducted-3, Wisconsin-16)
-conj_and(Connecticut-10, Wisconsin-16)
-
---Senna Output:------------------------------------------------------ 
-     laboratory	        NN	      B-NP	         O	              -	      B-A1	(S1(NP(NP*
-        testing	        NN	      E-NP	         O	              -	      E-A1	*)
-      conducted	       VBN	      S-VP	         O	      conducted	       S-V	(VP*
-             by	        IN	      S-PP	         O	              -	      B-A0	(PP*
-          state	        NN	      B-NP	         O	              -	      I-A0	(NP*
-         public	        JJ	      I-NP	         O	              -	      I-A0	*
-         health	        NN	      I-NP	         O	              -	      I-A0	*
-   laboratories	       NNS	      E-NP	         O	              -	      I-A0	*))
-             in	        IN	      S-PP	         O	              -	      I-A0	(PP*
-    Connecticut	       NNP	      S-NP	     S-LOC	              -	      I-A0	(NP*
-              ,	         ,	         O	         O	              -	      I-A0	*
-       Maryland	       NNP	      S-NP	     S-LOC	              -	      I-A0	*
-              ,	         ,	         O	         O	              -	      I-A0	*
-   Pennsylvania	       NNP	      S-NP	     S-LOC	              -	      I-A0	*
-            and	        CC	         O	         O	              -	      I-A0	*
-      Wisconsin	       NNP	      S-NP	     S-LOC	              -	      E-A0	*)))
-              .	         .	         O	         O	              -	         O	*))
-
-----------------------------------------------------------------------
-1-laboratory testing isolated salmonellae from 53 of 55 samples  .
-
--Stanford Output: ----------------------------------------------------
-(ROOT
-  (S
-    (NP (NN laboratory) (NN testing))
-    (VP (VBD isolated)
-      (NP (NN salmonellae))
-      (PP (IN from)
-        (NP
-          (NP (CD 53))
-          (PP (IN of)
-            (NP (CD 55) (NNS samples))))))
-    (. .)))
-
-nn(testing-2, laboratory-1)
-nsubj(isolated-3, testing-2)
-root(ROOT-0, isolated-3)
-dobj(isolated-3, salmonellae-4)
-prep_from(isolated-3, 53-6)
-num(samples-9, 55-8)
-prep_of(53-6, samples-9)
-
---Senna Output:------------------------------------------------------ 
-     laboratory	        NN	      B-NP	         O	              -	      B-A0	(S1(NP(NP*
-        testing	        NN	      E-NP	         O	              -	      E-A0	*)
-       isolated	       VBD	      S-VP	         O	       isolated	       S-V	(NP*
-    salmonellae	        NN	      S-NP	         O	              -	      S-A1	*)
-           from	        IN	      S-PP	         O	              -	      B-A3	(PP*
-             53	        CD	      S-NP	         O	              -	      I-A3	(NP(NP*)
-             of	        IN	      S-PP	         O	              -	      I-A3	(PP*
-             55	        CD	      B-NP	         O	              -	      I-A3	(NP*
-        samples	       NNS	      E-NP	         O	              -	      E-A3	*))))
-              .	         .	         O	         O	              -	         O	*))
-
-----------------------------------------------------------------------
-2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+0-Moon Fishery India , the manufacturer of the frozen yellow fin tuna Nakaochi scrape recently recalled  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
     (NP
-      (NP (CD 53))
-      (PP (IN of)
-        (NP (CD 55) (NNS samples))))
-    (VP (VBN taken)
-      (PP (IN from)
-        (NP
-          (NP (JJ intact) (NNS packages))
-          (PP (IN of)
-            (NP (JJ frozen) (JJ yellow) (NN fin) (NN tuna) (NN scrape)))))
-      (PP (IN from)
-        (NP (NN sushi))))
+      (NP (NNP Moon) (NNP Fishery) (NNP India))
+      (, ,)
+      (NP
+        (NP (DT the) (NN manufacturer))
+        (PP (IN of)
+          (NP (DT the) (JJ frozen) (JJ yellow) (NN fin) (NN tuna) (NNP Nakaochi) (NNP scrape)))))
+    (ADVP (RB recently))
+    (VP (VBD recalled))
     (. .)))
 
-nsubj(taken-5, 53-1)
-num(samples-4, 55-3)
-prep_of(53-1, samples-4)
-root(ROOT-0, taken-5)
-amod(packages-8, intact-7)
-prep_from(taken-5, packages-8)
-amod(scrape-14, frozen-10)
-amod(scrape-14, yellow-11)
-nn(scrape-14, fin-12)
-nn(scrape-14, tuna-13)
-prep_of(packages-8, scrape-14)
-prep_from(taken-5, sushi-16)
+nn(India-3, Moon-1)
+nn(India-3, Fishery-2)
+nsubj(recalled-16, India-3)
+det(manufacturer-6, the-5)
+appos(India-3, manufacturer-6)
+det(scrape-14, the-8)
+amod(scrape-14, frozen-9)
+amod(scrape-14, yellow-10)
+nn(scrape-14, fin-11)
+nn(scrape-14, tuna-12)
+nn(scrape-14, Nakaochi-13)
+prep_of(manufacturer-6, scrape-14)
+advmod(recalled-16, recently-15)
+root(ROOT-0, recalled-16)
 
 --Senna Output:------------------------------------------------------ 
-             53	        CD	      S-NP	         O	              -	         O	      B-A0	(S1(NP(NP*)
-             of	        IN	      S-PP	         O	              -	         O	      I-A0	(PP*
-             55	        CD	      B-NP	         O	              -	         O	      I-A0	(NP(NP*
-        samples	       NNS	      E-NP	         O	              -	         O	      I-A0	*)
-          taken	       VBN	      S-VP	         O	          taken	       S-V	      I-A0	(VP*
-           from	        IN	      S-PP	         O	              -	      B-A2	      I-A0	(PP(PP*
-         intact	        JJ	      B-NP	         O	              -	      I-A2	      I-A0	(NP(NP*
-       packages	       NNS	      E-NP	         O	              -	      I-A2	      I-A0	*)
-             of	        IN	      S-PP	         O	              -	      I-A2	      I-A0	(PP*
-         frozen	        JJ	      B-NP	         O	              -	      I-A2	      I-A0	(NP*
-         yellow	        JJ	      I-NP	         O	              -	      I-A2	      I-A0	*
-            fin	        NN	      I-NP	         O	              -	      I-A2	      I-A0	*
-           tuna	        NN	      I-NP	         O	              -	      E-A2	      E-A0	*
-         scrape	        NN	      E-NP	         O	         scrape	         O	       S-V	*))))
-           from	        IN	      S-PP	         O	              -	         O	      B-A2	(PP*
-          sushi	        NN	      S-NP	         O	              -	         O	      E-A2	(NP*))))))
-              .	         .	         O	         O	              -	         O	         O	*))
+           Moon	       NNP	      B-NP	     B-LOC	              -	         O	(S1(S(NP(NP*
+        Fishery	       NNP	      I-NP	     I-LOC	              -	         O	*
+          India	       NNP	      E-NP	     E-LOC	              -	         O	*)
+              ,	         ,	         O	         O	              -	         O	*
+            the	        DT	      B-NP	         O	              -	      B-A0	(NP(NP*
+   manufacturer	        NN	      E-NP	         O	              -	      I-A0	*)
+             of	        IN	      S-PP	         O	              -	      I-A0	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A0	(NP*
+         frozen	        JJ	      I-NP	         O	              -	      I-A0	*
+         yellow	        JJ	      I-NP	         O	              -	      I-A0	*
+            fin	        NN	      I-NP	         O	              -	      I-A0	*
+           tuna	        NN	      E-NP	         O	              -	      I-A0	*
+       Nakaochi	       NNP	      B-NP	    S-MISC	              -	      I-A0	*))))
+         scrape	        NN	      E-NP	         O	              -	      E-A0	(VP*
+       recently	        RB	    S-ADVP	         O	              -	  S-AM-TMP	(ADVP*)
+       recalled	       VBD	      S-VP	         O	       recalled	       S-V	(VP*))
+              .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------
-3-sushi prepared with the scrape tuna product  .
+1-10 May 2012 Moon Fishery India , the manufacturer of the frozen yellow fin tuna expanded  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
-    (NP (NN sushi))
-    (VP (VBN prepared)
-      (PP (IN with)
-        (NP (DT the) (NN scrape) (NN tuna) (NN product))))
+    (NP
+      (NP (CD 10) (NNP May) (CD 2012))
+      (NP (NNP Moon) (NNP Fishery) (NNP India)))
+    (, ,)
+    (NP
+      (NP (DT the) (NN manufacturer))
+      (PP (IN of)
+        (NP (DT the) (JJ frozen) (JJ yellow) (NN fin) (NN tuna))))
+    (VP (VBD expanded))
     (. .)))
 
-nsubj(prepared-2, sushi-1)
-root(ROOT-0, prepared-2)
-det(product-7, the-4)
-nn(product-7, scrape-5)
-nn(product-7, tuna-6)
-prep_with(prepared-2, product-7)
+num(May-2, 10-1)
+nsubj(expanded-16, May-2)
+num(May-2, 2012-3)
+nn(India-6, Moon-4)
+nn(India-6, Fishery-5)
+dep(May-2, India-6)
+det(manufacturer-9, the-8)
+nsubj(expanded-16, manufacturer-9)
+det(tuna-15, the-11)
+amod(tuna-15, frozen-12)
+amod(tuna-15, yellow-13)
+nn(tuna-15, fin-14)
+prep_of(manufacturer-9, tuna-15)
+root(ROOT-0, expanded-16)
 
 --Senna Output:------------------------------------------------------ 
-          sushi	        NN	      S-NP	         O	              -	      S-A1	(S1(S(NP*)
-       prepared	       VBN	      S-VP	         O	       prepared	       S-V	(VP*
-           with	        IN	      S-PP	         O	              -	         O	(PP*
-            the	        DT	      B-NP	         O	              -	         O	(NP*
-         scrape	        NN	      I-NP	         O	              -	         O	*
-           tuna	        NN	      I-NP	         O	              -	         O	*
-        product	        NN	      E-NP	         O	              -	         O	*)))
+             10	        CD	      B-NP	         O	              -	         O	(S1(S(NP(NP*
+            May	       NNP	      I-NP	         O	              -	         O	*
+           2012	        CD	      I-NP	         O	              -	         O	*
+           Moon	       NNP	      I-NP	     B-LOC	              -	         O	*
+        Fishery	       NNP	      I-NP	     I-LOC	              -	         O	*
+          India	       NNP	      E-NP	     E-LOC	              -	         O	*)
+              ,	         ,	         O	         O	              -	         O	*
+            the	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
+   manufacturer	        NN	      E-NP	         O	              -	      I-A1	*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A1	(NP*
+         frozen	        JJ	      I-NP	         O	              -	      I-A1	*
+         yellow	        JJ	      I-NP	         O	              -	      I-A1	*
+            fin	        NN	      I-NP	         O	              -	      I-A1	*
+           tuna	        NN	      E-NP	         O	              -	      E-A1	*))))
+       expanded	       VBN	      S-VP	         O	       expanded	       S-V	(VP*)
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------
-4-the implicated scrape tuna product  .
+2-the voluntary recall to include its 22 boxes of Tuna Strips , Product of India  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
-  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (NN product) (. .)))
+  (S
+    (NP (DT the) (JJ voluntary))
+    (VP (VBP recall)
+      (S
+        (VP (TO to)
+          (VP (VB include)
+            (NP
+              (NP (PRP$ its) (CD 22) (NNS boxes))
+              (PP (IN of)
+                (NP
+                  (NP (NNP Tuna) (NNP Strips))
+                  (, ,)
+                  (NP
+                    (NP (NN Product))
+                    (PP (IN of)
+                      (NP (NNP India)))))))))))
+    (. .)))
 
-det(product-5, the-1)
-amod(product-5, implicated-2)
-nn(product-5, scrape-3)
-nn(product-5, tuna-4)
-root(ROOT-0, product-5)
+det(voluntary-2, the-1)
+nsubj(recall-3, voluntary-2)
+xsubj(include-5, voluntary-2)
+root(ROOT-0, recall-3)
+aux(include-5, to-4)
+xcomp(recall-3, include-5)
+poss(boxes-8, its-6)
+num(boxes-8, 22-7)
+dobj(include-5, boxes-8)
+nn(Strips-11, Tuna-10)
+prep_of(boxes-8, Strips-11)
+appos(Strips-11, Product-13)
+prep_of(Product-13, India-15)
 
 --Senna Output:------------------------------------------------------ 
-            the	        DT	      B-NP	         O	              -	         O	(S1(FRAG(NP*
-     implicated	       VBN	      I-NP	         O	     implicated	       S-V	*
-         scrape	        NN	      I-NP	         O	              -	      B-A1	*
-           tuna	        NN	      I-NP	         O	              -	      I-A1	*
-        product	        NN	      E-NP	         O	              -	      E-A1	*)
+            the	        DT	      B-NP	         O	              -	         O	(S1(FRAG(NP(NP*
+      voluntary	        JJ	      I-NP	         O	              -	         O	*
+         recall	        NN	      E-NP	         O	              -	         O	*)
+             to	        TO	      B-VP	         O	              -	         O	(SBAR(S(VP*
+        include	        VB	      E-VP	         O	        include	       S-V	(VP*
+            its	      PRP$	      B-NP	         O	              -	      B-A1	(NP(NP*
+             22	        CD	      I-NP	         O	              -	      I-A1	*
+          boxes	       NNS	      E-NP	         O	              -	      I-A1	*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+           Tuna	       NNP	      B-NP	     B-ORG	              -	      I-A1	(NP(NP*
+         Strips	       NNP	      E-NP	     E-ORG	              -	      I-A1	*)
+              ,	         ,	         O	         O	              -	      I-A1	*
+        Product	       NNP	      S-NP	         O	              -	      I-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+          India	       NNP	      S-NP	     S-LOC	              -	      E-A1	(NP*)))))))))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+3-the voluntary recall marked AA or AAA Grade  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (DT the) (JJ voluntary) (NN recall))
+    (VP (VBD marked)
+      (NP
+        (NP (NNP AA))
+        (CC or)
+        (NP (NNP AAA) (NNP Grade))))
+    (. .)))
+
+det(recall-3, the-1)
+amod(recall-3, voluntary-2)
+nsubj(marked-4, recall-3)
+root(ROOT-0, marked-4)
+dobj(marked-4, AA-5)
+nn(Grade-8, AAA-7)
+dobj(marked-4, Grade-8)
+conj_or(AA-5, Grade-8)
+
+--Senna Output:------------------------------------------------------ 
+            the	        DT	      B-NP	         O	              -	      B-A0	(S1(NP(NP*
+      voluntary	        JJ	      I-NP	         O	              -	      I-A0	*
+         recall	        NN	      E-NP	         O	              -	      E-A0	*)
+         marked	       VBN	      S-VP	         O	         marked	       S-V	(VP*
+             AA	       NNP	      B-NP	         O	              -	      B-A1	(NP*
+             or	        CC	      I-NP	         O	              -	      I-A1	*
+            AAA	       NNP	      I-NP	         O	              -	      I-A1	*
+          Grade	       NNP	      E-NP	         O	              -	      E-A1	*))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+4-because the product has the potential  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (FRAG
+    (SBAR (IN because)
+      (S
+        (NP (DT the) (NN product))
+        (VP (VBZ has)
+          (NP (DT the) (NN potential)))))
+    (. .)))
+
+mark(has-4, because-1)
+det(product-3, the-2)
+nsubj(has-4, product-3)
+root(ROOT-0, has-4)
+det(potential-6, the-5)
+dobj(has-4, potential-6)
+
+--Senna Output:------------------------------------------------------ 
+        because	        IN	    S-SBAR	         O	              -	         O	(S1(S(SBAR*
+            the	        DT	      B-NP	         O	              -	      B-A0	(S(NP*
+        product	        NN	      E-NP	         O	              -	      E-A0	*)
+            has	       VBZ	      S-VP	         O	            has	       S-V	(VP*
+            the	        DT	      B-NP	         O	              -	      B-A1	(NP*
+      potential	        NN	      E-NP	         O	              -	      E-A1	*))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+5-the potential to contaminated with salmonellae  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (DT the) (NN potential))
+    (VP (TO to)
+      (VP (VB contaminated)
+        (PP (IN with)
+          (NP (NN salmonellae)))))
+    (. .)))
+
+det(potential-2, the-1)
+nsubj(contaminated-4, potential-2)
+aux(contaminated-4, to-3)
+root(ROOT-0, contaminated-4)
+prep_with(contaminated-4, salmonellae-6)
+
+--Senna Output:------------------------------------------------------ 
+            the	        DT	      B-NP	         O	              -	         O	(S1(S(NP*
+      potential	        NN	      E-NP	         O	              -	         O	*)
+             to	        TO	      B-VP	         O	              -	         O	(VP*
+   contaminated	       VBN	      E-VP	         O	   contaminated	       S-V	(VP*
+           with	        IN	      S-PP	         O	              -	      B-A2	(PP*
+    salmonellae	        NN	      S-NP	         O	              -	      E-A2	(NP*))))
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------

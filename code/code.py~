@@ -5,7 +5,7 @@ from nltk.corpus import propbank
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
 import en #for converting verbs into present tense
-from stemming.porter2 import stem # for removing ing,ial ,...
+from stemming.porter import stem # for removing ing,ial ,...
 from en import numeral
 
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -40,9 +40,11 @@ def verbRelatives(vlist,Stan):
 #------------------------------------------------------------------
 def roleFinder(verb):
 	#--converting verb into its present tense
-	targetverb=en.verb.present(verb)	
+	print "verb**",verb
+	targetverb=en.verb.present(verb)
+	print "targetverb **** ",targetverb	
 	propVerb=targetverb+".01"
-	#print propVerb
+	print propVerb
 	allroles={}
 	roles=propbank.roleset(propVerb)
 	for role in roles.findall('roles/role'):
@@ -64,7 +66,7 @@ def translateSent(vlist,result):
 
 
 	#--- Stanford Translations Dictionary
-	dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"is-Arg1","iobj":"to","neg":"not", "nn":"--","nsubj":"is-Arg0", "nsubjpass":"is-Arg0","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
+	dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"is-Arg1","iobj":"to","neg":"not", "nn":"--","nsubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
 
 
 
@@ -110,27 +112,25 @@ def translateSent(vlist,result):
 	#-- 4-3 Discovering the arg labels senna has assigned to the tokens, all Args are gathered in roleDep example:[('testing-2', 'A1'), ('laboratories-8', 'A0'),...]
 	roleDep=[]
 	for item in Senn:
-		if item.keys()[0] in verbRel:
-			
-			values=item.values()[0].values()
-			print "values of senna:",values
-			if values[2]!="O":
-				tok1=item.keys()[0]
-				tok2=values[2]
+		values=item.values()[0].values() #NER
+		#print "values of senna:",values
+		if values[2]!="O" and (values[2].split("-")[0]=="B" or values[2].split("-")[0]=="S"):
+			tok1=item.keys()[0]
+			tok2=values[2].split("-")[1:][0]
 	
-				number=tok1.split("-")[-1][0]
-				if (tok1.split("-")[0:-1][0]).isdigit()==False:
-					temp1=en.noun.singular(tok1.split("-")[0:-1][0])
-					if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
-						tok1.split("-")[0:-1][0]=en.spelling.suggest(temp1)[0]+"-"+number
-					temp2=stem(tok1.split("-")[0:-1][0])
-					if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
-						tok1=en.spelling.suggest(temp2)[0]+"-"+number
-				print "**2222"
-				print tok1," is ",tok2
-				STs.append((tok1," is ",tok2))
-
-			if values[4]!='O':
+			number=tok1.split("-")[-1][0]
+			if (tok1.split("-")[0:-1][0]).isdigit()==False:
+				temp1=en.noun.singular(tok1.split("-")[0:-1][0])
+				if temp1!=tok1.split("-")[0:-1][0]: #change has occured so needs spell checking
+					tok1.split("-")[0:-1][0]=en.spelling.suggest(temp1)[0]+"-"+number
+				temp2=stem(tok1.split("-")[0:-1][0])
+				if temp2 != tok1.split("-")[0:-1][0]: #change has occured, so needs spell checking
+					tok1=en.spelling.suggest(temp2)[0]+"-"+number
+			print "**2222"
+			print tok1," is ",tok2
+			STs.append((tok1," is ",tok2))
+		if item.keys()[0] in verbRel:
+			if values[4]!='O': # ARG
 				val1=item.keys()[0]
 				val2=values[4].split("-")[-1]
 				roleDep.append((val1,val2))
@@ -198,7 +198,7 @@ def translateSent(vlist,result):
 			#--       also nsbj,nsujpass are gathered in sbj[] to make verb-dependencies with 
 			#	  other tokens directly connected to the verb in obj[]. 
 			if pred in dictionary.keys():
-				if dictionary[pred]=="is-Arg0":	
+				if dictionary[pred]=="subject":	
 					
 					sbj[i]=(tok2,tok1)
 					
@@ -226,7 +226,7 @@ def translateSent(vlist,result):
 							temp2=stem(tok1.split("-")[0:-1][0])
 							if temp2 != tok1.split("-")[0:-1][0] and tok1.split("-")[0:-1][0][0].islower(): #change has occured, so needs spell checking
 								tok1=en.spelling.suggest(temp2)[0]+"-"+number
-						obj.append([pred,tok1])
+						obj.append([pred,tok1]) #collecting objects
 				else:	
 						
 					number=tok2.split("-")[-1][0]
@@ -372,8 +372,11 @@ def verbLinks(vbn,deplist,VBNs):
 						vlist.append(tok1)
 	return vlist
 #-----------------------------------------
+#recreating the sentence from a list of related words to a verb from the original sentenc.
+#
+#
 def scanVerb(sen,vlist):
-	banlist=['by','from','and','in',',','of','with','on','at','under','to','after']
+	banlist=['by','from','and','in',',','of','with','on','at','under','to','after',"or"]
 	doublewords=["becasue","instead","such","addition","due","all","rather","well"]
 	doublewordlist=[["becasue","of"],["instead","of"], ["such","as"], ["due","to"],["all","but"],["rather","than"]  ]
 	triplewords=["addition","well"]
@@ -394,21 +397,21 @@ def scanVerb(sen,vlist):
 		index=i
 		item=item+"-"+str(index+1)
 		newsenlist.append(item)
-	print "newsenlist: ",newsenlist
-	#print "sentence list: ", newsenlist #now i have the whole sentence in form of a list , indexing words
+	#print "newsenlist: ",newsenlist
+	print "sentence list: ", newsenlist #now i have the whole sentence in form of a list , indexing words
 	for item in newsenlist: 
 		index=newsenlist.index(item)
 		if item in vlist:
-			#print item.split("-")[0]
+			print item.split("-")[0]
 			newsen+=str(item.split("-")[0])+" "
 		elif item.split("-")[0] in banlist:
 			if (index>0 and index<len(newsenlist)): #checking if preposition is between 2 related words
 				if( newsenlist[index-1] in vlist and newsenlist[index+1] in vlist): 
-					#print item.split("-")[0]
+					print "1 ",item.split("-")[0]
 					newsen+=str(item.split("-")[0])+" "
 			if (index==0 or index==len(newsenlist)): #checking if preposition is before related words in the beginning or in the end
 				if( newsenlist[index-1] in vlist or newsenlist[index+1] in vlist): 
-					#print item.split("-")[0]
+					print "2 ",item.split("-")[0]
 					newsen+=str(item.split("-")[0])+" "
 
 				

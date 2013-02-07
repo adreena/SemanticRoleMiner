@@ -1,7 +1,16 @@
-            the	        DT	      B-NP	         O	              -	         O	(S1(FRAG(NP*
-     implicated	       VBN	      I-NP	         O	     implicated	       S-V	*
-         scrape	        NN	      I-NP	         O	              -	      B-A1	*
-           tuna	        NN	      I-NP	         O	              -	      I-A1	*
-        product	        NN	      E-NP	         O	              -	      E-A1	*)
+            the	        DT	      B-NP	         O	              -	      B-A1	(S1(S(NP(NP*
+     inspection	        NN	      E-NP	         O	              -	      I-A1	*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+              a	        DT	      B-NP	         O	              -	      I-A1	(NP*
+           Moon	       NNP	      I-NP	    B-MISC	              -	      I-A1	*
+        Fishery	       NNP	      I-NP	    E-MISC	              -	      I-A1	*
+       facility	        NN	      E-NP	         O	              -	      E-A1	*)))
+      conducted	       VBD	      S-VP	         O	      conducted	       S-V	(VP*
+           part	        NN	      S-NP	         O	              -	      B-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+           this	        DT	      B-NP	         O	              -	      I-A1	(NP*
+        ongoing	        JJ	      I-NP	         O	              -	      I-A1	*
+       outbreak	        NN	      I-NP	         O	              -	      I-A1	*
+  investigation	        NN	      E-NP	         O	              -	      E-A1	*))))
               .	         .	         O	         O	              -	         O	*))
 

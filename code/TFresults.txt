@@ -1,0 +1,948 @@
+actual Word: consul | value: 11.7647058824  |  Highest Freq: 0.176470588235 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: lack | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: dollar | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: yellow | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: month | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: laura | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: debris | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: follow | value: 40.0  |  Highest Freq: 0.4 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: violate | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: regal | value: 66.6666666667  |  Highest Freq: 1.0 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: sens | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: maryland | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: include | value: 20.0  |  Highest Freq: 0.2 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: premium | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: govern | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: cook | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: affect | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: salmonella | value: 28.5714285714  |  Highest Freq: 0.285714285714 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: suis | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: bring | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: die | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: list | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: large | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: amend | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: sand | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: prevent | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: direct | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: rate | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: naturals” | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: port | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: even | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: appear | value: 9.52380952381  |  Highest Freq: 0.142857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: gascon | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: investing | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: spokesman | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: ontrackan | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: conduct | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: public | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: body | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: full | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: reporter | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: water | value: 23.8095238095  |  Highest Freq: 0.357142857143 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: reported | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: les | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: active | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: sing | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: change | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: box | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: environs | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: institute | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: chant | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: implement | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: maker | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: montreal | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ice""il | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: depart | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: sample | value: 11.9047619048  |  Highest Freq: 0.357142857143 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: visible | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: sbareilli | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: total | value: 20.0  |  Highest Freq: 0.2 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: unit | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: use | value: 19.0476190476  |  Highest Freq: 0.285714285714 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: snchanga | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: weeklong | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: guideline | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: rustic | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: process | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: me”th | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: call | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: recommend | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: taken | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: survive | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: australian | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tell | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: more | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: diamond | value: 19.6078431373  |  Highest Freq: 0.588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: on | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: oscar | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: company | value: 9.80392156863  |  Highest Freq: 0.294117647059 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: line | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: it | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: connecticut | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: adult | value: 9.52380952381  |  Highest Freq: 0.142857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: announce | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: known | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: hole | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: impair | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: work | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: soul | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: cat | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: soup | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: nebraska | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: reportedlaboratori | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: drill | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: company’ | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: control | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: prompt | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: predict | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: wallet | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: involve | value: 11.7647058824  |  Highest Freq: 0.176470588235 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: critic | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: want | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: occur | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: lamb | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: provide | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: damage | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: fete | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: answer | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: place | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: plant | value: 5.88235294118  |  Highest Freq: 0.176470588235 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: calvaria | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: attend | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: wrong | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: date | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: unlink | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: onto | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: inform | value: 15.6862745098  |  Highest Freq: 0.235294117647 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: order | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: origin | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: duke | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: over | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: fall | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: major | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: pulsedfield | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: same | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: coli | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: equip | value: 19.0476190476  |  Highest Freq: 0.285714285714 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: tula | value: 16.6666666667  |  Highest Freq: 0.5 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: pent | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: acknowledge | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: source” | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: crew | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: platform | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: serotypeson | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: valuediamonddiamond | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: microbiolog | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: return | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: greater | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: food | value: 33.3333333333  |  Highest Freq: 1.0 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: howeverwork | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: practice | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: instead | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: day | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: wont | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: term | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: meat | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: opera | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: didn | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: properlydespit | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: herald | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: each | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: found | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: bone | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: mean | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ed | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: individu | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: product | value: 35.2941176471  |  Highest Freq: 0.352941176471 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: year | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: laboratory | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: beyond | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: extract | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: special | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: really | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: canada | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: repress | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: increase | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: investigation | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: health | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: internet | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: opportune | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: wasn’t | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: wisconsin | value: 9.52380952381  |  Highest Freq: 0.285714285714 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: moan | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: million | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: reason | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: california | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: york | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: facility"tank | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ensuit | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: mainland | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: recast | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: area | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: florida | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: keep | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: filter | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: iso | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: signature | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: fallen | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: south | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: first | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: knots | value: 5.88235294118  |  Highest Freq: 0.176470588235 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: rang | value: 9.52380952381  |  Highest Freq: 0.142857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: evans | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: grade | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: number | value: 14.2857142857  |  Highest Freq: 0.214285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: owner | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: open | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: size | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: avail | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: given | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: district | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: serotyp | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: construct | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: station | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: statement | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: foodwat | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tasmanium | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tool | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: albert | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: took | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: part | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: incur | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: yellowing | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: believe | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: herself | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: thy | value: 15.6862745098  |  Highest Freq: 0.235294117647 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: factory’ | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: project | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: endure | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: lover | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: cleaner | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: quebecanoth | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: alley | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: bacilli | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: seen | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: it” | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: aside | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: thorough | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: note | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: caesar | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: take | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: transmit | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: electrophoresi | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: knew | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: naturalspremium | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: victoria | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: marin | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: multiply | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: coming“diamond | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: later | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: clean | value: 5.88235294118  |  Highest Freq: 0.176470588235 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: show | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: text | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: random | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: aren’t | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: fedor | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: “the | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: chicken | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: find | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ground | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: backmeat | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: state | value: 33.3333333333  |  Highest Freq: 0.5 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: factor | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: suspect | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: rice | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: carolina | value: 9.52380952381  |  Highest Freq: 0.285714285714 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: do | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: dogfoodadvisercom | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: “diamond | value: 7.8431372549  |  Highest Freq: 0.235294117647 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: report | value: 57.1428571429  |  Highest Freq: 0.571428571429 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: median | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: yield | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: bird | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: transparent” | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: common | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: contain | value: 23.5294117647  |  Highest Freq: 0.235294117647 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: release | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: wrote | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: secretary | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: respond | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: blew | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: creator | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: potent | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: bare | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: result | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: quarante | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: fail | value: 28.5714285714  |  Highest Freq: 0.428571428571 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: salmonellaenterica | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: voluntary | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: label | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: outside | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: sait | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: between | value: 9.52380952381  |  Highest Freq: 0.142857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: pest | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: numerous | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: email | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: way” | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: continueinfect | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: persontoperson | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: nature | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: screen | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: missouribas | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: cut | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: news | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: come | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: problem | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: both | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: protect | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ill | value: 9.52380952381  |  Highest Freq: 0.285714285714 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: against | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: gastroenter | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: jersey | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: spear | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: period | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: improper | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tennessee | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: carbon | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: vessel | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: throughout | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: decline | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: fishery | value: 9.52380952381  |  Highest Freq: 0.285714285714 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: filth | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: union | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: mark | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: rhode | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ireland | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: louisiana | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: engine | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: mike | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: contribute | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: infect | value: 14.2857142857  |  Highest Freq: 0.214285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: worker | value: 53.3333333333  |  Highest Freq: 0.8 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: iss | value: 11.7647058824  |  Highest Freq: 0.176470588235 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: nowinclud | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: observe | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: salmonellanchanga | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: case | value: 14.2857142857  |  Highest Freq: 0.214285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: tank | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: look | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: corpora | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: batch | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: aim | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: weren | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: balance | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: procedure | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: forelegs | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: seven | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: pound | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: strait | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: site | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: strain | value: 16.6666666667  |  Highest Freq: 0.5 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: itself | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: prose | value: 9.52380952381  |  Highest Freq: 0.142857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: make | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: handwash | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: outbreak | value: 53.3333333333  |  Highest Freq: 0.8 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: document | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: difficult | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: week | value: 40.0  |  Highest Freq: 0.4 | Repeated in: 3 documents 
+------------------------------------------------------------------------------------
+actual Word: hand | value: 9.80392156863  |  Highest Freq: 0.294117647059 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: flown | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: expand | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: recent | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: audit | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: frozen | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: vermont | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: kept | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: enoughoth | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: pennsylvania | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: well | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: person | value: 42.8571428571  |  Highest Freq: 0.642857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: contact | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: alabama | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: cupertino | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: taller | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: vent | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: percent | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: identify | value: 9.52380952381  |  Highest Freq: 0.142857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: aspect | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tightlipped“th | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: illinois | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: onset | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: death | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: source | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: add | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: possibly | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: sanitary | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: specie | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: contamination”on | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ignore | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: virginian | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: continue | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: shigellosi | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: become | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: voluntarily | value: 7.8431372549  |  Highest Freq: 0.117647058824 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: canst | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: cabs | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: intact | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: procedures” | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: avoid | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: moon | value: 14.2857142857  |  Highest Freq: 0.428571428571 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: situate | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: locate | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: columbus | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: measures | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: patient | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: inspect | value: 11.7647058824  |  Highest Freq: 0.176470588235 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: stem | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: host | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: post | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: shine | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: unused | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: bars | value: 20.0  |  Highest Freq: 0.6 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: package | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: island | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: industry | value: 3.92156862745  |  Highest Freq: 0.117647058824 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: melbourne | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ensure | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: petfood | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: hotly | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: nakaochi | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: colorado | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: profession | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: massachusettspennsylvanium | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: down | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: female | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: strip | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: mississippi | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: prepare | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: question | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: custom | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: decontamin | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: editor | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: energy | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: manufacture | value: 42.8571428571  |  Highest Freq: 0.642857142857 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: medium | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: north | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: enough | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: brand | value: 7.8431372549  |  Highest Freq: 0.235294117647 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: regard | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: analyse | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: link | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: indiana | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tasmania | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: eat | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: made | value: 7.8431372549  |  Highest Freq: 0.117647058824 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: friday | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: until | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: below | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: limit | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: soulcountri | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: warman | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: certain | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: measure | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: exist | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: public”fda | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: melan | value: 13.3333333333  |  Highest Freq: 0.4 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: shut | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: floor | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: storage | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: “all | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: scrape | value: 14.2857142857  |  Highest Freq: 0.428571428571 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: bestpractic | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: salmonellosi | value: 26.6666666667  |  Highest Freq: 0.4 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: test | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: puppy | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: georgian | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: tedium | value: 7.14285714286  |  Highest Freq: 0.214285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: shelter | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: “their | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: time | value: 4.7619047619  |  Highest Freq: 0.0714285714286 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------
+actual Word: update | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: risked | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: outbreakstrain | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: insect | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: massachusetts | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: began | value: 1.96078431373  |  Highest Freq: 0.0588235294118 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: ago | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: faster | value: 4.7619047619  |  Highest Freq: 0.142857142857 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: rule | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: arkansas | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: missouri | value: 2.38095238095  |  Highest Freq: 0.0714285714286 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: push | value: 6.66666666667  |  Highest Freq: 0.2 | Repeated in: 1 documents 
+------------------------------------------------------------------------------------
+actual Word: expands | value: 13.3333333333  |  Highest Freq: 0.2 | Repeated in: 2 documents 
+------------------------------------------------------------------------------------

@@ -1,66 +1,48 @@
 -Complete Sentence is: 
-laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product.
+On 24 Apr 2012, FDA issued a document that lists observations made by the FDA Representative during the inspection of a Moon Fishery facility conducted as part of this ongoing outbreak investigation.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
+0-24 Apr 2012 , FDA issued a document  .
 
-      Connecticut-10   is   S-LOC
-      Maryland-12   is   S-LOC
-      Pennsylvania-14   is   S-LOC
-      Wisconsin-16   is   S-LOC
-      test-2  is  thing-led
-      laboratory-8  is  conductor
-      Connecticut-10  is  conductor
-      Maryland-12  is  conductor
-      Pennsylvania-14  is  conductor
-      Wisconsin-16  is  conductor
-      test-2  --  laboratory-1
-      laboratory-8  --  state-5
-      laboratory-8  is  public-6
-      laboratory-8  --  health-7
-      test-2  conducted-by  laboratory-8
-      test-2  conducted-in  Connecticut-10
-      test-2  conducted-in  Maryland-12
-      test-2  conducted-in  Pennsylvania-14
-      test-2  conducted-in  Wisconsin-16
+      FDA-5   is   ORG
+      FDA-5  is  issuer
+      document-8  is  thing-issued
+      Apr-2  number  24-1
+      Apr-2  number  2012-3
+      Apr-2  sameAs  FDA-5
+      FDA-5  moreDetail  issued-6
+      iss-6  is-Arg1  document-8
           --------------------------------------------------          
-1-laboratory testing isolated salmonellae from 53 of 55 samples  .
+1-lists observations  .
 
-      test-2  is  entity-causing-isolation
-      salmonella-4  is  entity-isolated
-      53-6  is  A3
-      test-2  --  laboratory-1
-      sample-9  number  55-8
-      53-6  of  sample-9
-      test-2  isolated  salmonella-4
-      test-2  isolated-from  53-6
+      observe-2  is  *
+      observe-2  subject  lists-1
           --------------------------------------------------          
-2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+2-that observations made by the FDA Representative the inspection of a Moon Fishery facility  .
 
-      package-8   is   entity-taken-from
-      sample-4  number  55-3
-      53-1  of  sample-4
-      package-8  is  intact-7
-      scrape-14  is  frozen-10
-      scrape-14  is  yellow-11
-      scrape-14  --  fin-12
-      scrape-14  --  tuna-13
-      package-8  of  scrape-14
-      53-1  taken-from  package-8
-      53-1  taken-from  sushi-16
+      FDA-6   is   ORG
+      Moon-12   is   LOC
+      observe-2  is  creation
+      Representative-7  is  creator
+      inspect-9  is  creator
+      Representative-7  --  FDA-6
+      fail-1  --  Moon-12
+      fail-1  --  Fishery-13
+      inspect-9  of  fail-1
+      observe-2  made-by  Representative-7
+      observe-2  made  inspect-9
           --------------------------------------------------          
-3-sushi prepared with the scrape tuna product  .
+3-the inspection of a Moon Fishery facility conducted part of this ongoing outbreak investigation  .
 
-      sushi-1  is  creation
-      product-7  --  scrape-5
-      product-7  --  tuna-6
-      sushi-1  prepared-with  product-7
-          --------------------------------------------------          
-4-the implicated scrape tuna product  .
-
-      product-5  is  thing-implicated
-      product-5  is  implicated-2
-      product-5  --  scrape-3
-      product-5  --  tuna-4
+      Moon-5   is   MISC
+      inspect-2  is  thing-led
+      part-9  is  thing-led
+      fail-7  --  Moon-5
+      fail-7  --  Fishery-6
+      inspect-2  of  fail-7
+      investing-1  is  onto-1
+      investing-1  --  outbreak-13
+      part-9  of  investing-1
+      inspect-2  conducted  part-9
           --------------------------------------------------          

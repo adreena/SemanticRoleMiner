@@ -1,0 +1,50 @@
+import sys
+import os
+
+from stemming.porter2 import stem
+import en
+def makeDict(inputFile):
+	dic={}
+	inputf=inputFile.read()
+	#round 0 lowercase
+	inputf=inputf.strip(',.').lower()
+	symlist=["1","2","3","4","5","6","7","8","9","0","(",")",";",":",",","/","-","_","+","=","[","]","{","}","*","&","%","$","#","@","!","~",".","?","<",">","`"]
+	inputf=inputf.replace("\n"," ")
+	for item in symlist: inputf=inputf.replace(item,"")
+
+	inputlist=inputf.split(" ")
+	#round 2
+	omitlist=["not","am","the","is","are","I","you","have","has","had","been","being","me","they","she","he","we","us","her","his","their","our","of","from","with","in","at","on","off","under","for","or","and","where","when","why","what","who","whose","whom","how","each","than","other","that","to","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+
+	for item in inputlist:
+		item=stem(item)
+		temp1=en.noun.singular(item)
+		if temp1!=item: #change has occured so needs spell checking
+			item=en.spelling.suggest(item)
+		temp2=stem(item)
+		if temp2 != item: #change has occured, so needs spell checking
+			item=en.spelling.suggest(item)
+		print item
+		if item not in omitlist and len(item)>1:
+			if item not in dic :
+				dic[item]=1
+			else:
+				dic[item]+=1
+	print dic
+	maxVal=-1
+	for key,val in dic.items():
+		if val>maxVal: 
+			maxVal=val
+	print maxVal
+        for key,val in dic.items():
+		dic[key]=(val/maxVal)
+		
+	return dic
+
+
+
+
+inputFile=open("/home/kimia/srl/python/SemanticRoleMiner/Python-TF-IDF-master/input1.txt","r")
+print makeDict(inputFile)
+

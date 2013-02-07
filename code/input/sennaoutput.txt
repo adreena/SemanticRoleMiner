@@ -1,45 +1,35 @@
-     laboratory	        NN	      B-NP	         O	              -	      B-A1	      B-A0	         O	         O	         O	(S1(S(NP(NP*
-        testing	        NN	      E-NP	         O	              -	      E-A1	      I-A0	         O	         O	         O	*)
-      conducted	       VBN	      S-VP	         O	      conducted	       S-V	      I-A0	         O	         O	         O	(VP*
-             by	        IN	      S-PP	         O	              -	      B-A0	      I-A0	         O	         O	         O	(PP*
-          state	        NN	      B-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	(NP*
-         public	        JJ	      I-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-         health	        NN	      I-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-   laboratories	       NNS	      E-NP	         O	              -	      I-A0	      I-A0	         O	         O	         O	*))
-             in	        IN	      S-PP	         O	              -	      I-A0	      I-A0	         O	         O	         O	(PP*
-    Connecticut	       NNP	      S-NP	     S-LOC	              -	      I-A0	      I-A0	         O	         O	         O	(NP(NP*)
-              ,	         ,	         O	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-       Maryland	       NNP	      S-NP	     S-LOC	              -	      I-A0	      I-A0	         O	         O	         O	(NP*)
-              ,	         ,	         O	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-   Pennsylvania	       NNP	      S-NP	     S-LOC	              -	      I-A0	      I-A0	         O	         O	         O	(NP*)
-            and	        CC	         O	         O	              -	      I-A0	      I-A0	         O	         O	         O	*
-      Wisconsin	       NNP	      S-NP	     S-LOC	              -	      E-A0	      E-A0	         O	         O	         O	(NP*)))))
-            has	       VBZ	      B-VP	         O	              -	         O	         O	         O	         O	         O	(VP*
-       isolated	       VBN	      E-VP	         O	       isolated	         O	       S-V	         O	         O	         O	(NP*
-    salmonellae	        NN	      S-NP	         O	              -	         O	      S-A1	         O	         O	         O	*)
-           from	        IN	      S-PP	         O	              -	         O	      B-A3	         O	         O	         O	(PP*
-             53	        CD	      S-NP	         O	              -	         O	      I-A3	         O	         O	         O	(NP(NP*)
-             of	        IN	      S-PP	         O	              -	         O	      I-A3	         O	         O	         O	(PP*
-             55	        CD	      B-NP	         O	              -	         O	      I-A3	         O	         O	         O	(NP(NP*
-        samples	       NNS	      E-NP	         O	              -	         O	      I-A3	         O	         O	         O	*)
-          taken	       VBN	      S-VP	         O	          taken	         O	      I-A3	       S-V	         O	         O	(VP*
-           from	        IN	      S-PP	         O	              -	         O	      I-A3	         O	         O	         O	(PP*
-         intact	        JJ	      B-NP	         O	              -	         O	      I-A3	         O	      B-A2	         O	(NP(NP*
-       packages	       NNS	      E-NP	         O	              -	         O	      I-A3	         O	      I-A2	         O	*)
-             of	        IN	      S-PP	         O	              -	         O	      I-A3	         O	      I-A2	         O	(PP*
-         frozen	        JJ	      B-NP	         O	              -	         O	      I-A3	         O	      I-A2	         O	(NP(NP*
-         yellow	        JJ	      I-NP	         O	              -	         O	      I-A3	         O	      I-A2	         O	*
-            fin	        NN	      I-NP	         O	              -	         O	      I-A3	         O	      I-A2	         O	*
-           tuna	        NN	      I-NP	         O	              -	         O	      I-A3	         O	      E-A2	         O	*
-         scrape	        NN	      E-NP	         O	         scrape	         O	      I-A3	         O	       S-V	         O	*)
-           from	        IN	      S-PP	         O	              -	         O	      I-A3	         O	      B-A3	         O	(PP*
-          sushi	        NN	      S-NP	         O	              -	         O	      I-A3	         O	      I-A3	         O	(NP(NP*)
-       prepared	       VBN	      S-VP	         O	              -	         O	      I-A3	         O	      I-A3	         O	(VP*
-           with	        IN	      S-PP	         O	              -	         O	      I-A3	         O	      I-A3	         O	(PP*
-            the	        DT	      B-NP	         O	              -	         O	      I-A3	         O	      I-A3	         O	(NP*
-     implicated	       VBN	      I-NP	         O	     implicated	         O	      I-A3	         O	      I-A3	       S-V	*
-         scrape	        NN	      I-NP	         O	              -	         O	      I-A3	         O	      I-A3	      B-A1	*
-           tuna	        NN	      I-NP	         O	              -	         O	      I-A3	         O	      I-A3	      I-A1	*
-        product	        NN	      E-NP	         O	              -	         O	      E-A3	         O	      E-A3	      E-A1	*)))))))))))))))
-              .	         .	         O	         O	              -	         O	         O	         O	         O	         O	*))
+             On	        IN	      S-PP	         O	              -	  B-AM-TMP	         O	         O	         O	(S1(S(PP*
+             24	        CD	      B-NP	         O	              -	  I-AM-TMP	         O	         O	         O	(NP*
+            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	         O	         O	         O	*
+           2012	        CD	      E-NP	         O	              -	  E-AM-TMP	         O	         O	         O	*))
+              ,	         ,	         O	         O	              -	         O	         O	         O	         O	*
+            FDA	       NNP	      S-NP	     S-ORG	              -	      S-A0	         O	         O	         O	(NP*)
+         issued	       VBD	      S-VP	         O	         issued	       S-V	         O	         O	         O	(VP*
+              a	        DT	      B-NP	         O	              -	      B-A1	      B-A0	         O	         O	(SBAR(S(NP(NP*
+       document	        NN	      E-NP	         O	              -	      I-A1	      E-A0	         O	         O	*)
+           that	       WDT	      S-NP	         O	              -	      I-A1	    S-R-A0	         O	         O	(SBAR(WHNP*)
+          lists	       VBZ	      S-VP	         O	          lists	      I-A1	       S-V	         O	         O	(S(VP*
+   observations	       NNS	      S-NP	         O	              -	      I-A1	      B-A1	      S-A1	         O	(NP(NP*)
+           made	       VBN	      S-VP	         O	           made	      I-A1	      I-A1	       S-V	         O	(VP*
+             by	        IN	      S-PP	         O	              -	      I-A1	      I-A1	      B-A0	         O	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A1	      I-A1	      I-A0	         O	(NP*
+            FDA	       NNP	      I-NP	         O	              -	      I-A1	      I-A1	      I-A0	         O	*
+ Representative	       NNP	      E-NP	         O	              -	      I-A1	      I-A1	      E-A0	         O	*))))
+         during	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  B-AM-TMP	         O	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	         O	(NP(NP*
+     inspection	        NN	      E-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	         O	*)
+             of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	         O	(PP*
+              a	        DT	      B-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	      B-A1	(NP*
+           Moon	       NNP	      I-NP	    B-MISC	              -	      I-A1	      I-A1	  I-AM-TMP	      I-A1	*
+        Fishery	       NNP	      I-NP	    E-MISC	              -	      I-A1	      I-A1	  I-AM-TMP	      I-A1	*
+       facility	        NN	      E-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	      E-A1	*))))))))
+      conducted	       VBD	      S-VP	         O	      conducted	      I-A1	      I-A1	  I-AM-TMP	       S-V	(VP*
+             as	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  B-AM-PNC	(PP*
+           part	        NN	      S-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	(PP*
+           this	        DT	      B-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	(NP*
+        ongoing	        JJ	      I-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	*
+       outbreak	        NN	      I-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	*
+  investigation	        NN	      E-NP	         O	              -	      E-A1	      E-A1	  E-AM-TMP	  E-AM-PNC	*))))))))
+              .	         .	         O	         O	              -	         O	         O	         O	         O	*))
 

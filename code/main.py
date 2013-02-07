@@ -22,6 +22,9 @@ if __name__=="__main__":
 
 	#1
 	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","r")	
+	se=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input1.txt","r")
+	for s in se.readlines():
+		print s
 	sent=sentence.readline()
 	sentence.close()
 
@@ -94,6 +97,7 @@ if __name__=="__main__":
 		
 		#print "vlist: ",vlist
 		if len(vlist)>1:
+			print vlist
 			STs=[]
 			result=scanVerb(sent,vlist)
 			print result
