@@ -1,144 +1,80 @@
-0-24 Apr 2012 , FDA issued a document  .
+0-ali , hassan , johnbrother and melisister went to university  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
-  (NP
-    (NP (CD 24) (NNP Apr) (CD 2012))
-    (, ,)
-    (NP
-      (NP (NNP FDA))
-      (VP (VBN issued)
-        (NP (DT a) (NN document))))
+  (S
+    (NP (NN ali) (, ,) (NN hassan) (, ,) (NN johnbrother)
+      (CC and)
+      (NN melisister))
+    (VP (VBD went)
+      (PP (TO to)
+        (NP (NN university))))
     (. .)))
 
-num(Apr-2, 24-1)
-root(ROOT-0, Apr-2)
-num(Apr-2, 2012-3)
-appos(Apr-2, FDA-5)
-partmod(FDA-5, issued-6)
-det(document-8, a-7)
-dobj(issued-6, document-8)
+nsubj(went-8, ali-1)
+conj_and(ali-1, hassan-3)
+nsubj(went-8, hassan-3)
+conj_and(ali-1, johnbrother-5)
+nsubj(went-8, johnbrother-5)
+conj_and(ali-1, melisister-7)
+nsubj(went-8, melisister-7)
+root(ROOT-0, went-8)
+prep_to(went-8, university-10)
 
 --Senna Output:------------------------------------------------------ 
-             24	        CD	      B-NP	         O	              -	         O	(S1(S(NP*
-            Apr	       NNP	      I-NP	         O	              -	         O	*
-           2012	        CD	      E-NP	         O	              -	         O	*)
-              ,	         ,	         O	         O	              -	         O	*
-            FDA	       NNP	      S-NP	     S-ORG	              -	      S-A0	(NP*)
-         issued	       VBD	      S-VP	         O	         issued	       S-V	(VP*
-              a	        DT	      B-NP	         O	              -	      B-A1	(NP*
-       document	        NN	      E-NP	         O	              -	      E-A1	*))
+            ali	        LS	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+         hassan	        NN	      I-NP	         O	              -	      I-A0	*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+    johnbrother	        NN	      I-NP	         O	              -	      I-A0	*
+            and	        CC	      I-NP	         O	              -	      I-A0	*
+     melisister	        NN	      E-NP	         O	              -	      E-A0	*)
+           went	       VBD	      S-VP	         O	           went	       S-V	(VP*
+             to	        TO	      S-PP	         O	              -	      B-A4	(PP*
+     university	        NN	      S-NP	         O	              -	      E-A4	(NP*)))
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------
-1-lists observations  .
+1-ali , hassan , johnbrother and melisister came back together on 4Apr2010  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
-    (NP (NNS lists))
-    (VP (VBZ observations))
+    (NP (NN ali) (, ,) (NN hassan) (, ,) (NN johnbrother)
+      (CC and)
+      (NN melisister))
+    (VP (VBD came)
+      (PRT (RP back))
+      (ADVP (RB together))
+      (PP (IN on)
+        (NP (CD 4Apr2010))))
     (. .)))
 
-nsubj(observations-2, lists-1)
-root(ROOT-0, observations-2)
+nsubj(came-8, ali-1)
+conj_and(ali-1, hassan-3)
+nsubj(came-8, hassan-3)
+conj_and(ali-1, johnbrother-5)
+nsubj(came-8, johnbrother-5)
+conj_and(ali-1, melisister-7)
+nsubj(came-8, melisister-7)
+root(ROOT-0, came-8)
+prt(came-8, back-9)
+advmod(came-8, together-10)
+prep_on(came-8, 4Apr2010-12)
 
 --Senna Output:------------------------------------------------------ 
-          lists	       NNS	      B-NP	         O	              -	(S1(NP*
-   observations	       NNS	      E-NP	         O	              -	*
-              .	         .	         O	         O	              -	*))
-
-----------------------------------------------------------------------
-2-that observations made by the FDA Representative the inspection of a Moon Fishery facility  .
-
--Stanford Output: ----------------------------------------------------
-(ROOT
-  (S
-    (NP (DT that) (NNS observations))
-    (VP (VBD made)
-      (PP (IN by)
-        (NP (DT the) (NNP FDA) (NNP Representative)))
-      (NP
-        (NP (DT the) (NN inspection))
-        (PP (IN of)
-          (NP (DT a) (NNP Moon) (NNP Fishery) (NN facility)))))
-    (. .)))
-
-det(observations-2, that-1)
-nsubj(made-3, observations-2)
-root(ROOT-0, made-3)
-det(Representative-7, the-5)
-nn(Representative-7, FDA-6)
-prep_by(made-3, Representative-7)
-det(inspection-9, the-8)
-dobj(made-3, inspection-9)
-det(facility-14, a-11)
-nn(facility-14, Moon-12)
-nn(facility-14, Fishery-13)
-prep_of(inspection-9, facility-14)
-
---Senna Output:------------------------------------------------------ 
-           that	        IN	    S-SBAR	         O	              -	         O	(S1(X(SBAR*
-   observations	       NNS	      S-NP	         O	              -	      S-A1	(S(NP*)
-           made	       VBN	      S-VP	         O	           made	       S-V	(VP(VP*
-             by	        IN	      S-PP	         O	              -	      B-A0	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A0	(NP*
-            FDA	       NNP	      I-NP	     S-ORG	              -	      I-A0	*
- Representative	       NNP	      E-NP	         O	              -	      I-A0	*)))
-            the	        DT	      B-NP	         O	              -	      I-A0	(NP(NP*
-     inspection	        NN	      E-NP	         O	              -	      I-A0	*)
-             of	        IN	      S-PP	         O	              -	      I-A0	(PP*
-              a	        DT	      B-NP	         O	              -	      I-A0	(NP*
-           Moon	       NNP	      I-NP	     B-LOC	              -	      I-A0	*
-        Fishery	       NNP	      I-NP	     E-LOC	              -	      I-A0	*
-       facility	        NN	      E-NP	         O	              -	      E-A0	*))))))
-              .	         .	         O	         O	              -	         O	*))
-
-----------------------------------------------------------------------
-3-the inspection of a Moon Fishery facility conducted part of this ongoing outbreak investigation  .
-
--Stanford Output: ----------------------------------------------------
-(ROOT
-  (S
-    (NP
-      (NP (DT the) (NN inspection))
-      (PP (IN of)
-        (NP (DT a) (NNP Moon) (NNP Fishery) (NN facility))))
-    (VP (VBD conducted)
-      (NP
-        (NP (NN part))
-        (PP (IN of)
-          (NP (DT this) (JJ ongoing) (NN outbreak) (NN investigation)))))
-    (. .)))
-
-det(inspection-2, the-1)
-nsubj(conducted-8, inspection-2)
-det(facility-7, a-4)
-nn(facility-7, Moon-5)
-nn(facility-7, Fishery-6)
-prep_of(inspection-2, facility-7)
-root(ROOT-0, conducted-8)
-dobj(conducted-8, part-9)
-det(investigation-14, this-11)
-amod(investigation-14, ongoing-12)
-nn(investigation-14, outbreak-13)
-prep_of(part-9, investigation-14)
-
---Senna Output:------------------------------------------------------ 
-            the	        DT	      B-NP	         O	              -	      B-A1	(S1(S(NP(NP*
-     inspection	        NN	      E-NP	         O	              -	      I-A1	*)
-             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
-              a	        DT	      B-NP	         O	              -	      I-A1	(NP*
-           Moon	       NNP	      I-NP	    B-MISC	              -	      I-A1	*
-        Fishery	       NNP	      I-NP	    E-MISC	              -	      I-A1	*
-       facility	        NN	      E-NP	         O	              -	      E-A1	*)))
-      conducted	       VBD	      S-VP	         O	      conducted	       S-V	(VP*
-           part	        NN	      S-NP	         O	              -	      B-A1	(NP(NP*)
-             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
-           this	        DT	      B-NP	         O	              -	      I-A1	(NP*
-        ongoing	        JJ	      I-NP	         O	              -	      I-A1	*
-       outbreak	        NN	      I-NP	         O	              -	      I-A1	*
-  investigation	        NN	      E-NP	         O	              -	      E-A1	*))))
+            ali	        LS	      B-NP	         O	              -	      B-A1	(S1(S(NP*
+              ,	         ,	      I-NP	         O	              -	      I-A1	*
+         hassan	        NN	      I-NP	         O	              -	      I-A1	*
+              ,	         ,	      I-NP	         O	              -	      I-A1	*
+    johnbrother	        NN	      I-NP	         O	              -	      I-A1	*
+            and	        CC	      I-NP	         O	              -	      I-A1	*
+     melisister	        NN	      E-NP	         O	              -	      E-A1	*)
+           came	       VBD	      S-VP	         O	           came	       S-V	(VP*
+           back	        RB	    S-ADVP	         O	              -	  B-AM-DIR	(ADVP*)
+       together	        RB	    S-ADVP	         O	              -	  E-AM-DIR	(ADVP*)
+             on	        IN	      S-PP	         O	              -	  B-AM-MNR	(PP*
+       4Apr2010	       NNS	      S-NP	         O	              -	  E-AM-MNR	(NP*)))
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------

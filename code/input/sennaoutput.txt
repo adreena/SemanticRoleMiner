@@ -1,35 +1,18 @@
-             On	        IN	      S-PP	         O	              -	  B-AM-TMP	         O	         O	         O	(S1(S(PP*
-             24	        CD	      B-NP	         O	              -	  I-AM-TMP	         O	         O	         O	(NP*
-            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	         O	         O	         O	*
-           2012	        CD	      E-NP	         O	              -	  E-AM-TMP	         O	         O	         O	*))
-              ,	         ,	         O	         O	              -	         O	         O	         O	         O	*
-            FDA	       NNP	      S-NP	     S-ORG	              -	      S-A0	         O	         O	         O	(NP*)
-         issued	       VBD	      S-VP	         O	         issued	       S-V	         O	         O	         O	(VP*
-              a	        DT	      B-NP	         O	              -	      B-A1	      B-A0	         O	         O	(SBAR(S(NP(NP*
-       document	        NN	      E-NP	         O	              -	      I-A1	      E-A0	         O	         O	*)
-           that	       WDT	      S-NP	         O	              -	      I-A1	    S-R-A0	         O	         O	(SBAR(WHNP*)
-          lists	       VBZ	      S-VP	         O	          lists	      I-A1	       S-V	         O	         O	(S(VP*
-   observations	       NNS	      S-NP	         O	              -	      I-A1	      B-A1	      S-A1	         O	(NP(NP*)
-           made	       VBN	      S-VP	         O	           made	      I-A1	      I-A1	       S-V	         O	(VP*
-             by	        IN	      S-PP	         O	              -	      I-A1	      I-A1	      B-A0	         O	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A1	      I-A1	      I-A0	         O	(NP*
-            FDA	       NNP	      I-NP	         O	              -	      I-A1	      I-A1	      I-A0	         O	*
- Representative	       NNP	      E-NP	         O	              -	      I-A1	      I-A1	      E-A0	         O	*))))
-         during	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  B-AM-TMP	         O	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	         O	(NP(NP*
-     inspection	        NN	      E-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	         O	*)
-             of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	         O	(PP*
-              a	        DT	      B-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	      B-A1	(NP*
-           Moon	       NNP	      I-NP	    B-MISC	              -	      I-A1	      I-A1	  I-AM-TMP	      I-A1	*
-        Fishery	       NNP	      I-NP	    E-MISC	              -	      I-A1	      I-A1	  I-AM-TMP	      I-A1	*
-       facility	        NN	      E-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	      E-A1	*))))))))
-      conducted	       VBD	      S-VP	         O	      conducted	      I-A1	      I-A1	  I-AM-TMP	       S-V	(VP*
-             as	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  B-AM-PNC	(PP*
-           part	        NN	      S-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	(NP(NP*)
-             of	        IN	      S-PP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	(PP*
-           this	        DT	      B-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	(NP*
-        ongoing	        JJ	      I-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	*
-       outbreak	        NN	      I-NP	         O	              -	      I-A1	      I-A1	  I-AM-TMP	  I-AM-PNC	*
-  investigation	        NN	      E-NP	         O	              -	      E-A1	      E-A1	  E-AM-TMP	  E-AM-PNC	*))))))))
-              .	         .	         O	         O	              -	         O	         O	         O	         O	*))
+            ali	        LS	      B-NP	         O	              -	      B-A0	      B-A1	(S1(S(NP*
+              ,	         ,	      I-NP	         O	              -	      I-A0	      I-A1	*
+         hassan	        NN	      I-NP	         O	              -	      I-A0	      I-A1	*
+              ,	         ,	      I-NP	         O	              -	      I-A0	      I-A1	*
+    johnbrother	        NN	      I-NP	         O	              -	      I-A0	      I-A1	*
+            and	        CC	      I-NP	         O	              -	      I-A0	      I-A1	*
+     melisister	        NN	      E-NP	         O	              -	      E-A0	      E-A1	*)
+           went	       VBD	      S-VP	         O	           went	       S-V	         O	(VP(VP*
+             to	        TO	      S-PP	         O	              -	      B-A4	         O	(PP*
+     university	        NN	      S-NP	         O	              -	      E-A4	         O	(NP*)))
+            and	        CC	         O	         O	              -	         O	         O	*
+           came	       VBD	      S-VP	         O	           came	         O	       S-V	(VP*
+           back	        RB	    S-ADVP	         O	              -	         O	  S-AM-DIR	(ADVP*)
+       together	        RB	    S-ADVP	         O	              -	         O	  S-AM-MNR	(ADVP*)
+             on	        IN	      S-PP	         O	              -	         O	  B-AM-MNR	(PP*
+       4Apr2010	       NNS	      S-NP	         O	              -	         O	  E-AM-MNR	(NP*))))
+              .	         .	         O	         O	              -	         O	         O	*))
 

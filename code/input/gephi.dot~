@@ -1,0 +1,19 @@
+digraph sample {
+"OriginEnergy-2" -> "MISC" [ label = " is " ];
+"DownerEngineering-4" -> "ORG" [ label = " is " ];
+"spokesman-5" -> "Sayer" [ label = "is" ];
+"spokesman-5" -> "OriginEnergy-2" [ label = "--" ];
+"spokesman-5" -> "DownerEngineering-4" [ label = "--" ];
+}
+digraph sample {
+"TasmaniasDepartment-4" -> "ORG" [ label = " is " ];
+"they-1" -> "worker" [ label = "is" ];
+"TasmaniasDepartment-4" -> "job" [ label = " is " ];
+"TasmaniasDepartment-4" -> "Health-6" [ label = "of" ];
+"they-1" -> "TasmaniasDepartment-4" [ label = "working-with" ];
+}
+digraph sample {
+"guideline-3" -> "thing-following" [ label = " is " ];
+"guideline-3" -> "best-1" [ label = "is" ];
+"guideline-3" -> "practice-2" [ label = "--" ];
+}

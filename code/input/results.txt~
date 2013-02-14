@@ -1,69 +1,13 @@
 -Complete Sentence is: 
-On 10 May 2012 Moon Fishery India, the manufacturer of the frozen yellow fin tuna Nakaochi scrape recently recalled, expanded the voluntary recall to include its 22-pound boxes of Tuna Strips, Product of India, marked as AA or AAA Grade because the product has the potential to be contaminated with salmonellae.
+ali and hassans sister went for shopping.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-Moon Fishery India , the manufacturer of the frozen yellow fin tuna Nakaochi scrape recently recalled  .
+0-ali and hassans sister went shopping  .
 
-      Moon-1   is   LOC
-      Nakaochi-13   is   MISC
-      recent-1  is  TMP
-      India-3  --  Moon-1
-      India-3  --  Fishery-2
-      India-3  sameAs  manufacture-6
-      scrape-14  is  frozen-9
-      scrape-14  is  yellow-10
-      scrape-14  --  fin-11
-      scrape-14  --  tuna-12
-      scrape-14  --  Nakaochi-13
-      manufacture-6  of  scrape-14
-      India-3  recalled-moreDetail  recent-1
-          --------------------------------------------------          
-1-10 May 2012 Moon Fishery India , the manufacturer of the frozen yellow fin tuna expanded  .
-
-      Moon-4   is   LOC
-      manufacture-9  is  thing-grown
-      May-2  number  10-1
-      May-2  number  2012-3
-      India-6  --  Moon-4
-      India-6  --  Fishery-5
-      tuna-15  is  frozen-12
-      tuna-15  is  yellow-13
-      tuna-15  --  fin-14
-      manufacture-9  of  tuna-15
-          --------------------------------------------------          
-2-the voluntary recall to include its 22 boxes of Tuna Strips , Product of India  .
-
-      Tuna-10   is   ORG
-      India-15   is   LOC
-      box-8   is   theme
-      regal-3  is-Arg0  voluntary-2
-      box-8  possession  it-6
-      box-8  number  22-7
-      include-5  is-Arg1  box-8
-      Strips-11  --  Tuna-10
-      box-8  of  Strips-11
-      Strips-11  sameAs  Product-13
-      Product-13  of  India-15
-          --------------------------------------------------          
-3-the voluntary recall marked AA or AAA Grade  .
-
-      regal-3  is  signifier
-      AA-5  is  signified
-      Grade-8  is  signified
-      regal-3  is  voluntary-2
-      Grade-8  --  AAA-7
-      regal-3  marked  AA-5
-      regal-3  marked  Grade-8
-          --------------------------------------------------          
-4-because the product has the potential  .
-
-      product-3  is  A0
-      potent-6  is  A1
-      product-3  has  potent-6
-          --------------------------------------------------          
-5-the potential to contaminated with salmonellae  .
-
-      salmonella-6  is  contaminant
-      potent-2  contaminated-with  salmonella-6
+      sister-4  is  A0
+      shop-6  is  extent
+      sister-4  --  ali-1
+      sister-4  --  bassano-3
+      sister-4  went-object  shop-6
           --------------------------------------------------          

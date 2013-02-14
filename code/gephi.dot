@@ -1,0 +1,17 @@
+digraph sample {
+"BassStrait-9" -> "MISC" [ label = " is " ];
+"worker-1" -> "Wanter" [ label = "is" ];
+"platform-6" -> "ga-4" [ label = "--" ];
+"platform-6" -> "product-5" [ label = "--" ];
+"worker-1" -> "platform-6" [ label = "on" ];
+"platform-6" -> "BassStrait-9" [ label = "in" ];
+"bars-2" -> "entity-in-motion" [ label = "is" ];
+"port-5" -> "end-point" [ label = "is" ];
+"outbreak-9" -> "TMP" [ label = "is" ];
+"bars-2" -> "their-1" [ label = "possession" ];
+"outbreak-9" -> "major-8" [ label = "is" ];
+"outbreak-9" -> "salmonella-11" [ label = "of" ];
+"outbreak-9" -> "gastroenter-13" [ label = "of" ];
+"bars-2" -> "port-5" [ label = "returned-to" ];
+"bars-2" -> "outbreak-9" [ label = "returned-after" ];
+}

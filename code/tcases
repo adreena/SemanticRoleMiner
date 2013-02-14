@@ -1,0 +1,101 @@
+t1- workers on a gas production platform in the BassStrait want their barge returned to port after a major outbreak of salmonella and gastroenteritis.
+
+    workers on a gas production platform in the BassStrait want  .
+
+          BassStrait-9   is   MISC
+          worker-1  is  Wanter
+          platform-6  --  ga-4
+          platform-6  --  product-5
+          worker-1  on  platform-6
+          platform-6  in  BassStrait-9
+
+    their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
+
+          bars-2  is  entity-in-motion
+          port-5  is  end-point
+          outbreak-9  is  TMP
+          bars-2  possession  their-1
+          outbreak-9  is  major-8
+          outbreak-9  of  salmonella-11
+          outbreak-9  of  gastroenter-13
+          bars-2  returned-to  port-5
+          bars-2  returned-after  outbreak-9
+------------------------------------------------------------------------------------------------------------------------------------
+t2- a total of 316 individuals infected with the outbreak strains of SalmonellaBareilly or SalmonellaNchanga have been reported from 26 states and the District of Columbia.
+
+    a total of 316 individuals infected with the outbreak strains of SalmonellaBareilly or SalmonellaNchanga  .
+
+          SalmonellaBareilli-12   is   MISC
+          SalmonellaNchanga-14   is   LOC
+          total-2  is  thing-becoming-infected
+          strain-10   is   infectant
+          individu-5  is  316-4
+          total-2  of  individu-5
+          strain-10  --  outbreak-9
+          strain-10  of  SalmonellaBareilly-12
+          strain-10  of  SalmonellaNchanga-14
+          total-2  infected-with  strain-10
+
+    a total of 316 individuals reported from 26 states and the District of Columbia  .
+
+          District-12   is   ORG
+          total-2  is  Reporter
+          state-9  is  thing-reported
+          District-12  is  thing-reported
+          individu-5  is  316-4
+          total-2  of  individu-5
+          state-9  number  26-8
+          District-12  of  Columbia-14
+          total-2  reported-from  state-9
+          total-2  reported-from  District-12
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+t3-The Bass Strait is the body of water separating Tasmania from the south of the Australian mainland, specifically the state of Victoria.
+	0-the BassStrait is the body of water  .
+
+	      BassStrait-2   is   LOC
+	      body-5  is  *)
+	      body-5  subject  BassStrait-2
+	      body-5  of  water-7
+		  --------------------------------------------------          
+	1-the BassStrait the body of water separating Tasmania from the south of the Australian mainland , specifically the state of Victoria  .
+
+	      BassStrait-2   is   MISC
+	      Tasmania-8   is   LOC
+	      Australian-14   is   MISC
+	      Victoria-21   is   LOC
+	      water-6  is  entity-causing-separation
+	      Tasmania-8  is  thing-being-divided
+	      south-11   is   source
+	      body-4  subject  BassStrait-2
+	      body-4  of  water-6
+	      water-6  moreDetail  separating-7
+	      spear-7  object  Tasmania-8
+	      spear-7  from  south-11
+	      mainland-15  is  Australian-14
+	      south-11  of  mainland-15
+	      state-19  of  Victoria-21
+-----------------------------------------------------------------------------------   
+t4- an OriginEnergy and DownerEngineering spokesman said they had been working with TasmaniasDepartment of Health and best practice guidelines had been followed.
+
+	0-an OriginEnergy and DownerEngineering spokesman said  .
+
+	      OriginEnergi-2   is   MISC
+	      DownerEngin-4   is   ORG
+	      spokesman-5  is  Sayer
+	      spokesman-5  --  OriginEnergy-2
+	      spokesman-5  --  DownerEngineering-4
+		  --------------------------------------------------          
+	1-they working with TasmaniasDepartment of Health  .
+
+	      TasmaniasDepart-4   is   ORG
+	      they-1  is  worker
+	      TasmaniasDepartment-4   is   job
+	      TasmaniasDepartment-4  of  Health-6
+	      they-1  working-with  TasmaniasDepartment-4
+		  --------------------------------------------------          
+	2-best practice guidelines followed  .
+
+	      guideline-3   is   thing-following
+	      guideline-3  is  best-1
+	      guideline-3  --  practice-2

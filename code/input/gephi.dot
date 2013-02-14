@@ -1,0 +1,28 @@
+digraph sample {
+"ali" -> "A0" [ label = "is" ];
+"hassan" -> "A0" [ label = "is" ];
+"johnbrother" -> "A0" [ label = "is" ];
+"melisister" -> "A0" [ label = "is" ];
+"university" -> "end-point" [ label = " is " ];
+"ali" -> "university" [ label = "went-to" ];
+"hassan" -> "university" [ label = "went-to" ];
+"johnbrother" -> "university" [ label = "went-to" ];
+"melisister" -> "university" [ label = "went-to" ];
+}
+digraph sample {
+"ali" -> "entity-in-motion-/-'comer'" [ label = "is" ];
+"hassan" -> "entity-in-motion-/-'comer'" [ label = "is" ];
+"johnbrother" -> "entity-in-motion-/-'comer'" [ label = "is" ];
+"melisister" -> "entity-in-motion-/-'comer'" [ label = "is" ];
+"back" -> "DIR" [ label = "is" ];
+"together" -> "DIR" [ label = "is" ];
+"4Apr2010" -> "MNR" [ label = "is" ];
+"ali" -> "together" [ label = "came-moreDetail" ];
+"ali" -> "4Apr2010" [ label = "came-on" ];
+"hassan" -> "together" [ label = "came-moreDetail" ];
+"hassan" -> "4Apr2010" [ label = "came-on" ];
+"johnbrother" -> "together" [ label = "came-moreDetail" ];
+"johnbrother" -> "4Apr2010" [ label = "came-on" ];
+"melisister" -> "together" [ label = "came-moreDetail" ];
+"melisister" -> "4Apr2010" [ label = "came-on" ];
+}
