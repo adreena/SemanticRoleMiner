@@ -1,14 +1,15 @@
-            ali	        LS	      B-NP	         O	              -	      B-A1	(S1(S(NP*
-              ,	         ,	      I-NP	         O	              -	      I-A1	*
-         hassan	        NN	      I-NP	         O	              -	      I-A1	*
-              ,	         ,	      I-NP	         O	              -	      I-A1	*
-    johnbrother	        NN	      I-NP	         O	              -	      I-A1	*
-            and	        CC	      I-NP	         O	              -	      I-A1	*
-     melisister	        NN	      E-NP	         O	              -	      E-A1	*)
-           came	       VBD	      S-VP	         O	           came	       S-V	(VP*
-           back	        RB	    S-ADVP	         O	              -	  B-AM-DIR	(ADVP*)
-       together	        RB	    S-ADVP	         O	              -	  E-AM-DIR	(ADVP*)
-             on	        IN	      S-PP	         O	              -	  B-AM-MNR	(PP*
-       4Apr2010	       NNS	      S-NP	         O	              -	  E-AM-MNR	(NP*)))
+            ali	        LS	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+         hassan	        NN	      I-NP	         O	              -	      I-A0	*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+    johnbrother	        NN	      I-NP	         O	              -	      I-A0	*
+            and	        CC	      I-NP	         O	              -	      I-A0	*
+     melisister	        NN	      E-NP	         O	              -	      E-A0	*)
+        visited	       VBD	      S-VP	         O	        visited	       S-V	(VP*
+            her	       PRP	      S-NP	         O	              -	      S-A1	(NP*)
+             on	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
+              4	        CD	      B-NP	         O	              -	  I-AM-TMP	(NP*
+            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	*
+           2010	        CD	      E-NP	         O	              -	  E-AM-TMP	*)))
               .	         .	         O	         O	              -	         O	*))
 

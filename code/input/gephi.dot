@@ -1,28 +1,23 @@
 digraph sample {
-"ali" -> "A0" [ label = "is" ];
-"hassan" -> "A0" [ label = "is" ];
-"johnbrother" -> "A0" [ label = "is" ];
-"melisister" -> "A0" [ label = "is" ];
-"university" -> "end-point" [ label = " is " ];
-"ali" -> "university" [ label = "went-to" ];
-"hassan" -> "university" [ label = "went-to" ];
-"johnbrother" -> "university" [ label = "went-to" ];
-"melisister" -> "university" [ label = "went-to" ];
+"sister-7" -> "university-10" [ label = "went-to" ];
+"ali-1" -> "A0" [ label = "is" ];
+"hassan-3" -> "A0" [ label = "is" ];
+"brother-5" -> "john" [ label = "of" ];
+"sister-7" -> "A0" [ label = "is" ];
+"sister-7" -> "meli" [ label = "of" ];
+"brother-5" -> "A0" [ label = "is" ];
+"university-10" -> "end-point" [ label = " is " ];
 }
 digraph sample {
-"ali" -> "entity-in-motion-/-'comer'" [ label = "is" ];
-"hassan" -> "entity-in-motion-/-'comer'" [ label = "is" ];
-"johnbrother" -> "entity-in-motion-/-'comer'" [ label = "is" ];
-"melisister" -> "entity-in-motion-/-'comer'" [ label = "is" ];
-"back" -> "DIR" [ label = "is" ];
-"together" -> "DIR" [ label = "is" ];
-"4Apr2010" -> "MNR" [ label = "is" ];
-"ali" -> "together" [ label = "came-moreDetail" ];
-"ali" -> "4Apr2010" [ label = "came-on" ];
-"hassan" -> "together" [ label = "came-moreDetail" ];
-"hassan" -> "4Apr2010" [ label = "came-on" ];
-"johnbrother" -> "together" [ label = "came-moreDetail" ];
-"johnbrother" -> "4Apr2010" [ label = "came-on" ];
-"melisister" -> "together" [ label = "came-moreDetail" ];
-"melisister" -> "4Apr2010" [ label = "came-on" ];
+"sister-7" -> "meli" [ label = "of" ];
+"sister-7" -> "one-party" [ label = "is" ];
+"brother-5" -> "one-party" [ label = "is" ];
+"hassan-3" -> "one-party" [ label = "is" ];
+"4/04/2010" -> "TMP" [ label = "is" ];
+"brother-5" -> "john" [ label = "of" ];
+"ali-1" -> "one-party" [ label = "is" ];
+"her-9" -> "other-party" [ label = "is" ];
+"sister-7" -> "her-9" [ label = "visited-object" ];
+"sister-7" -> "4/04/2010" [ label = "visited-object" ];
+"sister-7" -> "4/04/2010" [ label = "visited-on" ];
 }

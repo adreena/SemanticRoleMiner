@@ -35,7 +35,8 @@ if __name__=="__main__":
 	myTestFile.makeStanf()	
 	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
 	Stan=modifyStanf(stanfile)
-	#print "first Stan: ",Stan
+
+	# Fixing 's, using poss dependecy
 	Poss=[]
 	for key,val in Stan.items():
 	    for i, prep in val.items():
@@ -45,7 +46,7 @@ if __name__=="__main__":
 		token2=rel[1]
 		if pred=="poss":
 			Poss.append((str(token2.split("-")[0])+str(token1.split("-")[0]),str(token2.split("-")[0]),str(token1.split("-")[0])))
-			print "***********Posessins: ",Poss
+			#print "***********Posessins: ",Poss
 			sent=sent.replace(str(token2.split("-")[0])+"'s "+str(token1.split("-")[0]),str(token2.split("-")[0])+str(token1.split("-")[0]))
 	#print sent
 
@@ -61,14 +62,14 @@ if __name__=="__main__":
 		toks=item.split(" ")
 		newtok=" "
 		sent=sent.replace(item,newtok)
-	print "symbls removed : ",sent
+	#print "symbls removed : ",sent
 
 	match=re.findall(pattern3,sent) #capitals
 	for item in match:
 		toks=item.split(" ")
 		newtok=''.join(toks)
 		sent=sent.replace(item,newtok)
-	toremove=["/",">","<","_","-",""]
+	
 
 
 
@@ -137,24 +138,7 @@ if __name__=="__main__":
 	SennaStan=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/Stan_Senna_results.txt",'w')
 
 
-	#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	# NEW APPROACH for improving sentence Splitter
-	SEN0_SE=myTestFile.sennaDict['sen0']
-	SEN0_ST=myTestFile.stanfDict['sen0']
-	PAR=Find_Pred_Arg_Root(myTestFile,SEN0_SE,SEN0_ST)
-	PRED=PAR[0]
-	ARGS=PAR[1]
-	root=PAR[2]
-	#print PRED,"---",ARGS,"----",root
-	AM=Find_ArgDom_MixArgDep(ARGS,PRED,SEN0_ST)
-	ARGDOM=AM[0]
-	MIXARGS=AM[1]
-	#print "mixarg: ",MIXARGS
-	#for sets in MIXARGS.values():
-		#print sets
-	#	allTokens(sets,allDeps,VBNs,sent)
-	#	print "--------------------"
-	#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 	sentNumber=0

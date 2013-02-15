@@ -35,7 +35,7 @@ prep_to(went-8, university-10)
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------
-1-ali , hassan , johnbrother and melisister came back together on 4Apr2010  .
+1-ali , hassan , johnbrother and melisister visited her on 4 Apr 2010  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
@@ -43,38 +43,40 @@ prep_to(went-8, university-10)
     (NP (NN ali) (, ,) (NN hassan) (, ,) (NN johnbrother)
       (CC and)
       (NN melisister))
-    (VP (VBD came)
-      (PRT (RP back))
-      (ADVP (RB together))
+    (VP (VBD visited)
+      (NP (PRP her))
       (PP (IN on)
-        (NP (CD 4Apr2010))))
+        (NP (CD 4)))
+      (NP (NNP Apr) (CD 2010)))
     (. .)))
 
-nsubj(came-8, ali-1)
+nsubj(visited-8, ali-1)
 conj_and(ali-1, hassan-3)
-nsubj(came-8, hassan-3)
+nsubj(visited-8, hassan-3)
 conj_and(ali-1, johnbrother-5)
-nsubj(came-8, johnbrother-5)
+nsubj(visited-8, johnbrother-5)
 conj_and(ali-1, melisister-7)
-nsubj(came-8, melisister-7)
-root(ROOT-0, came-8)
-prt(came-8, back-9)
-advmod(came-8, together-10)
-prep_on(came-8, 4Apr2010-12)
+nsubj(visited-8, melisister-7)
+root(ROOT-0, visited-8)
+dobj(visited-8, her-9)
+prep_on(visited-8, 4-11)
+dobj(visited-8, Apr-12)
+num(Apr-12, 2010-13)
 
 --Senna Output:------------------------------------------------------ 
-            ali	        LS	      B-NP	         O	              -	      B-A1	(S1(S(NP*
-              ,	         ,	      I-NP	         O	              -	      I-A1	*
-         hassan	        NN	      I-NP	         O	              -	      I-A1	*
-              ,	         ,	      I-NP	         O	              -	      I-A1	*
-    johnbrother	        NN	      I-NP	         O	              -	      I-A1	*
-            and	        CC	      I-NP	         O	              -	      I-A1	*
-     melisister	        NN	      E-NP	         O	              -	      E-A1	*)
-           came	       VBD	      S-VP	         O	           came	       S-V	(VP*
-           back	        RB	    S-ADVP	         O	              -	  B-AM-DIR	(ADVP*)
-       together	        RB	    S-ADVP	         O	              -	  E-AM-DIR	(ADVP*)
-             on	        IN	      S-PP	         O	              -	  B-AM-MNR	(PP*
-       4Apr2010	       NNS	      S-NP	         O	              -	  E-AM-MNR	(NP*)))
+            ali	        LS	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+         hassan	        NN	      I-NP	         O	              -	      I-A0	*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+    johnbrother	        NN	      I-NP	         O	              -	      I-A0	*
+            and	        CC	      I-NP	         O	              -	      I-A0	*
+     melisister	        NN	      E-NP	         O	              -	      E-A0	*)
+        visited	       VBD	      S-VP	         O	        visited	       S-V	(VP*
+            her	       PRP	      S-NP	         O	              -	      S-A1	(NP*)
+             on	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
+              4	        CD	      B-NP	         O	              -	  I-AM-TMP	(NP*
+            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	*
+           2010	        CD	      E-NP	         O	              -	  E-AM-TMP	*)))
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------

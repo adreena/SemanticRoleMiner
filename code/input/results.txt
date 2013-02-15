@@ -1,35 +1,30 @@
 -Complete Sentence is: 
-ali , hassan, johnbrother and melisister went to university and came back together on 4Apr2010.
+ali , hassan, johnbrother and melisister went to university and visited her on 4 Apr 2010.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 0-ali , hassan , johnbrother and melisister went to university  .
 
-      ali  is  A0
-      hassan  is  A0
-      johnbrother  is  A0
-      melisister  is  A0
-      university   is   end-point
-      ali  went-to  university
-      hassan  went-to  university
-      johnbrother  went-to  university
-      melisister  went-to  university
+      sister-7  went-to  university-10
+      ali-1  is  A0
+      hassan-3  is  A0
+      brother-5  of  john
+      sister-7  is  A0
+      sister-7  of  meli
+      brother-5  is  A0
+      university-10   is   end-point
           --------------------------------------------------          
-1-ali , hassan , johnbrother and melisister came back together on 4Apr2010  .
+1-ali , hassan , johnbrother and melisister visited her on 4 Apr 2010  .
 
-      ali  is  entity-in-motion-/-'comer'
-      hassan  is  entity-in-motion-/-'comer'
-      johnbrother  is  entity-in-motion-/-'comer'
-      melisister  is  entity-in-motion-/-'comer'
-      back  is  DIR
-      together  is  DIR
-      4Apr2010  is  MNR
-      ali  came-moreDetail  together
-      ali  came-on  4Apr2010
-      hassan  came-moreDetail  together
-      hassan  came-on  4Apr2010
-      johnbrother  came-moreDetail  together
-      johnbrother  came-on  4Apr2010
-      melisister  came-moreDetail  together
-      melisister  came-on  4Apr2010
+      sister-7  of  meli
+      sister-7  is  one-party
+      brother-5  is  one-party
+      hassan-3  is  one-party
+      4/04/2010  is  TMP
+      brother-5  of  john
+      ali-1  is  one-party
+      her-9  is  other-party
+      sister-7  visited-object  her-9
+      sister-7  visited-object  4/04/2010
+      sister-7  visited-on  4/04/2010
           --------------------------------------------------          

@@ -1,13 +1,34 @@
 -Complete Sentence is: 
-ali and hassans sister went for shopping.
+ali , hassan, johnbrother and melisister went to university and visited alissasister.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-ali and hassans sister went shopping  .
+0-ali , hassan , johnbrother and melisister went to university  .
 
-      sister-4  is  A0
-      shop-6  is  extent
-      sister-4  --  ali-1
-      sister-4  --  bassano-3
-      sister-4  went-object  shop-6
+      ali-1  is  A0
+      hassan-3  is  A0
+      brother-5  is  A0
+      brother-5  of  john
+      sister-7  is  A0
+      sister-7  of  meli
+      university-10   is   end-point
+      ali-1  went-to  university-10
+      hassan-3  went-to  university-10
+      brother-5  went-to  university-10
+      sister-7  went-to  university-10
+          --------------------------------------------------          
+1-ali , hassan , johnbrother and melisister visited alissasister  .
+
+      ali-1  is  one-party
+      hassan-3  is  one-party
+      brother-5  is  one-party
+      brother-5  of  john
+      sister-7  is  one-party
+      sister-7  of  meli
+      sister-9  is  other-party
+      sister-9  of  alissa
+      ali-1  visited-object  sister-9
+      hassan-3  visited-object  sister-9
+      brother-5  visited-object  alissasister-9
+      sister-7  visited-object  alissasister-9
           --------------------------------------------------          
