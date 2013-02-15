@@ -1,34 +1,38 @@
 -Complete Sentence is: 
-ali , hassan, johnbrother and melisister went to university and visited alissasister.
+on 18 May 2012, the Calgary Herald in Alberta, Canada, reported that 2 cats in a Montreal animal shelter have died, and another is ill, after eating Diamond Pet Foods products company.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-ali , hassan , johnbrother and melisister went to university  .
+0-on 18 May2012 , the CalgaryHeraldin Alberta , Canada , reported another ill  .
 
-      ali-1  is  A0
-      hassan-3  is  A0
-      brother-5  is  A0
-      brother-5  of  john
-      sister-7  is  A0
-      sister-7  of  meli
-      university-10   is   end-point
-      ali-1  went-to  university-10
-      hassan-3  went-to  university-10
-      brother-5  went-to  university-10
-      sister-7  went-to  university-10
+      CalgaryHeraldin-6   is   LOC
+      Canada-9   is   LOC
+      May2012-3  is  Reporter
+      Alberta-7  is  Reporter
+      ill-13  is  thing-reported
+      May2012-3  number  18-2
+      Alberta-7  --  CalgaryHeraldin-6
+      Alberta-7  sameAs  Canada-9
+      another-12  ill-on  May2012-3
           --------------------------------------------------          
-1-ali , hassan , johnbrother and melisister visited alissasister  .
+1-that 2 cats in a Montrealanimal shelter died  .
 
-      ali-1  is  one-party
-      hassan-3  is  one-party
-      brother-5  is  one-party
-      brother-5  of  john
-      sister-7  is  one-party
-      sister-7  of  meli
-      sister-9  is  other-party
-      sister-9  of  alissa
-      ali-1  visited-object  sister-9
-      hassan-3  visited-object  sister-9
-      brother-5  visited-object  alissasister-9
-      sister-7  visited-object  alissasister-9
+      Montrealanimal-6   is   MISC
+      cats-3  is  the-deceased
+      cats-3  number  2-2
+      shelter-7  --  Montrealanimal-6
+      cats-3  in  shelter-7
+          --------------------------------------------------          
+2-another is ill  .
+
+      ill-3  is  (ADJP*))
+      ill-3  subject  another-1
+          --------------------------------------------------          
+3-on another ill eating DiamondPetFoodsproducts company  .
+
+      DiamondPetFoodsproducts-5   is   MISC
+      company-6  is  *))
+      company-6  is  ill-3
+      company-6  is  eating-4
+      company-6  --  DiamondPetFoodsproducts-5
           --------------------------------------------------          

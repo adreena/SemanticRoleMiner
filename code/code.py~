@@ -62,7 +62,7 @@ def roleFinder(verb):
 #----------------------------------------
 #--- translating list of word connected to verb into triples, "vlist" is a list of all tokens in the "result" sentence , in this list the first item is always the verb of the sentence.  
 #----------------------------------------
-def translateSent(vlist,result,Poss,OrgSent):
+def translateSent(vlist,result,Poss):
 	STs=[]
 
 
@@ -139,7 +139,7 @@ def translateSent(vlist,result,Poss,OrgSent):
 			tok2=values[2].split("-")[1:][0]
 			print "**2222"
 			print tok1," is ",tok2
-			STs.append((str(tok1.split("-")[0:-1][0])," is ",str(tok2.split("-")[0:-1][0])))
+			STs.append((str(tok1.split("-")[0])," is ",str(tok2.split("-")[0])))
 		if item.keys()[0] in verbRel:
 			if values[4]!='O': # ARG
 				val1=item.keys()[0]
@@ -183,8 +183,8 @@ def translateSent(vlist,result,Poss,OrgSent):
 			
 	#print "**********",targetverb,verb
 	#-- 5-2 in some cases there are no verb in sentence , this loop prints statements containing verb and the verb is the root.
-	print "verbs: ",targetverb,verb.split("-")[0:-1][0]
-	if verb !="notfound" and targetverb==verb.split("-")[0:-1][0]:
+	print "verbs: ",targetverb,verb.split("-")[0]
+	if verb !="notfound" and targetverb==verb.split("-")[0]:
 		for triple in Stan:
 			pred=triple.keys()[0]
 			tok1=triple.values()[0][0]
@@ -217,7 +217,7 @@ def translateSent(vlist,result,Poss,OrgSent):
 		for subject in sbj.values():
 			for objects in obj:
 				pred=dictionary[objects[0]]
-				damnVerb=subject[1].split("-")[0:-1][0]
+				damnVerb=subject[1].split("-")[0]
 				
 				if str(pred)!="is-Arg1":
 
@@ -259,99 +259,116 @@ def translateSent(vlist,result,Poss,OrgSent):
 	newSTs=[]
 	num1=0
 	num2=0
-	for item in STs:
-		#print"&*&", item
-		sw=0
-		i=0
-		if item[0] in sentlist: 
-			num1=sentlist.index(item[0])+1
+	if len(Poss)>0:
+		for item in STs:
+			#print"&*&", item
+			sw=0
+			i=0
+			if item[0] in sentlist: 
+				num1=sentlist.index(item[0])+1
 			
-		if item[2] in sentlist: 
-			num2=sentlist.index(item[2])+1
+			if item[2] in sentlist: 
+				num2=sentlist.index(item[2])+1
 			
-		#print num1,item[0],num2,item[2]
-		#print len(Poss)
-		for poss in Poss:
-			i+=1
-			#print "--Pss",poss
-			possID=poss[0]
-			temp1=poss[1] #john
-			temp2=poss[2] #brother
+			#print num1,item[0],num2,item[2]
+			#print len(Poss)
+			for poss in Poss: #filling newSTs
+				i+=1
+				#print "--Pss",poss
+				possID=poss[0]
+				temp1=poss[1] #john
+				temp2=poss[2] #brother
 			
-			if item[0]==possID and sw==0: # brother -- shopping
-				#print "rmoved ",item," appended ",(temp2,item[1],item[2])
-				#STs.remove(item)
-				num3=sentlist.index(possID)+1
-				tup=(temp2+"-"+str(num3),"of",temp1)
-				token=item[2]
-				if num2>0:				
-					token=str(item[2])+"-"+str(num2)
-				newSTs.append((temp2+"-"+str(num3),item[1],token))
-				sw=1
-				if tup not in newSTs:
-						newSTs.append(tup)
-			elif item[2]==possID and sw==0:
-				#print "removed",item," appended ",(item[0],item[1],temp2)
-				#STs.remove(item)
-				token=item[0]
-				if num1>0:				
-					token=str(item[0])+"-"+str(num1)
-				newSTs.append((token,item[1],temp2+"-"+str(num3)))
-				num3=sentlist.index(possID)+1
-				sw=1	
-				tup=(temp2+"-"+str(num3),"of",temp1)
-				if tup not in newSTs:
-						newSTs.append(tup)	
-			elif item[0]!=possID and item[2]!=possID and sw==0 and i==len(Poss):
+				if item[0]==possID and sw==0: # brother -- shopping
+					#print "rmoved ",item," appended ",(temp2,item[1],item[2])
+					#STs.remove(item)
+					num3=sentlist.index(possID)+1
+					tup=(temp2+"-"+str(num3),"of",temp1)
+					token=item[2]
+					if num2>0:				
+						token=str(item[2])+"-"+str(num2)
+					newSTs.append((temp2+"-"+str(num3),item[1],token))
+					sw=1
+					if tup not in newSTs:
+							newSTs.append(tup)
+				elif item[2]==possID and sw==0:
+					#print "removed",item," appended ",(item[0],item[1],temp2)
+					#STs.remove(item)
+					token=item[0]
+					if num1>0:				
+						token=str(item[0])+"-"+str(num1)
+					newSTs.append((token,item[1],temp2+"-"+str(num3)))
+					num3=sentlist.index(possID)+1
+					sw=1	
+					tup=(temp2+"-"+str(num3),"of",temp1)
+					if tup not in newSTs:
+							newSTs.append(tup)	
+				elif item[0]!=possID and item[2]!=possID and sw==0 and i==len(Poss):
 
-				if item not in newSTs: 
-					#print "not removed ",item
-					t1=item[0]
-					t2=item[2]
-					if num1>0:
-						t1=item[0]+"-"+str(num1)
-					if num2>0:
-						t2=item[2]+"-"+str(num2)
-					newSTs.append((t1,item[1],t2))
+					if item not in newSTs: 
+						#print "not removed ",item
+						t1=item[0]
+						t2=item[2]
+						if num1>0:
+							t1=item[0]+"-"+str(num1)
+						if num2>0:
+							t2=item[2]+"-"+str(num2)
+						newSTs.append((t1,item[1],t2))
 			
 				
-	#print "******modified St:",newSTs
-	#ModSTs=[]
+	
+	num1=0
+	num2=0
+	if len(newSTs)==0: #STs doesn't have numbers and this condition is when Poss is empty and newSTs is empty
+		for item in STs:
+			#print"&*&", item
+			sw=0
+			i=0
+			if item[0] in sentlist: num1=sentlist.index(item[0])+1
+			
+			if item[2] in sentlist: num2=sentlist.index(item[2])+1
 
-
+			if num2>0 and num1==0:	newSTs.append((str(item[0]),item[1],str(item[2])+"-"+str(num2)))		
+			elif num1>0 and num2==0:newSTs.append((str(item[0])+"-"+str(num1),item[1],str(item[2])))			
+			elif num1==0 and num2==0: newSTs.append((str(item[0])+"-"+str(num1),item[1],str(item[2])+"-"+str(num2)))
+			elif num1>0 and num2>0: newSTs.append((str(item[0]),item[1],str(item[2])))
+					
+			
 	#fixing Dates: dateObjects
 	print "------------------------------------------------"
 	remlist=[]
 	print dateObjects
-	length=len(newSTs)
-	for i in range(0,length): # for not counting newly added tuples
-		item=newSTs[i]
-		tok1=item[0]
-		pred=item[1]
-		tok2=item[2]
-		#i=newSTs.index(item)
-		print item
-		sw=0
-		for date,vals in dateObjects.items():
-			if (tok1==vals[0] or tok1==vals[1] or tok1==vals[2]) and ( tok2==vals[0] or tok2==vals[1] or tok2==vals[2]): # I don't want to include this tuple
-				remlist.append(item)
-			else:
-				if tok1==vals[0] or tok1==vals[1] or tok1==vals[2] : 
-					print "to remove:",item, " to append: ",(date,pred,tok2)
-					if (date,pred,tok2) not in newSTs: newSTs.append((date,pred,tok2))
+	if len(dateObjects)>0:
+		length=len(newSTs)
+		for i in range(0,length): # for not counting newly added tuples
+			item=newSTs[i]
+			tok1=item[0]
+			pred=item[1]
+			tok2=item[2]
+			#i=newSTs.index(item)
+			print item
+			sw=0
+			for date,vals in dateObjects.items():
+				if (tok1==vals[0] or tok1==vals[1] or tok1==vals[2]) and ( tok2==vals[0] or tok2==vals[1] or tok2==vals[2]): # I don't want to include this tuple
 					remlist.append(item)
-				elif tok2==vals[0] or tok2==vals[1] or tok2==vals[2]:
-					print "to remove:",item, " to append: ",(tok1,pred,date)
-					if (tok1,pred,date) not in newSTs : newSTs.append((tok1,pred,date))
-					remlist.append(item)
-	remlist=list(set(remlist))
-	print "remlist: ",remlist
-	print "before: ",newSTs
-	for item in remlist:
-		print item
-		newSTs.remove(item)
-		
-	print "After: ",newSTs
+				else:
+					if tok1==vals[0] or tok1==vals[1] or tok1==vals[2] : 
+						print "to remove:",item, " to append: ",(date,pred,tok2)
+						if (date,pred,tok2) not in newSTs: newSTs.append((date,pred,tok2))
+						remlist.append(item)
+					elif tok2==vals[0] or tok2==vals[1] or tok2==vals[2]:
+						print "to remove:",item, " to append: ",(tok1,pred,date)
+						if (tok1,pred,date) not in newSTs : newSTs.append((tok1,pred,date))
+						remlist.append(item)
+		remlist=list(set(remlist))
+		print "remlist: ",remlist
+		print "before: ",newSTs
+		for item in remlist:
+			#print item
+			newSTs.remove(item)
+		newSTs=list(set(newSTs))	
+		print "After: ",newSTs
+	 
 	return newSTs
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################

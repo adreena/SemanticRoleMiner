@@ -1,30 +1,43 @@
 -Complete Sentence is: 
-ali , hassan, johnbrother and melisister went to university and visited her on 4 Apr 2010.
+the Missouri , maker of Diamond , PremiumEdge , KirklandSignature, and other pet food brands has not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet recall site .
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-ali , hassan , johnbrother and melisister went to university  .
+0-the Missouri , maker of Diamond , PremiumEdge , KirklandSignature other pet food brands not called special attention to the expansion of the recall cat food  .
 
-      sister-7  went-to  university-10
-      ali-1  is  A0
-      hassan-3  is  A0
-      brother-5  of  john
-      sister-7  is  A0
-      sister-7  of  meli
-      brother-5  is  A0
-      university-10   is   end-point
+      Missouri-2   is   LOC
+      Diamond-6   is   PER
+      PremiumEdge-8   is   PER
+      KirklandSignature-10   is   PER
+      KirklandSignature-10  is  caller
+      brands-14  is  caller
+      not-15  is  NEG
+      attention-18  is  item-being-labelled
+      expansion-21  is  attribute-of-arg1
+      KirklandSignature-10  subject  Missouri-2
+      Missouri-2  sameAs  maker-4
+      PremiumEdge-8  --  Diamond-6
+      maker-4  of  PremiumEdge-8
+      brands-14  is  other-11
+      brands-14  is  pet-12
+      brands-14  --  food-13
+      called-16  subject  brands-14
+      called-16  not  not-15
+      attention-18  is  special-17
+      called-16  object  attention-18
+      called-16  to  expansion-21
+      food-13  --  recall-24
+      food-13  --  cat-25
+      expansion-21  of  food-13
           --------------------------------------------------          
-1-ali , hassan , johnbrother and melisister visited her on 4 Apr 2010  .
+1-amending a statement on the company Internet recall site  .
 
-      sister-7  of  meli
-      sister-7  is  one-party
-      brother-5  is  one-party
-      hassan-3  is  one-party
-      4/04/2010  is  TMP
-      brother-5  of  john
-      ali-1  is  one-party
-      her-9  is  other-party
-      sister-7  visited-object  her-9
-      sister-7  visited-object  4/04/2010
-      sister-7  visited-on  4/04/2010
+      Internet-7   is   MISC
+      statement-3  is  thing-amended
+      Internet-7  is  secondary-predication-on-arg1
+      recall-8  is  secondary-predication-on-arg1
+      amending-1  object  statement-3
+      Internet-7  --  company-6
+      amending-1  on  Internet-7
+      recall-8  object  site-9
           --------------------------------------------------          

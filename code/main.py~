@@ -55,20 +55,30 @@ if __name__=="__main__":
 	#find and replace Captial Names attached
 	pattern1=r"\s\s" # removing extra spaces
 	pattern2=r"(\"|\'|\s\s|\_)"
-	pattern3=r"([A-Z]\w+\s[A-Z]\w+)" # Captial Names
+	pattern3=r"([A-Z]\w+\s)" # Captial Names
 
 	match=re.findall(pattern2,sent) #symbols
 	for item in match:
 		toks=item.split(" ")
 		newtok=" "
 		sent=sent.replace(item,newtok)
-	print "symbls removed : ",sent
+	#print "symbls removed : ",sent
 
 	match=re.findall(pattern3,sent) #capitals
-	for item in match:
-		toks=item.split(" ")
-		newtok=''.join(toks)
-		sent=sent.replace(item,newtok)
+	
+	match=match[0:-1]   # the last token in pattern usually captures a low letter name 
+	templist=sent.split(" ")
+	print templist
+	if len(match)>1:
+		for item in match:
+			toks=item.split(" ")
+			check=templist.index(toks[0])+1
+			print templist[check], templist[check][0].isupper()
+			if templist[check].isupper(): 
+				print "()()()()",toks
+				newtok=''.join(toks)
+				sent=sent.replace(item,newtok)
+			
 	
 
 
@@ -131,7 +141,7 @@ if __name__=="__main__":
 	sen=[]
 	#print VBNs
 	output=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/results.txt",'w')
-	output.write("-Complete Sentence is: \n"+sent+"\n")
+	output.write("-Complete Sentence is: \n"+OrgSent+"\n")
 	output.write("----------------------------------------------------------------------\n")
 	output.write("----------------------------------------------------------------------\n")
 	
@@ -161,7 +171,7 @@ if __name__=="__main__":
 			output.write(str(sentNumber)+"-"+result+"\n\n")
 			SennaStan.write(str(sentNumber)+"-"+result+"\n\n")
 			sen.append(result)
-			STs=translateSent(vlist,result,Poss,OrgSent)
+			STs=translateSent(vlist,result,Poss)
 			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
 			
 			output.write("          --------------------------------------------------          \n")
@@ -186,6 +196,10 @@ if __name__=="__main__":
 	
 	SennaStan.close()
 	output.close()
-	#print "All STS ",AllSTs
-	
 	gephiFile.close()
+	
+	#---fixing input file for this process has modified it
+	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","w")	
+	sentence.write(OrgSent)
+	sentence.close()
+

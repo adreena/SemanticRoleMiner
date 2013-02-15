@@ -1,23 +1,36 @@
 digraph sample {
-"sister-7" -> "university-10" [ label = "went-to" ];
-"ali-1" -> "A0" [ label = "is" ];
-"hassan-3" -> "A0" [ label = "is" ];
-"brother-5" -> "john" [ label = "of" ];
-"sister-7" -> "A0" [ label = "is" ];
-"sister-7" -> "meli" [ label = "of" ];
-"brother-5" -> "A0" [ label = "is" ];
-"university-10" -> "end-point" [ label = " is " ];
+"Missouri-2" -> "LOC" [ label = " is " ];
+"Diamond-6" -> "PER" [ label = " is " ];
+"PremiumEdge-8" -> "PER" [ label = " is " ];
+"KirklandSignature-10" -> "PER" [ label = " is " ];
+"KirklandSignature-10" -> "caller" [ label = "is" ];
+"brands-14" -> "caller" [ label = "is" ];
+"not-15" -> "NEG" [ label = "is" ];
+"attention-18" -> "item-being-labelled" [ label = "is" ];
+"expansion-21" -> "attribute-of-arg1" [ label = "is" ];
+"KirklandSignature-10" -> "Missouri-2" [ label = "subject" ];
+"Missouri-2" -> "maker-4" [ label = "sameAs" ];
+"PremiumEdge-8" -> "Diamond-6" [ label = "--" ];
+"maker-4" -> "PremiumEdge-8" [ label = "of" ];
+"brands-14" -> "other-11" [ label = "is" ];
+"brands-14" -> "pet-12" [ label = "is" ];
+"brands-14" -> "food-13" [ label = "--" ];
+"called-16" -> "brands-14" [ label = "subject" ];
+"called-16" -> "not-15" [ label = "not" ];
+"attention-18" -> "special-17" [ label = "is" ];
+"called-16" -> "attention-18" [ label = "object" ];
+"called-16" -> "expansion-21" [ label = "to" ];
+"food-13" -> "recall-24" [ label = "--" ];
+"food-13" -> "cat-25" [ label = "--" ];
+"expansion-21" -> "food-13" [ label = "of" ];
 }
 digraph sample {
-"sister-7" -> "meli" [ label = "of" ];
-"sister-7" -> "one-party" [ label = "is" ];
-"brother-5" -> "one-party" [ label = "is" ];
-"hassan-3" -> "one-party" [ label = "is" ];
-"4/04/2010" -> "TMP" [ label = "is" ];
-"brother-5" -> "john" [ label = "of" ];
-"ali-1" -> "one-party" [ label = "is" ];
-"her-9" -> "other-party" [ label = "is" ];
-"sister-7" -> "her-9" [ label = "visited-object" ];
-"sister-7" -> "4/04/2010" [ label = "visited-object" ];
-"sister-7" -> "4/04/2010" [ label = "visited-on" ];
+"Internet-7" -> "MISC" [ label = " is " ];
+"statement-3" -> "thing-amended" [ label = "is" ];
+"Internet-7" -> "secondary-predication-on-arg1" [ label = "is" ];
+"recall-8" -> "secondary-predication-on-arg1" [ label = "is" ];
+"amending-1" -> "statement-3" [ label = "object" ];
+"Internet-7" -> "company-6" [ label = "--" ];
+"amending-1" -> "Internet-7" [ label = "on" ];
+"recall-8" -> "site-9" [ label = "object" ];
 }

@@ -1,0 +1,133 @@
+-Complete Sentence is: 
+Kate , Mike, John's brother and Meli's sister went to university on 1 Apr 2010, and visited her on 4 Apr 2010.
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+0-Kate , Mike , Johnbrother and Melisister went to university on 1 Apr 2010  .
+
+      sister-7  went-to  university-10
+      sister-7  of  Meli
+      Mike-3   is   PER
+      sister-7  went-on  1/04/2010
+      sister-7   is   PER
+      brother-5  is  entity-in-motion/goer
+      brother-5  of  John
+      1/04/2010  is  TMP
+      Kate-1   is   PER
+      Kate-1  is  entity-in-motion/goer
+      sister-7  is  entity-in-motion/goer
+      Mike-3  is  entity-in-motion/goer
+      brother-5   is   PER
+      university-10   is   end-point
+          --------------------------------------------------          
+1-Kate , Mike , Johnbrother and Melisister visited her on 4 Apr 2010  .
+
+      4/04/2010  is  TMP
+      sister-7  of  Meli
+      Mike-3   is   PER
+      sister-7  is  one-party
+      Kate-1  is  one-party
+      sister-7   is   PER
+      Mike-3  is  one-party
+      brother-5  of  John
+      brother-5  is  one-party
+      Kate-1   is   PER
+      sister-7  visited-on  4/04/2010
+      sister-7  visited-object  her-9
+      sister-7  visited-object  4/04/2010
+      brother-5   is   PER
+      her-9  is  other-party
+          --------------------------------------------------     
+
+
+0-Kate , Mike , Johnbrother and Melisister went to university on 1 Apr 2010  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (NNP Kate) (, ,) (NNP Mike) (, ,) (NNP Johnbrother)
+      (CC and)
+      (NNP Melisister))
+    (VP (VBD went)
+      (PP (TO to)
+        (NP (NN university)))
+      (PP (IN on)
+        (NP (CD 1) (NNP Apr) (NNS 2010))))
+    (. .)))
+
+nsubj(went-8, Kate-1)
+conj_and(Kate-1, Mike-3)
+nsubj(went-8, Mike-3)
+conj_and(Kate-1, Johnbrother-5)
+nsubj(went-8, Johnbrother-5)
+conj_and(Kate-1, Melisister-7)
+nsubj(went-8, Melisister-7)
+root(ROOT-0, went-8)
+prep_to(went-8, university-10)
+num(2010-14, 1-12)
+nn(2010-14, Apr-13)
+prep_on(went-8, 2010-14)
+
+--Senna Output:------------------------------------------------------ 
+           Kate	       NNP	      S-NP	     S-PER	              -	      B-A1	(S1(S(NP(NP*)
+              ,	         ,	         O	         O	              -	      I-A1	*
+           Mike	       NNP	      S-NP	     S-PER	              -	      I-A1	(NP*
+              ,	         ,	         O	         O	              -	      I-A1	*
+    Johnbrother	       NNP	      B-NP	     S-PER	              -	      I-A1	*
+            and	        CC	      I-NP	         O	              -	      I-A1	*
+     Melisister	       NNP	      E-NP	     S-PER	              -	      E-A1	*))
+           went	       VBD	      S-VP	         O	           went	       S-V	(VP*
+             to	        TO	      S-PP	         O	              -	      B-A4	(PP*
+     university	        NN	      S-NP	         O	              -	      E-A4	(NP*))
+             on	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
+              1	        CD	      B-NP	         O	              -	  I-AM-TMP	(NP*
+            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	*
+           2010	        CD	      E-NP	         O	              -	  E-AM-TMP	*)))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+1-Kate , Mike , Johnbrother and Melisister visited her on 4 Apr 2010  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (NNP Kate) (, ,) (NNP Mike) (, ,) (NNP Johnbrother)
+      (CC and)
+      (NNP Melisister))
+    (VP (VBD visited)
+      (NP (PRP her))
+      (PP (IN on)
+        (NP (CD 4)))
+      (NP (NNP Apr) (CD 2010)))
+    (. .)))
+
+nsubj(visited-8, Kate-1)
+conj_and(Kate-1, Mike-3)
+nsubj(visited-8, Mike-3)
+conj_and(Kate-1, Johnbrother-5)
+nsubj(visited-8, Johnbrother-5)
+conj_and(Kate-1, Melisister-7)
+nsubj(visited-8, Melisister-7)
+root(ROOT-0, visited-8)
+dobj(visited-8, her-9)
+prep_on(visited-8, 4-11)
+dobj(visited-8, Apr-12)
+num(Apr-12, 2010-13)
+
+--Senna Output:------------------------------------------------------ 
+           Kate	       NNP	      S-NP	     S-PER	              -	      B-A0	(S1(S(NP(NP*)
+              ,	         ,	         O	         O	              -	      I-A0	*
+           Mike	       NNP	      S-NP	     S-PER	              -	      I-A0	(NP*
+              ,	         ,	         O	         O	              -	      I-A0	*
+    Johnbrother	       NNP	      B-NP	     S-PER	              -	      I-A0	*
+            and	        CC	      I-NP	         O	              -	      I-A0	*
+     Melisister	       NNP	      E-NP	     S-PER	              -	      E-A0	*))
+        visited	       VBD	      S-VP	         O	        visited	       S-V	(VP*
+            her	       PRP	      S-NP	         O	              -	      S-A1	(NP*)
+             on	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
+              4	        CD	      B-NP	         O	              -	  I-AM-TMP	(NP*
+            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	*
+           2010	        CD	      E-NP	         O	              -	  E-AM-TMP	*)))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
