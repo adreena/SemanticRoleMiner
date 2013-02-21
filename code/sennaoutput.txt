@@ -1,15 +1,11 @@
-           Kate	       NNP	      S-NP	     S-PER	              -	      B-A0	(S1(S(NP(NP*)
-              ,	         ,	         O	         O	              -	      I-A0	*
-           Mike	       NNP	      S-NP	     S-PER	              -	      I-A0	(NP*
-              ,	         ,	         O	         O	              -	      I-A0	*
-    Johnbrother	       NNP	      B-NP	     S-PER	              -	      I-A0	*
-            and	        CC	      I-NP	         O	              -	      I-A0	*
-     Melisister	       NNP	      E-NP	     S-PER	              -	      E-A0	*))
-        visited	       VBD	      S-VP	         O	        visited	       S-V	(VP*
-            her	       PRP	      S-NP	         O	              -	      S-A1	(NP*)
-             on	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
-              4	        CD	      B-NP	         O	              -	  I-AM-TMP	(NP*
-            Apr	       NNP	      I-NP	         O	              -	  I-AM-TMP	*
-           2010	        CD	      E-NP	         O	              -	  E-AM-TMP	*)))
+       amending	       VBG	      S-VP	         O	       amending	       S-V	(S1(S(S(VP*
+              a	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
+      statement	        NN	      E-NP	         O	              -	      E-A1	*)
+             on	        IN	      S-PP	         O	              -	      B-A2	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A2	(NP*
+        company	        NN	      I-NP	         O	              -	      I-A2	*
+       Internet	       NNP	      I-NP	    S-MISC	              -	      I-A2	*
+         recall	        NN	      I-NP	         O	              -	      I-A2	*
+           site	        NN	      E-NP	         O	              -	      E-A2	*)))))
               .	         .	         O	         O	              -	         O	*))
 

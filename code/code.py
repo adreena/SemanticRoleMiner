@@ -7,6 +7,7 @@ from stanfProcessed import modifyStanf
 import en #for converting verbs into present tense
 from stemming.porter2 import stem # for removing ing,ial ,...
 from en import numeral
+import en
 import re
 from Visualizer import makeGephi
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -49,9 +50,9 @@ def verbRelatives(vlist,Stan,indices): #works based on dependecies discovered by
 def roleFinder(verb):
 	#--converting verb into its present tense
 	print "verb**",verb
-	targetverb=en.verb.present(verb)
-	print "targetverb **** ",targetverb	
-	propVerb=targetverb+".01"
+	tverb=en.verb.present(verb)
+	print "targetverb **** ",tverb	
+	propVerb=tverb+".01"
 	print propVerb
 	allroles={}
 	roles=propbank.roleset(propVerb)
@@ -419,90 +420,33 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs):
 	modSTs=[]
 	print "--**--ExtraSTs"
 	#print PrList
-	print "Vlist:",vlist
-	index1=0
-	index2=0
-	#generalizing token numbers 
-	for item in newSTs:
+	print "Vlist: ",vlist
+	print " to add args: ",addArgs
+	verb=vlist[0].split("-")[0]
+	print verb
+	allRoles={}	
+	allRoles=roleFinder(verb)
+	banlist=['by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+	for item in addArgs:
 		tok1=item[0]
-		tok2=item[2]
-		if "-" in tok1 and tok1.split("-")[0] in PrList: #tok1 to modify 
-			#print "tok1: ",tok1.split("-")[0]
-			index1=vlist.index(tok1.split("-")[0])+1
-			tok1=tok1.split("-")[0]+"-"+str(index1)
-		if "-" in tok2 and tok2.split("-")[0] in PrList: #tok2 to modify
-			#print "tok2 : ", tok2.split("-")[0]
-			index2=vlist.index(tok2.split("-")[0])+1
-			tok2=tok2.split("-")[0]+"-"+str(index2)
-		modSTs.append((tok1,item[1],tok2))	
-	print modSTs #tested
-	print "vlist and to add args"
-	print vlist, addArgs
-	#print argList
-
+		if tok1 not in vlist and tok1.split("-")[0] not in banlist: #not connected to verb-paths
+			label=item[1]
+			if label in allRoles.keys():
+				role=allRoles[label]
+				print tok1," is ",role
+				newSTs.append((tok1," is ",role))
+			else:
+				print tok1," is ",label
+				newSTs.append((tok1," is ",label))
+	
+	print "--------"
+	return newSTs
 
 ######################################################################################################################################
 ######################################################################################################################################
 #------------------------------------------------------------------------------------------------------------------------------------
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555%%%%%%%%%%%%%%%%%%%
-def allTokens(argList,allDeps,VBNs,sent):
-	tempList=argList.values()
-	allToks=[]
-	#print "*****************", VBNs
-	print tempList
-	verb=tempList[0].keys()[0].split("-")[-1]
-	print "verb:", verb
-	for item in tempList:
-		arg=item.keys()[0]
-		verb= arg.split("-")[-1]
-		val=item.values()[0]
-		#print val
-		dep=val.keys()[0]
-		toks=val.values()[0]
-		tok1=toks[0][0]
-		tok2=toks[1][0]
-		# fixing verbLinks aurg issue
-		pos=int(tok1.split("-")[-1])+2 # calculating the position for conj
-		temp=str(dep.split("_")[-1]+"-"+str(pos))
-		if dep=="conj_and" or dep=="conj_or" and temp not in allToks: 
-			#print "pos",pos, dep.split("_")[-1]
-			allToks.append(temp)
-		#print "***loop1:",tok1.split("-")[0:-1][0]
-		if tok1.split("-")[0:-1][0]==verb : 
-			verb= toks[0][0]
-			#print "****loop1: ", verb
-			if tok1 not in allToks:
-				allToks.append(tok1)
-			if tok2 not in allToks and tok2 not in VBNs:
-				allToks.append(tok2)
-		#print "***loop2:",tok2.split("-")[0:-1][0]
-		if tok2.split("-")[0:-1][0]==verb : 
-			verb= toks[1][0]
-			#print "***loop2: ",verb
-			if tok2 not in allToks:
-				allToks.append(tok2)
-			if tok1 not in allToks and tok1 not in VBNs:
-				allToks.append(tok1)
-		if tok1.split("-")[0:-1] !=verb and tok2.split("-")[0:-1] !=verb:
-			if tok1 not in VBNs and tok1 not in allToks:
-				allToks.append(tok1)
-			if tok2 not in VBNs and tok2 not in allToks:
-				allToks.append(tok2)
-		#-----------------------------
-		
-		
-	#print allToks
-	VLIST=verbLinks(verb,allDeps,VBNs) # all tokens connected to verb along with their continues dependencies till reaching a verb
-	#print "again vlist: ",VLIST
-	twoLists=list(set(allToks+VLIST))
-	#print "both Lists :", twoLists #now two lists are merged
-	#sts=[]
-	if len(twoLists)>1:
-		print twoLists
-		result=scanVerb(sent,twoLists)
-		print result
 
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #----------------------------------------
 def verbLinks(vbn,deplist,VBNs):
 	vlist=[]

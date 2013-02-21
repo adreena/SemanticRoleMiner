@@ -216,7 +216,7 @@ if __name__=="__main__":
 			#print indices
 			STs=translateSent(vlist,result,Poss,indices,PrSent)
 			#print STs
-			#moreSts=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
+			moreSts=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
 			
 			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
 			

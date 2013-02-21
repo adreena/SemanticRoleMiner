@@ -1,55 +1,43 @@
 -Complete Sentence is: 
-Kate , Mike , John's brother and Meli's sister went to university on 1 Apr 2010 , and visited her on 4 Apr 2010 .
+the Missouri , makeer of Diamond , Premium Edge , Kirkland Signature and other pet food brands have not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet recall site .
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-Kate , Mike , Johnbrother and Melisister went to university on 1 Apr 2010  .
+0-the Missouri , makeer of Diamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall cat food  .
 
-      sister-7  went-to  university-10
-      Mike-3   is   PER
-      Kate-1  went-on  1/04/2010
-      sister-7  went-on  1/04/2010
-      sister-7   is   PER
-      Mike-3  went-to  university-10
-      brother-5  is  entity-in-motion/goer
-      Mike-3  is  entity-in-motion/goer
-      Kate-1  went-to  university-10
-      Mike-3  went-on  1/04/2010
-      1/04/2010  is  TMP
-      brother-5  went-to  university-10
-      brother-5  went-on  1/04/2010
-      Kate-1   is   PER
-      sister-7  of  Meli-6
-      Kate-1  is  entity-in-motion/goer
-      sister-7  is  entity-in-motion/goer
-      brother-5  of  John-4
-      brother-5   is   PER
-      university-10   is   end-point
+      Missouri-2   is   LOC
+      Diamond-6   is   LOC
+      PremiumEdge-8   is   PER
+      KirklandSignature-10   is   PER
+      makeer-4  is  caller
+      not-17  is  NEG
+      attention-20  is  item-being-labelled
+      expansion-23  is  attribute-of-arg1
+      makeer-4  --  Missouri-2
+      KirklandSignature-10  --  Diamond-6
+      brands-15  --  PremiumEdge-8
+      brands-15  --  KirklandSignature-10
+      brands-15  --  other-12
+      brands-15  --  pet-13
+      brands-15  --  food-14
+      makeer-4  of  brands-15
+      attention-20  is  special-19
+      food-29  --  recall-26
+      food-29  --  cat-28
+      expansion-23  of  food-29
+      makeer-4  called-not  not-17
+      makeer-4  called-object  attention-20
+      makeer-4  called-to  expansion-23
           --------------------------------------------------          
-1-Kate , Mike , Johnbrother and Melisister visited her on 4 Apr 2010  .
+1-amending a statement on the company Internet recall site  .
 
-      Mike-3  is  one-party
-      Kate-1  visited-on  4/04/2010
-      sister-7  is  one-party
-      brother-5  visited-on  4/04/2010
-      4/04/2010  is  TMP
-      Kate-1  visited-object  4/04/2010
-      sister-7  visited-object  4/04/2010
-      Mike-3  visited-object  4/04/2010
-      Mike-3   is   PER
-      Kate-1  is  one-party
-      sister-7   is   PER
-      brother-5  visited-object  4/04/2010
-      sister-7  of  Meli-6
-      brother-5  visited-object  her-18
-      brother-5   is   PER
-      her-18  is  other-party
-      sister-7  visited-on  4/04/2010
-      brother-5  is  one-party
-      Mike-3  visited-on  4/04/2010
-      Mike-3  visited-object  her-18
-      sister-7  visited-object  her-18
-      brother-5  of  John-4
-      Kate-1  visited-object  her-18
-      Kate-1   is   PER
+      Internet-37   is   MISC
+      statement-33  is  thing-amended
+      Internet-37  is  secondary-predication-on-arg1
+      recall-38  is  secondary-predication-on-arg1
+      recall-38  subject  amending-31
+      amending-31  object  statement-33
+      Internet-37  --  company-36
+      amending-31  on  Internet-37
+      recall-38  object  site-39
           --------------------------------------------------          
