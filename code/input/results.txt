@@ -1,43 +1,55 @@
 -Complete Sentence is: 
-the Missouri , maker of Diamond , PremiumEdge , KirklandSignature, and other pet food brands has not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet recall site .
+Kate , Mike , John's brother and Meli's sister went to university on 1 Apr 2010 , and visited her on 4 Apr 2010 .
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-the Missouri , maker of Diamond , PremiumEdge , KirklandSignature other pet food brands not called special attention to the expansion of the recall cat food  .
+0-Kate , Mike , Johnbrother and Melisister went to university on 1 Apr 2010  .
 
-      Missouri-2   is   LOC
-      Diamond-6   is   PER
-      PremiumEdge-8   is   PER
-      KirklandSignature-10   is   PER
-      KirklandSignature-10  is  caller
-      brands-14  is  caller
-      not-15  is  NEG
-      attention-18  is  item-being-labelled
-      expansion-21  is  attribute-of-arg1
-      KirklandSignature-10  subject  Missouri-2
-      Missouri-2  sameAs  maker-4
-      PremiumEdge-8  --  Diamond-6
-      maker-4  of  PremiumEdge-8
-      brands-14  is  other-11
-      brands-14  is  pet-12
-      brands-14  --  food-13
-      called-16  subject  brands-14
-      called-16  not  not-15
-      attention-18  is  special-17
-      called-16  object  attention-18
-      called-16  to  expansion-21
-      food-13  --  recall-24
-      food-13  --  cat-25
-      expansion-21  of  food-13
+      sister-7  went-to  university-10
+      Mike-3   is   PER
+      Kate-1  went-on  1/04/2010
+      sister-7  went-on  1/04/2010
+      sister-7   is   PER
+      Mike-3  went-to  university-10
+      brother-5  is  entity-in-motion/goer
+      Mike-3  is  entity-in-motion/goer
+      Kate-1  went-to  university-10
+      Mike-3  went-on  1/04/2010
+      1/04/2010  is  TMP
+      brother-5  went-to  university-10
+      brother-5  went-on  1/04/2010
+      Kate-1   is   PER
+      sister-7  of  Meli-6
+      Kate-1  is  entity-in-motion/goer
+      sister-7  is  entity-in-motion/goer
+      brother-5  of  John-4
+      brother-5   is   PER
+      university-10   is   end-point
           --------------------------------------------------          
-1-amending a statement on the company Internet recall site  .
+1-Kate , Mike , Johnbrother and Melisister visited her on 4 Apr 2010  .
 
-      Internet-7   is   MISC
-      statement-3  is  thing-amended
-      Internet-7  is  secondary-predication-on-arg1
-      recall-8  is  secondary-predication-on-arg1
-      amending-1  object  statement-3
-      Internet-7  --  company-6
-      amending-1  on  Internet-7
-      recall-8  object  site-9
+      Mike-3  is  one-party
+      Kate-1  visited-on  4/04/2010
+      sister-7  is  one-party
+      brother-5  visited-on  4/04/2010
+      4/04/2010  is  TMP
+      Kate-1  visited-object  4/04/2010
+      sister-7  visited-object  4/04/2010
+      Mike-3  visited-object  4/04/2010
+      Mike-3   is   PER
+      Kate-1  is  one-party
+      sister-7   is   PER
+      brother-5  visited-object  4/04/2010
+      sister-7  of  Meli-6
+      brother-5  visited-object  her-18
+      brother-5   is   PER
+      her-18  is  other-party
+      sister-7  visited-on  4/04/2010
+      brother-5  is  one-party
+      Mike-3  visited-on  4/04/2010
+      Mike-3  visited-object  her-18
+      sister-7  visited-object  her-18
+      brother-5  of  John-4
+      Kate-1  visited-object  her-18
+      Kate-1   is   PER
           --------------------------------------------------          

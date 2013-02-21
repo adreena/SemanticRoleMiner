@@ -3,7 +3,7 @@ import os
 from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
-from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,allTokens,gephiTranslate
+from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,allTokens,gephiTranslate,ExtraSTs
 import re
 from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ if __name__=="__main__":
 	myTestFile.makeStanf()	
 	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
 	Stan=modifyStanf(stanfile)
-
-	# Fixing 's, using poss dependecy
+	
+	# Fixing 's, using poss dependecy , it Only works if stanford recognizes poss dependecy
 	Poss=[]
 	for key,val in Stan.items():
 	    for i, prep in val.items():
@@ -56,34 +56,37 @@ if __name__=="__main__":
 	pattern1=r"\s\s" # removing extra spaces
 	pattern2=r"(\"|\'|\s\s|\_)"
 	pattern3=r"([A-Z]\w+\s)" # Captial Names
-
+	
 	match=re.findall(pattern2,sent) #symbols
 	for item in match:
 		toks=item.split(" ")
 		newtok=" "
 		sent=sent.replace(item,newtok)
+		
 	#print "symbls removed : ",sent
-
+	
 	match=re.findall(pattern3,sent) #capitals
 	
 	match=match[0:-1]   # the last token in pattern usually captures a low letter name 
 	templist=sent.split(" ")
-	print templist
+	#print templist
 	if len(match)>1:
 		for item in match:
 			toks=item.split(" ")
 			check=templist.index(toks[0])+1
 			#print templist[check], templist[check][0].isupper()
 			if templist[check][0].isupper(): 
-				print "()()()()",toks
+				#print "()()()()",toks
 				newtok=''.join(toks)
 				sent=sent.replace(item,newtok)
+				
 			
 	
+	PrSent=sent #processed sentence
+	sent=sent.replace(" s "," ") # when poss-dependency is not available  the 's is leaving a "s" alone , so I treat it as nn dependency and remove s 
+	print "###---processed sent:",PrSent
 
-
-
-	#print sent
+	#print sent to process original sentence pre-processed
 	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","w")	
 	sentence.write(sent)
 	sentence.close()
@@ -95,9 +98,46 @@ if __name__=="__main__":
 	sennafile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/sennaoutput.txt"
 	
 	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
-	
-	
 
+
+#*************************************************************
+	# testing Feb 19th , additional statements
+	SEN0_SE=myTestFile.sennaDict['sen0']
+	SEN0_ST=myTestFile.stanfDict['sen0']
+	PAR=Find_Pred_Arg_Root(myTestFile,SEN0_SE,SEN0_ST)
+	PRED=PAR[0]
+	ARGS=PAR[1]
+	#print ARGS.values()
+	ARGs=ARGS.values()
+	#print "****--***",PRED
+	addArgs={}
+	for vals in PRED.values():
+	#	print vals,vals.split("-")[0]
+		addArgs[vals]=[]
+	#print addArgs #{'amending-32': [], 'called-19': []}
+	
+	for item in ARGs:
+		lb="not-found" #finding each list verb along number-tag 
+		for key,val in item.items():
+	#		print key,",",val
+			label=key.split("-")[0]
+			if label=="V":
+				lb=val[0][0]
+				break
+		if lb !="not-found":
+	#		print lb
+			for key,val in item.items():
+	#			print key,"--"
+				if key.split("-")[0]!="V":
+					for v in val:
+						if v[0].split("-")[0]!=",":
+	#						print key,v[0]
+							temp=key.split("-")[-1]
+							key=key.replace("-"+temp,"")
+							addArgs[lb].append((v[0],key))		
+	#print addArgs
+	#print "##################################################"
+#*************************************************************
 	#2
 	Senna=modifySenna(sennafile)
 	#print Senna['sen0']
@@ -157,7 +197,7 @@ if __name__=="__main__":
 	for vbn in VBNs:
 		#vbn="isolated-18"
 		#print"to be :  "
-
+		print "((((here is the VBN:))))",vbn
 		vlist=verbLinks(vbn,allDeps,VBNs)
 		#print "to be vlist:",vlist
 		#print "vlist: ",vlist
@@ -165,13 +205,19 @@ if __name__=="__main__":
 		if len(vlist)>1:
 		#	print vlist
 			STs=[]
-			result=scanVerb(sent,vlist)
+			
+			(indices,result)=scanVerb(sent,vlist)
 			print "result: ",result # here is the new sentece, segmented from the original one.
+			print "indices:", indices
 			#-- writing each sentence along with their triples in results.txt
 			output.write(str(sentNumber)+"-"+result+"\n\n")
 			SennaStan.write(str(sentNumber)+"-"+result+"\n\n")
 			sen.append(result)
-			STs=translateSent(vlist,result,Poss)
+			#print indices
+			STs=translateSent(vlist,result,Poss,indices,PrSent)
+			#print STs
+			#moreSts=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
+			
 			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
 			
 			output.write("          --------------------------------------------------          \n")
@@ -192,7 +238,7 @@ if __name__=="__main__":
 			AllSTs[sentNumber]=STs
 			sentNumber+=1
 			gephiTranslate(STs,gephiFile)
-			#print "Statements:",STs
+			print "Statements:",STs
 	
 	SennaStan.close()
 	output.close()
