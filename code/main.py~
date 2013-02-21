@@ -35,7 +35,7 @@ if __name__=="__main__":
 	myTestFile.makeStanf()	
 	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
 	Stan=modifyStanf(stanfile)
-	sent2=sent.replace("'s","")
+	
 	# Fixing 's, using poss dependecy , it Only works if stanford recognizes poss dependecy
 	Poss=[]
 	for key,val in Stan.items():
@@ -62,7 +62,7 @@ if __name__=="__main__":
 		toks=item.split(" ")
 		newtok=" "
 		sent=sent.replace(item,newtok)
-		sent2=sent2.replace(item,newtok)
+		
 	#print "symbls removed : ",sent
 	
 	match=re.findall(pattern3,sent) #capitals
@@ -79,7 +79,7 @@ if __name__=="__main__":
 				#print "()()()()",toks
 				newtok=''.join(toks)
 				sent=sent.replace(item,newtok)
-				sent2=sent2.replace(item,newtok)
+				
 			
 	
 	PrSent=sent #processed sentence
@@ -206,14 +206,14 @@ if __name__=="__main__":
 		#	print vlist
 			STs=[]
 			
-			(indices,result)=scanVerb(sent,vlist,sent2)
+			(indices,result)=scanVerb(sent,vlist)
 			print "result: ",result # here is the new sentece, segmented from the original one.
 			print "indices:", indices
 			#-- writing each sentence along with their triples in results.txt
 			output.write(str(sentNumber)+"-"+result+"\n\n")
 			SennaStan.write(str(sentNumber)+"-"+result+"\n\n")
 			sen.append(result)
-			print indices
+			#print indices
 			STs=translateSent(vlist,result,Poss,indices,PrSent)
 			#print STs
 			#moreSts=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
