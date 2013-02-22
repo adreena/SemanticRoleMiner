@@ -1,0 +1,45 @@
+digraph sample {
+"maker-3" -> "caller" [ label = "is" ];
+"not-16" -> "NEG" [ label = "is" ];
+"maker-3" -> "Missouribase-2" [ label = "is" ];
+"food-28" -> "attribute-of-arg1" [ label = "is" ];
+"Diamond-5" -> "PER" [ label = " is " ];
+"maker-3" -> "expansion-22" [ label = "called-to" ];
+"maker-3" -> "not-16" [ label = "called-not" ];
+"brands-14" -> "other-pet-food-brands" [ label = " typeOf " ];
+"attention-19" -> "special-18" [ label = "is" ];
+"PremiumEdge-7" -> "PER" [ label = " is " ];
+"expansion-22" -> "recall-25" [ label = "of" ];
+"maker-3" -> "attention-19" [ label = "called-object" ];
+"KirklandSignature-9" -> "Diamond-KirklandSignature" [ label = " typeOf " ];
+"expansion-22" -> "attribute-of-arg1" [ label = "is" ];
+"maker-3" -> "food-28" [ label = "called-for" ];
+"KirklandSignature-9" -> "PER" [ label = " is " ];
+"food-28" -> "cat-food" [ label = " typeOf " ];
+"maker-3" -> "brands-14" [ label = "of" ];
+"brands-14" -> "PremiumEdge-brands" [ label = " typeOf " ];
+"attention-19" -> "item-being-labelled" [ label = "is" ];
+"brands-14" -> "KirklandSignature-brands" [ label = " typeOf " ];
+"Missouribase-2" -> "MISC" [ label = " is " ];
+}
+digraph sample {
+"maker-3" -> "amender,-corrector" [ label = " is " ];
+"KirklandSignature-9" -> "amender,-corrector" [ label = " is " ];
+"Diamond-5" -> "amender,-corrector" [ label = " is " ];
+"other-11" -> "amender,-corrector" [ label = " is " ];
+"amending-30" -> "statement-32" [ label = "object" ];
+"amending-30" -> "Internet-36" [ label = "on" ];
+"food-13" -> "amender,-corrector" [ label = " is " ];
+"Internet-36" -> "secondary-predication-on-arg1" [ label = "is" ];
+"brands-14" -> "amender,-corrector" [ label = " is " ];
+"recall-37" -> "site-38" [ label = "object" ];
+"pet-12" -> "amender,-corrector" [ label = " is " ];
+"the-1" -> "amender,-corrector" [ label = " is " ];
+"Internet-36" -> "company-Internet" [ label = " typeOf " ];
+"Missouribase-2" -> "amender,-corrector" [ label = " is " ];
+"recall-37" -> "amending-30" [ label = "subject" ];
+"statement-32" -> "thing-amended" [ label = "is" ];
+"recall-37" -> "secondary-predication-on-arg1" [ label = "is" ];
+"PremiumEdge-7" -> "amender,-corrector" [ label = " is " ];
+"Internet-36" -> "MISC" [ label = " is " ];
+}

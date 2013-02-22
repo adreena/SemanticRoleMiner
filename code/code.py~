@@ -10,6 +10,9 @@ from en import numeral
 import en
 import re
 from Visualizer import makeGephi
+dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
+banlist=['and','an','a','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
 ######################################################################################################################################
@@ -74,7 +77,6 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 	STs=[]
 
 	#--- Stanford Translations Dictionary
-	dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
 
 	#print "to check nmubers: ",vlist #vlist has all tokens involved with their location attached to them
 
@@ -222,8 +224,11 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 
 	#print "**********",targetverb,verb
 	#-- 5-2 in some cases there are no verb in sentence , this loop prints statements containing verb and the verb is the root.
+	print "000000000000000000000000000000000000000000"
+	stanRoot=verb.split("-")[0]
+	sennaPred=targetverb
 	print "verbs: ",targetverb,verb.split("-")[0]
-	if verb !="notfound" and targetverb==verb.split("-")[0]:
+	if (verb !="notfound" and targetverb==verb.split("-")[0]) or (verb !="notfound" and targetverb==verb.split("-")[0]):
 		i=0
 		for triple in Stan:
 			pred=triple.keys()[0]
@@ -257,16 +262,27 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 					print tok1," ",dictionary[pred]," ",tok2
 					STs.append((str(tok1),dictionary[pred],str(tok2)))
 	
-
+	
 		#-- 5-2-2 printing statments withe predicate --verb-- among subjects and other objects directly connected to verb. 
 		#--       the location of each token is mentioned but for the verb it's omitted.  
-		#print "subjects All:",sbj # created in previous loop , no need for number fixation
-		#print "objects", obj
+		print ":::::::::::::::::::::::::::::::::::::::::::::::::;"
+		print "subjects All:",sbj # created in previous loop , no need for number fixation
+		print "objects", obj
+		neg=0
+		for ob in obj:
+			if 'neg' in ob:
+				neg=1
+				break
+
+		print "stanford",Stan
 		for subject in sbj.values():
 			for objects in obj:
 				pred=dictionary[objects[0]]
-				damnVerb=subject[1].split("-")[0]
 				
+				damnVerb=subject[1].split("-")[0]
+
+				if neg==1: damnVerb="not-"+damnVerb
+				print "!!!!!!!!!!!!!!!!!damnVerb, neg",damnVerb,neg
 				if str(pred)!="is-Arg1":
 
 					tok1=subject[0]
@@ -283,6 +299,8 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 				#	print "*nbnbn5*"
 					print tok1," ",damnVerb," ",tok2
 					STs.append((str(tok1),damnVerb,str(tok2)))
+
+		
 		#print STs
 	#-- 5-2-3 some sentences in stanford doesn't detect a verb as root. 
 	# 	  this is the loop for including relations in sentences without a verb-root
@@ -409,37 +427,50 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 		newSTs=list(set(newSTs))	
 		#print "After: ",newSTs
 	print newSTs
-	return newSTs
+	return newSTs,obj,sbj
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
 #------------------------------------------------------------------------------------------------------------------------------------
 #Additional statements
-def ExtraSTs(newSTs,PrSent,vlist,addArgs):
+def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects):
+	
 	PrSent=PrSent.replace(",","")
 	PrList=PrSent.split(" ")
 	modSTs=[]
 	print "--**--ExtraSTs"
+	#print "objects : ",objects
 	#print PrList
-	print "Vlist: ",vlist
+	#print "Vlist: ",vlist
 	print " to add args: ",addArgs
 	verb=vlist[0].split("-")[0]
 	print verb
 	allRoles={}	
 	allRoles=roleFinder(verb)
-	banlist=['by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+	#neg=0
+	for obj in objects:
+		if "not" in obj: verb="not-"+verb
 	for item in addArgs:
 		tok1=item[0]
 		if tok1 not in vlist and tok1.split("-")[0] not in banlist: #not connected to verb-paths
 			label=item[1]
+			print "label : ",label
+			if label=="A0":
+				for obj in objects:
+					print tok1," ",verb+"-"+dictionary[obj[0]]," ",obj[1]
+					newSTs.append((tok1," ",verb+"-"+dictionary[obj[0]]," ",obj[1]))
 			if label in allRoles.keys():
 				role=allRoles[label]
-				print tok1," is ",role
-				newSTs.append((tok1," is ",role))
+				#print "///",label, role
+				if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1," is ",label)
+				else: tup=(tok1," is ",role)
+				print tup
+				newSTs.append(tup)
 			else:
+				#print "//",label
 				print tok1," is ",label
 				newSTs.append((tok1," is ",label))
 	
-	print "--------"
+	#print "--------"
 	return newSTs
 
 ######################################################################################################################################
@@ -473,7 +504,7 @@ def verbLinks(vbn,deplist,VBNs):
 #
 #
 def scanVerb(sen,vlist):
-	banlist=['by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for"]
+	banlist=['for','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for","since"]
 	doublewords=["becasue","instead","such","addition","due","all","rather","well"]
 	doublewordlist=[["becasue","of"],["instead","of"], ["such","as"], ["due","to"],["all","but"],["rather","than"]  ]
 	triplewords=["addition","well"]
@@ -530,7 +561,7 @@ def gephiTranslate(Statements,gephiFile):
 		node1=item[0]
 		edge=item[1]
 		node2=item[2]	
-		print node1,edge,node2
+	#	print node1,edge,node2
 		gephiFile.write("\""+node1+"\""+" -> "+"\""+node2+"\" "+"[ label = \""+str(edge)+"\" ];\n") 
   	gephiFile.write("}\n")
 
@@ -559,18 +590,18 @@ def nnMerge(toklist): # the list is already sorted
 				index1=index2	
 			else:	#not to merge (indices are not continues)
 				templist.append(temp)
-				print "added temp:",temp
+				#print "added temp:",temp
 				temp=toklist[i+1][1] #moving to the 2nd token in list, setting it as base
 				index1=index2
 		else:
 			if temp not in templist:	
 				templist.append(temp)
 				#print "added temp:",temp
-		print "templist so far:",templist
+		#print "templist so far:",templist
 	return templist
 
 def nnTotypeOf(allSTs):
-	print "---nnTotypeOf--"
+	#print "---nnTotypeOf--"
 	targets={}
 	toAdd=[]
 	toRem=[]
@@ -592,15 +623,15 @@ def nnTotypeOf(allSTs):
 
 	#print targets
 	for key,val in targets.items():
-		print"-----"
-		print key
+		#print"-----"
+		#print key
 		templist=nnMerge(val)
 		for item in templist:
 			a=key.split("-")[-1] #removing index of main token
 			key1=key.replace("-"+a,"")
 			print key," typeOf ",item+"-"+key1
 			toAdd.append((key," typeOf ",item+"-"+key1))
-	print toAdd	
+	#print toAdd	
 	return toAdd,toRem
 
 

@@ -1,24 +1,16 @@
 (ROOT
   (S
-    (NP (JJ 316) (NNS individuals))
-    (VP (VBD reported)
-      (PP (IN from)
-        (NP
-          (NP (CD 26) (NNS states))
-          (CC and)
-          (NP
-            (NP (DT the) (NNP District))
-            (PP (IN of)
-              (NP (NNP Columbia)))))))
+    (VP (VBG amending)
+      (NP (DT a) (NN statement))
+      (PP (IN on)
+        (NP (DT the) (NN company) (NN Internet) (NN site))))
     (. .)))
 
-amod(individuals-2, 316-1)
-nsubj(reported-3, individuals-2)
-root(ROOT-0, reported-3)
-num(states-6, 26-5)
-prep_from(reported-3, states-6)
-det(District-9, the-8)
-prep_from(reported-3, District-9)
-conj_and(states-6, District-9)
-prep_of(District-9, Columbia-11)
+root(ROOT-0, amending-1)
+det(statement-3, a-2)
+dobj(amending-1, statement-3)
+det(site-8, the-5)
+nn(site-8, company-6)
+nn(site-8, Internet-7)
+prep_on(amending-1, site-8)
 

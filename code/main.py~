@@ -107,7 +107,7 @@ if __name__=="__main__":
 	PAR=Find_Pred_Arg_Root(myTestFile,SEN0_SE,SEN0_ST)
 	PRED=PAR[0]
 	ARGS=PAR[1]
-	print "^^^^^^^^^^^^^^^^^^^^^^pred",PRED
+	#print "^^^^^^^^^^^^^^^^^^^^^^pred",PRED
 	#print ARGS.values()
 	ARGs=ARGS.values()
 	#print "****--***",PRED
@@ -116,7 +116,7 @@ if __name__=="__main__":
 	#	print vals,vals.split("-")[0]
 		addArgs[vals]=[]
 	#print addArgs #{'amending-32': [], 'called-19': []}
-	
+	#print "&&--alARGS",ARGs
 	for item in ARGs:
 		lb="not-found" #finding each list verb along number-tag 
 		for key,val in item.items():
@@ -126,16 +126,19 @@ if __name__=="__main__":
 				lb=val[0][0]
 				break
 		if lb !="not-found":
-	#		print lb
+			print"&&--", item
 			for key,val in item.items():
-	#			print key,"--"
+				print key,"--",val
+				key2=key.replace("-"+key.split("-")[-1],"")
 				if key.split("-")[0]!="V":
 					for v in val:
 						if v[0].split("-")[0]!=",":
 	#						print key,v[0]
 							temp=key.split("-")[-1]
+							print "--",key
 							key=key.replace("-"+temp,"")
-							addArgs[lb].append((v[0],key))		
+							print"-", v[0],temp,key2
+							addArgs[lb].append((v[0],key2))		
 	print addArgs
 	print "##################################################"
 #*************************************************************
@@ -215,12 +218,12 @@ if __name__=="__main__":
 			SennaStan.write(str(sentNumber)+"-"+result+"\n\n")
 			sen.append(result)
 			#print indices
-			STs=translateSent(vlist,result,Poss,indices,PrSent)
+			(STs,objs,sbjs)=translateSent(vlist,result,Poss,indices,PrSent)
 			#print STs
 			print "before LOOOP",vbn, PRED.values()
-			if vbn in PRED: #some of the VBNs are not recognised as verb in the 1st senna output #testcase4 (prepared)
+			if vbn in PRED.values(): #some of the VBNs are not recognised as verb in the 1st senna output #testcase4 (prepared)
 				print "######",addArgs[vbn]
-				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
+				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn],objs,sbjs)
 				STs=list(set(STs+moreSTs)) # added roles from missing part of sentence (cause:verbToverb connection)
 			(toAdd,toRem)=nnTotypeOf(STs)
 			STs=list(set(STs)-set(toRem))
