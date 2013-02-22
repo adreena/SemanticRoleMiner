@@ -3,7 +3,7 @@ import os
 from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
-from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs
+from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf
 import re
 from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -107,6 +107,7 @@ if __name__=="__main__":
 	PAR=Find_Pred_Arg_Root(myTestFile,SEN0_SE,SEN0_ST)
 	PRED=PAR[0]
 	ARGS=PAR[1]
+	print "^^^^^^^^^^^^^^^^^^^^^^pred",PRED
 	#print ARGS.values()
 	ARGs=ARGS.values()
 	#print "****--***",PRED
@@ -135,8 +136,8 @@ if __name__=="__main__":
 							temp=key.split("-")[-1]
 							key=key.replace("-"+temp,"")
 							addArgs[lb].append((v[0],key))		
-	#print addArgs
-	#print "##################################################"
+	print addArgs
+	print "##################################################"
 #*************************************************************
 	#2
 	Senna=modifySenna(sennafile)
@@ -216,8 +217,14 @@ if __name__=="__main__":
 			#print indices
 			STs=translateSent(vlist,result,Poss,indices,PrSent)
 			#print STs
-			moreSts=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
-			
+			print "before LOOOP",vbn, PRED.values()
+			if vbn in PRED.values(): #some of the VBNs are not recognised as verb in the 1st senna output #testcase4 (prepared)
+				print "######",addArgs[vbn]
+				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn])
+				STs=list(set(STs+moreSTs)) # added roles from missing part of sentence (cause:verbToverb connection)
+			(toAdd,toRem)=nnTotypeOf(STs)
+			STs=list(set(STs)-set(toRem))
+			STs=list(set(STs+toAdd))
 			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
 			
 			output.write("          --------------------------------------------------          \n")
@@ -238,7 +245,7 @@ if __name__=="__main__":
 			AllSTs[sentNumber]=STs
 			sentNumber+=1
 			gephiTranslate(STs,gephiFile)
-			print "Statements:",STs
+			#print "Statements:",STs
 	
 	SennaStan.close()
 	output.close()

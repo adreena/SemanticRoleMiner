@@ -1,0 +1,63 @@
+-Complete Sentence is: 
+laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product.
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
+
+      Pennsylvania-14  is  conductor
+      Connecticut-10  is  conductor
+      laboratories-8   typeOf   state-laboratories
+      Maryland-12  is  conductor
+      testing-2  conducted-in  Maryland-12
+      testing-2   typeOf   laboratory-testing
+      laboratories-8  is  conductor
+      Wisconsin-16  is  conductor
+      testing-2  conducted-in  Connecticut-10
+      laboratories-8   typeOf   health-laboratories
+      testing-2  conducted-by  laboratories-8
+      testing-2  conducted-in  Wisconsin-16
+      testing-2  is  thing-led
+      Pennsylvania-14   is   LOC
+      Wisconsin-16   is   LOC
+      Connecticut-10   is   LOC
+      Maryland-12   is   LOC
+      laboratories-8  is  public-6
+      testing-2  conducted-in  Pennsylvania-14
+          --------------------------------------------------          
+1-laboratory testing isolated salmonellae from 53 of 55 samples  .
+
+      testing-2  is  entity-causing-isolation
+      53-21  is  A3
+      testing-2   typeOf   laboratory-testing
+      samples-24  number  55-23
+      testing-2  isolated-object  salmonellae-19
+      testing-2  isolated-from  53-21
+      salmonellae-19  is  entity-isolated
+      53-21  of  samples-24
+          --------------------------------------------------          
+2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+
+      53-21  taken-from  packages-28
+      packages-28   is   entity-taken-from
+      53-21  taken-from  sushi-36
+      samples-24  number  55-23
+      scrape-34  is  yellow-31
+      packages-28  is  intact-27
+      scrape-34   typeOf   fin-tuna-scrape
+      packages-28  of  scrape-34
+      scrape-34  is  frozen-30
+      53-21  of  samples-24
+          --------------------------------------------------          
+3-sushi prepared with the scrape tuna product  .
+
+      sushi-36  prepared-with  product-43
+      sushi-36  is  creation
+      product-43   typeOf   scrape-tuna-product
+          --------------------------------------------------          
+4-the implicated scrape tuna product  .
+
+      product-43  is  thing-implicated
+      product-43  is  implicated-40
+      product-43   typeOf   scrape-tuna-product
+          --------------------------------------------------                 

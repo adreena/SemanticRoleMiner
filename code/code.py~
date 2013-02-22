@@ -434,10 +434,13 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs):
 			if label in allRoles.keys():
 				role=allRoles[label]
 				print tok1," is ",role
+				newSTs.append((tok1," is ",role))
 			else:
 				print tok1," is ",label
+				newSTs.append((tok1," is ",label))
 	
 	print "--------"
+	return newSTs
 
 ######################################################################################################################################
 ######################################################################################################################################
@@ -470,7 +473,7 @@ def verbLinks(vbn,deplist,VBNs):
 #
 #
 def scanVerb(sen,vlist):
-	banlist=['by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and"]
+	banlist=['by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for"]
 	doublewords=["becasue","instead","such","addition","due","all","rather","well"]
 	doublewordlist=[["becasue","of"],["instead","of"], ["such","as"], ["due","to"],["all","but"],["rather","than"]  ]
 	triplewords=["addition","well"]
@@ -530,4 +533,81 @@ def gephiTranslate(Statements,gephiFile):
 		print node1,edge,node2
 		gephiFile.write("\""+node1+"\""+" -> "+"\""+node2+"\" "+"[ label = \""+str(edge)+"\" ];\n") 
   	gephiFile.write("}\n")
+
+
+#--------------------------------------------
+
+def nnMerge(toklist): # the list is already sorted
+	#fakeIndex=0
+	toklist.sort()
+	#print toklist	
+	length=len(toklist)
+	templist=[]
+	index1=int(toklist[0][0])
+	temp=toklist[0][1] #base
+	#print toklist,length,index1
+	for i in range(0,length):
+		
+		#print "round:",i
+		#print "index1:",index1
+		if i<length-1:
+			#print "if: ",i
+			index2=int(toklist[i+1][0]) #index of the 2nd token in toklist
+			#print "-index2: ",index2
+			if index2-index1==1: # to merge
+				temp+="-"+toklist[i+1][1]
+				index1=index2	
+			else:	#not to merge (indices are not continues)
+				templist.append(temp)
+				print "added temp:",temp
+				temp=toklist[i+1][1] #moving to the 2nd token in list, setting it as base
+				index1=index2
+		else:
+			if temp not in templist:	
+				templist.append(temp)
+				#print "added temp:",temp
+		print "templist so far:",templist
+	return templist
+
+def nnTotypeOf(allSTs):
+	print "---nnTotypeOf--"
+	targets={}
+	toAdd=[]
+	toRem=[]
+	for triple in allSTs:
+		tok1=triple[0]
+		pred=triple[1]
+		tok2=triple[2]
+		if pred=="--":
+			toRem.append(triple)
+			#print triple
+			index=int(tok2.split("-")[-1])
+			tok2=tok2.replace("-"+str(index),"")
+			if tok1 in targets.keys():
+				targets[tok1].sort()
+				targets[tok1].append((index,tok2)) 
+			else:
+				targets[tok1]=[]
+				targets[tok1].append((index,tok2))
+
+	#print targets
+	for key,val in targets.items():
+		print"-----"
+		print key
+		templist=nnMerge(val)
+		for item in templist:
+			a=key.split("-")[-1] #removing index of main token
+			key1=key.replace("-"+a,"")
+			print key," typeOf ",item+"-"+key1
+			toAdd.append((key," typeOf ",item+"-"+key1))
+	print toAdd	
+	return toAdd,toRem
+
+
+
+
+
+
+
+
 

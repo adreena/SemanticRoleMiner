@@ -1,11 +1,13 @@
-       amending	       VBG	      S-VP	         O	       amending	       S-V	(S1(S(S(VP*
-              a	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
-      statement	        NN	      E-NP	         O	              -	      E-A1	*)
-             on	        IN	      S-PP	         O	              -	      B-A2	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A2	(NP*
-        company	        NN	      I-NP	         O	              -	      I-A2	*
-       Internet	       NNP	      I-NP	    S-MISC	              -	      I-A2	*
-         recall	        NN	      I-NP	         O	              -	      I-A2	*
-           site	        NN	      E-NP	         O	              -	      E-A2	*)))))
+            316	        CD	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+    individuals	       NNS	      E-NP	         O	              -	      E-A0	*)
+       reported	       VBD	      S-VP	         O	       reported	       S-V	(VP*
+           from	        IN	      S-PP	         O	              -	      B-A1	(PP*
+             26	        CD	      B-NP	         O	              -	      I-A1	(NP(NP*
+         states	       NNS	      E-NP	         O	              -	      I-A1	*)
+            and	        CC	         O	         O	              -	      I-A1	*
+            the	        DT	      B-NP	         O	              -	      I-A1	(NP(NP*
+       District	       NNP	      E-NP	     B-ORG	              -	      I-A1	*)
+             of	        IN	      S-PP	     I-ORG	              -	      I-A1	(PP*
+       Columbia	       NNP	      S-NP	     E-ORG	              -	      E-A1	(NP*))))))
               .	         .	         O	         O	              -	         O	*))
 

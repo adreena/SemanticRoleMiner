@@ -32,4 +32,4 @@
       individuals-2  is  Reporter
       SalmonellaBareilly-9   is   thing-reported
       District-20   is   ORG
-          --------------------------------------------------          
+          --------------------------------------------------        

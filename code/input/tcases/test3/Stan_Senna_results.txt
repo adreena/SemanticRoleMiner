@@ -1,0 +1,70 @@
+(ROOT
+  (S
+    (NP
+      (NP (CD 36))
+      (PP (IN of)
+        (NP
+          (QP (JJR more) (IN than) (CD 200))
+          (NNS workers))))
+    (VP (VBN fallen)
+      (S
+        (ADJP (RB ill)))
+      (PP (IN in)
+        (NP
+          (NP (DT the) (CD 2) (NNS weeks))
+          (PP (IN since)
+            (NP (DT the) (NN outbreak))))))
+    (. .)))
+
+nsubj(fallen-7, 36-1)
+mwe(than-4, more-3)
+quantmod(200-5, than-4)
+num(workers-6, 200-5)
+prep_of(36-1, workers-6)
+root(ROOT-0, fallen-7)
+dep(fallen-7, ill-8)
+det(weeks-12, the-10)
+num(weeks-12, 2-11)
+prep_in(fallen-7, weeks-12)
+det(outbreak-15, the-14)
+prep_since(weeks-12, outbreak-15)
+
+--Senna Output:------------------------------------------------------ 
+             36	        CD	      S-NP	         O	              -	      B-A1	(S1(S(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+           more	       JJR	      B-NP	         O	              -	      I-A1	(NP(QP*
+           than	        IN	      I-NP	         O	              -	      I-A1	*
+            200	        CD	      I-NP	         O	              -	      I-A1	*)
+        workers	       NNS	      E-NP	         O	              -	      E-A1	*)))
+         fallen	       VBD	      S-VP	         O	         fallen	       S-V	(VP*
+            ill	        RB	    S-ADVP	         O	              -	      S-A2	(ADVP*)
+             in	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
+            the	        DT	      B-NP	         O	              -	  I-AM-TMP	(NP(NP*
+              2	        CD	      I-NP	         O	              -	  I-AM-TMP	*
+          weeks	       NNS	      E-NP	         O	              -	  I-AM-TMP	*)
+          since	        IN	    S-SBAR	         O	              -	  I-AM-TMP	(PP*
+            the	        DT	      B-NP	         O	              -	  I-AM-TMP	(NP*
+       outbreak	        NN	      E-NP	         O	              -	  E-AM-TMP	*)))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+1-their union said  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (PRP$ their) (NN union))
+    (VP (VBD said))
+    (. .)))
+
+poss(union-2, their-1)
+nsubj(said-3, union-2)
+root(ROOT-0, said-3)
+
+--Senna Output:------------------------------------------------------ 
+          their	      PRP$	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+          union	        NN	      E-NP	         O	              -	      E-A0	*)
+           said	       VBD	      S-VP	         O	           said	       S-V	(VP*)
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------

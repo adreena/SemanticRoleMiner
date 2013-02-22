@@ -3,7 +3,7 @@
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-36 of more than 200 workers fallen ill in the 2 weeks the outbreak  .
+0-36 of more than 200 workers fallen ill in the 2 weeks since the outbreak  .
 
       weeks-13  is  TMP
       since-14   is   medium
@@ -13,6 +13,7 @@
       36-1  of  workers-6
       weeks-13  number  2-12
       ill-9   is   EXT
+      weeks-13  since  outbreak-16
           --------------------------------------------------          
 1-their union said  .
 

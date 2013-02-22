@@ -1,0 +1,29 @@
+digraph sample {
+"weeks-13" -> "TMP" [ label = "is" ];
+"since-14" -> "medium" [ label = " is " ];
+"36-1" -> "Logical-subject" [ label = " is " ];
+"workers-6" -> "200-5" [ label = "number" ];
+"36-1" -> "weeks-13" [ label = "fallen-in" ];
+"36-1" -> "workers-6" [ label = "of" ];
+"weeks-13" -> "2-12" [ label = "number" ];
+"ill-9" -> "EXT" [ label = " is " ];
+"weeks-13" -> "outbreak-16" [ label = "since" ];
+}
+digraph sample {
+"2-12" -> "Utterance" [ label = " is " ];
+"than-4" -> "Utterance" [ label = " is " ];
+"the-15" -> "Utterance" [ label = " is " ];
+"outbreak-16" -> "Utterance" [ label = " is " ];
+"more-3" -> "Utterance" [ label = " is " ];
+"have-7" -> "Utterance" [ label = " is " ];
+"36-1" -> "Utterance" [ label = " is " ];
+"union-19" -> "their-18" [ label = "possession" ];
+"fallen-8" -> "Utterance" [ label = " is " ];
+"workers-6" -> "Utterance" [ label = " is " ];
+"union-19" -> "Sayer" [ label = "is" ];
+"weeks-13" -> "Utterance" [ label = " is " ];
+"ill-9" -> "Utterance" [ label = " is " ];
+"200-5" -> "Utterance" [ label = " is " ];
+"the-11" -> "Utterance" [ label = " is " ];
+"since-14" -> "Utterance" [ label = " is " ];
+}

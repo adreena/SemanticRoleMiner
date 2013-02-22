@@ -1,0 +1,34 @@
+workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis.
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+0-workers on a gas production platform in the Bass Strait want  .
+
+      a-18   is   thing-wanted
+      major-19   is   thing-wanted
+      platform-6  in  Strait-10
+      their-12   is   thing-wanted
+      outbreak-20   is   thing-wanted
+      salmonella-22   is   thing-wanted
+      platform-6   typeOf   gas-production-platform
+      workers-1  on  platform-6
+      port-16   is   thing-wanted
+      workers-1  is  Wanter
+      gastroenteritis-24   is   thing-wanted
+      Strait-10   typeOf   Bass-Strait
+      returned-14   is   thing-wanted
+      barge-13   is   thing-wanted
+      Bass-9   is   LOC
+          --------------------------------------------------          
+1-their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
+
+      outbreak-20  is  major-19
+      barge-13  possession  their-12
+      barge-13  returned-after  outbreak-20
+      port-16  is  end-point
+      outbreak-20  of  salmonella-22
+      barge-13  is  entity-in-motion
+      outbreak-20  is  TMP
+      outbreak-20  of  gastroenteritis-24
+      barge-13  returned-to  port-16
+          --------------------------------------------------                 
