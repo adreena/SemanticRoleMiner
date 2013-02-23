@@ -1,74 +1,63 @@
 -Complete Sentence is: 
-the MissouriDiamond , PremiumEdge , KirklandSignature and other pet food brands have not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet site .
+laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-the MissouriDiamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall for cat food  .
+0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
 
-      MissouriDiamond-2  not-called-to  expansion-19
-      brands-11  not-called-for  food-25
-      KirklandSignature-6  not-called-for  food-25
-      PremiumEdge-4  not-called-for  food-25
-      PremiumEdge-4  is  caller
-      MissouriDiamond-2  not-called-for  food-25
-      brands-11  is  caller
-      attention-16  is  special-15
-      KirklandSignature-6  not-called-object  attention-16
-      KirklandSignature-6  is  caller
-      KirklandSignature-6   is   PER
-      brands-11  is  pet-9
-      MissouriDiamond-2  not-called-not  not-13
-      MissouriDiamond-2  not-called-object  attention-16
-      brands-11  not-called-not  not-13
-      KirklandSignature-6  not-called-not  not-13
-      brands-11  not-called-object  attention-16
-      MissouriDiamond-2   is   LOC
-      PremiumEdge-4  not-called-to  expansion-19
-      attention-16  is  item-being-labelled
-      Internet-33   is   AM-CAU
-      brands-11  is  other-8
-      brands-11   typeOf   food-brands
-      not-13  is  NEG
-      amending-27   is   AM-CAU
-      expansion-19  of  recall-22
-      PremiumEdge-4  not-called-object  attention-16
-      company-32   is   AM-CAU
-      site-34   is   AM-CAU
-      expansion-19  is  attribute-of-arg1
-      PremiumEdge-4   is   PER
-      food-25   typeOf   cat-food
-      food-25  is  attribute-of-arg1
-      statement-29   is   AM-CAU
-      PremiumEdge-4  not-called-not  not-13
-      MissouriDiamond-2  is  caller
-      KirklandSignature-6  not-called-to  expansion-19
-      brands-11  not-called-to  expansion-19
+      Pennsylvania-14  is  conductor
+      Connecticut-10  is  conductor
+      Maryland-12   is   LOC
+      Maryland-12  is  conductor
+      testing-2  conducted-in  Maryland-12
+      testing-2   typeOf   laboratory-testing
+      laboratories-8  is  conductor
+      Wisconsin-16  is  conductor
+      testing-2  conducted-in  Connecticut-10
+      Connecticut-10   is   LOC
+      laboratories-8   typeOf   health-laboratories
+      testing-2  conducted-by  laboratories-8
+      testing-2  conducted-in  Pennsylvania-14
+      laboratories-8   typeOf   state-laboratories
+      Pennsylvania-14   is   LOC
+      Wisconsin-16   is   LOC
+      testing-2  conducted-in  Wisconsin-16
+      laboratories-8  is  public-6
+      testing-2  is  thing-led
           --------------------------------------------------          
-1-amending a statement on the company Internet site  .
+1-laboratory testing isolated salmonellae from 53 of 55 samples  .
 
-      other-8  amending-on  site-34
-      pet-9  amending-on  site-34
-      food-10   is   amender,-corrector
-      site-34  is  thing-amended
-      MissouriDiamond-2  amending-object  statement-29
-      PremiumEdge-4   is   amender,-corrector
-      other-8  amending-object  statement-29
-      brands-11   is   amender,-corrector
-      brands-11  amending-object  statement-29
-      pet-9   is   amender,-corrector
-      MissouriDiamond-2  amending-on  site-34
-      other-8   is   amender,-corrector
-      food-10  amending-on  site-34
-      food-10  amending-object  statement-29
-      MissouriDiamond-2   is   amender,-corrector
-      PremiumEdge-4  amending-on  site-34
-      Internet-33   is   MISC
-      KirklandSignature-6  amending-on  site-34
-      PremiumEdge-4  amending-object  statement-29
-      brands-11  amending-on  site-34
-      KirklandSignature-6  amending-object  statement-29
-      site-34   typeOf   company-Internet-site
-      pet-9  amending-object  statement-29
-      KirklandSignature-6   is   amender,-corrector
-      statement-29  is  thing-amended
+      testing-2  is  entity-causing-isolation
+      53-21  is  A3
+      testing-2   typeOf   laboratory-testing
+      samples-24  number  55-23
+      testing-2  isolated-object  salmonellae-19
+      53-21  of  samples-24
+      salmonellae-19  is  entity-isolated
+      testing-2  isolated-from  53-21
+          --------------------------------------------------          
+2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+
+      53-21  taken-from  packages-28
+      packages-28   is   entity-taken-from
+      53-21  taken-from  sushi-36
+      samples-24  number  55-23
+      scrape-34  is  yellow-31
+      packages-28  is  intact-27
+      scrape-34   typeOf   fin-tuna-scrape
+      packages-28  of  scrape-34
+      scrape-34  is  frozen-30
+      53-21  of  samples-24
+          --------------------------------------------------          
+3-sushi prepared with the scrape tuna product  .
+
+      sushi-36  prepared-with  product-43
+      sushi-36  is  creation
+      product-43   typeOf   scrape-tuna-product
+          --------------------------------------------------          
+4-the implicated scrape tuna product  .
+
+      product-43  is  thing-implicated
+      product-43  is  implicated-40
+      product-43   typeOf   scrape-tuna-product
           --------------------------------------------------          

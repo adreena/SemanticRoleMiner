@@ -173,18 +173,22 @@ if __name__=="__main__":
 	temp=vals.values() 
 	#print temp
 	#print VBNs 
-	DCT={} #directly connected tokens
-	for v in VBNs:
-		DCT[v]=[]
+	#DCT={} #directly connected tokens
+	#VBs=list(set(VBNs+PRED.values()))
+	DCT=[]
+	#for v in VBNs:
+	#	DCT[v]=[]
+	print "888888888"
 	for v in vals.values():
+		prep=v.keys()[0]
 		toks= v.values()[0]
 		tok1=toks[0]
 		tok2=toks[1]
-		if tok1 in VBNs and tok2 !="ROOT-0" and tok2 not in VBNs:
-			DCT[tok1].append(tok2)
-		elif tok2 in VBNs and tok1 !="ROOT-0" and tok1 not in VBNs:
-			DCT[tok2].append(tok1)
-	#print DCT	
+		if prep.split("_")[0]!="prep" and tok1 in VBNs and tok2 !="ROOT-0" and tok2 not in VBNs:
+			DCT.append(tok2)
+		elif prep.split("_")[0]!="prep" and tok2 in VBNs and tok1 !="ROOT-0" and tok1 not in VBNs:
+			DCT.append(tok1)
+		
 	allDeps=[] 
 	for v in temp:
 		a=(v.values()[0][0],v.values()[0][1])
@@ -209,7 +213,7 @@ if __name__=="__main__":
 
 
 	sentNumber=0
-	AllSTs={}
+	AllSTs=[]
 	gephiFile=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/gephi.dot","w")
 	for vbn in VBNs:
 		#vbn="isolated-18"
@@ -258,7 +262,7 @@ if __name__=="__main__":
 			SennaStan.write("--Senna Output:------------------------------------------------------ \n")
 			SennaStan.write(text)
 			SennaStan.write("----------------------------------------------------------------------\n")
-			AllSTs+=STs
+			AllSTs=list(set(AllSTs+STs))
 			sentNumber+=1
 	gephiTranslate(AllSTs,gephiFile)
 	#print "Statements:",STs
@@ -271,4 +275,5 @@ if __name__=="__main__":
 	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","w")	
 	sentence.write(OrgSent)
 	sentence.close()
+	print DCT, PRED.values()
 

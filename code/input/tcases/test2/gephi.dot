@@ -1,35 +1,13 @@
 digraph sample {
-"major-19" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "barge-13" [ label = "want" ];
-"port-16" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "gastroenteritis-24" [ label = "want" ];
-"workers-1" -> "salmonella-22" [ label = "want" ];
-"salmonella-22" -> "thing-wanted" [ label = " is " ];
-"platform-6" -> "gas-production-platform" [ label = " typeOf " ];
-"workers-1" -> "returned-14" [ label = "want" ];
-"Strait-10" -> "Bass-Strait" [ label = " typeOf " ];
-"returned-14" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "outbreak-20" [ label = "want" ];
-"their-12" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "their-12" [ label = "want" ];
-"workers-1" -> "port-16" [ label = "want" ];
-"workers-1" -> "platform-6" [ label = "on" ];
-"workers-1" -> "Wanter" [ label = "is" ];
-"gastroenteritis-24" -> "thing-wanted" [ label = " is " ];
-"Bass-9" -> "LOC" [ label = " is " ];
-"platform-6" -> "Strait-10" [ label = "in" ];
-"outbreak-20" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "major-19" [ label = "want" ];
-"barge-13" -> "thing-wanted" [ label = " is " ];
-}
-digraph sample {
-"outbreak-20" -> "major-19" [ label = "is" ];
-"barge-13" -> "their-12" [ label = "possession" ];
-"barge-13" -> "outbreak-20" [ label = "returned-after" ];
-"port-16" -> "end-point" [ label = "is" ];
-"outbreak-20" -> "salmonella-22" [ label = "of" ];
-"barge-13" -> "entity-in-motion" [ label = "is" ];
-"outbreak-20" -> "TMP" [ label = "is" ];
-"outbreak-20" -> "gastroenteritis-24" [ label = "of" ];
-"barge-13" -> "port-16" [ label = "returned-to" ];
+"weeks-13" -> "TMP" [ label = "is" ];
+"36-1" -> "Logical-subject" [ label = " is " ];
+"union-19" -> "Sayer" [ label = "is" ];
+"workers-6" -> "200-5" [ label = "number" ];
+"union-19" -> "their-18" [ label = "possession" ];
+"36-1" -> "ill-9" [ label = "fallen---" ];
+"36-1" -> "weeks-13" [ label = "fallen-in" ];
+"36-1" -> "workers-6" [ label = "of" ];
+"weeks-13" -> "2-12" [ label = "number" ];
+"ill-9" -> "EXT" [ label = " is " ];
+"weeks-13" -> "outbreak-16" [ label = "since" ];
 }

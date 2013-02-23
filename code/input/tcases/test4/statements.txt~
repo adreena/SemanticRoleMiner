@@ -7,34 +7,75 @@ laboratory testing conducted by state public health laboratories in Connecticut,
 
       Pennsylvania-14  is  conductor
       Connecticut-10  is  conductor
-      laboratories-8   typeOf   state-laboratories
+      Maryland-12   is   LOC
       Maryland-12  is  conductor
       testing-2  conducted-in  Maryland-12
       testing-2   typeOf   laboratory-testing
       laboratories-8  is  conductor
       Wisconsin-16  is  conductor
       testing-2  conducted-in  Connecticut-10
+      Connecticut-10   is   LOC
       laboratories-8   typeOf   health-laboratories
       testing-2  conducted-by  laboratories-8
-      testing-2  conducted-in  Wisconsin-16
-      testing-2  is  thing-led
+      testing-2  conducted-in  Pennsylvania-14
+      laboratories-8   typeOf   state-laboratories
       Pennsylvania-14   is   LOC
       Wisconsin-16   is   LOC
-      Connecticut-10   is   LOC
-      Maryland-12   is   LOC
+      testing-2  conducted-in  Wisconsin-16
       laboratories-8  is  public-6
-      testing-2  conducted-in  Pennsylvania-14
+      testing-2  is  thing-led
           --------------------------------------------------          
 1-laboratory testing isolated salmonellae from 53 of 55 samples  .
 
-      testing-2  is  entity-causing-isolation
-      53-21  is  A3
-      testing-2   typeOf   laboratory-testing
-      samples-24  number  55-23
-      testing-2  isolated-object  salmonellae-19
-      testing-2  isolated-from  53-21
-      salmonellae-19  is  entity-isolated
+      taken-25   is   A3
+      state-5  isolated-from  53-21
+      Connecticut-10  isolated-from  53-21
+      Connecticut-10  isolated-object  salmonellae-19
+      health-7   is   entity-causing-isolation
+      public-6   is   entity-causing-isolation
+      conducted-3  isolated-object  salmonellae-19
+      Pennsylvania-14   is   entity-causing-isolation
       53-21  of  samples-24
+      laboratories-8   is   entity-causing-isolation
+      salmonellae-19  is  entity-isolated
+      53-21  is  A3
+      product-43   is   A3
+      samples-24  number  55-23
+      implicated-40   is   A3
+      testing-2  isolated-object  salmonellae-19
+      Pennsylvania-14  isolated-object  salmonellae-19
+      health-7  isolated-object  salmonellae-19
+      Wisconsin-16  isolated-from  53-21
+      health-7  isolated-from  53-21
+      scrape-41   is   A3
+      Maryland-12   is   entity-causing-isolation
+      state-5  isolated-object  salmonellae-19
+      intact-27   is   A3
+      fin-32   is   A3
+      packages-28   is   A3
+      Pennsylvania-14  isolated-from  53-21
+      public-6  isolated-from  53-21
+      Wisconsin-16  isolated-object  salmonellae-19
+      state-5   is   entity-causing-isolation
+      laboratories-8  isolated-object  salmonellae-19
+      prepared-37   is   A3
+      laboratories-8  isolated-from  53-21
+      Maryland-12  isolated-from  53-21
+      sushi-36   is   A3
+      Connecticut-10   is   entity-causing-isolation
+      Wisconsin-16   is   entity-causing-isolation
+      tuna-42   is   A3
+      testing-2  is  entity-causing-isolation
+      testing-2   typeOf   laboratory-testing
+      yellow-31   is   A3
+      conducted-3   is   entity-causing-isolation
+      conducted-3  isolated-from  53-21
+      tuna-33   is   A3
+      scrape-34   is   A3
+      Maryland-12  isolated-object  salmonellae-19
+      public-6  isolated-object  salmonellae-19
+      frozen-30   is   A3
+      testing-2  isolated-from  53-21
           --------------------------------------------------          
 2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
 
@@ -60,4 +101,4 @@ laboratory testing conducted by state public health laboratories in Connecticut,
       product-43  is  thing-implicated
       product-43  is  implicated-40
       product-43   typeOf   scrape-tuna-product
-          --------------------------------------------------                 
+          --------------------------------------------------          

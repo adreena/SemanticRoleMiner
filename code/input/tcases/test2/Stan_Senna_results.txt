@@ -1,86 +1,73 @@
-0-workers on a gas production platform in the Bass Strait want  .
+0-36 of more than 200 workers fallen ill in the 2 weeks since the outbreak  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
     (NP
-      (NP (NNS workers))
-      (PP (IN on)
+      (NP (CD 36))
+      (PP (IN of)
         (NP
-          (NP (DT a) (NN gas) (NN production) (NN platform))
-          (PP (IN in)
-            (NP (DT the) (NNP Bass) (NNP Strait))))))
-    (VP (VBP want))
+          (QP (JJR more) (IN than) (CD 200))
+          (NNS workers))))
+    (VP (VBN fallen)
+      (S
+        (ADJP (RB ill)))
+      (PP (IN in)
+        (NP
+          (NP (DT the) (CD 2) (NNS weeks))
+          (PP (IN since)
+            (NP (DT the) (NN outbreak))))))
     (. .)))
 
-nsubj(want-11, workers-1)
-det(platform-6, a-3)
-nn(platform-6, gas-4)
-nn(platform-6, production-5)
-prep_on(workers-1, platform-6)
-det(Strait-10, the-8)
-nn(Strait-10, Bass-9)
-prep_in(platform-6, Strait-10)
-root(ROOT-0, want-11)
+nsubj(fallen-7, 36-1)
+mwe(than-4, more-3)
+quantmod(200-5, than-4)
+num(workers-6, 200-5)
+prep_of(36-1, workers-6)
+root(ROOT-0, fallen-7)
+dep(fallen-7, ill-8)
+det(weeks-12, the-10)
+num(weeks-12, 2-11)
+prep_in(fallen-7, weeks-12)
+det(outbreak-15, the-14)
+prep_since(weeks-12, outbreak-15)
 
 --Senna Output:------------------------------------------------------ 
-        workers	       NNS	      S-NP	         O	              -	      B-A0	(S1(S(NP(NP*)
-             on	        IN	      S-PP	         O	              -	      I-A0	(PP*
-              a	        DT	      B-NP	         O	              -	      I-A0	(NP*
-            gas	        NN	      I-NP	         O	              -	      I-A0	*
-     production	        NN	      I-NP	         O	              -	      I-A0	*
-       platform	        NN	      E-NP	         O	              -	      I-A0	*))
-             in	        IN	      S-PP	         O	              -	      I-A0	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A0	(NP*
-           Bass	       NNP	      I-NP	     B-LOC	              -	      I-A0	*
-         Strait	       NNP	      E-NP	     E-LOC	              -	      E-A0	*)))
-           want	       VBP	      S-VP	         O	           want	       S-V	(VP*)
+             36	        CD	      S-NP	         O	              -	      B-A1	(S1(S(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+           more	       JJR	      B-NP	         O	              -	      I-A1	(NP(QP*
+           than	        IN	      I-NP	         O	              -	      I-A1	*
+            200	        CD	      I-NP	         O	              -	      I-A1	*)
+        workers	       NNS	      E-NP	         O	              -	      E-A1	*)))
+         fallen	       VBD	      S-VP	         O	         fallen	       S-V	(VP*
+            ill	        RB	    S-ADVP	         O	              -	      S-A2	(ADVP*)
+             in	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
+            the	        DT	      B-NP	         O	              -	  I-AM-TMP	(NP(NP*
+              2	        CD	      I-NP	         O	              -	  I-AM-TMP	*
+          weeks	       NNS	      E-NP	         O	              -	  I-AM-TMP	*)
+          since	        IN	    S-SBAR	         O	              -	  I-AM-TMP	(PP*
+            the	        DT	      B-NP	         O	              -	  I-AM-TMP	(NP*
+       outbreak	        NN	      E-NP	         O	              -	  E-AM-TMP	*)))))
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------
-1-their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
+1-their union said  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
-    (NP (PRP$ their) (NN barge))
-    (VP (VBD returned)
-      (PP (TO to)
-        (NP (NN port)))
-      (PP (IN after)
-        (NP
-          (NP (DT a) (JJ major) (NN outbreak))
-          (PP (IN of)
-            (NP (NN salmonella)
-              (CC and)
-              (NNS gastroenteritis))))))
+    (NP (PRP$ their) (NN union))
+    (VP (VBD said))
     (. .)))
 
-poss(barge-2, their-1)
-nsubj(returned-3, barge-2)
-root(ROOT-0, returned-3)
-prep_to(returned-3, port-5)
-det(outbreak-9, a-7)
-amod(outbreak-9, major-8)
-prep_after(returned-3, outbreak-9)
-prep_of(outbreak-9, salmonella-11)
-prep_of(outbreak-9, gastroenteritis-13)
-conj_and(salmonella-11, gastroenteritis-13)
+poss(union-2, their-1)
+nsubj(said-3, union-2)
+root(ROOT-0, said-3)
 
 --Senna Output:------------------------------------------------------ 
-          their	      PRP$	      B-NP	         O	              -	      B-A1	(S1(S(NP*
-          barge	        NN	      E-NP	         O	              -	      E-A1	*)
-       returned	       VBD	      S-VP	         O	       returned	       S-V	(VP*
-             to	        TO	      S-PP	         O	              -	      B-A4	(PP*
-           port	        NN	      S-NP	         O	              -	      E-A4	(NP*))
-          after	        IN	      S-PP	         O	              -	  B-AM-TMP	(PP*
-              a	        DT	      B-NP	         O	              -	  I-AM-TMP	(NP(NP*
-          major	        JJ	      I-NP	         O	              -	  I-AM-TMP	*
-       outbreak	        NN	      E-NP	         O	              -	  I-AM-TMP	*)
-             of	        IN	      S-PP	         O	              -	  I-AM-TMP	(PP*
-     salmonella	        NN	      B-NP	         O	              -	  I-AM-TMP	(NP*
-            and	        CC	      I-NP	         O	              -	  I-AM-TMP	*
-gastroenteritis	       NNS	      E-NP	         O	              -	  E-AM-TMP	*)))))
+          their	      PRP$	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+          union	        NN	      E-NP	         O	              -	      E-A0	*)
+           said	       VBD	      S-VP	         O	           said	       S-V	(VP*)
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------

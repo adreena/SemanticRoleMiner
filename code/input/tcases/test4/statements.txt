@@ -1,104 +1,28 @@
 -Complete Sentence is: 
-laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product.
+workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
+0-workers on a gas production platform in the Bass Strait want  .
 
-      Pennsylvania-14  is  conductor
-      Connecticut-10  is  conductor
-      Maryland-12   is   LOC
-      Maryland-12  is  conductor
-      testing-2  conducted-in  Maryland-12
-      testing-2   typeOf   laboratory-testing
-      laboratories-8  is  conductor
-      Wisconsin-16  is  conductor
-      testing-2  conducted-in  Connecticut-10
-      Connecticut-10   is   LOC
-      laboratories-8   typeOf   health-laboratories
-      testing-2  conducted-by  laboratories-8
-      testing-2  conducted-in  Pennsylvania-14
-      laboratories-8   typeOf   state-laboratories
-      Pennsylvania-14   is   LOC
-      Wisconsin-16   is   LOC
-      testing-2  conducted-in  Wisconsin-16
-      laboratories-8  is  public-6
-      testing-2  is  thing-led
+      platform-6  in  Strait-10
+      workers-1  want  barge-13
+      platform-6   typeOf   gas-production-platform
+      workers-1  on  platform-6
+      workers-1  is  Wanter
+      Strait-10   typeOf   Bass-Strait
+      barge-13   is   thing-wanted
+      Bass-9   is   LOC
           --------------------------------------------------          
-1-laboratory testing isolated salmonellae from 53 of 55 samples  .
+1-their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
 
-      taken-25   is   A3
-      state-5  isolated-from  53-21
-      Connecticut-10  isolated-from  53-21
-      Connecticut-10  isolated-object  salmonellae-19
-      health-7   is   entity-causing-isolation
-      public-6   is   entity-causing-isolation
-      conducted-3  isolated-object  salmonellae-19
-      Pennsylvania-14   is   entity-causing-isolation
-      53-21  of  samples-24
-      laboratories-8   is   entity-causing-isolation
-      salmonellae-19  is  entity-isolated
-      53-21  is  A3
-      product-43   is   A3
-      samples-24  number  55-23
-      implicated-40   is   A3
-      testing-2  isolated-object  salmonellae-19
-      Pennsylvania-14  isolated-object  salmonellae-19
-      health-7  isolated-object  salmonellae-19
-      Wisconsin-16  isolated-from  53-21
-      health-7  isolated-from  53-21
-      scrape-41   is   A3
-      Maryland-12   is   entity-causing-isolation
-      state-5  isolated-object  salmonellae-19
-      intact-27   is   A3
-      fin-32   is   A3
-      packages-28   is   A3
-      Pennsylvania-14  isolated-from  53-21
-      public-6  isolated-from  53-21
-      Wisconsin-16  isolated-object  salmonellae-19
-      state-5   is   entity-causing-isolation
-      laboratories-8  isolated-object  salmonellae-19
-      prepared-37   is   A3
-      laboratories-8  isolated-from  53-21
-      Maryland-12  isolated-from  53-21
-      sushi-36   is   A3
-      Connecticut-10   is   entity-causing-isolation
-      Wisconsin-16   is   entity-causing-isolation
-      tuna-42   is   A3
-      testing-2  is  entity-causing-isolation
-      testing-2   typeOf   laboratory-testing
-      yellow-31   is   A3
-      conducted-3   is   entity-causing-isolation
-      conducted-3  isolated-from  53-21
-      tuna-33   is   A3
-      scrape-34   is   A3
-      Maryland-12  isolated-object  salmonellae-19
-      public-6  isolated-object  salmonellae-19
-      frozen-30   is   A3
-      testing-2  isolated-from  53-21
-          --------------------------------------------------          
-2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
-
-      53-21  taken-from  packages-28
-      packages-28   is   entity-taken-from
-      53-21  taken-from  sushi-36
-      samples-24  number  55-23
-      scrape-34  is  yellow-31
-      packages-28  is  intact-27
-      scrape-34   typeOf   fin-tuna-scrape
-      packages-28  of  scrape-34
-      scrape-34  is  frozen-30
-      53-21  of  samples-24
-          --------------------------------------------------          
-3-sushi prepared with the scrape tuna product  .
-
-      sushi-36  prepared-with  product-43
-      sushi-36  is  creation
-      product-43   typeOf   scrape-tuna-product
-          --------------------------------------------------          
-4-the implicated scrape tuna product  .
-
-      product-43  is  thing-implicated
-      product-43  is  implicated-40
-      product-43   typeOf   scrape-tuna-product
+      outbreak-20  is  major-19
+      barge-13  possession  their-12
+      barge-13  returned-after  outbreak-20
+      port-16  is  end-point
+      outbreak-20  of  salmonella-22
+      barge-13  is  entity-in-motion
+      outbreak-20  is  TMP
+      outbreak-20  of  gastroenteritis-24
+      barge-13  returned-to  port-16
           --------------------------------------------------          

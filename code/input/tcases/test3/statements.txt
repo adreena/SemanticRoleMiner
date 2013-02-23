@@ -1,42 +1,57 @@
 -Complete Sentence is: 
-workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis.
+the Missouri Diamond , Premium Edge , Kirkland Signature and other pet food brands have not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet site .
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-workers on a gas production platform in the Bass Strait want  .
+0-the MissouriDiamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall for cat food  .
 
-      major-19   is   thing-wanted
-      workers-1  want  barge-13
-      port-16   is   thing-wanted
-      workers-1  want  gastroenteritis-24
-      workers-1  want  salmonella-22
-      salmonella-22   is   thing-wanted
-      platform-6   typeOf   gas-production-platform
-      workers-1  want  returned-14
-      Strait-10   typeOf   Bass-Strait
-      returned-14   is   thing-wanted
-      workers-1  want  outbreak-20
-      their-12   is   thing-wanted
-      workers-1  want  their-12
-      workers-1  want  port-16
-      workers-1  on  platform-6
-      workers-1  is  Wanter
-      gastroenteritis-24   is   thing-wanted
-      Bass-9   is   LOC
-      platform-6  in  Strait-10
-      outbreak-20   is   thing-wanted
-      workers-1  want  major-19
-      barge-13   is   thing-wanted
+      MissouriDiamond-2  not-called-to  expansion-19
+      brands-11  not-called-for  food-25
+      KirklandSignature-6  not-called-for  food-25
+      PremiumEdge-4  not-called-for  food-25
+      PremiumEdge-4  is  caller
+      MissouriDiamond-2  not-called-for  food-25
+      brands-11  is  caller
+      attention-16  is  special-15
+      KirklandSignature-6  not-called-object  attention-16
+      KirklandSignature-6  is  caller
+      KirklandSignature-6   is   PER
+      brands-11  is  pet-9
+      MissouriDiamond-2  not-called-object  attention-16
+      brands-11  not-called-object  attention-16
+      MissouriDiamond-2   is   LOC
+      PremiumEdge-4  not-called-to  expansion-19
+      attention-16  is  item-being-labelled
+      brands-11  is  other-8
+      brands-11   typeOf   food-brands
+      not-13  is  NEG
+      expansion-19  of  recall-22
+      PremiumEdge-4  not-called-object  attention-16
+      expansion-19  is  attribute-of-arg1
+      PremiumEdge-4   is   PER
+      food-25   typeOf   cat-food
+      food-25  is  attribute-of-arg1
+      statement-29   is   AM-CAU
+      MissouriDiamond-2  is  caller
+      KirklandSignature-6  not-called-to  expansion-19
+      brands-11  not-called-to  expansion-19
           --------------------------------------------------          
-1-their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
+1-amending a statement on the company Internet site  .
 
-      outbreak-20  is  major-19
-      barge-13  possession  their-12
-      barge-13  returned-after  outbreak-20
-      port-16  is  end-point
-      outbreak-20  of  salmonella-22
-      barge-13  is  entity-in-motion
-      outbreak-20  is  TMP
-      outbreak-20  of  gastroenteritis-24
-      barge-13  returned-to  port-16
+      PremiumEdge-4   is   amender,-corrector
+      MissouriDiamond-2   is   amender,-corrector
+      PremiumEdge-4  amending-on  site-34
+      brands-11   is   amender,-corrector
+      Internet-33   is   MISC
+      KirklandSignature-6  amending-on  site-34
+      PremiumEdge-4  amending-object  statement-29
+      brands-11  amending-on  site-34
+      KirklandSignature-6  amending-object  statement-29
+      MissouriDiamond-2  amending-on  site-34
+      brands-11  amending-object  statement-29
+      site-34   typeOf   company-Internet-site
+      statement-29  is  thing-amended
+      site-34  is  thing-amended
+      KirklandSignature-6   is   amender,-corrector
+      MissouriDiamond-2  amending-object  statement-29
           --------------------------------------------------          

@@ -2,11 +2,12 @@ digraph sample {
 "53-21" -> "packages-28" [ label = "taken-from" ];
 "53-21" -> "A3" [ label = "is" ];
 "product-43" -> "thing-implicated" [ label = "is" ];
+"Wisconsin-16" -> "LOC" [ label = " is " ];
 "Connecticut-10" -> "LOC" [ label = " is " ];
-"testing-2" -> "Pennsylvania-14" [ label = "conducted-in" ];
 "salmonellae-19" -> "entity-isolated" [ label = "is" ];
-"53-21" -> "samples-24" [ label = "of" ];
+"sushi-36" -> "A3" [ label = " is " ];
 "Pennsylvania-14" -> "conductor" [ label = "is" ];
+"laboratories-8" -> "entity-causing-isolation" [ label = " is " ];
 "packages-28" -> "entity-taken-from" [ label = " is " ];
 "Maryland-12" -> "conductor" [ label = "is" ];
 "53-21" -> "sushi-36" [ label = "taken-from" ];
@@ -15,6 +16,7 @@ digraph sample {
 "samples-24" -> "55-23" [ label = "number" ];
 "scrape-34" -> "frozen-30" [ label = "is" ];
 "testing-2" -> "salmonellae-19" [ label = "isolated-object" ];
+"53-21" -> "samples-24" [ label = "of" ];
 "laboratories-8" -> "health-laboratories" [ label = " typeOf " ];
 "packages-28" -> "scrape-34" [ label = "of" ];
 "testing-2" -> "53-21" [ label = "isolated-from" ];
@@ -26,16 +28,19 @@ digraph sample {
 "laboratories-8" -> "conductor" [ label = "is" ];
 "sushi-36" -> "product-43" [ label = "prepared-with" ];
 "Connecticut-10" -> "conductor" [ label = "is" ];
+"laboratories-8" -> "salmonellae-19" [ label = "isolated-object" ];
+"laboratories-8" -> "53-21" [ label = "isolated-from" ];
 "sushi-36" -> "creation" [ label = "is" ];
 "Maryland-12" -> "LOC" [ label = " is " ];
+"testing-2" -> "Pennsylvania-14" [ label = "conducted-in" ];
 "Wisconsin-16" -> "conductor" [ label = "is" ];
 "testing-2" -> "entity-causing-isolation" [ label = "is" ];
 "scrape-34" -> "yellow-31" [ label = "is" ];
 "testing-2" -> "Connecticut-10" [ label = "conducted-in" ];
 "packages-28" -> "intact-27" [ label = "is" ];
+"product-43" -> "A3" [ label = " is " ];
 "testing-2" -> "laboratories-8" [ label = "conducted-by" ];
 "Pennsylvania-14" -> "LOC" [ label = " is " ];
-"Wisconsin-16" -> "LOC" [ label = " is " ];
 "testing-2" -> "Wisconsin-16" [ label = "conducted-in" ];
 "product-43" -> "scrape-tuna-product" [ label = " typeOf " ];
 }

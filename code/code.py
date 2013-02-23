@@ -10,7 +10,7 @@ from en import numeral
 import en
 import re
 from Visualizer import makeGephi
-dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
+dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
 banlist=['and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
 
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -461,25 +461,25 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects,DCT):
 			print "label : ",label
 			if label=="A0":
 				for obj in objects:
-					if tok1 in DCT[vlist[0]]:
+					if tok1 in DCT:
 						print tok1," ",verb+"-"+dictionary[obj[0]]," ",obj[1]
 						newSTs.append((tok1,verb+"-"+dictionary[obj[0]],obj[1]))
 			if label=="A1":
 				for sbj in subjects:
-					if tok1 in DCT[vlist[0]]:
+					if tok1 in DCT:
 						print sbj[0]," ",verb," ",tok1
 						newSTs.append((sbj[0],verb,tok1))			
 			if label in allRoles.keys():
 				role=allRoles[label]
 				#print "///",label, role
-				if tok1 in DCT[vlist[0]]:
+				if tok1 in DCT:
 					if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1," is ",label)
 					else: tup=(tok1," is ",role)
 					print tup
 					newSTs.append(tup)
 			else:
 				#print "//",label
-				if tok1 in DCT[vlist[0]]:
+				if tok1 in DCT:
 					print tok1," is ",label
 					newSTs.append((tok1," is ",label))
 	

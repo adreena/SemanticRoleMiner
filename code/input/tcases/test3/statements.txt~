@@ -1,36 +1,58 @@
 -Complete Sentence is: 
-36 of more than 200 workers have fallen ill in the 2 weeks since the outbreak, their union said.
+the Missouri Diamond , Premium Edge , Kirkland Signature and other pet food brands have not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet site .
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-36 of more than 200 workers fallen ill in the 2 weeks since the outbreak  .
+0-the MissouriDiamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall for cat food  .
 
-      weeks-13  is  TMP
-      since-14   is   medium
-      36-1   is   Logical-subject
-      workers-6  number  200-5
-      36-1  fallen-in  weeks-13
-      36-1  of  workers-6
-      weeks-13  number  2-12
-      ill-9   is   EXT
-      weeks-13  since  outbreak-16
+      MissouriDiamond-2  not-called-to  expansion-19
+      brands-11  not-called-for  food-25
+      KirklandSignature-6  not-called-for  food-25
+      PremiumEdge-4  not-called-for  food-25
+      PremiumEdge-4  is  caller
+      MissouriDiamond-2  not-called-for  food-25
+      brands-11  is  caller
+      attention-16  is  special-15
+      KirklandSignature-6  not-called-object  attention-16
+      KirklandSignature-6  is  caller
+      KirklandSignature-6   is   PER
+      brands-11  is  pet-9
+      MissouriDiamond-2  not-called-object  attention-16
+      brands-11  not-called-object  attention-16
+      MissouriDiamond-2   is   LOC
+      PremiumEdge-4  not-called-to  expansion-19
+      attention-16  is  item-being-labelled
+      brands-11  is  other-8
+      brands-11   typeOf   food-brands
+      not-13  is  NEG
+      expansion-19  of  recall-22
+      PremiumEdge-4  not-called-object  attention-16
+      site-34   is   AM-CAU
+      expansion-19  is  attribute-of-arg1
+      PremiumEdge-4   is   PER
+      food-25   typeOf   cat-food
+      food-25  is  attribute-of-arg1
+      statement-29   is   AM-CAU
+      MissouriDiamond-2  is  caller
+      KirklandSignature-6  not-called-to  expansion-19
+      brands-11  not-called-to  expansion-19
           --------------------------------------------------          
-1-their union said  .
+1-amending a statement on the company Internet site  .
 
-      2-12   is   Utterance
-      than-4   is   Utterance
-      the-15   is   Utterance
-      outbreak-16   is   Utterance
-      more-3   is   Utterance
-      have-7   is   Utterance
-      36-1   is   Utterance
-      union-19  possession  their-18
-      fallen-8   is   Utterance
-      workers-6   is   Utterance
-      union-19  is  Sayer
-      weeks-13   is   Utterance
-      ill-9   is   Utterance
-      200-5   is   Utterance
-      the-11   is   Utterance
-      since-14   is   Utterance
+      PremiumEdge-4   is   amender,-corrector
+      MissouriDiamond-2   is   amender,-corrector
+      PremiumEdge-4  amending-on  site-34
+      brands-11   is   amender,-corrector
+      Internet-33   is   MISC
+      KirklandSignature-6  amending-on  site-34
+      PremiumEdge-4  amending-object  statement-29
+      brands-11  amending-on  site-34
+      KirklandSignature-6  amending-object  statement-29
+      MissouriDiamond-2  amending-on  site-34
+      brands-11  amending-object  statement-29
+      site-34   typeOf   company-Internet-site
+      statement-29  is  thing-amended
+      site-34  is  thing-amended
+      KirklandSignature-6   is   amender,-corrector
+      MissouriDiamond-2  amending-object  statement-29
           --------------------------------------------------          

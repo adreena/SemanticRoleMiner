@@ -27,13 +27,18 @@ laboratory testing conducted by state public health laboratories in Connecticut,
           --------------------------------------------------          
 1-laboratory testing isolated salmonellae from 53 of 55 samples  .
 
+      laboratories-8   is   entity-causing-isolation
+      53-21  of  samples-24
       testing-2  is  entity-causing-isolation
       53-21  is  A3
-      testing-2   typeOf   laboratory-testing
+      product-43   is   A3
       samples-24  number  55-23
       testing-2  isolated-object  salmonellae-19
-      53-21  of  samples-24
+      laboratories-8  isolated-object  salmonellae-19
+      testing-2   typeOf   laboratory-testing
+      laboratories-8  isolated-from  53-21
       salmonellae-19  is  entity-isolated
+      sushi-36   is   A3
       testing-2  isolated-from  53-21
           --------------------------------------------------          
 2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
