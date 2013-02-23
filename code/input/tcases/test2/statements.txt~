@@ -1,32 +1,24 @@
--Complete Sentence is: 
 workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
 0-workers on a gas production platform in the Bass Strait want  .
 
+      a-18   is   thing-wanted
       major-19   is   thing-wanted
-      workers-1  want  barge-13
-      port-16   is   thing-wanted
-      workers-1  want  gastroenteritis-24
-      workers-1  want  salmonella-22
+      platform-6  in  Strait-10
+      their-12   is   thing-wanted
+      outbreak-20   is   thing-wanted
       salmonella-22   is   thing-wanted
       platform-6   typeOf   gas-production-platform
-      workers-1  want  returned-14
-      Strait-10   typeOf   Bass-Strait
-      returned-14   is   thing-wanted
-      workers-1  want  outbreak-20
-      their-12   is   thing-wanted
-      workers-1  want  their-12
-      workers-1  want  port-16
       workers-1  on  platform-6
+      port-16   is   thing-wanted
       workers-1  is  Wanter
       gastroenteritis-24   is   thing-wanted
-      Bass-9   is   LOC
-      platform-6  in  Strait-10
-      outbreak-20   is   thing-wanted
-      workers-1  want  major-19
+      Strait-10   typeOf   Bass-Strait
+      returned-14   is   thing-wanted
       barge-13   is   thing-wanted
+      Bass-9   is   LOC
           --------------------------------------------------          
 1-their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
 
@@ -39,4 +31,4 @@ workers on a gas production platform in the Bass Strait want their barge returne
       outbreak-20  is  TMP
       outbreak-20  of  gastroenteritis-24
       barge-13  returned-to  port-16
-          --------------------------------------------------          
+          --------------------------------------------------                 

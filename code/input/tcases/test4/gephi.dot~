@@ -1,0 +1,53 @@
+digraph sample {
+"Pennsylvania-14" -> "conductor" [ label = "is" ];
+"Connecticut-10" -> "conductor" [ label = "is" ];
+"laboratories-8" -> "state-laboratories" [ label = " typeOf " ];
+"Maryland-12" -> "conductor" [ label = "is" ];
+"testing-2" -> "Maryland-12" [ label = "conducted-in" ];
+"testing-2" -> "laboratory-testing" [ label = " typeOf " ];
+"laboratories-8" -> "conductor" [ label = "is" ];
+"Wisconsin-16" -> "conductor" [ label = "is" ];
+"testing-2" -> "Connecticut-10" [ label = "conducted-in" ];
+"laboratories-8" -> "health-laboratories" [ label = " typeOf " ];
+"testing-2" -> "laboratories-8" [ label = "conducted-by" ];
+"testing-2" -> "Wisconsin-16" [ label = "conducted-in" ];
+"testing-2" -> "thing-led" [ label = "is" ];
+"Pennsylvania-14" -> "LOC" [ label = " is " ];
+"Wisconsin-16" -> "LOC" [ label = " is " ];
+"Connecticut-10" -> "LOC" [ label = " is " ];
+"Maryland-12" -> "LOC" [ label = " is " ];
+"laboratories-8" -> "public-6" [ label = "is" ];
+"testing-2" -> "Pennsylvania-14" [ label = "conducted-in" ];
+}
+digraph sample {
+"testing-2" -> "entity-causing-isolation" [ label = "is" ];
+"53-21" -> "A3" [ label = "is" ];
+"testing-2" -> "laboratory-testing" [ label = " typeOf " ];
+"samples-24" -> "55-23" [ label = "number" ];
+"testing-2" -> "salmonellae-19" [ label = "isolated-object" ];
+"testing-2" -> "53-21" [ label = "isolated-from" ];
+"salmonellae-19" -> "entity-isolated" [ label = "is" ];
+"53-21" -> "samples-24" [ label = "of" ];
+}
+digraph sample {
+"53-21" -> "packages-28" [ label = "taken-from" ];
+"packages-28" -> "entity-taken-from" [ label = " is " ];
+"53-21" -> "sushi-36" [ label = "taken-from" ];
+"samples-24" -> "55-23" [ label = "number" ];
+"scrape-34" -> "yellow-31" [ label = "is" ];
+"packages-28" -> "intact-27" [ label = "is" ];
+"scrape-34" -> "fin-tuna-scrape" [ label = " typeOf " ];
+"packages-28" -> "scrape-34" [ label = "of" ];
+"scrape-34" -> "frozen-30" [ label = "is" ];
+"53-21" -> "samples-24" [ label = "of" ];
+}
+digraph sample {
+"sushi-36" -> "product-43" [ label = "prepared-with" ];
+"sushi-36" -> "creation" [ label = "is" ];
+"product-43" -> "scrape-tuna-product" [ label = " typeOf " ];
+}
+digraph sample {
+"product-43" -> "thing-implicated" [ label = "is" ];
+"product-43" -> "implicated-40" [ label = "is" ];
+"product-43" -> "scrape-tuna-product" [ label = " typeOf " ];
+}

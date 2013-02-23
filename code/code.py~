@@ -11,7 +11,7 @@ import en
 import re
 from Visualizer import makeGephi
 dictionary={"abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
-banlist=['and','an','a','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+banlist=['and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
 
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
@@ -283,22 +283,24 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 
 				if neg==1: damnVerb="not-"+damnVerb
 				print "!!!!!!!!!!!!!!!!!damnVerb, neg",damnVerb,neg
-				if str(pred)!="is-Arg1":
+				if str(pred)!="is-Arg1" :
 
 					tok1=subject[0]
 					tok2=objects[1]
 
 				#	print "**"
-					print tok1," ",damnVerb+"-"+str(pred)," ",tok2
-					STs.append((str(tok1),damnVerb+"-"+str(pred),str(tok2)))
+					if tok2.split("-")[0]!="not":
+						print tok1," ",damnVerb+"-"+str(pred)," ",tok2
+						STs.append((tok1,damnVerb+"-"+str(pred),tok2))
 				else:
 					tok1=subject[0]
 
 					tok2=objects[1]
 
 				#	print "*nbnbn5*"
-					print tok1," ",damnVerb," ",tok2
-					STs.append((str(tok1),damnVerb,str(tok2)))
+					if tok2.split("-")[0]!="not":
+						print tok1," ",damnVerb," ",tok2
+						STs.append((tok1,damnVerb,tok2))
 
 		
 		#print STs
@@ -432,7 +434,7 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 ######################################################################################################################################
 #------------------------------------------------------------------------------------------------------------------------------------
 #Additional statements
-def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects):
+def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects,DCT):
 	
 	PrSent=PrSent.replace(",","")
 	PrList=PrSent.split(" ")
@@ -442,11 +444,14 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects):
 	#print PrList
 	#print "Vlist: ",vlist
 	print " to add args: ",addArgs
+	print DCT
 	verb=vlist[0].split("-")[0]
 	print verb
 	allRoles={}	
 	allRoles=roleFinder(verb)
-	#neg=0
+	
+	subjects=subjects.values()
+	print "all subjects",subjects
 	for obj in objects:
 		if "not" in obj: verb="not-"+verb
 	for item in addArgs:
@@ -456,19 +461,27 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects):
 			print "label : ",label
 			if label=="A0":
 				for obj in objects:
-					print tok1," ",verb+"-"+dictionary[obj[0]]," ",obj[1]
-					newSTs.append((tok1," ",verb+"-"+dictionary[obj[0]]," ",obj[1]))
+					if tok1 in DCT[vlist[0]]:
+						print tok1," ",verb+"-"+dictionary[obj[0]]," ",obj[1]
+						newSTs.append((tok1,verb+"-"+dictionary[obj[0]],obj[1]))
+			if label=="A1":
+				for sbj in subjects:
+					if tok1 in DCT[vlist[0]]:
+						print sbj[0]," ",verb," ",tok1
+						newSTs.append((sbj[0],verb,tok1))			
 			if label in allRoles.keys():
 				role=allRoles[label]
 				#print "///",label, role
-				if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1," is ",label)
-				else: tup=(tok1," is ",role)
-				print tup
-				newSTs.append(tup)
+				if tok1 in DCT[vlist[0]]:
+					if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1," is ",label)
+					else: tup=(tok1," is ",role)
+					print tup
+					newSTs.append(tup)
 			else:
 				#print "//",label
-				print tok1," is ",label
-				newSTs.append((tok1," is ",label))
+				if tok1 in DCT[vlist[0]]:
+					print tok1," is ",label
+					newSTs.append((tok1," is ",label))
 	
 	#print "--------"
 	return newSTs
@@ -555,14 +568,16 @@ def scanVerb(sen,vlist):
 def gephiTranslate(Statements,gephiFile):
 	#print Statements
 	gephiFile.write("digraph sample {\n")
-	#for key,val in Statements.items():
-	#	#print val
-	for item in Statements:
-		node1=item[0]
-		edge=item[1]
-		node2=item[2]	
+	#Statements=list(set(Statements))
+	print "--gephi",Statements
+	for key,val in Statements.items():
+		#print val
+		for item in val:
+			node1=item[0]
+			edge=item[1]
+			node2=item[2]	
 	#	print node1,edge,node2
-		gephiFile.write("\""+node1+"\""+" -> "+"\""+node2+"\" "+"[ label = \""+str(edge)+"\" ];\n") 
+			gephiFile.write("\""+node1+"\""+" -> "+"\""+node2+"\" "+"[ label = \""+str(edge)+"\" ];\n") 
   	gephiFile.write("}\n")
 
 

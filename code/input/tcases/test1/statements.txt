@@ -1,52 +1,63 @@
 -Complete Sentence is: 
-the Missouribase maker of Diamond , PremiumEdge , KirklandSignature and other pet food brands have not called special attention to the expansion of the recall for cat food beyond amending a statement on the company Internet recall site .
+laboratory testing conducted by state public health laboratories in Connecticut, Maryland, Pennsylvania and Wisconsin has isolated salmonellae from 53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi prepared with the implicated scrape tuna product.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-the Missouribase maker of Diamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall for cat food  .
+0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
 
-      maker-3  is  caller
-      not-16  is  NEG
-      maker-3  is  Missouribase-2
-      food-28  is  attribute-of-arg1
-      Diamond-5   is   PER
-      maker-3  called-to  expansion-22
-      maker-3  called-not  not-16
-      brands-14   typeOf   other-pet-food-brands
-      attention-19  is  special-18
-      PremiumEdge-7   is   PER
-      expansion-22  of  recall-25
-      maker-3  called-object  attention-19
-      KirklandSignature-9   typeOf   Diamond-KirklandSignature
-      expansion-22  is  attribute-of-arg1
-      maker-3  called-for  food-28
-      KirklandSignature-9   is   PER
-      food-28   typeOf   cat-food
-      maker-3  of  brands-14
-      brands-14   typeOf   PremiumEdge-brands
-      attention-19  is  item-being-labelled
-      brands-14   typeOf   KirklandSignature-brands
-      Missouribase-2   is   MISC
+      Pennsylvania-14  is  conductor
+      Connecticut-10  is  conductor
+      Maryland-12   is   LOC
+      Maryland-12  is  conductor
+      testing-2  conducted-in  Maryland-12
+      testing-2   typeOf   laboratory-testing
+      laboratories-8  is  conductor
+      Wisconsin-16  is  conductor
+      testing-2  conducted-in  Connecticut-10
+      Connecticut-10   is   LOC
+      laboratories-8   typeOf   health-laboratories
+      testing-2  conducted-by  laboratories-8
+      testing-2  conducted-in  Pennsylvania-14
+      laboratories-8   typeOf   state-laboratories
+      Pennsylvania-14   is   LOC
+      Wisconsin-16   is   LOC
+      testing-2  conducted-in  Wisconsin-16
+      laboratories-8  is  public-6
+      testing-2  is  thing-led
           --------------------------------------------------          
-1-amending a statement on the company Internet recall site  .
+1-laboratory testing isolated salmonellae from 53 of 55 samples  .
 
-      maker-3   is   amender,-corrector
-      KirklandSignature-9   is   amender,-corrector
-      Diamond-5   is   amender,-corrector
-      other-11   is   amender,-corrector
-      amending-30  object  statement-32
-      amending-30  on  Internet-36
-      food-13   is   amender,-corrector
-      Internet-36  is  secondary-predication-on-arg1
-      brands-14   is   amender,-corrector
-      recall-37  object  site-38
-      pet-12   is   amender,-corrector
-      the-1   is   amender,-corrector
-      Internet-36   typeOf   company-Internet
-      Missouribase-2   is   amender,-corrector
-      recall-37  subject  amending-30
-      statement-32  is  thing-amended
-      recall-37  is  secondary-predication-on-arg1
-      PremiumEdge-7   is   amender,-corrector
-      Internet-36   is   MISC
+      testing-2  is  entity-causing-isolation
+      53-21  is  A3
+      testing-2   typeOf   laboratory-testing
+      samples-24  number  55-23
+      testing-2  isolated-object  salmonellae-19
+      53-21  of  samples-24
+      salmonellae-19  is  entity-isolated
+      testing-2  isolated-from  53-21
+          --------------------------------------------------          
+2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
+
+      53-21  taken-from  packages-28
+      packages-28   is   entity-taken-from
+      53-21  taken-from  sushi-36
+      samples-24  number  55-23
+      scrape-34  is  yellow-31
+      packages-28  is  intact-27
+      scrape-34   typeOf   fin-tuna-scrape
+      packages-28  of  scrape-34
+      scrape-34  is  frozen-30
+      53-21  of  samples-24
+          --------------------------------------------------          
+3-sushi prepared with the scrape tuna product  .
+
+      sushi-36  prepared-with  product-43
+      sushi-36  is  creation
+      product-43   typeOf   scrape-tuna-product
+          --------------------------------------------------          
+4-the implicated scrape tuna product  .
+
+      product-43  is  thing-implicated
+      product-43  is  implicated-40
+      product-43   typeOf   scrape-tuna-product
           --------------------------------------------------          

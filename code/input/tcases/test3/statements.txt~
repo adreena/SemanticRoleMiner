@@ -1,0 +1,36 @@
+-Complete Sentence is: 
+36 of more than 200 workers have fallen ill in the 2 weeks since the outbreak, their union said.
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+0-36 of more than 200 workers fallen ill in the 2 weeks since the outbreak  .
+
+      weeks-13  is  TMP
+      since-14   is   medium
+      36-1   is   Logical-subject
+      workers-6  number  200-5
+      36-1  fallen-in  weeks-13
+      36-1  of  workers-6
+      weeks-13  number  2-12
+      ill-9   is   EXT
+      weeks-13  since  outbreak-16
+          --------------------------------------------------          
+1-their union said  .
+
+      2-12   is   Utterance
+      than-4   is   Utterance
+      the-15   is   Utterance
+      outbreak-16   is   Utterance
+      more-3   is   Utterance
+      have-7   is   Utterance
+      36-1   is   Utterance
+      union-19  possession  their-18
+      fallen-8   is   Utterance
+      workers-6   is   Utterance
+      union-19  is  Sayer
+      weeks-13   is   Utterance
+      ill-9   is   Utterance
+      200-5   is   Utterance
+      the-11   is   Utterance
+      since-14   is   Utterance
+          --------------------------------------------------          

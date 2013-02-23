@@ -1,10 +1,7 @@
-       amending	       VBG	      S-VP	         O	       amending	       S-V	(S1(S(VP*
-              a	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
-      statement	        NN	      E-NP	         O	              -	      I-A1	*)
-             on	        IN	      S-PP	         O	              -	      I-A1	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A1	(NP*
-        company	        NN	      I-NP	         O	              -	      I-A1	*
-       Internet	       NNP	      I-NP	    S-MISC	              -	      I-A1	*
-           site	        NN	      E-NP	         O	              -	      E-A1	*))))
+            the	        DT	      B-NP	         O	              -	         O	(S1(FRAG(NP*
+     implicated	       VBN	      I-NP	         O	     implicated	       S-V	*
+         scrape	        NN	      I-NP	         O	              -	      B-A1	*
+           tuna	        NN	      I-NP	         O	              -	      I-A1	*
+        product	        NN	      E-NP	         O	              -	      E-A1	*)
               .	         .	         O	         O	              -	         O	*))
 

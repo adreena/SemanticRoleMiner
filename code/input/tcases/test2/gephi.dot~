@@ -1,26 +1,19 @@
 digraph sample {
+"a-18" -> "thing-wanted" [ label = " is " ];
 "major-19" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "barge-13" [ label = "want" ];
-"port-16" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "gastroenteritis-24" [ label = "want" ];
-"workers-1" -> "salmonella-22" [ label = "want" ];
+"platform-6" -> "Strait-10" [ label = "in" ];
+"their-12" -> "thing-wanted" [ label = " is " ];
+"outbreak-20" -> "thing-wanted" [ label = " is " ];
 "salmonella-22" -> "thing-wanted" [ label = " is " ];
 "platform-6" -> "gas-production-platform" [ label = " typeOf " ];
-"workers-1" -> "returned-14" [ label = "want" ];
-"Strait-10" -> "Bass-Strait" [ label = " typeOf " ];
-"returned-14" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "outbreak-20" [ label = "want" ];
-"their-12" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "their-12" [ label = "want" ];
-"workers-1" -> "port-16" [ label = "want" ];
 "workers-1" -> "platform-6" [ label = "on" ];
+"port-16" -> "thing-wanted" [ label = " is " ];
 "workers-1" -> "Wanter" [ label = "is" ];
 "gastroenteritis-24" -> "thing-wanted" [ label = " is " ];
-"Bass-9" -> "LOC" [ label = " is " ];
-"platform-6" -> "Strait-10" [ label = "in" ];
-"outbreak-20" -> "thing-wanted" [ label = " is " ];
-"workers-1" -> "major-19" [ label = "want" ];
+"Strait-10" -> "Bass-Strait" [ label = " typeOf " ];
+"returned-14" -> "thing-wanted" [ label = " is " ];
 "barge-13" -> "thing-wanted" [ label = " is " ];
+"Bass-9" -> "LOC" [ label = " is " ];
 }
 digraph sample {
 "outbreak-20" -> "major-19" [ label = "is" ];

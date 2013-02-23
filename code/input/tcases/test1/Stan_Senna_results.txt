@@ -1,113 +1,188 @@
-0-the Missouribase maker of Diamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall for cat food  .
+0-laboratory testing conducted by state public health laboratories in Connecticut , Maryland , Pennsylvania and Wisconsin  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (NN laboratory) (NN testing))
+    (VP (VBD conducted)
+      (PP (IN by)
+        (NP (NN state) (JJ public) (NN health) (NNS laboratories)))
+      (PP (IN in)
+        (NP (NNP Connecticut) (, ,) (NNP Maryland) (, ,) (NNP Pennsylvania)
+          (CC and)
+          (NNP Wisconsin))))
+    (. .)))
+
+nn(testing-2, laboratory-1)
+nsubj(conducted-3, testing-2)
+root(ROOT-0, conducted-3)
+nn(laboratories-8, state-5)
+amod(laboratories-8, public-6)
+nn(laboratories-8, health-7)
+prep_by(conducted-3, laboratories-8)
+prep_in(conducted-3, Connecticut-10)
+prep_in(conducted-3, Maryland-12)
+conj_and(Connecticut-10, Maryland-12)
+prep_in(conducted-3, Pennsylvania-14)
+conj_and(Connecticut-10, Pennsylvania-14)
+prep_in(conducted-3, Wisconsin-16)
+conj_and(Connecticut-10, Wisconsin-16)
+
+--Senna Output:------------------------------------------------------ 
+     laboratory	        NN	      B-NP	         O	              -	      B-A1	(S1(NP(NP*
+        testing	        NN	      E-NP	         O	              -	      E-A1	*)
+      conducted	       VBN	      S-VP	         O	      conducted	       S-V	(VP*
+             by	        IN	      S-PP	         O	              -	      B-A0	(PP*
+          state	        NN	      B-NP	         O	              -	      I-A0	(NP*
+         public	        JJ	      I-NP	         O	              -	      I-A0	*
+         health	        NN	      I-NP	         O	              -	      I-A0	*
+   laboratories	       NNS	      E-NP	         O	              -	      I-A0	*))
+             in	        IN	      S-PP	         O	              -	      I-A0	(PP*
+    Connecticut	       NNP	      S-NP	     S-LOC	              -	      I-A0	(NP*
+              ,	         ,	         O	         O	              -	      I-A0	*
+       Maryland	       NNP	      S-NP	     S-LOC	              -	      I-A0	*
+              ,	         ,	         O	         O	              -	      I-A0	*
+   Pennsylvania	       NNP	      S-NP	     S-LOC	              -	      I-A0	*
+            and	        CC	         O	         O	              -	      I-A0	*
+      Wisconsin	       NNP	      S-NP	     S-LOC	              -	      E-A0	*)))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+1-laboratory testing isolated salmonellae from 53 of 55 samples  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (NN laboratory) (NN testing))
+    (VP (VBD isolated)
+      (NP (NN salmonellae))
+      (PP (IN from)
+        (NP
+          (NP (CD 53))
+          (PP (IN of)
+            (NP (CD 55) (NNS samples))))))
+    (. .)))
+
+nn(testing-2, laboratory-1)
+nsubj(isolated-3, testing-2)
+root(ROOT-0, isolated-3)
+dobj(isolated-3, salmonellae-4)
+prep_from(isolated-3, 53-6)
+num(samples-9, 55-8)
+prep_of(53-6, samples-9)
+
+--Senna Output:------------------------------------------------------ 
+     laboratory	        NN	      B-NP	         O	              -	      B-A0	(S1(NP(NP*
+        testing	        NN	      E-NP	         O	              -	      E-A0	*)
+       isolated	       VBD	      S-VP	         O	       isolated	       S-V	(NP*
+    salmonellae	        NN	      S-NP	         O	              -	      S-A1	*)
+           from	        IN	      S-PP	         O	              -	      B-A3	(PP*
+             53	        CD	      S-NP	         O	              -	      I-A3	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A3	(PP*
+             55	        CD	      B-NP	         O	              -	      I-A3	(NP*
+        samples	       NNS	      E-NP	         O	              -	      E-A3	*))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+2-53 of 55 samples taken from intact packages of frozen yellow fin tuna scrape from sushi  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
     (NP
-      (NP (DT the) (JJ Missouribase) (NN maker))
+      (NP (CD 53))
       (PP (IN of)
-        (NP (NNP Diamond) (, ,) (NNP PremiumEdge) (, ,) (NNP KirklandSignature)
-          (CC and)
-          (JJ other) (NN pet) (NN food) (NNS brands))))
-    (RB not)
-    (VP (VBD called)
-      (NP (JJ special) (NN attention))
-      (PP (TO to)
+        (NP (CD 55) (NNS samples))))
+    (VP (VBN taken)
+      (PP (IN from)
         (NP
-          (NP (DT the) (NN expansion))
+          (NP (JJ intact) (NNS packages))
           (PP (IN of)
-            (NP (DT the) (NN recall)))))
-      (PP (IN for)
-        (NP (NN cat) (NN food))))
+            (NP (JJ frozen) (JJ yellow) (NN fin) (NN tuna) (NN scrape)))))
+      (PP (IN from)
+        (NP (NN sushi))))
     (. .)))
 
-det(maker-3, the-1)
-amod(maker-3, Missouribase-2)
-nsubj(called-16, maker-3)
-nn(KirklandSignature-9, Diamond-5)
-conj_and(KirklandSignature-9, PremiumEdge-7)
-nn(brands-14, PremiumEdge-7)
-nn(brands-14, KirklandSignature-9)
-conj_and(KirklandSignature-9, other-11)
-nn(brands-14, other-11)
-nn(brands-14, pet-12)
-nn(brands-14, food-13)
-prep_of(maker-3, brands-14)
-neg(called-16, not-15)
-root(ROOT-0, called-16)
-amod(attention-18, special-17)
-dobj(called-16, attention-18)
-det(expansion-21, the-20)
-prep_to(called-16, expansion-21)
-det(recall-24, the-23)
-prep_of(expansion-21, recall-24)
-nn(food-27, cat-26)
-prep_for(called-16, food-27)
+nsubj(taken-5, 53-1)
+num(samples-4, 55-3)
+prep_of(53-1, samples-4)
+root(ROOT-0, taken-5)
+amod(packages-8, intact-7)
+prep_from(taken-5, packages-8)
+amod(scrape-14, frozen-10)
+amod(scrape-14, yellow-11)
+nn(scrape-14, fin-12)
+nn(scrape-14, tuna-13)
+prep_of(packages-8, scrape-14)
+prep_from(taken-5, sushi-16)
 
 --Senna Output:------------------------------------------------------ 
-            the	        DT	      B-NP	         O	              -	      B-A0	(S1(S(NP(NP*
-   Missouribase	       NNP	      I-NP	    S-MISC	              -	      I-A0	*
-          maker	        NN	      E-NP	         O	              -	      I-A0	*)
-             of	        IN	      S-PP	         O	              -	      I-A0	(PP*
-        Diamond	       NNP	      B-NP	     S-PER	              -	      I-A0	(NP*
-              ,	         ,	      I-NP	         O	              -	      I-A0	*
-    PremiumEdge	       NNP	      I-NP	     S-PER	              -	      I-A0	*
-              ,	         ,	      I-NP	         O	              -	      I-A0	*)))
-KirklandSignature	       NNP	      I-NP	     S-PER	              -	      I-A0	(NP(NP*)
-            and	        CC	      I-NP	         O	              -	      I-A0	*
-          other	        JJ	      I-NP	         O	              -	      I-A0	(NP*
-            pet	        JJ	      I-NP	         O	              -	      I-A0	*
-           food	        NN	      I-NP	         O	              -	      I-A0	*
-         brands	       NNS	      E-NP	         O	              -	      E-A0	*))
-            not	        RB	      B-VP	         O	              -	  S-AM-NEG	(VP*
-         called	       VBN	      E-VP	         O	         called	       S-V	(VP*
-        special	        JJ	      B-NP	         O	              -	      B-A1	(NP(NP*
-      attention	        NN	      E-NP	         O	              -	      E-A1	*)
-             to	        TO	      S-PP	         O	              -	      B-A2	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A2	(NP(NP*
-      expansion	        NN	      E-NP	         O	              -	      I-A2	*)
-             of	        IN	      S-PP	         O	              -	      I-A2	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A2	(NP(NP*
-         recall	        NN	      E-NP	         O	              -	      I-A2	*)
-            for	        IN	      S-PP	         O	              -	      I-A2	(PP*
-            cat	        NN	      B-NP	         O	              -	      I-A2	(NP*
-           food	        NN	      E-NP	         O	              -	      E-A2	*)))))))))
-              .	         .	         O	         O	              -	         O	*))
+             53	        CD	      S-NP	         O	              -	         O	      B-A0	(S1(NP(NP*)
+             of	        IN	      S-PP	         O	              -	         O	      I-A0	(PP*
+             55	        CD	      B-NP	         O	              -	         O	      I-A0	(NP(NP*
+        samples	       NNS	      E-NP	         O	              -	         O	      I-A0	*)
+          taken	       VBN	      S-VP	         O	          taken	       S-V	      I-A0	(VP*
+           from	        IN	      S-PP	         O	              -	      B-A2	      I-A0	(PP(PP*
+         intact	        JJ	      B-NP	         O	              -	      I-A2	      I-A0	(NP(NP*
+       packages	       NNS	      E-NP	         O	              -	      I-A2	      I-A0	*)
+             of	        IN	      S-PP	         O	              -	      I-A2	      I-A0	(PP*
+         frozen	        JJ	      B-NP	         O	              -	      I-A2	      I-A0	(NP*
+         yellow	        JJ	      I-NP	         O	              -	      I-A2	      I-A0	*
+            fin	        NN	      I-NP	         O	              -	      I-A2	      I-A0	*
+           tuna	        NN	      I-NP	         O	              -	      E-A2	      E-A0	*
+         scrape	        NN	      E-NP	         O	         scrape	         O	       S-V	*))))
+           from	        IN	      S-PP	         O	              -	         O	      B-A2	(PP*
+          sushi	        NN	      S-NP	         O	              -	         O	      E-A2	(NP*))))))
+              .	         .	         O	         O	              -	         O	         O	*))
 
 ----------------------------------------------------------------------
-1-amending a statement on the company Internet recall site  .
+3-sushi prepared with the scrape tuna product  .
 
 -Stanford Output: ----------------------------------------------------
 (ROOT
   (S
-    (S
-      (VP (VBG amending)
-        (NP (DT a) (NN statement))
-        (PP (IN on)
-          (NP (DT the) (NN company) (NN Internet)))))
-    (VP (VBP recall)
-      (NP (NN site)))
+    (NP (NN sushi))
+    (VP (VBN prepared)
+      (PP (IN with)
+        (NP (DT the) (NN scrape) (NN tuna) (NN product))))
     (. .)))
 
-csubj(recall-8, amending-1)
-det(statement-3, a-2)
-dobj(amending-1, statement-3)
-det(Internet-7, the-5)
-nn(Internet-7, company-6)
-prep_on(amending-1, Internet-7)
-root(ROOT-0, recall-8)
-dobj(recall-8, site-9)
+nsubj(prepared-2, sushi-1)
+root(ROOT-0, prepared-2)
+det(product-7, the-4)
+nn(product-7, scrape-5)
+nn(product-7, tuna-6)
+prep_with(prepared-2, product-7)
 
 --Senna Output:------------------------------------------------------ 
-       amending	       VBG	      S-VP	         O	       amending	       S-V	(S1(S(S(VP*
-              a	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
-      statement	        NN	      E-NP	         O	              -	      E-A1	*)
-             on	        IN	      S-PP	         O	              -	      B-A2	(PP*
-            the	        DT	      B-NP	         O	              -	      I-A2	(NP*
-        company	        NN	      I-NP	         O	              -	      I-A2	*
-       Internet	       NNP	      I-NP	    S-MISC	              -	      I-A2	*
-         recall	        NN	      I-NP	         O	              -	      I-A2	*
-           site	        NN	      E-NP	         O	              -	      E-A2	*)))))
+          sushi	        NN	      S-NP	         O	              -	      S-A1	(S1(S(NP*)
+       prepared	       VBN	      S-VP	         O	       prepared	       S-V	(VP*
+           with	        IN	      S-PP	         O	              -	         O	(PP*
+            the	        DT	      B-NP	         O	              -	         O	(NP*
+         scrape	        NN	      I-NP	         O	              -	         O	*
+           tuna	        NN	      I-NP	         O	              -	         O	*
+        product	        NN	      E-NP	         O	              -	         O	*)))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+4-the implicated scrape tuna product  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (NN product) (. .)))
+
+det(product-5, the-1)
+amod(product-5, implicated-2)
+nn(product-5, scrape-3)
+nn(product-5, tuna-4)
+root(ROOT-0, product-5)
+
+--Senna Output:------------------------------------------------------ 
+            the	        DT	      B-NP	         O	              -	         O	(S1(FRAG(NP*
+     implicated	       VBN	      I-NP	         O	     implicated	       S-V	*
+         scrape	        NN	      I-NP	         O	              -	      B-A1	*
+           tuna	        NN	      I-NP	         O	              -	      I-A1	*
+        product	        NN	      E-NP	         O	              -	      E-A1	*)
               .	         .	         O	         O	              -	         O	*))
 
 ----------------------------------------------------------------------

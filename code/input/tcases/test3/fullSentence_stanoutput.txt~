@@ -1,0 +1,38 @@
+(ROOT
+  (S
+    (S
+      (NP
+        (NP (CD 36))
+        (PP (IN of)
+          (NP
+            (QP (JJR more) (IN than) (CD 200))
+            (NNS workers))))
+      (VP (VBP have)
+        (VP (VBN fallen)
+          (ADJP (JJ ill)
+            (PP (IN in)
+              (NP (DT the) (CD 2) (NNS weeks))))
+          (PP (IN since)
+            (NP (DT the) (NN outbreak))))))
+    (, ,)
+    (NP (PRP$ their) (NN union))
+    (VP (VBD said))
+    (. .)))
+
+nsubj(fallen-8, 36-1)
+mwe(than-4, more-3)
+quantmod(200-5, than-4)
+num(workers-6, 200-5)
+prep_of(36-1, workers-6)
+aux(fallen-8, have-7)
+ccomp(said-20, fallen-8)
+acomp(fallen-8, ill-9)
+det(weeks-13, the-11)
+num(weeks-13, 2-12)
+prep_in(ill-9, weeks-13)
+det(outbreak-16, the-15)
+prep_since(fallen-8, outbreak-16)
+poss(union-19, their-18)
+nsubj(said-20, union-19)
+root(ROOT-0, said-20)
+

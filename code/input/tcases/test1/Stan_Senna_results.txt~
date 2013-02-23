@@ -1,0 +1,106 @@
+0-the MissouriDiamond , PremiumEdge , KirklandSignature and other pet food brands not called special attention to the expansion of the recall for cat food  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (NP (DT the) (NNP MissouriDiamond))
+      (, ,)
+      (NP (NNP PremiumEdge))
+      (, ,)
+      (NP (NNP KirklandSignature))
+      (CC and)
+      (NP (JJ other) (JJ pet) (NN food) (NNS brands)))
+    (RB not)
+    (VP (VBD called)
+      (NP (JJ special) (NN attention))
+      (PP (TO to)
+        (NP
+          (NP (DT the) (NN expansion))
+          (PP (IN of)
+            (NP (DT the) (NN recall)))))
+      (PP (IN for)
+        (NP (NN cat) (NN food))))
+    (. .)))
+
+det(MissouriDiamond-2, the-1)
+nsubj(called-13, MissouriDiamond-2)
+conj_and(MissouriDiamond-2, PremiumEdge-4)
+nsubj(called-13, PremiumEdge-4)
+conj_and(MissouriDiamond-2, KirklandSignature-6)
+nsubj(called-13, KirklandSignature-6)
+amod(brands-11, other-8)
+amod(brands-11, pet-9)
+nn(brands-11, food-10)
+conj_and(MissouriDiamond-2, brands-11)
+nsubj(called-13, brands-11)
+neg(called-13, not-12)
+root(ROOT-0, called-13)
+amod(attention-15, special-14)
+dobj(called-13, attention-15)
+det(expansion-18, the-17)
+prep_to(called-13, expansion-18)
+det(recall-21, the-20)
+prep_of(expansion-18, recall-21)
+nn(food-24, cat-23)
+prep_for(called-13, food-24)
+
+--Senna Output:------------------------------------------------------ 
+            the	        DT	      B-NP	         O	              -	      B-A0	(S1(S(NP(NP*
+MissouriDiamond	       NNP	      I-NP	     S-LOC	              -	      I-A0	*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+    PremiumEdge	       NNP	      I-NP	     S-PER	              -	      I-A0	*
+              ,	         ,	      I-NP	         O	              -	      I-A0	*
+KirklandSignature	       NNP	      I-NP	     S-PER	              -	      I-A0	*)
+            and	        CC	      I-NP	         O	              -	      I-A0	*
+          other	        JJ	      I-NP	         O	              -	      I-A0	(NP*
+            pet	        JJ	      I-NP	         O	              -	      I-A0	*
+           food	        NN	      I-NP	         O	              -	      I-A0	*
+         brands	       NNS	      E-NP	         O	              -	      E-A0	*))
+            not	        RB	      B-VP	         O	              -	  S-AM-NEG	(VP*
+         called	       VBN	      E-VP	         O	         called	       S-V	(VP*
+        special	        JJ	      B-NP	         O	              -	      B-A1	(NP(NP*
+      attention	        NN	      E-NP	         O	              -	      E-A1	*)
+             to	        TO	      S-PP	         O	              -	      B-A2	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A2	(NP(NP*
+      expansion	        NN	      E-NP	         O	              -	      I-A2	*)
+             of	        IN	      S-PP	         O	              -	      I-A2	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A2	(NP(NP*
+         recall	        NN	      E-NP	         O	              -	      I-A2	*)
+            for	        IN	      S-PP	         O	              -	      I-A2	(PP*
+            cat	        NN	      B-NP	         O	              -	      I-A2	(NP*
+           food	        NN	      E-NP	         O	              -	      E-A2	*)))))))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+1-amending a statement on the company Internet site  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (VP (VBG amending)
+      (NP (DT a) (NN statement))
+      (PP (IN on)
+        (NP (DT the) (NN company) (NN Internet) (NN site))))
+    (. .)))
+
+root(ROOT-0, amending-1)
+det(statement-3, a-2)
+dobj(amending-1, statement-3)
+det(site-8, the-5)
+nn(site-8, company-6)
+nn(site-8, Internet-7)
+prep_on(amending-1, site-8)
+
+--Senna Output:------------------------------------------------------ 
+       amending	       VBG	      S-VP	         O	       amending	       S-V	(S1(S(VP*
+              a	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
+      statement	        NN	      E-NP	         O	              -	      I-A1	*)
+             on	        IN	      S-PP	         O	              -	      I-A1	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A1	(NP*
+        company	        NN	      I-NP	         O	              -	      I-A1	*
+       Internet	       NNP	      I-NP	    S-MISC	              -	      I-A1	*
+           site	        NN	      E-NP	         O	              -	      E-A1	*))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------

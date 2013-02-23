@@ -1,36 +1,42 @@
 -Complete Sentence is: 
-36 of more than 200 workers have fallen ill in the 2 weeks since the outbreak, their union said.
+workers on a gas production platform in the Bass Strait want their barge returned to port after a major outbreak of salmonella and gastroenteritis.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
-0-36 of more than 200 workers fallen ill in the 2 weeks since the outbreak  .
+0-workers on a gas production platform in the Bass Strait want  .
 
-      weeks-13  is  TMP
-      since-14   is   medium
-      36-1   is   Logical-subject
-      workers-6  number  200-5
-      36-1  fallen-in  weeks-13
-      36-1  of  workers-6
-      weeks-13  number  2-12
-      ill-9   is   EXT
-      weeks-13  since  outbreak-16
+      major-19   is   thing-wanted
+      workers-1  want  barge-13
+      port-16   is   thing-wanted
+      workers-1  want  gastroenteritis-24
+      workers-1  want  salmonella-22
+      salmonella-22   is   thing-wanted
+      platform-6   typeOf   gas-production-platform
+      workers-1  want  returned-14
+      Strait-10   typeOf   Bass-Strait
+      returned-14   is   thing-wanted
+      workers-1  want  outbreak-20
+      their-12   is   thing-wanted
+      workers-1  want  their-12
+      workers-1  want  port-16
+      workers-1  on  platform-6
+      workers-1  is  Wanter
+      gastroenteritis-24   is   thing-wanted
+      Bass-9   is   LOC
+      platform-6  in  Strait-10
+      outbreak-20   is   thing-wanted
+      workers-1  want  major-19
+      barge-13   is   thing-wanted
           --------------------------------------------------          
-1-their union said  .
+1-their barge returned to port after a major outbreak of salmonella and gastroenteritis  .
 
-      2-12   is   Utterance
-      than-4   is   Utterance
-      the-15   is   Utterance
-      outbreak-16   is   Utterance
-      more-3   is   Utterance
-      have-7   is   Utterance
-      36-1   is   Utterance
-      union-19  possession  their-18
-      fallen-8   is   Utterance
-      workers-6   is   Utterance
-      union-19  is  Sayer
-      weeks-13   is   Utterance
-      ill-9   is   Utterance
-      200-5   is   Utterance
-      the-11   is   Utterance
-      since-14   is   Utterance
+      outbreak-20  is  major-19
+      barge-13  possession  their-12
+      barge-13  returned-after  outbreak-20
+      port-16  is  end-point
+      outbreak-20  of  salmonella-22
+      barge-13  is  entity-in-motion
+      outbreak-20  is  TMP
+      outbreak-20  of  gastroenteritis-24
+      barge-13  returned-to  port-16
           --------------------------------------------------          

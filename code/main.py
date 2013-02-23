@@ -171,7 +171,20 @@ if __name__=="__main__":
 	#4
 	vals=Stan.values()[0]
 	temp=vals.values() 
-	#print "*" 
+	#print temp
+	#print VBNs 
+	DCT={} #directly connected tokens
+	for v in VBNs:
+		DCT[v]=[]
+	for v in vals.values():
+		toks= v.values()[0]
+		tok1=toks[0]
+		tok2=toks[1]
+		if tok1 in VBNs and tok2 !="ROOT-0" and tok2 not in VBNs:
+			DCT[tok1].append(tok2)
+		elif tok2 in VBNs and tok1 !="ROOT-0" and tok1 not in VBNs:
+			DCT[tok2].append(tok1)
+	#print DCT	
 	allDeps=[] 
 	for v in temp:
 		a=(v.values()[0][0],v.values()[0][1])
@@ -196,7 +209,7 @@ if __name__=="__main__":
 
 
 	sentNumber=0
-	AllSTs={}
+	AllSTs=[]
 	gephiFile=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/gephi.dot","w")
 	for vbn in VBNs:
 		#vbn="isolated-18"
@@ -223,7 +236,7 @@ if __name__=="__main__":
 			print "before LOOOP",vbn, PRED.values()
 			if vbn in PRED.values(): #some of the VBNs are not recognised as verb in the 1st senna output #testcase4 (prepared)
 				print "######",addArgs[vbn]
-				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn],objs,sbjs)
+				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn],objs,sbjs,DCT)
 				STs=list(set(STs+moreSTs)) # added roles from missing part of sentence (cause:verbToverb connection)
 			(toAdd,toRem)=nnTotypeOf(STs)
 			STs=list(set(STs)-set(toRem))
@@ -245,10 +258,10 @@ if __name__=="__main__":
 			SennaStan.write("--Senna Output:------------------------------------------------------ \n")
 			SennaStan.write(text)
 			SennaStan.write("----------------------------------------------------------------------\n")
-			AllSTs[sentNumber]=STs
+			AllSTs=list(set(AllSTs+STs))
 			sentNumber+=1
-			gephiTranslate(STs,gephiFile)
-			#print "Statements:",STs
+	gephiTranslate(AllSTs,gephiFile)
+	#print "Statements:",STs
 	
 	SennaStan.close()
 	output.close()

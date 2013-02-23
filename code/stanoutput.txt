@@ -1,16 +1,9 @@
 (ROOT
-  (S
-    (VP (VBG amending)
-      (NP (DT a) (NN statement))
-      (PP (IN on)
-        (NP (DT the) (NN company) (NN Internet) (NN site))))
-    (. .)))
+  (NP (DT the) (JJ implicated) (NN scrape) (NN tuna) (NN product) (. .)))
 
-root(ROOT-0, amending-1)
-det(statement-3, a-2)
-dobj(amending-1, statement-3)
-det(site-8, the-5)
-nn(site-8, company-6)
-nn(site-8, Internet-7)
-prep_on(amending-1, site-8)
+det(product-5, the-1)
+amod(product-5, implicated-2)
+nn(product-5, scrape-3)
+nn(product-5, tuna-4)
+root(ROOT-0, product-5)
 
