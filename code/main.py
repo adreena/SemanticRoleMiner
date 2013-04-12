@@ -3,7 +3,7 @@ import os
 from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
-from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf
+from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf , makeOtherFormats
 import re
 from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -276,4 +276,5 @@ if __name__=="__main__":
 	sentence.write(OrgSent)
 	sentence.close()
 	print DCT, PRED.values()
-
+	inputFile="/home/kimia/srl/python/SemanticRoleMiner/code/input"
+	makeOtherFormats(AllSTs,inputFile)
