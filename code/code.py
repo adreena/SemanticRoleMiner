@@ -9,6 +9,10 @@ from stemming.porter2 import stem # for removing ing,ial ,...
 from en import numeral
 import en
 import re
+import rdflib
+from rdflib.graph import Graph
+from rdflib import plugin
+from rdflib.namespace import Namespace
 from Visualizer import makeGephi
 dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
 banlist=['and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
@@ -647,7 +651,29 @@ def nnTotypeOf(allSTs):
 	#print toAdd	
 	return toAdd,toRem
 
+def makeOtherFormats(STs,inputFile):
+	f=open(inputFile+'/results.nt',"w")
+	for val in STs:
+		f.write("<http://"+val[0]+"> <http://"+val[1]+"> <http://"+val[2]+"> .\n")
+	f.close() #nt created
+	#----------------------------------------------------------------------------------
+	#make graph
+	graph=Graph()
+	graph.parse(inputFile+'/results.nt',format='nt')
 
+	#makin turtle
+	f=open(inputFile+'/rdf.ttl','w') 
+	s=graph.serialize(format="turtle")
+	for line in s.split("\n"):
+		f.write(line+"\n")
+	f.close()
+
+	#making rdf/xml
+	f=open(inputFile+'/results.rdf',"w")
+	s=graph.serialize(format="xml")
+	for line in s.split("\n"):
+		f.write(line+"\n")
+	f.close()
 
 
 
