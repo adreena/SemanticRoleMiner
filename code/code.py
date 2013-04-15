@@ -14,7 +14,8 @@ from rdflib.graph import Graph
 from rdflib import plugin
 from rdflib.namespace import Namespace
 from Visualizer import makeGephi
-dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","amod":"is","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not", "nn":"--","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
+#excluded "nn":"--","amod":"is"
+dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
 banlist=['and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
 
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -433,6 +434,7 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 		newSTs=list(set(newSTs))	
 		#print "After: ",newSTs
 	print newSTs
+	newSTs+=typeOfs(Stan)
 	return newSTs,obj,sbj
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
@@ -674,6 +676,33 @@ def makeOtherFormats(STs,inputFile):
 	for line in s.split("\n"):
 		f.write(line+"\n")
 	f.close()
+
+#---------------------------------------------------------
+#typeofS
+def MyFn(s):
+    return s[-1]
+
+def typeOfs(Stan):
+	sts=[]
+	typeOfsDic={}
+	for item in Stan:
+		dep=item.keys()[0]
+		if dep=="nn" or dep=="amod":
+			head=item.values()[0][0]
+			body=item.values()[0][1]
+			if head in typeOfsDic.keys():
+				typeOfsDic[head].append(body)
+			else:
+				typeOfsDic[head]=[]
+				typeOfsDic[head].append(head)
+				typeOfsDic[head].append(body)
+	#sorting list items by number tags
+	for keys,vals in typeOfsDic.items():
+		vals.sort(key=MyFn)
+		obj=" ".join(str(x.split("-")[0]) for x in vals)
+		sts.append((keys,"typeOf",obj))
+	#print typeOfsDic
+	return sts
 
 
 
