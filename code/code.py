@@ -431,6 +431,7 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 		for item in remlist:
 			#print item
 			newSTs.remove(item)
+		newSTs=addDates(dateObjects,newSTs)
 		newSTs=list(set(newSTs))	
 		#print "After: ",newSTs
 	print newSTs
@@ -495,6 +496,13 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects,DCT):
 ######################################################################################################################################
 ######################################################################################################################################
 #------------------------------------------------------------------------------------------------------------------------------------
+def addDates(dateObjects,newSTs):
+	for key,val in dateObjects.items():
+		print "/\/\/\/"
+		newSTs.append((str(key), "is","date"))
+	return newSTs
+
+
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555%%%%%%%%%%%%%%%%%%%
 
 #----------------------------------------
