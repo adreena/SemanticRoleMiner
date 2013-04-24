@@ -21,6 +21,33 @@ from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 
 if __name__=="__main__":
 
+	#removing comma between digits
+	sentence=open("/home/kimia/srl/SemanticRoleMiner/code/input/test_input.txt","r")	
+	text=sentence.readline()
+	sentence.close()
+	patternComma=r'\d+[,]'
+	match=re.findall(patternComma,text) #removing comma in betweeb digits
+	for item in match:
+		digits=item.replace(",","")
+		text=text.replace(item,digits)	
+	sentence=open("/home/kimia/srl/SemanticRoleMiner/code/input/test_input.txt","w")
+
+	#removing ,and or , and
+	patternAnd=r'([,]\s*(and))'
+	match=re.findall(patternAnd,text) #symbols
+	for item in match:
+		text=text.replace(item[0],"and")
+	
+
+	#lowercase beginning for this set
+	patternCaptialNoises=r'^(The\s|A\s|There\s|She\s|He\s|I\s|That\s|Is\s|Are\s|An\s|This\s|It\s|Am\s)'
+	match=re.findall(patternCaptialNoises,text) #symbols
+	for item in match:
+		text=text.replace(item,item.lower())
+
+	sentence.write(text)
+	sentence.close()
+	#------------------------------------------------------------------------------------
 	#1
 	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","r")	
 
