@@ -712,6 +712,68 @@ def typeOfs(Stan):
 	#print typeOfsDic
 	return sts
 
+#----------------------------------
+#tagNumbers
+
+def tagRem(AllSTs,passTheNumber):
+	ModSTs=[]
+	print "OOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+	print AllSTs
+	tag="Sen"+str(passTheNumber)+"-"
+	checkList=[]
+	countList={}
+	damnList={}
+	item0=""
+	item1=""
+	item2=""
+	number=0
+	#damnList contains all terms with their tag numbers
+	for item in AllSTs:
+		item1=item[0]
+		item2=item[2]
+		#print item1,item2
+		if "-" in item1 :
+			print item1
+			if item1.split("-")[0] in damnList: 
+				damnList[item1.split("-")[0]].append(item1.split("-")[-1])  
+			else: 
+				damnList[item1.split("-")[0]]=[]
+				damnList[item1.split("-")[0]].append(item1.split("-")[-1])
+			#print "77777......",damnList
+			damnList[item1.split("-")[0]]=list(set(damnList[item1.split("-")[0]]))
+			
+			
+
+		if "-" in item2 :
+			if item2.split("-")[0] in damnList: damnList[item2.split("-")[0]].append(item2.split("-")[-1])  
+			else: 
+				damnList[item2.split("-")[0]]=[]
+				damnList[item2.split("-")[0]].append(item2.split("-")[-1])
+			#print "77777......",damnList
+			damnList[item2.split("-")[0]]=list(set(damnList[item2.split("-")[0]]))
+
+	
+	#print damnList
+
+	for item in AllSTs:
+		item1=item[0]
+		item2=item[2]
+		if "-" in item1:
+			term=item1.split("-")[0]
+			if len(damnList[term])==1 : item1=tag+str(item1.split("-")[0]) #means the term is not repeated , so tear off the tag number
+			else: item1=tag+str(item1) 				       #means the term is reapeated several times, so keep the tag number
+		else:
+			if item1 not in ["ORG","PER","TMP","MISC","LOC"]: item1=tag+str(item1)  
+		#---------------------------	
+		if "-" in item2:
+			term=item2.split("-")[0]
+			if len(damnList[term])==1 : item2=tag+str(item2.split("-")[0])
+			else: item2= tag+str(item2)
+		else:
+			if item2 not in ["ORG","PER","TMP","MISC","LOC"]: item2=tag+str(item2) 
+		#---------------------------		
+		if ")" not in item2 : ModSTs.append((item1,item[1],item2))
+	return ModSTs
 
 
 
