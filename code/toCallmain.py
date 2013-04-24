@@ -8,13 +8,18 @@ SennaStan.close()
 count=1
 tokyo=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/tokyo/tokyo.txt","r")
 txt=tokyo.read()
+txt=txt.replace(";"," .\n")
+counter=-1
 for line in txt.split("\n"):
   #print count	
-
+	counter+=1
 	if len(line)>1:
 		inputFile=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","w")
 		inputFile.write(line)
 		inputFile.close()
+		initfile=open("/home/kimia/srl/SemanticRoleMiner/code/input/init.txt","w")
+		initfile.write(str(counter))
+		initfile.close()
 		print line
 		cmd=os.system('python main.py')
 		result=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/results.txt","r")
