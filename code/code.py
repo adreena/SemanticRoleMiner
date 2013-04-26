@@ -435,7 +435,7 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 		newSTs=list(set(newSTs))	
 		#print "After: ",newSTs
 	print newSTs
-	newSTs+=typeOfs(Stan)
+	newSTs+=typeOfs(Stan,indices)
 	return newSTs,obj,sbj
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
@@ -690,7 +690,7 @@ def makeOtherFormats(STs,inputFile):
 def MyFn(s):
     return s[-1]
 
-def typeOfs(Stan):
+def typeOfs(Stan,indices):
 	sts=[]
 	typeOfsDic={}
 	for item in Stan:
@@ -708,7 +708,8 @@ def typeOfs(Stan):
 	for keys,vals in typeOfsDic.items():
 		vals.sort(key=MyFn)
 		obj=" ".join(str(x.split("-")[0]) for x in vals)
-		sts.append((keys,"typeOf",obj))
+		gotya=keys.split("-")[-1]
+		sts.append((indices[int(gotya)-1],"typeOf",obj))
 	#print typeOfsDic
 	return sts
 
