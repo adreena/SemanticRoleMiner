@@ -3,7 +3,7 @@ import os
 from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
-from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf , makeOtherFormats
+from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf, makeOtherFormats, tagRem ,abbreviations
 import re
 from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -17,12 +17,12 @@ from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #-- 4-  
 #-- 5- for each verb in VBNs all tokens are collected in a vlist, the sentence is then recreated from the original sentence by scanVerb function, and is sent #      to translateSent to build statements. 
 
-
+path="/home/kimia/srl/"
 
 if __name__=="__main__":
 
 	#removing comma between digits
-	sentence=open("/home/kimia/srl/SemanticRoleMiner/code/input/test_input.txt","r")	
+	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","r")	
 	text=sentence.readline()
 	sentence.close()
 	patternComma=r'\d+[,]'
@@ -30,7 +30,7 @@ if __name__=="__main__":
 	for item in match:
 		digits=item.replace(",","")
 		text=text.replace(item,digits)	
-	sentence=open("/home/kimia/srl/SemanticRoleMiner/code/input/test_input.txt","w")
+	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","w")
 
 	#removing ,and or , and
 	patternAnd=r'([,]\s*(and))'
@@ -45,22 +45,28 @@ if __name__=="__main__":
 	for item in match:
 		text=text.replace(item,item.lower())
 
+
+
+	
+	
 	sentence.write(text)
 	sentence.close()
 	#------------------------------------------------------------------------------------
-	#1
-	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","r")	
 
+
+	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","r")	
 	sent=sentence.readline()
 	sentence.close()
-
 	OrgSent=sent
-	#handling 's
 
-	inputFile="srl/python/SemanticRoleMiner/code/input"
+
+
+
+	#handling 's
+	inputFile="srl/SemanticRoleMiner/code/input"
 	myTestFile=SenSta(inputFile)
 	myTestFile.makeStanf()	
-	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
+	stanfile=path+"SemanticRoleMiner/code/input"+"/stanoutput.txt"
 	Stan=modifyStanf(stanfile)
 	
 	# Fixing 's, using poss dependecy , it Only works if stanford recognizes poss dependecy
@@ -92,8 +98,16 @@ if __name__=="__main__":
 		
 	#print "symbls removed : ",sent
 	
+
+	ofpattern=r'[A-Z][a-z]+\sof\s[A-Z][a-z]+'
+	match=re.findall(ofpattern,sent)
+	for item in match: 
+#		print item
+		item2=item.split(" of ")
+#		print item2
+		sent=sent.replace(" of "+item2[1],"")
+		sent=sent.replace(item2[0],item2[0]+"of"+item2[1])
 	match=re.findall(pattern3,sent) #capitals
-	
 	match=match[0:-1]   # the last token in pattern usually captures a low letter name 
 	templist=sent.split(" ")
 	#print templist
@@ -114,17 +128,17 @@ if __name__=="__main__":
 	print "###---processed sent:",PrSent
 
 	#print sent to process original sentence pre-processed
-	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","w")	
+	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","w")	
 	sentence.write(sent)
 	sentence.close()
 
-	inputFile="srl/python/SemanticRoleMiner/code/input"
+	inputFile="srl/SemanticRoleMiner/code/input"
 	myTestFile=SenSta(inputFile)
 	myTestFile.makeSenna()
 	myTestFile.makeStanf()
-	sennafile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/sennaoutput.txt"
+	sennafile=path+"SemanticRoleMiner/code/input"+"/sennaoutput.txt"
 	
-	stanfile="/home/kimia/srl/python/SemanticRoleMiner/code/input"+"/stanoutput.txt"
+	stanfile=path+"SemanticRoleMiner/code/input"+"/stanoutput.txt"
 
 
 #*************************************************************
@@ -228,20 +242,20 @@ if __name__=="__main__":
 	#5
 	sen=[]
 	#print VBNs
-	output=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/results.txt",'w')
+	output=open(path+"SemanticRoleMiner/code/input/results.txt",'w')
 	output.write("-Complete Sentence is: \n"+OrgSent+"\n")
 	output.write("----------------------------------------------------------------------\n")
 	output.write("----------------------------------------------------------------------\n")
 	
-	SennaStan=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/Stan_Senna_results.txt",'w')
+	SennaStan=open(path+"SemanticRoleMiner/code/input/Stan_Senna_results.txt",'w')
 
 
 
 
 
-	sentNumber=0
+	sentNumber=1
 	AllSTs=[]
-	gephiFile=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/gephi.dot","w")
+	gephiFile=open(path+"SemanticRoleMiner/code/input/gephi.dot","w")
 	for vbn in VBNs:
 		#vbn="isolated-18"
 		#print"to be :  "
@@ -255,35 +269,42 @@ if __name__=="__main__":
 			STs=[]
 			
 			(indices,result)=scanVerb(sent,vlist)
-			print "result: ",result # here is the new sentece, segmented from the original one.
-			print "indices:", indices
+			#print "result: ",result # here is the new sentece, segmented from the original one.
+			#print "indices:", indices
 			#-- writing each sentence along with their triples in results.txt
 			output.write(str(sentNumber)+"-"+result+"\n\n")
 			SennaStan.write(str(sentNumber)+"-"+result+"\n\n")
 			sen.append(result)
 			#print indices
 			(STs,objs,sbjs)=translateSent(vlist,result,Poss,indices,PrSent)
-			#print STs
-			print "before LOOOP",vbn, PRED.values()
+			print "\n\n",STs,"\n\n"
+			#print "before LOOOP",vbn, PRED.values()
 			if vbn in PRED.values(): #some of the VBNs are not recognised as verb in the 1st senna output #testcase4 (prepared)
-				print "######",addArgs[vbn]
+			#	print "######",addArgs[vbn]
 				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn],objs,sbjs,DCT)
 				STs=list(set(STs+moreSTs)) # added roles from missing part of sentence (cause:verbToverb connection)
+			#----------------------- adding abbreviation
+			abbFile=path+"SemanticRoleMiner/code/input/abbreviation.txt"
+			abbr=abbreviations(sent,abbFile,indices)
+			STs+=abbr
 			(toAdd,toRem)=nnTotypeOf(STs)
 			STs=list(set(STs)-set(toRem))
+			
 			STs=list(set(STs+toAdd))
 			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
+			
+			#-----------------------
 			
 			output.write("          --------------------------------------------------          \n")
 
 			#-- writing each sentence stanford output in Stan_Senna_results.txt
-			stanfile=open("/home/kimia/srl/python/SemanticRoleMiner/code/stanoutput.txt","r")
+			stanfile=open(path+"SemanticRoleMiner/code/stanoutput.txt","r")
 			text=stanfile.read()
 			stanfile.close()
 			SennaStan.write("-Stanford Output: ----------------------------------------------------\n")
 			SennaStan.write(text)
 			#-- writing each sentence ssenna output in Stan_Senna_results.txt
-			sennafile=open("/home/kimia/srl/python/SemanticRoleMiner/code/sennaoutput.txt","r")
+			sennafile=open(path+"SemanticRoleMiner/code/sennaoutput.txt","r")
 			text=sennafile.read()
 			sennafile.close()
 			SennaStan.write("--Senna Output:------------------------------------------------------ \n")
@@ -291,6 +312,13 @@ if __name__=="__main__":
 			SennaStan.write("----------------------------------------------------------------------\n")
 			AllSTs=list(set(AllSTs+STs))
 			sentNumber+=1
+			#typeOfs(Stan)
+	initfile=open(path+"SemanticRoleMiner/code/input/init.txt","r")
+	print "initiiiiiii"
+	senNumber= int(initfile.readline().split("\n")[0])
+	print AllSTs,"\n\n"
+	
+	AllSTs=tagRem(AllSTs,senNumber)
 	gephiTranslate(AllSTs,gephiFile)
 	#print "Statements:",STs
 	
@@ -299,9 +327,11 @@ if __name__=="__main__":
 	gephiFile.close()
 	
 	#---fixing input file for this process has modified it
-	sentence=open("/home/kimia/srl/python/SemanticRoleMiner/code/input/test_input.txt","w")	
+	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","w")	
 	sentence.write(OrgSent)
 	sentence.close()
-	print DCT, PRED.values()
-	inputFile="/home/kimia/srl/python/SemanticRoleMiner/code/input"
-	makeOtherFormats(AllSTs,inputFile)
+	inputFile=path+"SemanticRoleMiner/code/input"
+	
+	#print DCT, PRED.values()
+	#makeOtherFormats(AllSTs,inputFile)
+	
