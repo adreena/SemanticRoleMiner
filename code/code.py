@@ -777,6 +777,34 @@ def tagRem(AllSTs,passTheNumber):
 	return ModSTs
 
 
+#--------------------------------------------------------
+def abbreviations(sent,abbFile,indices):
+	addedSTs=[]
+	print sent
+	sent=sent.replace(","," ")
+	sent=sent.replace("."," .")
+
+	sentList=sent.split(" ")
+	sentList
+	print indices
+	print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SentList",sentList
+	abbfile=open(abbFile,"r")
+	getAbb=abbfile.read()
+	for line in getAbb.split("\n"):
+		if len(line)>0:		
+			print line
+			items=line.split(" - ")
+			item1=items[-1]
+			print item1
+			if item1 in sentList:
+				item2=items[0]
+				print item1 , "-" , item2
+				for token in indices:
+					term=token.split("-")[0]
+					if term==item1: item1=token	
+				addedSTs.append((item1,"acronym-for",item2))
+
+	return addedSTs
 
 
 
