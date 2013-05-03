@@ -4,7 +4,9 @@ paragName="/abstracts/abstract_"
 #initialization
 paragraphNumber=open("/home/kimia/srl/SemanticRoleMiner/code/input/paragNumber.txt","r")
 pNumber=paragraphNumber.readline()
-print pNumber
+paragraphNumber.close()
+if "\n" in pNumber: pNumber=pNumber.replace("\n","")
+
 outputFile=open(path+"SemanticRoleMiner/code"+paragName+pNumber+"/Allresult.txt","w")
 outputFile.close()
 SennaStan=open(path+"SemanticRoleMiner/code"+paragName+pNumber+"/Stan_Senna_results.txt",'w')
@@ -14,8 +16,8 @@ abbreviationFile=open(path+"SemanticRoleMiner/code/input/abbreviation.txt","w")
 abbreviationFile.close()
 count=1
 
-tokyo=open(path+"SemanticRoleMiner/code"+paragName+pNumber+"/test_input.txt","r")
-txt=tokyo.read()
+temp=open(path+"SemanticRoleMiner/code"+paragName+pNumber+"/test_input.txt","r")
+txt=temp.read()
 txt=txt.replace(". ",".\n")
 txt=txt.replace("; "," .\n")
 
