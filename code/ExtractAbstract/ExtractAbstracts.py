@@ -27,7 +27,7 @@ for line in abstractFileRead.split("\n"):
 			line=line.replace(item[-1],item[-1].lower())
 		#print line
 		#pattern 3
-		AbrPattern=r'((((([A-Z][a-z]+\s((in|for|of|and)\s)*)*[A-Z][a-z]+).*s*\s))(\([A-z]+\)))' #item[0] must be removed, item[-1] instead is kep as the short form
+		AbrPattern=r'((((([A-Z][a-z]+\s((in|for|of|and)\s)*)*[A-Z][a-z]+)(\Ss)*\s))(\([A-z]+\)))' #item[0] must be removed, item[-1] instead is kep as the short form
 		match=re.findall(AbrPattern,line)
 		abbreviationFile=open("/home/kimia/srl/SemanticRoleMiner/code/Allabs/abstract"+str(counter)+"/abbreviation.txt","w")
 		for item in match:
