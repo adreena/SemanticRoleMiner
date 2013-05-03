@@ -49,7 +49,8 @@ for line in abstractFileRead.split("\n"):
 
 		
 		
-		ExtractedAbsFile.write(line[14:]) # removing "Abstract: "
+		ExtractedAbsFile.write(line[14:]) # removing "Abstract are "
+		ExtractedAbsFile.close()
 		#NOW running translateParagraph.py for parsing the whole paragraph
 		paragraphNumber=open("/home/kimia/srl/SemanticRoleMiner/code/input/paragNumber.txt","w")
 		paragraphNumber.write(str(counter))
