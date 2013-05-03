@@ -27,12 +27,16 @@ for line in abstractFileRead.split("\n"):
 			line=line.replace(item[-1],item[-1].lower())
 		#print line
 		#pattern 3
-		AbrPattern=r'((((([A-Z][a-z]+\s(of\s)*)*[A-Z][a-z]+)\s))(\([A-z]+\)))' #item[-1] must be removed, item[1] is the compelte name
+		AbrPattern=r'((((([A-Z][a-z]+\s((in|for|of|and)\s)*)*[A-Z][a-z]+).*s*\s))(\([A-z]+\)))' #item[0] must be removed, item[-1] instead is kep as the short form
 		match=re.findall(AbrPattern,line)
-		abbreviationFile=open("/home/kimia/srl/SemanticRoleMiner/code/abstracts/abstract_"+str(counter)+"/abbreviation.txt","a")
-		for item in match: 
+		abbreviationFile=open("/home/kimia/srl/SemanticRoleMiner/code/Allabs/abstract"+str(counter)+"/abbreviation.txt","w")
+		for item in match:
+			ab=item[-1]
+			ab=item[-1].replace("(","")
+			ab=ab.replace(")","") 
+			print item
 			abbreviationFile.write(item[1]+"- "+item[-1][1:-1]+"\n" )
-			line=line.replace(item[-1],"")
+			line=line.replace(item[0],ab)
 		abbreviationFile.close()
 		# pattern 1
 		RefPattern=r'(References: \d+)' #removing [References: dd] from text
