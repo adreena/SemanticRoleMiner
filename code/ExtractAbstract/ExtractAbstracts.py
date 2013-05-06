@@ -2,21 +2,21 @@ import sys
 import os
 import re
 
-abstractFile=open("/home/kimia/srl/SemanticRoleMiner/code/abstracts/49abstracts.txt","r")
-abstractOutput=open("/home/kimia/srl/SemanticRoleMiner/code/abstracts/ExAbOutput.txt","w")
+abstractFile=open("/home/kimia/srl/SemanticRoleMiner/code/Allabs/49abstracts.txt","r")
+abstractOutput=open("/home/kimia/srl/SemanticRoleMiner/code/Allabs/ExAbOutput.txt","w")
 counter=1
-abbreviationFile=open("/home/kimia/srl/SemanticRoleMiner/code/abstracts/abstract_"+str(counter)+"/abbreviation.txt","w")
-abbreviationFile.close()
-
+stop=counter+3
 abstractFileRead=abstractFile.read()
 
 for line in abstractFileRead.split("\n"):
-  if line[0:3]=="Abs":
+	if line[0:3]=="Abs":
 		abstractOutput.write(line+"\n****\n")
 		#if [! -d ""]; then 
-		cmd=os.system('if [ ! -d abstract_'+str(counter)+' ]; then mkdir abstract_'+str(counter)+'; fi')
-		#cmd=os.system('mkdir '+"abstract_"+str(counter)) #create a folder for every abstract 
-		ExtractedAbsFile=open("/home/kimia/srl/SemanticRoleMiner/code/abstracts/abstract_"+str(counter)+"/test_input.txt","w")
+		cmd=os.system('if [ ! -d abstract'+str(counter)+' ]; then mkdir abstract'+str(counter)+'; fi')
+		abbreviationFile=open("/home/kimia/srl/SemanticRoleMiner/code/Allabs/abstract"+str(counter)+"/abbreviation.txt","a")
+		abbreviationFile.close()
+		#cmd=os.system('mkdir '+"abstract"+str(counter)) #create a folder for every abstract 
+		ExtractedAbsFile=open("/home/kimia/srl/SemanticRoleMiner/code/Allabs/abstract"+str(counter)+"/test_input.txt","w")
 		line=line.replace("[","")
 		line=line.replace("]","")
 		#pattern for noise capital letters
@@ -49,21 +49,19 @@ for line in abstractFileRead.split("\n"):
 		ListPattern=r'\w+\:\s' #removing : , example : covers 11 zoonotic agents :  Salmonella --> covers 11 zoonotic agents are  Salmonella, 
 		match=re.findall(ListPattern,line)
 		for item in match: line= line.replace(item[-2:-1]," are ")
-
-
 		
-		
-		ExtractedAbsFile.write(line[14:]) # removing "Abstract are "
+		ExtractedAbsFile.write(line[14:]) # removing "Abstract: "
 		ExtractedAbsFile.close()
 		#NOW running translateParagraph.py for parsing the whole paragraph
 		paragraphNumber=open("/home/kimia/srl/SemanticRoleMiner/code/input/paragNumber.txt","w")
 		paragraphNumber.write(str(counter))
 		paragraphNumber.close()
+		print line
 		cmd=os.system('python /home/kimia/srl/SemanticRoleMiner/code/translateParagraph.py')
 		
 		
 		counter+=1
-		
+	if counter==stop: break
 
 abstractFile.close()
 abstractOutput.close()
