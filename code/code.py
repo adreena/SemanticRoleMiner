@@ -807,5 +807,31 @@ def abbreviations(sent,abbFile,indices):
 	return addedSTs
 
 
+#-----------------------------------------------------------
+#Fixing capital name units into space form
+
+def fixCaps(AllSTs,remakeCaps):
+	STs=[]
+	keys=remakeCaps.keys()
+	for item in AllSTs:
+		tag=item[0].split("-")[0]
+		item1=item[0].split("-")[-1]
+		print "---item1",item1
+		dep=item[1]
+		item2=item[2].split("-")[-1]
+		if item1 in keys: 
+			print "0000itm1",item1,remakeCaps[item1]
+			STs.append((tag+"-"+remakeCaps[item1],dep,item[2]))
+		if item2 in keys:
+			print "0000itm2",item2 
+			STs.append((item[0],dep, tag+"-"+remakeCaps[item2]))
+		if item1 not in keys and item2 not in keys:
+			STs.append(item)
+
+
+	return STs
+
+
+
 
 
