@@ -3,7 +3,7 @@ import os
 from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
-from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf, makeOtherFormats, tagRem ,abbreviations
+from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf, makeOtherFormats, tagRem ,abbreviations, fixCaps ,evalTrans
 import re
 from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -20,10 +20,13 @@ from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 path="/home/kimia/srl/"
 
 if __name__=="__main__":
+	
+	
 
 	#removing comma between digits
 	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","r")	
 	text=sentence.readline()
+	keepOrgSent=text
 	sentence.close()
 	patternComma=r'\d+[,]'
 	match=re.findall(patternComma,text) #removing comma in betweeb digits
@@ -31,6 +34,19 @@ if __name__=="__main__":
 		digits=item.replace(",","")
 		text=text.replace(item,digits)	
 	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","w")
+
+	#make all the space-separated capital names 1 unit-name
+	remakeCaps={}
+	patternCaps=r'(([A-Z][a-z]+\s((of|and|for)\s)*)*[A-Z][a-z]+)'
+	match=re.findall(patternCaps,text)
+	for item in match:
+		temp=item[0]
+		temp=temp.replace(" ","")
+		temp2=item[0].replace(" ","_")
+		remakeCaps[temp]=temp2
+		print remakeCaps
+		text=text.replace(item[0],temp)
+	#print text successfully done
 
 	#removing ,and or , and
 	patternAnd=r'([,]\s*(and))'
@@ -40,7 +56,7 @@ if __name__=="__main__":
 	
 
 	#lowercase beginning for this set
-	patternCaptialNoises=r'^(The\s|A\s|There\s|She\s|He\s|I\s|That\s|Is\s|Are\s|An\s|This\s|It\s|Am\s)'
+	patternCaptialNoises=r'^(They\s|The\s|A\s|There\s|For\s|From\s|So\s|Then\|She\s|He\s|I\s|That\s|Is\s|Are\s|An\s|This\s|It\s|Am\s)'
 	match=re.findall(patternCaptialNoises,text) #symbols
 	for item in match:
 		text=text.replace(item,item.lower())
@@ -52,7 +68,6 @@ if __name__=="__main__":
 	sentence.write(text)
 	sentence.close()
 	#------------------------------------------------------------------------------------
-
 
 	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","r")	
 	sent=sentence.readline()
@@ -247,6 +262,9 @@ if __name__=="__main__":
 	output.write("----------------------------------------------------------------------\n")
 	output.write("----------------------------------------------------------------------\n")
 	
+	evaloutput=open(path+"SemanticRoleMiner/code/input/eval_result.txt","w")	
+	evaloutput.write(keepOrgSent+"\n")
+
 	SennaStan=open(path+"SemanticRoleMiner/code/input/Stan_Senna_results.txt",'w')
 
 
@@ -277,8 +295,8 @@ if __name__=="__main__":
 			sen.append(result)
 			#print indices
 			(STs,objs,sbjs)=translateSent(vlist,result,Poss,indices,PrSent)
-			print "\n\n",STs,"\n\n"
-			#print "before LOOOP",vbn, PRED.values()
+			print "\n\n************************\n",STs,"\n****************\n"
+				#print "before LOOOP",vbn, PRED.values()
 			if vbn in PRED.values(): #some of the VBNs are not recognised as verb in the 1st senna output #testcase4 (prepared)
 			#	print "######",addArgs[vbn]
 				moreSTs=ExtraSTs(STs,PrSent,vlist,addArgs[vbn],objs,sbjs,DCT)
@@ -291,8 +309,10 @@ if __name__=="__main__":
 			STs=list(set(STs)-set(toRem))
 			
 			STs=list(set(STs+toAdd))
-			for st in STs: output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
-			
+			for st in STs: 
+				if "(" not in st[2] and "*" not in st[2] and ")" not in st[2]:
+					output.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
+					#evaloutput.write("      "+str(st[0])+"  "+str(st[1])+"  "+str(st[2])+"\n")
 			#-----------------------
 			
 			output.write("          --------------------------------------------------          \n")
@@ -314,11 +334,14 @@ if __name__=="__main__":
 			sentNumber+=1
 			#typeOfs(Stan)
 	initfile=open(path+"SemanticRoleMiner/code/input/init.txt","r")
-	print "initiiiiiii"
+	#print "initiiiiiii"
 	senNumber= int(initfile.readline().split("\n")[0])
-	print AllSTs,"\n\n"
-	
+	#print "\n\n",AllSTs,"\n\n"
+	initfile.close()
 	AllSTs=tagRem(AllSTs,senNumber)
+	#print "---LAST MODIFICATION"
+	AllSTs=fixCaps(AllSTs,remakeCaps)
+	#print AllSTs
 	gephiTranslate(AllSTs,gephiFile)
 	#print "Statements:",STs
 	
@@ -328,10 +351,16 @@ if __name__=="__main__":
 	
 	#---fixing input file for this process has modified it
 	sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","w")	
-	sentence.write(OrgSent)
+	sentence.write(keepOrgSent)
 	sentence.close()
 	inputFile=path+"SemanticRoleMiner/code/input"
 	
 	#print DCT, PRED.values()
 	#makeOtherFormats(AllSTs,inputFile)
 	
+	#translating for evalutation, checking if they have tag numbers
+	print "-----------------ALL ATS-----------------"
+	for st in AllSTs:
+		evaloutput.write("<"+str(st[0])+" ; "+str(st[1])+" ; "+str(st[2])+">\n")
+	evaloutput.write("---------\n")
+	evaloutput.close()
