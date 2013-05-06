@@ -13,10 +13,13 @@ import rdflib
 from rdflib.graph import Graph
 from rdflib import plugin
 from rdflib.namespace import Namespace
+
 from Visualizer import makeGephi
 #excluded "nn":"--","amod":"is"
-dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"moreDetail","agent":"by","appos":"sameAs","attr":"","csubjpass":"moreDetail","dobj":"object","iobj":"to","neg":"not","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
-banlist=['and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"more-detail","agent":"by","appos":"or","attr":"","csubjpass":"more-detail","dobj":"direct-object","iobj":"to","neg":"not","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
+banlist=['estimated','is','are','and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+
+path="/home/kimia/srl/"
 
 #------------------------------------------------------------------------------------------------------------------------------------
 ######################################################################################################################################
@@ -88,16 +91,15 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 	#--- SenSta class accepts a sentence written in a file format, so for every sentence being sent to translateSent() in "result" argument , the sentence is first saved into a file with base directory mentioned in "inputFile"
 	
 	#-- 1- writing the sentence in file.
-	stanfile=open("/home/kimia/srl/python/SemanticRoleMiner/code/test_input.txt","w")
+	stanfile=open(path+"SemanticRoleMiner/code/test_input.txt","w")
 	stanfile.write(result)
 	stanfile.close()
-
+	
 
 	sbj={}
 	obj=[]
 	i=0
-
-
+	
 	#-- 2- the first verb in vlist is the targetverb which is splited from its location of the main text. verb is set to default value of "not found".
 	targetverb=vlist[0].split("-")[0:-1][0]
 
@@ -105,13 +107,14 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 	verb="not found"
 
 	#-- 3- processing stanford-parser and senna on the textfile, the results are store into 2 dictionaries , Stan and Senn
-        inputFile="srl/python/SemanticRoleMiner/code"
+        inputFile="srl/SemanticRoleMiner/code"
 	myTestFile=SenSta(inputFile)
 	myTestFile.makeSenna()
 	myTestFile.makeStanf()
 	Stan= myTestFile.stanfDict['sen0'].values()
 	Senn= myTestFile.sennaDict['sen0'].values()
-	print "Senn: ",Senn
+	
+	
 	#thissent=[]
 	#thissent=result.split(" ")
 	#-- 3.5 finding matches for date-pattern to merge all numbers into just 1 object connected to the target verb
@@ -175,11 +178,14 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 			tok2=values[2].split("-")[1:][0]
 			#print "**2222"
 			print tok1," is ",tok2 #fixed
-			STs.append((str(tok1)," is ",str(tok2)))
+			STs.append((str(tok1),"is",str(tok2)))
 		if item.keys()[0] in verbRel:
 			if values[4]!='O': # ARG
 				val1=item.keys()[0]
-				val2=values[4].split("-")[-1]
+				#val2=values[4].split("-")[1:]
+				val2=values[4]
+				damnval2=values[4].split("-")[0]
+				val2=val2.replace(damnval2+"-","")
 				roleDep.append((val1,val2))
 	#print "###########NER#############################"	 #number tags checked		
 	#-- 4-4 Translating Args into rolesets, if the Arg is not in allRole list , it's printed itself. 
@@ -196,7 +202,7 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 				temp=allRoles[role].split(",")[0]
 					
 				print token," is ",temp
-				STs.append((str(token)," is ",temp))
+				STs.append((str(token),"is",temp))
 
 			else:
 				print token," is ",allRoles[role]
@@ -206,7 +212,8 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 			#print "*role_added2*"
 			print token," is ",role
 			STs.append((str(token),"is",role))
-	#print STs
+
+ 
 	#print "###########-ROLE-NAMEs-#############################"
 
 	#-- 5- Stan Translation-----------------------------------
@@ -229,10 +236,10 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 
 	#print "**********",targetverb,verb
 	#-- 5-2 in some cases there are no verb in sentence , this loop prints statements containing verb and the verb is the root.
-	print "000000000000000000000000000000000000000000"
+	#print "000000000000000000000000000000000000000000"
 	stanRoot=verb.split("-")[0]
 	sennaPred=targetverb
-	print "verbs: ",targetverb,verb.split("-")[0]
+#	print "verbs: ",targetverb,verb.split("-")[0]
 	if (verb !="notfound" and targetverb==verb.split("-")[0]) or (verb !="notfound" and targetverb==verb.split("-")[0]):
 		i=0
 		for triple in Stan:
@@ -266,7 +273,7 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 					#print "**2222"
 					print tok1," ",dictionary[pred]," ",tok2
 					STs.append((str(tok1),dictionary[pred],str(tok2)))
-	
+
 	
 		#-- 5-2-2 printing statments withe predicate --verb-- among subjects and other objects directly connected to verb. 
 		#--       the location of each token is mentioned but for the verb it's omitted.  
@@ -330,9 +337,8 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 	sentlist=result.split(" ")
 	#print sentlist
 	#i=0
-	print"\n"
-	print "STS:",STs
-	print "\n"
+	
+
 	newSTs=[]
 
 	#print "888888888888888888888888888888888888888888888888888888"
@@ -397,8 +403,12 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 
 	if len(newSTs)==0: #newSTs is empty because no Poss has been detected , newSTs was created in the loop above . so if there are no poss-dependencies , newSTs would be the same as STs (tag-numbers are checked)
 		newSTs=STs
-					
-	print "all statements", newSTs		
+	
+
+
+
+				
+	print "all statements", newSTs #!!!!!!!!!!!!!!!!!!!!!!!1checked	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	#fixing Dates: dateObjects
 	print "------------------------------------------------"
 	remlist=[]
@@ -431,10 +441,10 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 		for item in remlist:
 			#print item
 			newSTs.remove(item)
-		newSTs=addDates(dateObjects,newSTs)
 		newSTs=list(set(newSTs))	
 		#print "After: ",newSTs
 	print newSTs
+	print "********///"
 	newSTs+=typeOfs(Stan,indices)
 	return newSTs,obj,sbj
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -480,15 +490,15 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects,DCT):
 				role=allRoles[label]
 				#print "///",label, role
 				if tok1 in DCT:
-					if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1," is ",label)
-					else: tup=(tok1," is ",role)
+					if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1,"is",label)
+					else: tup=(tok1,"is",role)
 					print tup
 					newSTs.append(tup)
 			else:
 				#print "//",label
 				if tok1 in DCT:
 					print tok1," is ",label
-					newSTs.append((tok1," is ",label))
+					newSTs.append((tok1,"is",label))
 	
 	#print "--------"
 	return newSTs
@@ -496,13 +506,6 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects,DCT):
 ######################################################################################################################################
 ######################################################################################################################################
 #------------------------------------------------------------------------------------------------------------------------------------
-def addDates(dateObjects,newSTs):
-	for key,val in dateObjects.items():
-		print "/\/\/\/"
-		newSTs.append((str(key), "is","date"))
-	return newSTs
-
-
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%555%%%%%%%%%%%%%%%%%%%
 
 #----------------------------------------
@@ -531,7 +534,7 @@ def verbLinks(vbn,deplist,VBNs):
 #
 #
 def scanVerb(sen,vlist):
-	banlist=['for','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for","since"]
+	banlist=['is','are','for','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for","since","estimated"]
 	doublewords=["becasue","instead","such","addition","due","all","rather","well"]
 	doublewordlist=[["becasue","of"],["instead","of"], ["such","as"], ["due","to"],["all","but"],["rather","than"]  ]
 	triplewords=["addition","well"]
@@ -657,9 +660,13 @@ def nnTotypeOf(allSTs):
 			a=key.split("-")[-1] #removing index of main token
 			key1=key.replace("-"+a,"")
 			print key," typeOf ",item+"-"+key1
-			toAdd.append((key," typeOf ",item+"-"+key1))
+			toAdd.append((key,"typeOf",item+"-"+key1))
 	#print toAdd	
 	return toAdd,toRem
+
+
+#`````````````````````````````````````````````````````````````````````````
+#making serialization formats with fake https
 
 def makeOtherFormats(STs,inputFile):
 	f=open(inputFile+'/results.nt',"w")
@@ -685,12 +692,15 @@ def makeOtherFormats(STs,inputFile):
 		f.write(line+"\n")
 	f.close()
 
+
 #---------------------------------------------------------
 #typeofS
 def MyFn(s):
     return s[-1]
 
 def typeOfs(Stan,indices):
+	print "''''''''''''''''''''''"
+	print indices, Stan
 	sts=[]
 	typeOfsDic={}
 	for item in Stan:
@@ -709,18 +719,20 @@ def typeOfs(Stan,indices):
 		vals.sort(key=MyFn)
 		obj=" ".join(str(x.split("-")[0]) for x in vals)
 		gotya=keys.split("-")[-1]
+		#print gotya, indices[int(gotya)-1]
+		obj=obj.replace(" ","_")
 		sts.append((indices[int(gotya)-1],"typeOf",obj))
-	#print typeOfsDic
+	print sts
 	return sts
 
 #----------------------------------
 #tagNumbers
 
-def tagRem(AllSTs,passTheNumber):
+def tagRem(AllSTs,senNumber):
 	ModSTs=[]
 	print "OOOOOOOOOOOOOOOOOOOOOOOOOOOO"
 	print AllSTs
-	tag="Sen"+str(passTheNumber)+"-"
+	tag="Sen"+str(senNumber)+"-"
 	checkList=[]
 	countList={}
 	damnList={}
@@ -776,7 +788,6 @@ def tagRem(AllSTs,passTheNumber):
 		if ")" not in item2 : ModSTs.append((item1,item[1],item2))
 	return ModSTs
 
-
 #--------------------------------------------------------
 def abbreviations(sent,abbFile,indices):
 	addedSTs=[]
@@ -806,7 +817,6 @@ def abbreviations(sent,abbFile,indices):
 
 	return addedSTs
 
-
 #-----------------------------------------------------------
 #Fixing capital name units into space form
 
@@ -816,14 +826,14 @@ def fixCaps(AllSTs,remakeCaps):
 	for item in AllSTs:
 		tag=item[0].split("-")[0]
 		item1=item[0].split("-")[-1]
-		print "---item1",item1
+		#print "---item1",item1
 		dep=item[1]
 		item2=item[2].split("-")[-1]
 		if item1 in keys: 
-			print "0000itm1",item1,remakeCaps[item1]
+			#print "0000itm1",item1,remakeCaps[item1]
 			STs.append((tag+"-"+remakeCaps[item1],dep,item[2]))
 		if item2 in keys:
-			print "0000itm2",item2 
+			#print "0000itm2",item2 
 			STs.append((item[0],dep, tag+"-"+remakeCaps[item2]))
 		if item1 not in keys and item2 not in keys:
 			STs.append(item)
@@ -832,6 +842,10 @@ def fixCaps(AllSTs,remakeCaps):
 	return STs
 
 
+#------------------------------------------------------------
+# a specific type of translation for evaluating the reuslts
+def evalTrans(STs):
+	print ST
 
 
 
