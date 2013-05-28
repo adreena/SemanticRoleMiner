@@ -684,25 +684,30 @@ def makeOtherFormats(STs,inputFile):
 	#makin turtle
 	f=open(inputFile+'/rdf.ttl','w') 
 	s=graph.serialize(format="turtle")
-	ind1=0
-	ind2=0
-	ind=0
+	
 	for line in s.split("\n"):
-		line=line.replace("  ","")
-		line=line.replace(" .",".")
-		segs=line.split(" ")
-		print segs
-		if len(segs)==3:
-			ind=0
-			ind1=len(segs[0])
-			ind2=len(segs[1])
-		elif len(segs)==2:
-			ind=ind1+1
-			ind2=len(segs[0])
-		elif len(segs)==1:
-			ind=ind1+ind2+2
-		line=" "*ind+line
-		f.write(line+"\n")
+		#line=line.replace("  ","")
+		
+		line=line.replace(" .","\n")
+		line=line.replace(",",";")
+		line=line.replace(" "*8,",,")
+		line=line.replace(" "*4,",")
+		line=line.replace(" ",",")
+		print line
+		# removing prefixes for making evaluation easier
+		pattern1=r"(ns\d*:)" # Captial Names
+		match=re.findall(pattern1,line) #symbols
+		for item in match:
+			toks=item.split(" ")
+			newtok=""
+			line=line.replace(item,newtok)
+
+		
+		line=line.replace(";","")
+		line=line.replace("<http://","")
+		line=line.replace(">","")
+		if "@prefix" not in line and len(line)>1:
+			f.write(line+"\n")
 	f.close()
 
 	#making rdf/xml
@@ -711,6 +716,7 @@ def makeOtherFormats(STs,inputFile):
 	for line in s.split("\n"):
 		f.write(line+"\n")
 	f.close()
+
 
 #---------------------------------------------------------
 #typeofS
@@ -865,6 +871,26 @@ def fixCaps(AllSTs,remakeCaps):
 # a specific type of translation for evaluating the reuslts
 def evalTrans(STs):
 	print ST
+
+#removing tag numbers AGAIN and eliminating AM-s 
+def refineSts(STs):
+	newSTs=[]
+	for item in STs:
+		val0=item[0]
+		val1=item[1]
+		val2=item[2]
+		if "Sen" in val0:
+			rem=val0.split("-")[0]
+			val0=val0.replace(rem+"-","")
+		if "Sen" in val2:
+			rem=val2.split("-")[0]
+			val2=val2.replace(rem+"-","")
+		if "AM-" in val2 :
+			if val2 in ["AM-LOC", "AM-DIR","AM-TMP","AM-PNC","AM-CAU"]:
+				newSTs.append((val0,val1,val2))
+		else:
+			newSTs.append((val0,val1,val2))
+	return newSTs
 
 
 
