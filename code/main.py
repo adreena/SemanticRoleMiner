@@ -3,7 +3,7 @@ import os
 from StanSennaClass import SenSta
 from sennaProcessed import modifySenna
 from stanfProcessed import modifyStanf
-from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf, makeOtherFormats, tagRem ,abbreviations, fixCaps ,evalTrans
+from code import verbRelatives,roleFinder,translateSent,verbLinks,scanVerb,gephiTranslate,ExtraSTs, nnTotypeOf, makeOtherFormats, tagRem ,abbreviations, fixCaps ,evalTrans, refineSts
 import re
 from FindPropArg import Find_Pred_Arg_Root,Find_ArgDom_MixArgDep
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -356,7 +356,15 @@ if __name__=="__main__":
 	inputFile=path+"SemanticRoleMiner/code/input"
 	
 	#print DCT, PRED.values()
+	#print DCT, PRED.values()
+	print "\n\n"
+	print "raw:\n",AllSTs
+	refinedSTs=refineSts(AllSTs)
+	print "refined:\n",refinedSTs
+	AllSTs=[]
+	AllSTs=refinedSTs
 	makeOtherFormats(AllSTs,inputFile)
+
 	
 	#translating for evalutation, checking if they have tag numbers
 	print "-----------------ALL ATS-----------------"
