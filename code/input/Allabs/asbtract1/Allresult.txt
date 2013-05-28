@@ -1,0 +1,256 @@
+Sentence: 1
+*********************************************
+-Complete Sentence is: 
+the IDSA, in cooperation with the CentersforDiseaseControlandPrevention, has launched an EIN.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+1-the IDSA cooperation with the CentersforDiseaseControlandPrevention launched an EIN  .
+
+      IDSA-2  acronym-for  Infectious Diseases Society of America
+      cooperation-5  typeOf  IDSA_cooperation
+      cooperation-5  is  starter
+      CentersforDiseaseControlandPrevention-8  is  ORG
+      IDSA-2  is  MISC
+      cooperation-5  launched-direct-object  EIN-13
+      EIN-13  is  thing-being-launched
+      EIN-13  acronym-for  Emerging Infections Network
+      cooperation-5  with  CentersforDiseaseControlandPrevention-8
+          --------------------------------------------------          
+
+Sentence: 2
+*********************************************
+-Complete Sentence is: 
+this network of infectious diseases consultants was conceived as a sentinel system to monitor new or resurgent infectious diseases in a way that would complement other public health surveillance efforts.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+1-this network of infectious diseases consultants conceived a sentinel system  .
+
+      efforts-30  is  AM-PNC
+      would-24  is  AM-PNC
+      network-2  of  consultants-6
+      network-2  conceived-direct-object  system-12
+      way-22  is  AM-PNC
+      system-12  is  thought
+      consultants-6  typeOf  infectious_diseases_consultants
+      system-12  typeOf  system_sentinel
+      network-2  is  conceiver
+      diseases-19  is  AM-PNC
+      new-15  is  AM-PNC
+          --------------------------------------------------          
+2-this network of infectious diseases consultants to monitor new or resurgent infectious diseases in a way  .
+
+      monitor-14  direct-object  diseases-19
+      would-24  is  AM-MNR
+      network-2  of  consultants-6
+      diseases-19  is  thing-looked-at
+      diseases-19  typeOf  resurgent_infectious_diseases
+      way-22  is  AM-MNR
+      efforts-30  is  AM-MNR
+      consultants-6  typeOf  infectious_diseases_consultants
+      monitor-14  in  way-22
+      new-15  is  thing-looked-at
+      network-2  is  observer
+      monitor-14  direct-object  new-15
+          --------------------------------------------------          
+3-a way would complement other public health surveillance efforts  .
+
+      way-22  is  thing-complemented
+      would-24  is  AM-MOD
+      efforts-30  is  thing-complemented
+      way-22  complement-direct-object  efforts-30
+      efforts-30  typeOf  other_public_health_surveillance_efforts
+          --------------------------------------------------          
+
+Sentence: 3
+*********************************************
+-Complete Sentence is: 
+a pilot study with 169 participants recruited from 32 of the IDSA's state and regional societies confirmed the feasibility and potential value of this network.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+1-a pilot study with 169 participants recruited from 32 of the IDSAstate and regional societies  .
+
+      participants-6  typeOf  169_participants
+      study-3  is  recruit
+      state-12  of  IDSA
+      state-12  is  MISC
+      study-3  with  participants-6
+      societies-15  typeOf  regional_societies
+      study-3  recruited-from  32-9
+      32-9  is  group
+      state-12  of  IDSA-11
+      study-3  typeOf  pilot_study
+      32-9  of  state-12
+      32-9  of  societies-15
+          --------------------------------------------------          
+2-a pilot study with 169 participants confirmed the feasibility and potential value of this network  .
+
+      participants-6  typeOf  169_participants
+      study-3  is  confirmer
+      study-3  with  participants-6
+      value-21  of  network-24
+      value-21  typeOf  potential_value_feasibility
+      value-21  is  thing-confirmed
+      study-3  typeOf  pilot_study
+      study-3  confirmed-direct-object  value-21
+          --------------------------------------------------          
+
+Sentence: 4
+*********************************************
+-Complete Sentence is: 
+More than 300 infectious diseases consultants are currently participating in IDSa and EIN.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+1-More than 300 infectious diseases consultants are currently participating in IDSa and EIN  .
+
+      consultants-6  number  300-3
+      consultants-6  participating-in  EIN-13
+      currently-8  is  AM-TMP
+      EIN-13  is  participating-in-what?
+      IDSa-11  is  MISC
+      consultants-6  participating-in  IDSa-11
+      consultants-6  typeOf  infectious_diseases_consultants
+      consultants-6  is  agent
+      IDSa-11  is  participating-in-what?
+      EIN-13  acronym-for  Emerging Infections Network
+      consultants-6  participating-more-detail  currently-8
+          --------------------------------------------------          
+
+Sentence: 5
+*********************************************
+-Complete Sentence is: 
+Future plans include aggressive probing for clinical experiences that indicate or suggest the presence of emerging infections, initiation of prospective studies for selected infectious diseases and other activities designed both to benefit consultants in infectious diseases and to make use of their services.
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+1-Future plans include aggressive clinical experiences initiation of prospective studies infectious diseases and other activities  .
+
+      consultants-34  is  theme,-thing-being-included-in-some-group
+      infections-17  is  theme,-thing-being-included-in-some-group
+      plans-2  include  consultants-34
+      studies-22  typeOf  studies_prospective
+      initiation-19  of  studies-22
+      plans-2  include  use-41
+      use-41  is  theme,-thing-being-included-in-some-group
+      diseases-26  typeOf  infectious_diseases
+      activities-29  is  theme
+      plans-2  include-direct-object  activities-29
+      presence-14  is  theme,-thing-being-included-in-some-group
+      plans-2  include-direct-object  diseases-26
+      activities-29  typeOf  other_activities
+      plans-2  is  group
+      initiation-19  is  theme
+      plans-2  include  infections-17
+      plans-2  include  presence-14
+      plans-2  include  both-31
+      plans-2  typeOf  Future_plans
+      plans-2  include-to  initiation-19
+      diseases-26  is  theme
+      initiation-19  typeOf  aggressive_clinical_experiences_initiation
+      both-31  is  theme,-thing-being-included-in-some-group
+          --------------------------------------------------          
+2-aggressive probing  .
+
+      both-31  is  thing-probed
+      experiences-8  is  thing-probed
+      infections-17  is  thing-probed
+      aggressive-4  typeOf  probing-aggressive
+      consultants-34  is  thing-probed
+      activities-29  is  thing-probed
+      diseases-26  is  thing-probed
+      presence-14  is  thing-probed
+      aggressive-4  is  AM-MNR
+      initiation-19  is  thing-probed
+      use-41  is  thing-probed
+          --------------------------------------------------          
+3-clinical experiences indicate the presence infections , initiation of prospective studies infectious diseases and other activities  .
+
+      initiation-19  of  studies-22
+      infections-17  is  thing-indicated
+      diseases-26  is  thing-indicated
+      experiences-8  typeOf  clinical_experiences
+      experiences-8  indicate  consultants-34
+      both-31  is  thing-indicated
+      infections-17  or  initiation-19
+      infections-17  typeOf  presence_infections
+      diseases-26  typeOf  infectious_diseases
+      studies-22  typeOf  prospective_studies
+      experiences-8  indicate-direct-object  diseases-26
+      experiences-8  indicate-to  infections-17
+      experiences-8  indicate  both-31
+      use-41  is  thing-indicated
+      consultants-34  is  thing-indicated
+      experiences-8  is  indicator
+      experiences-8  indicate  use-41
+      experiences-8  indicate-direct-object  activities-29
+      activities-29  is  thing-indicated
+      activities-29  typeOf  other_activities
+          --------------------------------------------------          
+4-clinical experiences suggest initiation of prospective studies infectious diseases and other activities  .
+
+      experiences-8  suggest  consultants-34
+      diseases-26  typeOf  infectious_diseases
+      initiation-19  of  studies-22
+      experiences-8  typeOf  clinical_experiences
+      studies-22  typeOf  prospective_studies
+      experiences-8  suggest  presence-14
+      activities-29  typeOf  other_activities
+      experiences-8  suggest-direct-object  diseases-26
+      experiences-8  suggest-to  initiation-19
+      experiences-8  suggest  both-31
+      experiences-8  suggest  infections-17
+      experiences-8  is  Sayer
+      experiences-8  suggest-direct-object  activities-29
+      experiences-8  suggest  use-41
+          --------------------------------------------------          
+5-the presence of emerging infections  .
+
+      presence-14  of  infections-17
+      infections-17  typeOf  emerging_infections
+      infections-17  is  thing-exiting
+          --------------------------------------------------          
+6-clinical experiences initiation of prospective studies for selected infectious diseases and other activities  .
+
+      experiences-8  direct-object  initiation-19
+      initiation-19  of  studies-22
+      experiences-8  subject  clinical-7
+      studies-22  typeOf  prospective_studies
+      studies-22  for  activities-29
+      diseases-26  is  entity-selected
+      diseases-26  typeOf  diseases_selected_infectious
+      studies-22  for  diseases-26
+      activities-29  typeOf  other_activities
+          --------------------------------------------------          
+7-clinical experiences initiation of prospective studies infectious diseases and other activities designed  .
+
+      initiation-19  of  studies-22
+      initiation-19  of  activities-29
+      use-41  is  purpose
+      consultants-34  is  purpose
+      diseases-26  typeOf  infectious_diseases
+      studies-22  typeOf  prospective_studies
+      initiation-19  typeOf  clinical_experiences_initiation
+      initiation-19  is  thing-designed
+      both-31  is  purpose
+      activities-29  typeOf  other_activities
+      studies-22  typeOf  diseases-studies
+          --------------------------------------------------          
+8-both to benefit consultants in infectious diseases  .
+
+      both-31  benefit-in  diseases-37
+      activities-29  benefit-in  diseases-37
+      diseases-37  typeOf  infectious_diseases
+      activities-29  is  giver
+      both-31  benefit-direct-object  consultants-34
+      diseases-37  is  benefactive
+      activities-29  benefit-direct-object  consultants-34
+      consultants-34  is  benefactive
+          --------------------------------------------------          
+9-to make use of their services  .
+
+      activities-29  make-direct-object  use-41
+      diseases-26  make-direct-object  use-41
+      activities-29  is  creator
+      diseases-26  is  creator
+      services-44  possession  their-43
+      use-41  of  services-44
+      use-41  is  creation
+          --------------------------------------------------          
