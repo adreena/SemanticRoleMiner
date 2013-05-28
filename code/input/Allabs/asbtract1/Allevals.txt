@@ -1,0 +1,177 @@
+the IDSA, in cooperation with the Centers for Disease Control and Prevention, has launched an EIN.
+<Sen1-IDSA ; acronym-for ; Sen1-Infectious Diseases Society of America>
+<Sen1-cooperation ; typeOf ; Sen1-IDSA_cooperation>
+<Sen1-cooperation ; is ; Sen1-starter>
+<Sen1-IDSA ; is ; MISC>
+<Sen1-Centers_for_Disease_Control_and_Prevention ; is ; ORG>
+<Sen1-cooperation ; launched-direct-object ; Sen1-EIN>
+<Sen1-EIN ; is ; Sen1-thing>
+<Sen1-EIN ; acronym-for ; Sen1-Emerging Infections Network>
+<Sen1-cooperation ; with ; Sen1-Centers_for_Disease_Control_and_Prevention>
+---------
+
+this network of infectious diseases consultants was conceived as a sentinel system to monitor new or resurgent infectious diseases in a way that would complement other public health surveillance efforts.
+<Sen2-diseases ; typeOf ; Sen2-resurgent_infectious_diseases>
+<Sen2-network ; conceived-direct-object ; Sen2-system>
+<Sen2-way ; is ; Sen2-AM-MNR>
+<Sen2-would ; is ; Sen2-AM-MOD>
+<Sen2-monitor ; in ; Sen2-way>
+<Sen2-new ; is ; Sen2-AM-PNC>
+<Sen2-efforts ; is ; Sen2-AM-MNR>
+<Sen2-would ; is ; Sen2-AM-PNC>
+<Sen2-network ; of ; Sen2-consultants>
+<Sen2-monitor ; direct-object ; Sen2-new>
+<Sen2-efforts ; is ; Sen2-thing-complemented>
+<Sen2-consultants ; typeOf ; Sen2-infectious_diseases_consultants>
+<Sen2-way ; complement-direct-object ; Sen2-efforts>
+<Sen2-diseases ; is ; Sen2-AM-PNC>
+<Sen2-network ; is ; Sen2-conceiver>
+<Sen2-network ; is ; Sen2-observer>
+<Sen2-monitor ; direct-object ; Sen2-diseases>
+<Sen2-way ; is ; Sen2-thing-complemented>
+<Sen2-way ; is ; Sen2-AM-PNC>
+<Sen2-system ; typeOf ; Sen2-system_sentinel>
+<Sen2-new ; is ; Sen2-thing-looked-at>
+<Sen2-efforts ; is ; Sen2-AM-PNC>
+<Sen2-would ; is ; Sen2-AM-MNR>
+<Sen2-efforts ; typeOf ; Sen2-other_public_health_surveillance_efforts>
+<Sen2-diseases ; is ; Sen2-thing-looked-at>
+<Sen2-system ; is ; Sen2-thought>
+---------
+
+a pilot study with 169 participants recruited from 32 of the IDSA's state and regional societies confirmed the feasibility and potential value of this network.
+<Sen3-participants ; typeOf ; Sen3-169_participants>
+<Sen3-study ; is ; Sen3-recruit>
+<Sen3-state ; of ; Sen3-IDSA>
+<Sen3-state ; is ; MISC>
+<Sen3-value ; is ; Sen3-thing>
+<Sen3-study ; with ; Sen3-participants>
+<Sen3-value ; is ; Sen3-group,>
+<Sen3-value ; of ; Sen3-network>
+<Sen3-value ; typeOf ; Sen3-potential_value_feasibility>
+<Sen3-societies ; typeOf ; Sen3-regional_societies>
+<Sen3-study ; recruited-from ; Sen3-32>
+<Sen3-study ; is ; Sen3-confirmer>
+<Sen3-32 ; is ; Sen3-group>
+<Sen3-state ; of ; Sen3-IDSA>
+<Sen3-study ; typeOf ; Sen3-pilot_study>
+<Sen3-study ; confirmed-direct-object ; Sen3-value>
+<Sen3-32 ; of ; Sen3-state>
+<Sen3-32 ; of ; Sen3-societies>
+---------
+
+More than 300 infectious diseases consultants are currently participating in IDSa and EIN.
+<Sen4-consultants ; number ; Sen4-300>
+<Sen4-consultants ; participating-in ; Sen4-EIN>
+<Sen4-currently ; is ; Sen4-AM>
+<Sen4-EIN ; is ; Sen4-participating>
+<Sen4-IDSa ; is ; MISC>
+<Sen4-consultants ; participating-in ; Sen4-IDSa>
+<Sen4-consultants ; typeOf ; Sen4-infectious_diseases_consultants>
+<Sen4-consultants ; is ; Sen4-agent>
+<Sen4-IDSa ; is ; Sen4-participating>
+<Sen4-EIN ; acronym-for ; Sen4-Emerging Infections Network>
+<Sen4-consultants ; participating-more-detail ; Sen4-currently>
+---------
+
+Future plans include aggressive probing for clinical experiences that indicate or suggest the presence of emerging infections, initiation of prospective studies for selected infectious diseases and other activities designed both to benefit consultants in infectious diseases and to make use of their services.
+<Sen5-experiences ; suggest ; Sen5-consultants>
+<Sen5-both ; is ; Sen5-thing-probed>
+<Sen5-both ; is ; Sen5-thing-indicated>
+<Sen5-studies ; typeOf ; Sen5-studies_prospective>
+<Sen5-use ; is ; Sen5-creation>
+<Sen5-infections ; is ; Sen5-thing-exiting>
+<Sen5-diseases-26 ; is ; Sen5-thing-indicated>
+<Sen5-activities ; is ; Sen5-creator>
+<Sen5-presence ; is ; Sen5-thing-probed>
+<Sen5-activities ; is ; Sen5-Utterance>
+<Sen5-activities ; is ; Sen5-theme>
+<Sen5-diseases-26 ; make-direct-object ; Sen5-use>
+<Sen5-experiences ; is ; Sen5-thing-probed>
+<Sen5-experiences ; suggest-to ; Sen5-initiation>
+<Sen5-experiences ; suggest ; Sen5-both>
+<Sen5-diseases-37 ; is ; Sen5-benefactive>
+<Sen5-experiences ; suggest ; Sen5-presence>
+<Sen5-initiation ; is ; Sen5-thing-designed>
+<Sen5-experiences ; is ; Sen5-Sayer>
+<Sen5-diseases-26 ; is ; Sen5-entity>
+<Sen5-plans ; include ; Sen5-both>
+<Sen5-both ; is ; Sen5-theme,>
+<Sen5-activities ; make-direct-object ; Sen5-use>
+<Sen5-consultants ; is ; Sen5-theme,>
+<Sen5-presence ; of ; Sen5-infections>
+<Sen5-diseases-26 ; is ; Sen5-Utterance>
+<Sen5-aggressive ; typeOf ; Sen5-probing>
+<Sen5-infections ; is ; Sen5-theme,>
+<Sen5-plans ; include ; Sen5-consultants>
+<Sen5-experiences ; indicate ; Sen5-both>
+<Sen5-use ; is ; Sen5-Utterance>
+<Sen5-experiences ; indicate-direct-object ; Sen5-diseases-26>
+<Sen5-experiences ; indicate ; Sen5-consultants>
+<Sen5-both ; benefit-in ; Sen5-diseases-37>
+<Sen5-plans ; is ; Sen5-group>
+<Sen5-activities ; is ; Sen5-thing-probed>
+<Sen5-initiation ; typeOf ; Sen5-clinical_experiences_initiation>
+<Sen5-aggressive ; is ; Sen5-AM>
+<Sen5-use ; is ; Sen5-thing-probed>
+<Sen5-diseases-37 ; typeOf ; Sen5-infectious_diseases>
+<Sen5-activities ; is ; Sen5-giver>
+<Sen5-infections ; typeOf ; Sen5-presence_infections>
+<Sen5-both ; benefit-direct-object ; Sen5-consultants>
+<Sen5-services ; possession ; Sen5-their>
+<Sen5-use ; is ; Sen5-thing-indicated>
+<Sen5-consultants ; is ; Sen5-thing-indicated>
+<Sen5-diseases-26 ; typeOf ; Sen5-diseases_selected_infectious>
+<Sen5-plans ; include-to ; Sen5-initiation>
+<Sen5-diseases-26 ; is ; Sen5-creator>
+<Sen5-consultants ; is ; Sen5-thing-probed>
+<Sen5-experiences ; is ; Sen5-indicator>
+<Sen5-both ; is ; Sen5-Utterance>
+<Sen5-activities ; is ; Sen5-thing-indicated>
+<Sen5-studies ; typeOf ; Sen5-diseases-studies>
+<Sen5-plans ; include ; Sen5-use>
+<Sen5-diseases-26 ; typeOf ; Sen5-infectious_diseases>
+<Sen5-studies ; typeOf ; Sen5-prospective_studies>
+<Sen5-use ; is ; Sen5-purpose>
+<Sen5-experiences ; indicate ; Sen5-use>
+<Sen5-experiences ; suggest-direct-object ; Sen5-diseases-26>
+<Sen5-experiences ; subject ; Sen5-clinical>
+<Sen5-consultants ; is ; Sen5-purpose>
+<Sen5-consultants ; is ; Sen5-benefactive>
+<Sen5-experiences ; suggest ; Sen5-infections>
+<Sen5-plans ; include ; Sen5-infections>
+<Sen5-experiences ; indicate-direct-object ; Sen5-activities>
+<Sen5-studies ; for ; Sen5-diseases-26>
+<Sen5-consultants ; is ; Sen5-Utterance>
+<Sen5-activities ; benefit-in ; Sen5-diseases-37>
+<Sen5-presence ; is ; Sen5-theme,>
+<Sen5-plans ; typeOf ; Sen5-Future_plans>
+<Sen5-plans ; include-direct-object ; Sen5-diseases-26>
+<Sen5-initiation ; typeOf ; Sen5-aggressive_clinical_experiences_initiation>
+<Sen5-presence ; is ; Sen5-Utterance>
+<Sen5-infections ; typeOf ; Sen5-emerging_infections>
+<Sen5-use ; of ; Sen5-services>
+<Sen5-experiences ; indicate-to ; Sen5-infections>
+<Sen5-activities ; benefit-direct-object ; Sen5-consultants>
+<Sen5-initiation ; is ; Sen5-thing-probed>
+<Sen5-both ; is ; Sen5-purpose>
+<Sen5-initiation ; of ; Sen5-studies>
+<Sen5-use ; is ; Sen5-theme,>
+<Sen5-experiences ; typeOf ; Sen5-clinical_experiences>
+<Sen5-plans ; include-direct-object ; Sen5-activities>
+<Sen5-studies ; for ; Sen5-activities>
+<Sen5-initiation ; is ; Sen5-Utterance>
+<Sen5-infections ; is ; Sen5-Utterance>
+<Sen5-activities ; typeOf ; Sen5-other_activities>
+<Sen5-experiences ; direct-object ; Sen5-initiation>
+<Sen5-infections ; is ; Sen5-thing-probed>
+<Sen5-infections ; or ; Sen5-initiation>
+<Sen5-initiation ; is ; Sen5-theme>
+<Sen5-diseases-26 ; is ; Sen5-theme>
+<Sen5-plans ; include ; Sen5-presence>
+<Sen5-infections ; is ; Sen5-thing-indicated>
+<Sen5-initiation ; of ; Sen5-activities>
+<Sen5-experiences ; suggest-direct-object ; Sen5-activities>
+<Sen5-experiences ; suggest ; Sen5-use>
+<Sen5-diseases-26 ; is ; Sen5-thing-probed>
+---------
