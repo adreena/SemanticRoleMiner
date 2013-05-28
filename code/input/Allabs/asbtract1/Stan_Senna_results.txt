@@ -1,0 +1,671 @@
+Sentence: 1
+*********************************************
+1-the IDSA cooperation with the CentersforDiseaseControlandPrevention launched an EIN  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (NP (DT the) (NNP IDSA) (NN cooperation))
+      (PP (IN with)
+        (NP (DT the) (NNP CentersforDiseaseControlandPrevention))))
+    (VP (VBD launched)
+      (NP (DT an) (NNP EIN)))
+    (. .)))
+
+det(cooperation-3, the-1)
+nn(cooperation-3, IDSA-2)
+nsubj(launched-7, cooperation-3)
+det(CentersforDiseaseControlandPrevention-6, the-5)
+prep_with(cooperation-3, CentersforDiseaseControlandPrevention-6)
+root(ROOT-0, launched-7)
+det(EIN-9, an-8)
+dobj(launched-7, EIN-9)
+
+--Senna Output:------------------------------------------------------ 
+            the          DT	      B-NP	         O	              -	      B-A0	(S1(S(NP(NP*
+           IDSA	       NNP	      I-NP	    S-MISC	              -	      I-A0	*
+    cooperation	        NN	      E-NP	         O	              -	      I-A0	*)
+           with	        IN	      S-PP	         O	              -	      I-A0	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A0	(NP*
+CentersforDiseaseControlandPrevention	       NNP	      E-NP	     S-ORG	              -	      E-A0	*)))
+       launched	       VBD	      S-VP	         O	       launched	       S-V	(VP*
+             an	        DT	      B-NP	         O	              -	      B-A1	(NP*
+            EIN	       NNP	      E-NP	         O	              -	      E-A1	*))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+
+Sentence: 2
+*********************************************
+1-this network of infectious diseases consultants conceived a sentinel system  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (NP (DT this) (NN network))
+      (PP (IN of)
+        (NP (JJ infectious) (NNS diseases) (NNS consultants))))
+    (VP (VBD conceived)
+      (NP (DT a) (JJ sentinel) (NN system)))
+    (. .)))
+
+det(network-2, this-1)
+nsubj(conceived-7, network-2)
+amod(consultants-6, infectious-4)
+nn(consultants-6, diseases-5)
+prep_of(network-2, consultants-6)
+root(ROOT-0, conceived-7)
+det(system-10, a-8)
+amod(system-10, sentinel-9)
+dobj(conceived-7, system-10)
+
+--Senna Output:------------------------------------------------------ 
+           this	        DT	      B-NP	         O	              -	      B-A0	(S1(S(NP(NP*
+        network	        NN	      E-NP	         O	              -	      I-A0	*)
+             of	        IN	      S-PP	         O	              -	      I-A0	(PP*
+     infectious	        JJ	      B-NP	         O	              -	      I-A0	(NP*
+       diseases	       NNS	      I-NP	         O	              -	      I-A0	*
+    consultants	       NNS	      E-NP	         O	              -	      E-A0	*)))
+      conceived	       VBD	      S-VP	         O	      conceived	       S-V	(VP*
+              a	        DT	      B-NP	         O	              -	      B-A1	(NP*
+       sentinel	        NN	      I-NP	         O	              -	      I-A1	*
+         system	        NN	      E-NP	         O	              -	      E-A1	*))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+2-this network of infectious diseases consultants to monitor new or resurgent infectious diseases in a way  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (NP
+    (NP (DT this) (NN network))
+    (PP (IN of)
+      (NP (JJ infectious) (NNS diseases) (NNS consultants)))
+    (S
+      (VP (TO to)
+        (VP (VB monitor)
+          (NP
+            (NP (JJ new))
+            (CC or)
+            (NP (JJ resurgent) (JJ infectious) (NNS diseases)))
+          (PP (IN in)
+            (NP (DT a) (NN way))))))
+    (. .)))
+
+det(network-2, this-1)
+root(ROOT-0, network-2)
+amod(consultants-6, infectious-4)
+nn(consultants-6, diseases-5)
+prep_of(network-2, consultants-6)
+aux(monitor-8, to-7)
+infmod(network-2, monitor-8)
+dobj(monitor-8, new-9)
+amod(diseases-13, resurgent-11)
+amod(diseases-13, infectious-12)
+dobj(monitor-8, diseases-13)
+conj_or(new-9, diseases-13)
+det(way-16, a-15)
+prep_in(monitor-8, way-16)
+
+--Senna Output:------------------------------------------------------ 
+           this	        DT	      B-NP	         O	              -	      B-A0	(S1(NP(NP(NP*
+        network	        NN	      E-NP	         O	              -	      I-A0	*)
+             of	        IN	      S-PP	         O	              -	      I-A0	(PP*
+     infectious	        JJ	      B-NP	         O	              -	      I-A0	(NP*
+       diseases	       NNS	      I-NP	         O	              -	      I-A0	*
+    consultants	       NNS	      E-NP	         O	              -	      E-A0	*))
+             to	        TO	      B-VP	         O	              -	         O	(SBAR(S(VP*
+        monitor	        VB	      E-VP	         O	        monitor	       S-V	(VP*
+            new	        JJ	      B-NP	         O	              -	      B-A1	(NP*
+             or	        CC	      I-NP	         O	              -	      I-A1	*
+      resurgent	        JJ	      I-NP	         O	              -	      I-A1	(NP(NP*
+     infectious	        JJ	      I-NP	         O	              -	      I-A1	*
+       diseases	       NNS	      E-NP	         O	              -	      E-A1	*)
+             in	        IN	      S-PP	         O	              -	  B-AM-MNR	(PP*
+              a	        DT	      B-NP	         O	              -	  I-AM-MNR	(NP*
+            way	        NN	      E-NP	         O	              -	  E-AM-MNR	*)))))))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+3-a way would complement other public health surveillance efforts  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (DT a) (NN way))
+    (VP (MD would)
+      (VP (VB complement)
+        (NP (JJ other) (JJ public) (NN health) (NN surveillance) (NNS efforts))))
+    (. .)))
+
+det(way-2, a-1)
+nsubj(complement-4, way-2)
+aux(complement-4, would-3)
+root(ROOT-0, complement-4)
+amod(efforts-9, other-5)
+amod(efforts-9, public-6)
+nn(efforts-9, health-7)
+nn(efforts-9, surveillance-8)
+dobj(complement-4, efforts-9)
+
+--Senna Output:------------------------------------------------------ 
+              a	        DT	      B-NP	         O	              -	      B-A2	(S1(S(NP*
+            way	        NN	      E-NP	         O	              -	      E-A2	*)
+          would	        MD	      B-VP	         O	              -	  S-AM-MOD	(VP*
+     complement	        VB	      E-VP	         O	     complement	       S-V	(VP*
+          other	        JJ	      B-NP	         O	              -	      B-A2	(NP*
+         public	        JJ	      I-NP	         O	              -	      I-A2	*
+         health	        NN	      I-NP	         O	              -	      I-A2	*
+   surveillance	        NN	      I-NP	         O	              -	      I-A2	*
+        efforts	       NNS	      E-NP	         O	              -	      E-A2	*)))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+
+Sentence: 3
+*********************************************
+1-a pilot study with 169 participants recruited from 32 of the IDSAstate and regional societies  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (NP (DT a) (NN pilot) (NN study))
+      (PP (IN with)
+        (NP (JJ 169) (NNS participants))))
+    (VP (VBD recruited)
+      (PP (IN from)
+        (NP
+          (NP (CD 32))
+          (PP (IN of)
+            (NP
+              (NP (DT the) (NN IDSAstate))
+              (CC and)
+              (NP (JJ regional) (NNS societies)))))))
+    (. .)))
+
+det(study-3, a-1)
+nn(study-3, pilot-2)
+nsubj(recruited-7, study-3)
+amod(participants-6, 169-5)
+prep_with(study-3, participants-6)
+root(ROOT-0, recruited-7)
+prep_from(recruited-7, 32-9)
+det(IDSAstate-12, the-11)
+prep_of(32-9, IDSAstate-12)
+amod(societies-15, regional-14)
+prep_of(32-9, societies-15)
+conj_and(IDSAstate-12, societies-15)
+
+--Senna Output:------------------------------------------------------ 
+              a	        DT	      B-NP	         O	              -	      B-A1	(S1(NP(NP*
+          pilot	        NN	      I-NP	         O	              -	      I-A1	*
+          study	        NN	      E-NP	         O	              -	      I-A1	*)
+           with	        IN	      S-PP	         O	              -	      I-A1	(PP*
+            169	        CD	      B-NP	         O	              -	      I-A1	(NP(NP*
+   participants	       NNS	      E-NP	         O	              -	      E-A1	*)
+      recruited	       VBN	      S-VP	         O	      recruited	       S-V	(VP*
+           from	        IN	      S-PP	         O	              -	      B-A2	(PP*
+             32	        CD	      S-NP	         O	              -	      I-A2	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A2	(PP*
+            the	        DT	      B-NP	         O	              -	      I-A2	(NP*
+      IDSAstate	       NNP	      I-NP	    S-MISC	              -	      I-A2	(ADJP*
+            and	        CC	      I-NP	         O	              -	      I-A2	*
+       regional	        JJ	      I-NP	         O	              -	      I-A2	*)
+      societies	       NNS	      E-NP	         O	              -	      E-A2	*)))))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+2-a pilot study with 169 participants confirmed the feasibility and potential value of this network  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (NP (DT a) (NN pilot) (NN study))
+      (PP (IN with)
+        (NP (JJ 169) (NNS participants))))
+    (VP (VBD confirmed)
+      (NP
+        (NP (DT the) (NN feasibility)
+          (CC and)
+          (JJ potential) (NN value))
+        (PP (IN of)
+          (NP (DT this) (NN network)))))
+    (. .)))
+
+det(study-3, a-1)
+nn(study-3, pilot-2)
+nsubj(confirmed-7, study-3)
+amod(participants-6, 169-5)
+prep_with(study-3, participants-6)
+root(ROOT-0, confirmed-7)
+det(value-12, the-8)
+nn(value-12, feasibility-9)
+conj_and(feasibility-9, potential-11)
+nn(value-12, potential-11)
+dobj(confirmed-7, value-12)
+det(network-15, this-14)
+prep_of(value-12, network-15)
+
+--Senna Output:------------------------------------------------------ 
+              a	        DT	      B-NP	         O	              -	      B-A0	(S1(S(NP(NP*
+          pilot	        NN	      I-NP	         O	              -	      I-A0	*
+          study	        NN	      E-NP	         O	              -	      I-A0	*)
+           with	        IN	      S-PP	         O	              -	      I-A0	(PP*
+            169	        CD	      B-NP	         O	              -	      I-A0	(NP*
+   participants	       NNS	      E-NP	         O	              -	      E-A0	*)))
+      confirmed	       VBD	      S-VP	         O	      confirmed	       S-V	(VP*
+            the	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
+    feasibility	        NN	      I-NP	         O	              -	      I-A1	*)
+            and	        CC	      I-NP	         O	              -	      I-A1	*
+      potential	        JJ	      I-NP	         O	              -	      I-A1	(NP(NP*
+          value	        NN	      E-NP	         O	              -	      I-A1	*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+           this	        DT	      B-NP	         O	              -	      I-A1	(NP*
+        network	        NN	      E-NP	         O	              -	      E-A1	*)))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+
+Sentence: 4
+*********************************************
+1-More than 300 infectious diseases consultants are currently participating in IDSa and EIN  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (QP (JJR More) (IN than) (CD 300))
+      (JJ infectious) (NNS diseases) (NNS consultants))
+    (VP (VBP are)
+      (ADVP (RB currently))
+      (VP (VBG participating)
+        (PP (IN in)
+          (NP (NNP IDSa)
+            (CC and)
+            (NNP EIN)))))
+    (. .)))
+
+mwe(than-2, More-1)
+quantmod(300-3, than-2)
+num(consultants-6, 300-3)
+amod(consultants-6, infectious-4)
+nn(consultants-6, diseases-5)
+nsubj(participating-9, consultants-6)
+aux(participating-9, are-7)
+advmod(participating-9, currently-8)
+root(ROOT-0, participating-9)
+prep_in(participating-9, IDSa-11)
+prep_in(participating-9, EIN-13)
+conj_and(IDSa-11, EIN-13)
+
+--Senna Output:------------------------------------------------------ 
+           More	       JJR	      B-NP	         O	              -	      B-A0	(S1(S(NP(QP*
+           than	        IN	      I-NP	         O	              -	      I-A0	*
+            300	        CD	      I-NP	         O	              -	      I-A0	*)
+     infectious	        JJ	      I-NP	         O	              -	      I-A0	*
+       diseases	       NNS	      I-NP	         O	              -	      I-A0	*)
+    consultants	       NNS	      E-NP	         O	              -	      E-A0	(NP*)
+            are	       VBP	      B-VP	         O	              -	         O	(VP*
+      currently	        RB	      I-VP	         O	              -	  S-AM-TMP	(ADVP*)
+  participating	       VBG	      E-VP	         O	  participating	       S-V	(VP*
+             in	        IN	      S-PP	         O	              -	      B-A1	(PP*
+           IDSa	       NNP	      B-NP	    B-MISC	              -	      I-A1	(NP*
+            and	        CC	      I-NP	    I-MISC	              -	      I-A1	*
+            EIN	       NNP	      E-NP	    E-MISC	              -	      E-A1	*))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+
+Sentence: 5
+*********************************************
+1-Future plans include aggressive clinical experiences initiation of prospective studies infectious diseases and other activities  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (JJ Future) (NNS plans))
+    (VP (VBP include)
+      (NP
+        (NP (JJ aggressive) (JJ clinical) (NNS experiences) (NN initiation))
+        (PP (IN of)
+          (NP (JJ prospective) (NNS studies))))
+      (NP
+        (NP (JJ infectious) (NNS diseases))
+        (CC and)
+        (NP (JJ other) (NNS activities))))
+    (. .)))
+
+amod(plans-2, Future-1)
+nsubj(include-3, plans-2)
+root(ROOT-0, include-3)
+amod(initiation-7, aggressive-4)
+amod(initiation-7, clinical-5)
+nn(initiation-7, experiences-6)
+iobj(include-3, initiation-7)
+amod(studies-10, prospective-9)
+prep_of(initiation-7, studies-10)
+amod(diseases-12, infectious-11)
+dobj(include-3, diseases-12)
+amod(activities-15, other-14)
+dobj(include-3, activities-15)
+conj_and(diseases-12, activities-15)
+
+--Senna Output:------------------------------------------------------ 
+         Future	        JJ	      B-NP	         O	              -	      B-A2	(S1(S(NP*
+          plans	       NNS	      E-NP	         O	              -	      E-A2	*)
+        include	       VBP	      S-VP	         O	        include	       S-V	(VP*
+     aggressive	        JJ	      B-NP	         O	              -	      B-A1	(NP(NP*
+       clinical	        JJ	      I-NP	         O	              -	      I-A1	*
+    experiences	       NNS	      E-NP	         O	              -	      I-A1	*)
+     initiation	        NN	      S-NP	         O	              -	      I-A1	(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+    prospective	        JJ	      B-NP	         O	              -	      I-A1	(NP(NP*
+        studies	       NNS	      I-NP	         O	              -	      I-A1	*
+     infectious	        JJ	      I-NP	         O	              -	      I-A1	*
+       diseases	       NNS	      E-NP	         O	              -	      I-A1	*)
+            and	        CC	         O	         O	              -	      I-A1	*
+          other	        JJ	      B-NP	         O	              -	      I-A1	(NP*
+     activities	       NNS	      E-NP	         O	              -	      E-A1	*)))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+2-aggressive probing  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (FRAG
+    (ADJP (JJ aggressive))
+    (S
+      (VP (VBG probing)))
+    (. .)))
+
+root(ROOT-0, aggressive-1)
+dep(aggressive-1, probing-2)
+
+--Senna Output:------------------------------------------------------ 
+     aggressive	        JJ	    S-ADJP	         O	              -	  S-AM-MNR	(S1(S(S(ADJP*
+        probing	       VBG	      S-VP	         O	        probing	       S-V	*))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+3-clinical experiences indicate the presence infections , initiation of prospective studies infectious diseases and other activities  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (JJ clinical) (NNS experiences))
+    (VP (VBP indicate)
+      (NP
+        (NP (DT the) (NN presence) (NNS infections))
+        (, ,)
+        (NP
+          (NP (NN initiation))
+          (PP (IN of)
+            (NP (JJ prospective) (NNS studies)))))
+      (NP
+        (NP (JJ infectious) (NNS diseases))
+        (CC and)
+        (NP (JJ other) (NNS activities))))
+    (. .)))
+
+amod(experiences-2, clinical-1)
+nsubj(indicate-3, experiences-2)
+root(ROOT-0, indicate-3)
+det(infections-6, the-4)
+nn(infections-6, presence-5)
+iobj(indicate-3, infections-6)
+appos(infections-6, initiation-8)
+amod(studies-11, prospective-10)
+prep_of(initiation-8, studies-11)
+amod(diseases-13, infectious-12)
+dobj(indicate-3, diseases-13)
+amod(activities-16, other-15)
+dobj(indicate-3, activities-16)
+conj_and(diseases-13, activities-16)
+
+--Senna Output:------------------------------------------------------ 
+       clinical	        JJ	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+    experiences	       NNS	      E-NP	         O	              -	      E-A0	*)
+       indicate	       VBP	      S-VP	         O	       indicate	       S-V	(VP*
+            the	        DT	      B-NP	         O	              -	      B-A1	(NP(NP*
+       presence	        NN	      I-NP	         O	              -	      I-A1	*
+     infections	       NNS	      E-NP	         O	              -	      I-A1	*)
+              ,	         ,	         O	         O	              -	      I-A1	*
+     initiation	        NN	      S-NP	         O	              -	      I-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+    prospective	        JJ	      B-NP	         O	              -	      I-A1	(NP(NP*
+        studies	       NNS	      I-NP	         O	              -	      I-A1	*
+     infectious	        JJ	      I-NP	         O	              -	      I-A1	*
+       diseases	       NNS	      E-NP	         O	              -	      I-A1	*)
+            and	        CC	         O	         O	              -	      I-A1	*
+          other	        JJ	      B-NP	         O	              -	      I-A1	(NP*
+     activities	       NNS	      E-NP	         O	              -	      E-A1	*))))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+4-clinical experiences suggest initiation of prospective studies infectious diseases and other activities  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (JJ clinical) (NNS experiences))
+    (VP (VBP suggest)
+      (NP
+        (NP (NN initiation))
+        (PP (IN of)
+          (NP (JJ prospective) (NNS studies))))
+      (NP
+        (NP (JJ infectious) (NNS diseases))
+        (CC and)
+        (NP (JJ other) (NNS activities))))
+    (. .)))
+
+amod(experiences-2, clinical-1)
+nsubj(suggest-3, experiences-2)
+root(ROOT-0, suggest-3)
+iobj(suggest-3, initiation-4)
+amod(studies-7, prospective-6)
+prep_of(initiation-4, studies-7)
+amod(diseases-9, infectious-8)
+dobj(suggest-3, diseases-9)
+amod(activities-12, other-11)
+dobj(suggest-3, activities-12)
+conj_and(diseases-9, activities-12)
+
+--Senna Output:------------------------------------------------------ 
+       clinical	        JJ	      B-NP	         O	              -	      B-A0	(S1(S(NP*
+    experiences	       NNS	      E-NP	         O	              -	      E-A0	*)
+        suggest	       VBP	      S-VP	         O	        suggest	       S-V	(VP*
+     initiation	        NN	      S-NP	         O	              -	      B-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+    prospective	        JJ	      B-NP	         O	              -	      I-A1	(NP(NP*
+        studies	       NNS	      I-NP	         O	              -	      I-A1	*
+     infectious	        JJ	      I-NP	         O	              -	      I-A1	*
+       diseases	       NNS	      E-NP	         O	              -	      I-A1	*)
+            and	        CC	         O	         O	              -	      I-A1	*
+          other	        JJ	      B-NP	         O	              -	      I-A1	(NP*
+     activities	       NNS	      E-NP	         O	              -	      E-A1	*)))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+5-the presence of emerging infections  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (NP
+    (NP (DT the) (NN presence))
+    (PP (IN of)
+      (NP (VBG emerging) (NNS infections)))
+    (. .)))
+
+det(presence-2, the-1)
+root(ROOT-0, presence-2)
+amod(infections-5, emerging-4)
+prep_of(presence-2, infections-5)
+
+--Senna Output:------------------------------------------------------ 
+            the	        DT	      B-NP	         O	              -	         O	(S1(NP(NP*
+       presence	        NN	      E-NP	         O	              -	         O	*)
+             of	        IN	      S-PP	         O	              -	         O	(PP*
+       emerging	       VBG	      B-NP	         O	       emerging	       S-V	(NP*
+     infections	       NNS	      E-NP	         O	              -	      S-A0	*))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+6-clinical experiences initiation of prospective studies for selected infectious diseases and other activities  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (JJ clinical))
+    (VP (VBZ experiences)
+      (NP
+        (NP (NN initiation))
+        (PP (IN of)
+          (NP
+            (NP (JJ prospective) (NNS studies))
+            (PP (IN for)
+              (NP
+                (NP (VBN selected) (JJ infectious) (NNS diseases))
+                (CC and)
+                (NP (JJ other) (NNS activities))))))))
+    (. .)))
+
+nsubj(experiences-2, clinical-1)
+root(ROOT-0, experiences-2)
+dobj(experiences-2, initiation-3)
+amod(studies-6, prospective-5)
+prep_of(initiation-3, studies-6)
+amod(diseases-10, selected-8)
+amod(diseases-10, infectious-9)
+prep_for(studies-6, diseases-10)
+amod(activities-13, other-12)
+prep_for(studies-6, activities-13)
+conj_and(diseases-10, activities-13)
+
+--Senna Output:------------------------------------------------------ 
+       clinical	        JJ	      B-NP	         O	              -	         O	(S1(NP(NP*
+    experiences	       NNS	      E-NP	         O	              -	         O	*)
+     initiation	        NN	      S-NP	         O	              -	         O	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	         O	(PP*
+    prospective	        JJ	      B-NP	         O	              -	         O	(NP*
+        studies	       NNS	      E-NP	         O	              -	         O	*))
+            for	        IN	      S-PP	         O	              -	         O	(PP*
+       selected	       VBN	      B-NP	         O	       selected	       S-V	(NP(NP*
+     infectious	        JJ	      I-NP	         O	              -	      B-A1	*
+       diseases	       NNS	      E-NP	         O	              -	      E-A1	*)
+            and	        CC	         O	         O	              -	         O	*
+          other	        JJ	      B-NP	         O	              -	         O	(NP*
+     activities	       NNS	      E-NP	         O	              -	         O	*))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+7-clinical experiences initiation of prospective studies infectious diseases and other activities designed  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP
+      (NP (JJ clinical) (NNS experiences) (NN initiation))
+      (PP (IN of)
+        (NP
+          (NP
+            (NP (JJ prospective) (NNS studies))
+            (NP (JJ infectious) (NNS diseases)))
+          (CC and)
+          (NP (JJ other) (NNS activities)))))
+    (VP (VBD designed))
+    (. .)))
+
+amod(initiation-3, clinical-1)
+nn(initiation-3, experiences-2)
+nsubj(designed-12, initiation-3)
+amod(studies-6, prospective-5)
+prep_of(initiation-3, studies-6)
+amod(diseases-8, infectious-7)
+dep(studies-6, diseases-8)
+amod(activities-11, other-10)
+prep_of(initiation-3, activities-11)
+conj_and(studies-6, activities-11)
+root(ROOT-0, designed-12)
+
+--Senna Output:------------------------------------------------------ 
+       clinical	        JJ	      B-NP	         O	              -	      B-A1	(S1(FRAG(NP(NP*
+    experiences	       NNS	      E-NP	         O	              -	      I-A1	*)
+     initiation	        NN	      S-NP	         O	              -	      I-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      I-A1	(PP*
+    prospective	        JJ	      B-NP	         O	              -	      I-A1	(NP(NP*
+        studies	       NNS	      I-NP	         O	              -	      I-A1	*)
+     infectious	        JJ	      I-NP	         O	              -	      I-A1	(NP*
+       diseases	       NNS	      E-NP	         O	              -	      I-A1	*))))
+            and	        CC	         O	         O	              -	      I-A1	*
+          other	        JJ	      B-NP	         O	              -	      I-A1	(S(NP*
+     activities	       NNS	      E-NP	         O	              -	      E-A1	*)
+       designed	       VBN	      S-VP	         O	       designed	       S-V	(VP*))
+              .	         .	         O	         O	              -	         O	*)))
+
+----------------------------------------------------------------------
+8-both to benefit consultants in infectious diseases  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (NP (DT both))
+    (VP (TO to)
+      (VP (VB benefit)
+        (NP (NNS consultants))
+        (PP (IN in)
+          (NP (JJ infectious) (NNS diseases)))))
+    (. .)))
+
+nsubj(benefit-3, both-1)
+aux(benefit-3, to-2)
+root(ROOT-0, benefit-3)
+dobj(benefit-3, consultants-4)
+amod(diseases-7, infectious-6)
+prep_in(benefit-3, diseases-7)
+
+--Senna Output:------------------------------------------------------ 
+           both	        DT	         O	         O	              -	         O	(S1(NP*
+             to	        TO	      B-VP	         O	              -	         O	(S(VP*
+        benefit	        VB	      E-VP	         O	        benefit	       S-V	(VP*
+    consultants	       NNS	      S-NP	         O	              -	      B-A1	(NP*)
+             in	        IN	      S-PP	         O	              -	      I-A1	(PP*
+     infectious	        JJ	      B-NP	         O	              -	      I-A1	(NP*
+       diseases	       NNS	      E-NP	         O	              -	      E-A1	*)))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
+9-to make use of their services  .
+
+-Stanford Output: ----------------------------------------------------
+(ROOT
+  (S
+    (VP (TO to)
+      (VP (VB make)
+        (NP
+          (NP (NN use))
+          (PP (IN of)
+            (NP (PRP$ their) (NNS services))))))
+    (. .)))
+
+aux(make-2, to-1)
+root(ROOT-0, make-2)
+dobj(make-2, use-3)
+poss(services-6, their-5)
+prep_of(use-3, services-6)
+
+--Senna Output:------------------------------------------------------ 
+             to	        TO	      B-VP	         O	              -	         O	(S1(S(S(VP*
+           make	        VB	      E-VP	         O	           make	       S-V	(VP*
+            use	        NN	      S-NP	         O	              -	      S-A1	(NP(NP*)
+             of	        IN	      S-PP	         O	              -	      B-A2	(PP*
+          their	      PRP$	      B-NP	         O	              -	      I-A2	(NP*
+       services	       NNS	      E-NP	         O	              -	      E-A2	*))))))
+              .	         .	         O	         O	              -	         O	*))
+
+----------------------------------------------------------------------
