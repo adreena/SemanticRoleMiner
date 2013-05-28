@@ -356,7 +356,7 @@ if __name__=="__main__":
 	inputFile=path+"SemanticRoleMiner/code/input"
 	
 	#print DCT, PRED.values()
-	#makeOtherFormats(AllSTs,inputFile)
+	makeOtherFormats(AllSTs,inputFile)
 	
 	#translating for evalutation, checking if they have tag numbers
 	print "-----------------ALL ATS-----------------"
