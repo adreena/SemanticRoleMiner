@@ -1,0 +1,219 @@
+@prefix ns1: <http://>.
+             
+ns1:Sen1-IDSA ns1:acronym-for ns1:Sen1-Infectious_Diseases_Society_of_America;
+              ns1:is ns1:MISC.
+                     
+ns1:Sen1-cooperation ns1:is ns1:Sen1-starter;
+                     ns1:launched-direct-object ns1:Sen1-EIN;
+                     ns1:typeOf ns1:Sen1-IDSA_cooperation;
+                     ns1:with ns1:Sen1-Centers_for_Disease_Control_and_Prevention.
+                              
+ns1:Sen1-Centers_for_Disease_Control_and_Prevention ns1:is ns1:ORG.
+                                                           
+ns1:Sen1-EIN ns1:acronym-for ns1:Sen1-Emerging_Infections_Network;
+             ns1:is ns1:Sen1-thing.
+                    
+                    
+-------------------------------------------------
+@prefix ns1: <http://>.
+             
+ns1:Sen2-monitor ns1:direct-object ns1:Sen2-diseases,
+                                   ns1:Sen2-new;
+                 ns1:in ns1:Sen2-way.
+                        
+ns1:Sen2-network ns1:conceived-direct-object ns1:Sen2-system;
+                 ns1:is ns1:Sen2-conceiver,
+                        ns1:Sen2-observer;
+                 ns1:of ns1:Sen2-consultants.
+                        
+ns1:Sen2-would ns1:is ns1:Sen2-AM-MNR,
+                      ns1:Sen2-AM-MOD,
+                      ns1:Sen2-AM-PNC.
+                      
+ns1:Sen2-consultants ns1:typeOf ns1:Sen2-infectious_diseases_consultants.
+                                
+ns1:Sen2-diseases ns1:is ns1:Sen2-AM-PNC,
+                         ns1:Sen2-thing-looked-at;
+                  ns1:typeOf ns1:Sen2-resurgent_infectious_diseases.
+                             
+ns1:Sen2-efforts ns1:is ns1:Sen2-AM-MNR,
+                        ns1:Sen2-AM-PNC,
+                        ns1:Sen2-thing-complemented;
+                 ns1:typeOf ns1:Sen2-other_public_health_surveillance_efforts.
+                            
+ns1:Sen2-new ns1:is ns1:Sen2-AM-PNC,
+                    ns1:Sen2-thing-looked-at.
+                    
+ns1:Sen2-system ns1:is ns1:Sen2-thought;
+                ns1:typeOf ns1:Sen2-system_sentinel.
+                           
+ns1:Sen2-way ns1:complement-direct-object ns1:Sen2-efforts;
+             ns1:is ns1:Sen2-AM-MNR,
+                    ns1:Sen2-AM-PNC,
+                    ns1:Sen2-thing-complemented.
+                    
+                    
+-------------------------------------------------
+@prefix ns1: <http://>.
+             
+ns1:Sen3-study ns1:confirmed-direct-object ns1:Sen3-value;
+               ns1:is ns1:Sen3-confirmer,
+                      ns1:Sen3-recruit;
+               ns1:recruited-from ns1:Sen3-32;
+               ns1:typeOf ns1:Sen3-pilot_study;
+               ns1:with ns1:Sen3-participants.
+                        
+ns1:Sen3-32 ns1:is ns1:Sen3-group;
+            ns1:of ns1:Sen3-societies,
+                   ns1:Sen3-state.
+                   
+ns1:Sen3-participants ns1:typeOf ns1:Sen3-169_participants.
+                                 
+ns1:Sen3-societies ns1:typeOf ns1:Sen3-regional_societies.
+                              
+ns1:Sen3-state ns1:is ns1:MISC;
+               ns1:of ns1:Sen3-IDSA.
+                      
+ns1:Sen3-value ns1:is <http://Sen3-group,>,
+                      ns1:Sen3-thing;
+               ns1:of ns1:Sen3-network;
+               ns1:typeOf ns1:Sen3-potential_value_feasibility.
+                          
+                          
+-------------------------------------------------
+@prefix ns1: <http://>.
+             
+ns1:Sen4-consultants ns1:is ns1:Sen4-agent;
+                     ns1:number ns1:Sen4-300;
+                     ns1:participating-in ns1:Sen4-EIN,
+                                          ns1:Sen4-IDSa;
+                     ns1:participating-more-detail ns1:Sen4-currently;
+                     ns1:typeOf ns1:Sen4-infectious_diseases_consultants.
+                                
+ns1:Sen4-EIN ns1:acronym-for ns1:Sen4-Emerging_Infections_Network;
+             ns1:is ns1:Sen4-participating.
+                    
+ns1:Sen4-IDSa ns1:is ns1:MISC,
+                     ns1:Sen4-participating.
+                     
+ns1:Sen4-currently ns1:is ns1:Sen4-AM.
+                          
+                          
+-------------------------------------------------
+@prefix ns1: <http://>.
+             
+ns1:Sen5-aggressive ns1:is ns1:Sen5-AM;
+                    ns1:typeOf ns1:Sen5-probing.
+                               
+ns1:Sen5-experiences ns1:direct-object ns1:Sen5-initiation;
+                     ns1:indicate ns1:Sen5-both,
+                                  ns1:Sen5-consultants,
+                                  ns1:Sen5-use;
+                     ns1:indicate-direct-object ns1:Sen5-activities,
+                                                ns1:Sen5-diseases-26;
+                     ns1:indicate-to ns1:Sen5-infections;
+                     ns1:is ns1:Sen5-Sayer,
+                            ns1:Sen5-indicator,
+                            ns1:Sen5-thing-probed;
+                     ns1:subject ns1:Sen5-clinical;
+                     ns1:suggest ns1:Sen5-both,
+                                 ns1:Sen5-consultants,
+                                 ns1:Sen5-infections,
+                                 ns1:Sen5-presence,
+                                 ns1:Sen5-use;
+                     ns1:suggest-direct-object ns1:Sen5-activities,
+                                               ns1:Sen5-diseases-26;
+                     ns1:suggest-to ns1:Sen5-initiation;
+                     ns1:typeOf ns1:Sen5-clinical_experiences.
+                                
+ns1:Sen5-plans ns1:include ns1:Sen5-both,
+                           ns1:Sen5-consultants,
+                           ns1:Sen5-infections,
+                           ns1:Sen5-presence,
+                           ns1:Sen5-use;
+               ns1:include-direct-object ns1:Sen5-activities,
+                                         ns1:Sen5-diseases-26;
+               ns1:include-to ns1:Sen5-initiation;
+               ns1:is ns1:Sen5-group;
+               ns1:typeOf ns1:Sen5-Future_plans.
+                          
+ns1:Sen5-services ns1:possession ns1:Sen5-their.
+                                 
+ns1:Sen5-studies ns1:for ns1:Sen5-activities,
+                         ns1:Sen5-diseases-26;
+                 ns1:typeOf ns1:Sen5-diseases-studies,
+                            ns1:Sen5-prospective_studies,
+                            ns1:Sen5-studies_prospective.
+                            
+ns1:Sen5-diseases-37 ns1:is ns1:Sen5-benefactive;
+                     ns1:typeOf ns1:Sen5-infectious_diseases.
+                                
+ns1:Sen5-presence ns1:is ns1:Sen5-Utterance,
+                         <http://Sen5-theme,>,
+                         ns1:Sen5-thing-probed;
+                  ns1:of ns1:Sen5-infections.
+                         
+ns1:Sen5-both ns1:benefit-direct-object ns1:Sen5-consultants;
+              ns1:benefit-in ns1:Sen5-diseases-37;
+              ns1:is ns1:Sen5-Utterance,
+                     ns1:Sen5-purpose,
+                     <http://Sen5-theme,>,
+                     ns1:Sen5-thing-indicated,
+                     ns1:Sen5-thing-probed.
+                     
+ns1:Sen5-diseases-26 ns1:is ns1:Sen5-Utterance,
+                            ns1:Sen5-creator,
+                            ns1:Sen5-entity,
+                            ns1:Sen5-theme,
+                            ns1:Sen5-thing-indicated,
+                            ns1:Sen5-thing-probed;
+                     ns1:make-direct-object ns1:Sen5-use;
+                     ns1:typeOf ns1:Sen5-diseases_selected_infectious,
+                                ns1:Sen5-infectious_diseases.
+                                
+ns1:Sen5-infections ns1:is ns1:Sen5-Utterance,
+                           <http://Sen5-theme,>,
+                           ns1:Sen5-thing-exiting,
+                           ns1:Sen5-thing-indicated,
+                           ns1:Sen5-thing-probed;
+                    ns1:or ns1:Sen5-initiation;
+                    ns1:typeOf ns1:Sen5-emerging_infections,
+                               ns1:Sen5-presence_infections.
+                               
+ns1:Sen5-initiation ns1:is ns1:Sen5-Utterance,
+                           ns1:Sen5-theme,
+                           ns1:Sen5-thing-designed,
+                           ns1:Sen5-thing-probed;
+                    ns1:of ns1:Sen5-activities,
+                           ns1:Sen5-studies;
+                    ns1:typeOf ns1:Sen5-aggressive_clinical_experiences_initiation,
+                               ns1:Sen5-clinical_experiences_initiation.
+                               
+ns1:Sen5-activities ns1:benefit-direct-object ns1:Sen5-consultants;
+                    ns1:benefit-in ns1:Sen5-diseases-37;
+                    ns1:is ns1:Sen5-Utterance,
+                           ns1:Sen5-creator,
+                           ns1:Sen5-giver,
+                           ns1:Sen5-theme,
+                           ns1:Sen5-thing-indicated,
+                           ns1:Sen5-thing-probed;
+                    ns1:make-direct-object ns1:Sen5-use;
+                    ns1:typeOf ns1:Sen5-other_activities.
+                               
+ns1:Sen5-consultants ns1:is ns1:Sen5-Utterance,
+                            ns1:Sen5-benefactive,
+                            ns1:Sen5-purpose,
+                            <http://Sen5-theme,>,
+                            ns1:Sen5-thing-indicated,
+                            ns1:Sen5-thing-probed.
+                            
+ns1:Sen5-use ns1:is ns1:Sen5-Utterance,
+                    ns1:Sen5-creation,
+                    ns1:Sen5-purpose,
+                    <http://Sen5-theme,>,
+                    ns1:Sen5-thing-indicated,
+                    ns1:Sen5-thing-probed;
+             ns1:of ns1:Sen5-services.
+                    
+                    
+-------------------------------------------------
