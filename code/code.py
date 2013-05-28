@@ -671,7 +671,10 @@ def nnTotypeOf(allSTs):
 def makeOtherFormats(STs,inputFile):
 	f=open(inputFile+'/results.nt',"w")
 	for val in STs:
-		f.write("<http://"+val[0]+"> <http://"+val[1]+"> <http://"+val[2]+"> .\n")
+		val0=val[0].replace(" ","_")
+		val1=val[1].replace(" ","_")
+		val2=val[2].replace(" ","_")
+		f.write("<http://"+val0+"> <http://"+val1+"> <http://"+val2+"> .\n")
 	f.close() #nt created
 	#----------------------------------------------------------------------------------
 	#make graph
@@ -681,7 +684,24 @@ def makeOtherFormats(STs,inputFile):
 	#makin turtle
 	f=open(inputFile+'/rdf.ttl','w') 
 	s=graph.serialize(format="turtle")
+	ind1=0
+	ind2=0
+	ind=0
 	for line in s.split("\n"):
+		line=line.replace("  ","")
+		line=line.replace(" .",".")
+		segs=line.split(" ")
+		print segs
+		if len(segs)==3:
+			ind=0
+			ind1=len(segs[0])
+			ind2=len(segs[1])
+		elif len(segs)==2:
+			ind=ind1+1
+			ind2=len(segs[0])
+		elif len(segs)==1:
+			ind=ind1+ind2+2
+		line=" "*ind+line
 		f.write(line+"\n")
 	f.close()
 
@@ -691,7 +711,6 @@ def makeOtherFormats(STs,inputFile):
 	for line in s.split("\n"):
 		f.write(line+"\n")
 	f.close()
-
 
 #---------------------------------------------------------
 #typeofS
