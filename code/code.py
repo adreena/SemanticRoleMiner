@@ -16,8 +16,8 @@ from rdflib.namespace import Namespace
 
 from Visualizer import makeGephi
 #excluded "nn":"--","amod":"is"
-dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"more-detail","agent":"by","appos":"or","attr":"","csubjpass":"more-detail","dobj":"direct-object","iobj":"to","neg":"not","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for","prep_of":"of","prep_to":"to","prep_from":"from" , "quantmode":"quantity", "tmod":"time"}
-banlist=['estimated','is','are','and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
+dictionary={"dep":"--","abbrev":"sameAs","acomp":"is","advmod":"more-detail","agent":"by","appos":"or","attr":"","csubjpass":"more-detail","dobj":"direct-object","iobj":"to","neg":"not","nsubj":"subject","csubj":"subject", "nsubjpass":"subject","num":"number", "number":"currency","partmod":"moreDetail", "poss":"possession", "prep_on":"on","prep_in":"in","prep_by":"by","prep_since":"since", "prep_with":"with", "prep_at":"at","prep_after":"after","prep_for":"for",'prep_behind':'behind',"prep_of":"of","prep_to":"to","prep_from":"from" , "prep_among":"among","prep_without":"without" ,"quantmode":"quantity", "tmod":"time"}
+banlist=['behind','without','among','estimated','is','are','and','an','a','for','the','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","becasue","instead","such","addition","due","all","rather","well"]
 
 path="/home/kimia/srl/"
 
@@ -61,15 +61,23 @@ def verbRelatives(vlist,Stan,indices): #works based on dependecies discovered by
 def roleFinder(verb):
 	#--converting verb into its present tense
 	print "verb**",verb
-	tverb=en.verb.present(verb)
+	
+	if verb=="find" or verb=="found" : tverb="find"
+	else: tverb=en.verb.present(verb)
 	print "targetverb **** ",tverb	
-	propVerb=tverb+".01"
+	if tverb=="emerge": propVerb=tverb+".02"
+	else: propVerb=tverb+".01"
 	print propVerb
+	if propVerb=="re-cover.01": propVerb="recover.01"
 	allroles={}
-	roles=propbank.roleset(propVerb)
-	for role in roles.findall('roles/role'):
-		role.attrib['descr']=role.attrib['descr'].replace(" ","-")
-		allroles["A"+str(role.attrib['n'])]=role.attrib['descr']
+	if propVerb=="vaccinate.01": 
+		allroles={'A0':'Vaccinator','A1':'Vaccinated','A2':'Against_what/disease'}
+	
+	else:
+		roles=propbank.roleset(propVerb)
+		for role in roles.findall('roles/role'):
+			role.attrib['descr']=role.attrib['descr'].replace(" ","-")
+			allroles["A"+str(role.attrib['n'])]=role.attrib['descr']
 
 	return allroles
 #------------------------------------------------------------------------------------------------------------------------------------
@@ -534,7 +542,7 @@ def verbLinks(vbn,deplist,VBNs):
 #
 #
 def scanVerb(sen,vlist):
-	banlist=['is','are','for','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for","since","estimated"]
+	['behind','without','among','is','are','for','by','from','and','in',',','of','with','on','at','under','to','after',"or","beyond","and","for","since","estimated"]
 	doublewords=["becasue","instead","such","addition","due","all","rather","well"]
 	doublewordlist=[["becasue","of"],["instead","of"], ["such","as"], ["due","to"],["all","but"],["rather","than"]  ]
 	triplewords=["addition","well"]
