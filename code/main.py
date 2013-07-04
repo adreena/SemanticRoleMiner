@@ -137,6 +137,11 @@ if __name__=="__main__":
 				sent=sent.replace(item,newtok)
 				
 			
+	#replacing whats and what is with the reason
+	whatpattern=r"\s(what's|what is)\s"
+	match=re.findall(whatpattern,sent)
+	for item in match:
+		sent=sent.replace(item," the reason ")	
 	
 	PrSent=sent #processed sentence
 	sent=sent.replace(" s "," ") # when poss-dependency is not available  the 's is leaving a "s" alone , so I treat it as nn dependency and remove s 
@@ -197,6 +202,34 @@ if __name__=="__main__":
 							addArgs[lb].append((v[0],key2))		
 	#print addArgs
 	print "##################################################"
+#*************************************************************
+#*************************************************************
+	
+	quote=r"(.,\s(\w+)\ssaid\s*)."
+	addLast=[]
+	match=re.findall(quote,sent)
+	#print match[0][0]
+	if len(match)>0:
+		sayer=match[0][-1]
+		#I should add the arguments related to said in here
+		#I'm gonna translate this as he-is-sayer , he-said-statement , statement-begins_with-We , we is the beginning of statement
+		sent=sent.replace(match[0][0]," ")
+		beginStatement=sent.split(" ")[0]
+	
+		addLast.append((sayer,"is","Sayer"))
+		addLast.append((sayer,"said","Statement"))
+		addLast.append(("Statement","begins_with",beginStatement))
+	
+		sentence=open(path+"SemanticRoleMiner/code/input/test_input.txt","w")	
+		sentence.write(sent)
+		sentence.close()
+
+		inputFile="SemanticRoleMiner/code/input"
+		myTestFile=SenSta(inputFile)
+		myTestFile.makeSenna()
+		myTestFile.makeStanf()
+		sennafile=path+"SemanticRoleMiner/code/input"+"/sennaoutput.txt"
+		stanfile=path+"SemanticRoleMiner/code/input"+"/stanoutput.txt"	
 #*************************************************************
 	#2
 	Senna=modifySenna(sennafile)
@@ -333,6 +366,10 @@ if __name__=="__main__":
 			AllSTs=list(set(AllSTs+STs))
 			sentNumber+=1
 			#typeOfs(Stan)
+	Results=open(path+"SemanticRoleMiner/code/RESULTS.txt","w")
+	for item in AllSTs:
+		Results.write(item[0]+"  -"+item[1]+"-  "+item[2]+"\n")
+	Results.close()
 	initfile=open(path+"SemanticRoleMiner/code/input/init.txt","r")
 	#print "initiiiiiii"
 	senNumber= int(initfile.readline().split("\n")[0])
