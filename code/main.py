@@ -366,6 +366,7 @@ if __name__=="__main__":
 			AllSTs=list(set(AllSTs+STs))
 			sentNumber+=1
 			#typeOfs(Stan)
+	AllSts+=addLast
 	Results=open(path+"SemanticRoleMiner/code/input/RESULTS.txt","w")
 	for item in AllSTs:
 		Results.write(item[0]+"  -"+item[1]+"-  "+item[2]+"\n")
