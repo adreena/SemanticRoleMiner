@@ -209,17 +209,17 @@ def translateSent(vlist,result,Poss,indices,PrSent):
 			if len(allRoles[role].split(","))>1:	#sometimes we have more than 1 role , I take the first one
 				temp=allRoles[role].split(",")[0]
 					
-				print token," is ",temp
-				STs.append((str(token),"is",temp))
+				print token," has-role ",temp
+				STs.append((str(token),"has-role",temp))
 
 			else:
-				print token," is ",allRoles[role]
-				STs.append((str(token),"is",allRoles[role]))
+				print token," has-role ",allRoles[role]
+				STs.append((str(token),"has-role",allRoles[role]))
 		else:
 #
 			#print "*role_added2*"
-			print token," is ",role
-			STs.append((str(token),"is",role))
+			print token," has-role ",role
+			STs.append((str(token),"has-role",role))
 
  
 	#print "###########-ROLE-NAMEs-#############################"
@@ -499,14 +499,14 @@ def ExtraSTs(newSTs,PrSent,vlist,addArgs,objects,subjects,DCT):
 				#print "///",label, role
 				if tok1 in DCT:
 					if role in ["A0","A1","A2","A3","A4","AM"]: tup=(tok1,"is",label)
-					else: tup=(tok1,"is",role)
+					else: tup=(tok1,"has-role",role)
 					print tup
 					newSTs.append(tup)
 			else:
 				#print "//",label
 				if tok1 in DCT:
 					print tok1," is ",label
-					newSTs.append((tok1,"is",label))
+					newSTs.append((tok1,"has-role",label))
 	
 	#print "--------"
 	return newSTs
@@ -667,8 +667,8 @@ def nnTotypeOf(allSTs):
 		for item in templist:
 			a=key.split("-")[-1] #removing index of main token
 			key1=key.replace("-"+a,"")
-			print key," typeOf ",item+"-"+key1
-			toAdd.append((key,"typeOf",item+"-"+key1))
+			print key," superClassOf ",item+"-"+key1
+			toAdd.append((key,"superClassOf",item+"-"+key1))
 	#print toAdd	
 	return toAdd,toRem
 
@@ -754,7 +754,7 @@ def typeOfs(Stan,indices):
 		gotya=keys.split("-")[-1]
 		#print gotya, indices[int(gotya)-1]
 		obj=obj.replace(" ","_")
-		sts.append((indices[int(gotya)-1],"typeOf",obj))
+		sts.append((indices[int(gotya)-1],"superClassOf",obj))
 	print sts
 	return sts
 
