@@ -57,7 +57,7 @@ We formulate procedure of creating RDF triples into four steps:
  
  	Input: "Farmers with salmonella in the herd should advise Fonterra [multinational dairy company]", he said.
  	
- 	output: ![Alt text](http://i44.tinypic.com/207us02.jpg)
+ 	output: [id]:http://i44.tinypic.com/207us02.jpg
  
  	
  
