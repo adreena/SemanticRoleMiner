@@ -58,8 +58,7 @@ We formulate procedure of creating RDF triples into four steps:
  	Input : “farmers have lost more than 20 cows.”
  	
  	output: 
- 	
- 		![alt text]( http://i44.tinypic.com/207us02.jpg "Title")
+ 	<img src="http://i44.tinypic.com/207us02.jpg" alt="alt text" title="Title" />
  
  
  
