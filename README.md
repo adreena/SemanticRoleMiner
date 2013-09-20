@@ -12,7 +12,7 @@ Such tasks require deep understanding of the underlying structures and semantics
 On the other hand, Ontology provides a framework for representing extracted information, 
 in the format of entities and relationships among them. 
 This framework is machine-readable and allows sharing and exchanging of knowledge between different applications.
-Most of the tools designed for discussed purposes are not successful to cover all aspects of linguistic analysis for texts. Query engines and ontology learners such as BIEQA[1], Text2Onto[2] and OntoPlus[8] rely on bag-of-words and pattern-matching methods, which also make them domain-specific and user-dependent. FRED[10] mines more information from texts in terms of semantic-roles and relations between terms.
+Most of the tools designed for discussed purposes are not successful to cover all aspects of linguistic analysis for texts. Query engines and ontology learners such as BIEQA, Text2Onto and OntoPlus rely on bag-of-words and pattern-matching methods, which also make them domain-specific and user-dependent. FRED mines more information from texts in terms of semantic-roles and relations between terms.
 Meanwhile, a big portion of its output is unnecessary and the size of output can be reduced by merging and more analysis.  
 
 
@@ -34,7 +34,32 @@ creates several layers of features exploited from unlabelled data, using neural 
 Neural network is an adaptive system for real-world problem solving. Each layer provides a basis for other 
 layers and makes the approach almost independent from anyprior knowledge. Because of following a neural network structure, 
 Senna does all text analysis from scratch.
-	Senna follows PropBank annotation style for semantic role labelling. 
-	PropBank annotators examine instances from their databank and decide which frameset suits the given sentence the best. 
-	In some cases, annotator has to decide between two roles for a word.
- They often apply ranking strategy of Arg0 > Arg1 > Arg2 >… to make the final decision
+Senna follows PropBank annotation style for semantic role labelling. 
+PropBank annotators examine instances from their databank and decide which frameset suits the given sentence the best. 
+In some cases, annotator has to decide between two roles for a word.
+They often apply ranking strategy of Arg0 > Arg1 > Arg2 >… to make the final decision.
+
+We formulate procedure of creating RDF triples into four steps: 
+
+	Pre-processing
+	
+	Simplification 
+	
+	Generating Triples 
+	
+	Representation.  
+
+ 
+ 
+ Sample input and output
+ ---
+ Example 1:
+ 
+ 	Input : “farmers have lost more than 20 cows.”
+ 	
+ 	output: 
+ 	
+ 		![alt text]( http://i44.tinypic.com/207us02.jpg "Title")
+ 
+ 
+ 
